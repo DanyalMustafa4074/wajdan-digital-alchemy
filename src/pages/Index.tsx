@@ -1,29 +1,16 @@
-
 import { ArrowRight, CheckCircle, TrendingUp, Users, Zap, Star, Play, BarChart3, Palette, Video, Code, Megaphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import WajdanNavbar from "@/components/WajdanNavbar";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-brand-dark/95 backdrop-blur-sm text-white py-4 px-6 fixed w-full top-0 z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="text-2xl font-bold text-brand-green">Wajdan</div>
-          <div className="hidden md:flex space-x-8">
-            <a href="#services" className="hover:text-brand-yellow transition-colors">Services</a>
-            <a href="#about" className="hover:text-brand-yellow transition-colors">About</a>
-            <a href="#testimonials" className="hover:text-brand-yellow transition-colors">Results</a>
-            <a href="#contact" className="hover:text-brand-yellow transition-colors">Contact</a>
-          </div>
-          <Button className="bg-brand-yellow text-brand-dark hover:bg-brand-yellow/90 font-semibold">
-            Free Strategy Call
-          </Button>
-        </div>
-      </nav>
+      <WajdanNavbar />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-6 bg-gradient-to-br from-brand-dark via-brand-dark to-brand-blue text-white relative overflow-hidden">
+      <section className="pt-32 pb-16 px-6 bg-gradient-to-br from-brand-dark via-brand-dark to-brand-blue text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-brand-green/10 to-brand-yellow/10"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
