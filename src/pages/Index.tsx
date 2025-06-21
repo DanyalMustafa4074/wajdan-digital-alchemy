@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle, TrendingUp, Users, Zap, Star, Play, BarChart3, Palette, Video, Code, Megaphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { HeroSection } from "@/components/ui/hero-section-dark";
 import WajdanNavbar from "@/components/WajdanNavbar";
 
 const Index = () => {
@@ -10,58 +11,28 @@ const Index = () => {
       <WajdanNavbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-br from-brand-dark via-brand-dark to-brand-blue text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-green/10 to-brand-yellow/10"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-up">
-              <div className="inline-flex items-center bg-brand-orange/20 text-brand-orange px-4 py-2 rounded-full mb-6">
-                <TrendingUp className="w-4 h-4 mr-2" />
-                <span className="text-sm font-medium">Scaling Brands Smarter & Faster</span>
-              </div>
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Turn Your Brand Into A 
-                <span className="text-brand-yellow"> Growth Machine</span>
-              </h1>
-              <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                We don't just run ads—we architect digital ecosystems that convert strangers into customers and customers into advocates. Data-backed strategy meets creative excellence.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-brand-yellow text-brand-dark hover:bg-brand-yellow/90 font-semibold text-lg px-8 py-6">
-                  Get Your Free Growth Audit
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold text-lg px-8 py-6">
-                  <Play className="mr-2 w-5 h-5" />
-                  See Our Work
-                </Button>
-              </div>
-            </div>
-            <div className="relative animate-fade-in">
-              <div className="bg-brand-green/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-green/30">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-brand-yellow">300%+</div>
-                    <div className="text-sm text-gray-300">Average ROAS</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-brand-yellow">$2M+</div>
-                    <div className="text-sm text-gray-300">Ad Spend Managed</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-brand-yellow">150+</div>
-                    <div className="text-sm text-gray-300">Brands Scaled</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-brand-yellow">24hr</div>
-                    <div className="text-sm text-gray-300">Response Time</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="Scaling Brands Smarter & Faster"
+        subtitle={{
+          regular: "Turn Your Brand Into A ",
+          gradient: "Growth Machine"
+        }}
+        description="We don't just run ads—we architect digital ecosystems that convert strangers into customers and customers into advocates. Data-backed strategy meets creative excellence."
+        ctaText="Get Your Free Growth Audit"
+        ctaHref="#contact"
+        bottomImage={{
+          light: "https://farmui.vercel.app/dashboard-light.png",
+          dark: "https://farmui.vercel.app/dashboard.png"
+        }}
+        gridOptions={{
+          angle: 65,
+          opacity: 0.3,
+          cellSize: 60,
+          lightLineColor: "#57A773",
+          darkLineColor: "#264653"
+        }}
+        className="pt-20"
+      />
 
       {/* Services Section */}
       <section id="services" className="py-20 px-6 bg-gray-50">
@@ -178,61 +149,60 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="py-20 px-6 bg-brand-dark text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">
-                We're Not Just Another Agency—
-                <span className="text-brand-yellow">We're Your Growth Partners</span>
-              </h2>
-              <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                Born from the frustration of seeing businesses struggle with cookie-cutter marketing approaches, Wajdan was built on a simple philosophy: every brand deserves a custom-crafted growth strategy.
-              </p>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                We don't believe in one-size-fits-all solutions. Instead, we dive deep into your business, understand your customers, and architect digital experiences that don't just look good—they perform exceptionally.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="flex items-center">
-                  <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
-                  <span>Data-Driven Decisions</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
-                  <span>Creative Excellence</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
-                  <span>Transparent Reporting</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
-                  <span>Scalable Systems</span>
-                </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-brand-dark mb-4">
+              We're Not Just Another Agency—
+              <span className="text-brand-yellow">We're Your Growth Partners</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+              Born from the frustration of seeing businesses struggle with cookie-cutter marketing approaches, Wajdan was built on a simple philosophy: every brand deserves a custom-crafted growth strategy.
+            </p>
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              We don't believe in one-size-fits-all solutions. Instead, we dive deep into your business, understand your customers, and architect digital experiences that don't just look good—they perform exceptionally.
+            </p>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="flex items-center">
+                <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
+                <span>Data-Driven Decisions</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
+                <span>Creative Excellence</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
+                <span>Transparent Reporting</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
+                <span>Scalable Systems</span>
               </div>
             </div>
-            <div className="relative">
-              <div className="bg-brand-green/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-green/30">
-                <h3 className="text-2xl font-bold text-brand-yellow mb-6">Our Proven Process</h3>
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="bg-brand-yellow text-brand-dark rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">1</div>
-                    <div>
-                      <h4 className="font-semibold text-lg mb-2">Deep Dive Analysis</h4>
-                      <p className="text-gray-300">Understand your business, audience, and competitive landscape</p>
-                    </div>
+          </div>
+          
+          <div className="relative">
+            <div className="bg-brand-green/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-green/30">
+              <h3 className="text-2xl font-bold text-brand-yellow mb-6">Our Proven Process</h3>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-brand-yellow text-brand-dark rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">1</div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Deep Dive Analysis</h4>
+                    <p className="text-gray-300">Understand your business, audience, and competitive landscape</p>
                   </div>
-                  <div className="flex items-start">
-                    <div className="bg-brand-yellow text-brand-dark rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">2</div>
-                    <div>
-                      <h4 className="font-semibold text-lg mb-2">Strategic Planning</h4>
-                      <p className="text-gray-300">Craft custom growth strategies tailored to your goals</p>
-                    </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-brand-yellow text-brand-dark rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">2</div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Strategic Planning</h4>
+                    <p className="text-gray-300">Craft custom growth strategies tailored to your goals</p>
                   </div>
-                  <div className="flex items-start">
-                    <div className="bg-brand-yellow text-brand-dark rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">3</div>
-                    <div>
-                      <h4 className="font-semibold text-lg mb-2">Execute & Optimize</h4>
-                      <p className="text-gray-300">Launch campaigns and continuously optimize for better results</p>
-                    </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-brand-yellow text-brand-dark rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">3</div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Execute & Optimize</h4>
+                    <p className="text-gray-300">Launch campaigns and continuously optimize for better results</p>
                   </div>
                 </div>
               </div>
