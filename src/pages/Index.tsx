@@ -1,10 +1,86 @@
+
 import { ArrowRight, CheckCircle, TrendingUp, Users, Zap, Star, Play, BarChart3, Palette, Video, Code, Megaphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { HeroSection } from "@/components/ui/hero-section-dark";
+import { BentoGrid } from "@/components/ui/bento-grid";
+import { ShuffleCards } from "@/components/ui/testimonial-cards";
+import { PremiumContact } from "@/components/ui/premium-contact";
 import WajdanNavbar from "@/components/WajdanNavbar";
 
 const Index = () => {
+  // Services data for BentoGrid
+  const servicesData = [
+    {
+      title: "Meta Ads That Convert",
+      meta: "5.8x ROAS",
+      description: "Strategic Facebook & Instagram campaigns with advanced targeting and conversion optimization.",
+      icon: <Megaphone className="w-4 h-4 text-brand-orange" />,
+      status: "Live",
+      tags: ["Meta", "ROI", "Growth"],
+      colSpan: 2,
+      hasPersistentHover: true,
+    },
+    {
+      title: "Social Media Mastery", 
+      meta: "400% Growth",
+      description: "Build communities that buy with strategic content and engagement growth.",
+      icon: <Users className="w-4 h-4 text-brand-green" />,
+      status: "Active",
+      tags: ["Community", "Content"],
+    },
+    {
+      title: "Content That Converts",
+      meta: "12% CTR",
+      description: "Strategic copy that educates, entertains, and drives action across all platforms.",
+      icon: <Zap className="w-4 h-4 text-brand-yellow" />,
+      tags: ["Copy", "Strategy"],
+      colSpan: 2,
+    },
+    {
+      title: "Design That Sells",
+      meta: "Brand Systems",
+      description: "Visual identity that commands attention and communicates value effectively.",
+      icon: <Palette className="w-4 h-4 text-brand-blue" />,
+      status: "Creative",
+      tags: ["Design", "Brand"],
+    },
+    {
+      title: "Video That Engages",
+      meta: "Pro Editing",
+      description: "Professional video content that tells your story and drives engagement.",
+      icon: <Video className="w-4 h-4 text-brand-orange" />,
+      tags: ["Video", "Story"],
+    },
+    {
+      title: "Websites That Work",
+      meta: "Conversion+",
+      description: "High-converting sites optimized for speed, mobile, and user experience.",
+      icon: <Code className="w-4 h-4 text-brand-green" />,
+      status: "Dev",
+      tags: ["Web", "UX"],
+    },
+  ];
+
+  // Testimonials data
+  const testimonialsData = [
+    {
+      id: 1,
+      testimonial: "Wajdan transformed our social media presence completely. Our engagement increased by 400% and sales followed suit.",
+      author: "Sarah Martinez - Founder, EcoLiving Co."
+    },
+    {
+      id: 2,
+      testimonial: "Our ROAS went from 2.1x to 5.8x in just 3 months. Their Meta ads strategy is phenomenal—every dollar multiplied.", 
+      author: "Michael Rodriguez - CEO, TechStart Solutions"
+    },
+    {
+      id: 3,
+      testimonial: "The website they built converts at 12%—triple our old site. Every element optimized for our customers' journey.",
+      author: "Jennifer Liu - Owner, Luxe Fashion Boutique"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -42,107 +118,11 @@ const Index = () => {
               Your Complete Digital Growth Arsenal
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Every service designed to work together, creating a unified growth engine that scales your business across all digital touchpoints.
+              Every service designed to work together, creating a unified growth engine that scales your business.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="bg-brand-orange/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Megaphone className="w-8 h-8 text-brand-orange" />
-                </div>
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">Meta Ads That Convert</h3>
-                <p className="text-gray-600 mb-4">
-                  Strategic Facebook & Instagram campaigns that turn cold traffic into paying customers. Advanced targeting, creative testing, and conversion optimization.
-                </p>
-                <div className="flex items-center text-brand-green font-semibold">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="bg-brand-green/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Users className="w-8 h-8 text-brand-green" />
-                </div>
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">Social Media Mastery</h3>
-                <p className="text-gray-600 mb-4">
-                  Build communities that buy. Strategic content planning, engagement growth, and brand storytelling across all major platforms.
-                </p>
-                <div className="flex items-center text-brand-green font-semibold">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="bg-brand-yellow/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Zap className="w-8 h-8 text-brand-dark" />
-                </div>
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">Content That Converts</h3>
-                <p className="text-gray-600 mb-4">
-                  Strategic content creation that educates, entertains, and converts. Blog posts, captions, emails, and landing page copy that drives action.
-                </p>
-                <div className="flex items-center text-brand-green font-semibold">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="bg-brand-blue/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Palette className="w-8 h-8 text-brand-blue" />
-                </div>
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">Design That Sells</h3>
-                <p className="text-gray-600 mb-4">
-                  Visual identity and graphics that command attention and communicate value. From logos to ad creatives to complete brand systems.
-                </p>
-                <div className="flex items-center text-brand-green font-semibold">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="bg-brand-orange/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Video className="w-8 h-8 text-brand-orange" />
-                </div>
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">Video That Engages</h3>
-                <p className="text-gray-600 mb-4">
-                  Professional video editing that tells your brand story and drives engagement. Social clips, ads, testimonials, and promotional content.
-                </p>
-                <div className="flex items-center text-brand-green font-semibold">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="bg-brand-green/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Code className="w-8 h-8 text-brand-green" />
-                </div>
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">Websites That Work</h3>
-                <p className="text-gray-600 mb-4">
-                  High-converting Shopify & WordPress sites that turn visitors into customers. Optimized for speed, mobile, and conversions.
-                </p>
-                <div className="flex items-center text-brand-green font-semibold">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <BentoGrid items={servicesData} />
         </div>
       </section>
 
@@ -150,61 +130,29 @@ const Index = () => {
       <section id="about" className="py-20 px-6 bg-brand-dark text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-brand-dark mb-4">
+            <h2 className="text-4xl font-bold mb-4">
               We're Not Just Another Agency—
               <span className="text-brand-yellow">We're Your Growth Partners</span>
             </h2>
-            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed max-w-4xl mx-auto">
               Born from the frustration of seeing businesses struggle with cookie-cutter marketing approaches, Wajdan was built on a simple philosophy: every brand deserves a custom-crafted growth strategy.
             </p>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              We don't believe in one-size-fits-all solutions. Instead, we dive deep into your business, understand your customers, and architect digital experiences that don't just look good—they perform exceptionally.
-            </p>
-            <div className="grid grid-cols-2 gap-6">
-              <div className="flex items-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+              <div className="flex items-center justify-center">
                 <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
                 <span>Data-Driven Decisions</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
                 <span>Creative Excellence</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
                 <span>Transparent Reporting</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
                 <span>Scalable Systems</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative">
-            <div className="bg-brand-green/20 rounded-2xl p-8 backdrop-blur-sm border border-brand-green/30">
-              <h3 className="text-2xl font-bold text-brand-yellow mb-6">Our Proven Process</h3>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-brand-yellow text-brand-dark rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">1</div>
-                  <div>
-                    <h4 className="font-semibold text-lg mb-2">Deep Dive Analysis</h4>
-                    <p className="text-gray-300">Understand your business, audience, and competitive landscape</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-brand-yellow text-brand-dark rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">2</div>
-                  <div>
-                    <h4 className="font-semibold text-lg mb-2">Strategic Planning</h4>
-                    <p className="text-gray-300">Craft custom growth strategies tailored to your goals</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-brand-yellow text-brand-dark rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">3</div>
-                  <div>
-                    <h4 className="font-semibold text-lg mb-2">Execute & Optimize</h4>
-                    <p className="text-gray-300">Launch campaigns and continuously optimize for better results</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -212,150 +160,23 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section id="testimonials" className="py-20 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-brand-dark mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Real Results, Real Stories
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. See how we've helped businesses like yours achieve extraordinary growth.
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Don't just take our word for it. See how we've helped businesses achieve extraordinary growth.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-brand-yellow fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 italic">
-                  "Wajdan transformed our social media presence completely. Our engagement increased by 400% and our sales followed suit. They don't just manage accounts—they build communities."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-brand-green/20 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-brand-green font-bold">SM</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-brand-dark">Sarah Martinez</div>
-                    <div className="text-sm text-gray-500">Founder, EcoLiving Co.</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-brand-yellow fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 italic">
-                  "Our ROAS went from 2.1x to 5.8x in just 3 months. Their Meta ads strategy is phenomenal—every dollar we spend comes back multiplied. True growth partners."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-brand-green/20 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-brand-green font-bold">MR</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-brand-dark">Michael Rodriguez</div>
-                    <div className="text-sm text-gray-500">CEO, TechStart Solutions</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-brand-yellow fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 italic">
-                  "The website they built for us converts at 12%—triple our old site. Every element is optimized for our customers' journey. Exceptional work and ongoing support."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-brand-green/20 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-brand-green font-bold">JL</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-brand-dark">Jennifer Liu</div>
-                    <div className="text-sm text-gray-500">Owner, Luxe Fashion Boutique</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="bg-gradient-to-r from-brand-green to-brand-blue rounded-2xl p-12 text-white text-center">
-            <BarChart3 className="w-16 h-16 mx-auto mb-6 animate-float" />
-            <h3 className="text-3xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              Every great partnership starts with a conversation. Let's discuss how we can accelerate your growth.
-            </p>
-            <Button size="lg" className="bg-brand-yellow text-brand-dark hover:bg-brand-yellow/90 font-semibold text-lg px-8 py-6">
-              Book Your Free Strategy Session
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </div>
+          <ShuffleCards testimonials={testimonialsData} />
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section id="contact" className="py-20 px-6 bg-brand-dark text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-6">
-            Stop Guessing. Start 
-            <span className="text-brand-yellow"> Growing.</span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-            Your competitors are already investing in their digital presence. Every day you wait is potential revenue walking out the door. 
-            Let's change that—starting with a free, no-obligation strategy session.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="bg-brand-green/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-brand-green" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Free Growth Audit</h3>
-              <p className="text-gray-300">Comprehensive analysis of your current digital presence</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-brand-yellow/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="w-8 h-8 text-brand-yellow" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Custom Strategy</h3>
-              <p className="text-gray-300">Tailored roadmap for your specific business goals</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-brand-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-brand-orange" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Growth Forecast</h3>
-              <p className="text-gray-300">Realistic projections for your digital transformation</p>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-brand-yellow text-brand-dark hover:bg-brand-yellow/90 font-semibold text-xl px-12 py-8">
-              Book Your Free Strategy Call Now
-              <ArrowRight className="ml-3 w-6 h-6" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold text-xl px-12 py-8">
-              View Our Portfolio
-            </Button>
-          </div>
-          
-          <p className="text-sm text-gray-400 mt-8">
-            No contracts. No pressure. Just actionable insights you can implement immediately.
-          </p>
-        </div>
-      </section>
+      {/* Contact Section */}
+      <PremiumContact />
 
       {/* Footer */}
       <footer className="bg-brand-dark border-t border-brand-green/20 py-12 px-6">

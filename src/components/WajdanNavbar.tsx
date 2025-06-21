@@ -1,9 +1,8 @@
 
 "use client";
 import React from "react";
-import { Home, User, Briefcase, FileText } from "lucide-react";
+import { Home, User, Briefcase, FileText, Phone } from "lucide-react";
 import { NavBar } from "@/components/ui/tubelight-navbar";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 function WajdanNavbar({ className }: { className?: string }) {
@@ -11,7 +10,8 @@ function WajdanNavbar({ className }: { className?: string }) {
     { name: 'Services', url: '#services', icon: Briefcase },
     { name: 'About', url: '#about', icon: User },
     { name: 'Results', url: '#testimonials', icon: FileText },
-    { name: 'Contact', url: '#contact', icon: Home }
+    { name: 'Contact', url: '#contact', icon: Home },
+    { name: 'Free Strategy Call', url: '#contact', icon: Phone, isButton: true }
   ];
 
   return (
@@ -22,10 +22,6 @@ function WajdanNavbar({ className }: { className?: string }) {
         <div className="flex-1 flex justify-center">
           <NavBar items={navItems} className="relative" />
         </div>
-
-        <Button className="bg-brand-yellow text-brand-dark hover:bg-brand-yellow/90 font-semibold">
-          Free Strategy Call
-        </Button>
       </div>
     </div>
   );

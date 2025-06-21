@@ -10,6 +10,7 @@ interface NavItem {
   name: string
   url: string
   icon: LucideIcon
+  isButton?: boolean
 }
 
 interface NavBarProps {
@@ -50,15 +51,17 @@ export function NavBar({ items, className }: NavBarProps) {
               onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                "text-foreground/80 hover:text-primary",
-                isActive && "bg-muted text-primary",
+                item.isButton 
+                  ? "bg-brand-yellow text-brand-dark hover:bg-brand-yellow/90 border-2 border-brand-yellow"
+                  : "text-foreground/80 hover:text-primary",
+                !item.isButton && isActive && "bg-muted text-primary",
               )}
             >
               <span className="hidden md:inline">{item.name}</span>
               <span className="md:hidden">
                 <Icon size={18} strokeWidth={2.5} />
               </span>
-              {isActive && (
+              {isActive && !item.isButton && (
                 <motion.div
                   layoutId="lamp"
                   className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
