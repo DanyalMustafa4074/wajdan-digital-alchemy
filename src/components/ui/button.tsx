@@ -37,34 +37,16 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
-  href?: string
 }
 
-const Button = React.forwardRef<HTMLElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, href, ...props }, ref) => {
-    const classNames = cn(buttonVariants({ variant, size, className }))
-
-    if (href) {
-      const { target, rel, ...anchorProps } = props as React.AnchorHTMLAttributes<HTMLAnchorElement>
-      const safeRel = rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)
-      return (
-        <a
-          className={classNames}
-          href={href}
-          target={target}
-          rel={safeRel}
-          ref={ref as React.Ref<HTMLAnchorElement>}
-          {...anchorProps}
-        />
-      )
-    }
-
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
-        className={classNames}
-        ref={ref as React.Ref<HTMLButtonElement>}
-        {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
       />
     )
   }
