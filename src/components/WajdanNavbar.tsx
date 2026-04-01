@@ -13,7 +13,6 @@ function WajdanNavbar({ className }: { className?: string }) {
     { name: 'How It Works', url: '#system' },
     { name: 'Results', url: '#results' },
     { name: 'Pricing', url: '#pricing' },
-    { name: 'Services', url: '/services' },
   ];
 
   useEffect(() => {
@@ -32,8 +31,8 @@ function WajdanNavbar({ className }: { className?: string }) {
         transition={{ duration: 0.5 }}
         className={cn(
           "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-          isScrolled 
-            ? "bg-brand-dark/95 backdrop-blur-lg border-b border-brand-orange/20 py-3" 
+          isScrolled
+            ? "glass-card border-x-0 border-t-0 border-b border-white/10 py-3 shadow-lg shadow-black/20"
             : "bg-transparent py-6",
           className
         )}
@@ -41,7 +40,7 @@ function WajdanNavbar({ className }: { className?: string }) {
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between">
             {/* Logo - Using actual image */}
-            <a href="/" className="flex items-center gap-2 group">
+            <a href="/" className="flex items-center gap-2 group" aria-label="Home">
               <motion.img
                 src="/Wajdan Logo light.png"
                 alt="Wajdan"
@@ -79,7 +78,6 @@ function WajdanNavbar({ className }: { className?: string }) {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-3 -mr-2 text-white hover:bg-white/10 rounded-lg transition-colors flex items-center justify-center min-w-[48px] min-h-[48px]"
-              aria-expanded={isMobileMenuOpen}
               aria-label="Toggle Navigation Menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -102,7 +100,9 @@ function WajdanNavbar({ className }: { className?: string }) {
               {navItems.map((item) => (
                 <a
                   key={item.name}
-                  href={item.url} className="hover:bg-white/5 transition-colors text-lg font-medium py-3 px-4 rounded-lg flex items-center disabled:opacity-50 min-h-[48px]"
+                  href={item.url}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="hover:bg-white/5 transition-colors text-lg font-medium py-3 px-4 rounded-lg flex items-center disabled:opacity-50 min-h-[48px]"
                 >
                   {item.name}
                 </a>

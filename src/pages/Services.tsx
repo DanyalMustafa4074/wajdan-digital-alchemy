@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ArrowDown, Check, Star, Target, Video, Zap, Megaphone, TrendingUp, ChevronDown, Search, UserCheck, FileText, MessageSquare, TestTube, FileCheck, Clapperboard, Layout, PenTool, FormInput, Calendar, MonitorPlay, Bot, Mail, Bell, RefreshCw, BarChart3, Palette, FlaskConical, Activity, RotateCw, FileBarChart, Link2, CircleDot, Database, PieChart, Brain, LineChart } from 'lucide-react';
 import WajdanNavbar from "@/components/WajdanNavbar";
+import { Footer } from "@/components/Footer";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { AnimatedCounter, StatsBar } from "@/components/ui/animated-counter";
 import { ComparisonTable } from "@/components/ui/comparison-table";
@@ -108,14 +109,15 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
               {features.map((feature, index) => (
                 <StaggerItem key={index}>
                   <motion.div
-                    whileHover={{ y: -4, scale: 1.02 }}
-                    className="bg-brand-dark/50 border border-white/10 rounded-xl p-5 group hover:border-brand-orange/30 transition-all"
+                    className="glass-card rounded-xl p-6 group hover-lift transition-all relative overflow-hidden"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-brand-orange/10 transition-colors">
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    <div className="relative z-10 w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-brand-orange mb-5 group-hover:bg-brand-orange/20 transition-colors shadow-inner">
                       {feature.icon}
                     </div>
-                    <h4 className="font-semibold text-white mb-2">{feature.title}</h4>
-                    <p className="text-sm text-gray-400 leading-relaxed">{feature.description}</p>
+                    <h4 className="relative z-10 font-bold text-white mb-3 text-lg">{feature.title}</h4>
+                    <p className="relative z-10 text-sm text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">{feature.description}</p>
                   </motion.div>
                 </StaggerItem>
               ))}
@@ -167,13 +169,23 @@ const Services = () => {
       <WajdanNavbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,107,53,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,107,53,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,107,53,0.15),transparent_50%)]" />
+          <div className="mesh-bg-brand" />
+          <motion.div
+            className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px] opacity-70"
+            animate={{
+              backgroundPosition: ['0px 0px', '48px 48px'],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+          />
           
-          {/* Floating Particles */}
+          {/* Floating Gradients & Particles */}
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
@@ -514,34 +526,11 @@ const Services = () => {
       <FloatingSystemNav />
 
       {/* Footer */}
-      <footer className="bg-brand-dark border-t border-brand-orange/20 py-16 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.a 
-            href="/"
-            whileHover={{ scale: 1.05 }}
-            className="inline-block mb-6"
-          >
-            <img 
-              src="/Wajdan Logo light.png" 
-              alt="Wajdan" 
-              className="h-10 mx-auto"
-            />
-          </motion.a>
-          <p className="text-gray-400 mb-6">
-            Client Acquisition Systems for Immigration & Education Consultants
-          </p>
-          <p className="text-gray-600 text-sm">
-            wajdan.co
-          </p>
-          <div className="border-t border-brand-orange/20 mt-8 pt-8">
-            <p className="text-gray-500 text-sm">
-              © 2024 Wajdan. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
 
 export default Services;
+
+

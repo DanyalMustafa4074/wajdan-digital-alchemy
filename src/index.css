@@ -101,12 +101,17 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    width: 100%;
+    scroll-snap-type: y mandatory;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   /* Custom scrollbar for dark theme */
@@ -226,22 +231,60 @@
   animation: gradient-x 3s ease infinite;
 }
 
-/* Glass effect */
+/* Glass effect (Premium UI Goodies style) */
 .glass {
-  background: rgba(22, 48, 43, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(87, 167, 115, 0.2);
+  background: rgba(22, 48, 43, 0.4);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover lift effect */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Advanced Mesh Gradient Background */
+.mesh-bg {
+  background-color: #0D1B1E;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(225,39%,30%,0.1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(339,49%,30%,0.1) 0, transparent 50%);
+}
+
+.mesh-bg-brand {
+  background-color: #0D1B1E;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(255, 107, 53, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(87, 167, 115, 0.15), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(246, 226, 127, 0.1), transparent 25%);
+  filter: blur(60px);
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+}
+
+/* Hover lift effect with premium shadow */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.25);
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+/* Text glow effect */
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
 }
 
 /* Focus ring for accessibility */
@@ -264,4 +307,20 @@
   height: 2px;
   background: linear-gradient(90deg, transparent, #57A773, transparent);
 }
-.hide-scrollbar::-webkit-scrollbar { display: none; } .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+@supports (scrollbar-width: none) {
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@layer components {
+  /* Snap scroll configuration */
+  .snap-container > section,
+  .snap-container > div:not(.absolute):not(.fixed) {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Ensure no section exceeds 100vh if possible, or allow internal scroll */
+  }
+}

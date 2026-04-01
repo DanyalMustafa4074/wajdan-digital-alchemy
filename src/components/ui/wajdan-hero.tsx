@@ -47,19 +47,19 @@ const WajdanHero: React.FC<WajdanHeroProps> = ({ className }) => {
   };
 
   return (
-    <div className={cn('relative min-h-screen overflow-hidden', className)}>
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-brand-dark">
-        {/* Animated Grid Pattern */}
-        <motion.div 
-          className="absolute inset-0 bg-[linear-gradient(rgba(255,107,53,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,107,53,0.03)_1px,transparent_1px)] bg-[size:64px_64px]"
+    <div className={cn('relative min-h-[calc(100svh-80px)] sm:min-h-screen overflow-hidden flex flex-col justify-center py-16', className)}>
+      {/* Animated Mesh Gradient Background (UI Goodies Premium Style) */}
+      <div className="absolute inset-0 bg-brand-dark overflow-hidden">
+        <div className="mesh-bg-brand" />
+
+        {/* Animated Grid Pattern slightly refined */}
+        <motion.div
+          className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px] opacity-70"
           animate={{
-            backgroundPosition: ['0px 0px', '64px 64px'],
+            backgroundPosition: ['0px 0px', '48px 48px'],
           }}
           transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'linear',
+            duration: 15,
           }}
         />
         
@@ -135,7 +135,7 @@ const WajdanHero: React.FC<WajdanHeroProps> = ({ className }) => {
           <motion.div variants={itemVariants}>
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/10 border border-brand-orange/30 text-brand-orange text-sm font-medium mb-8"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card text-brand-orange text-sm font-semibold tracking-wide mb-8 uppercase"
             >
               <PulsingDot color="bg-brand-orange" />
               For Immigration & Education Consultancies
@@ -145,11 +145,11 @@ const WajdanHero: React.FC<WajdanHeroProps> = ({ className }) => {
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
+            className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.1] mb-6 tracking-tight"
           >
             We Build The Most{' '}
-            <motion.span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-yellow to-brand-orange inline-block"
+            <motion.span
+              className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-yellow to-brand-orange inline-block text-glow"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}

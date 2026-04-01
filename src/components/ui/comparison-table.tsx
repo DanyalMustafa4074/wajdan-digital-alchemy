@@ -12,7 +12,7 @@ interface ComparisonTableProps {
 
 const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
   return (
-    <div className={cn('py-20', className)}>
+    <div className={cn('py-12 md:py-20', className)}>
       <ScrollReveal className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
           Your Funnel: <span className="text-red-400">Before</span> vs <span className="text-brand-orange">After</span>

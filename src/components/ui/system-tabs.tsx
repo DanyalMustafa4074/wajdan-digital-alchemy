@@ -140,8 +140,8 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
         className
       )}
     >
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex flex-nowrap overflow-x-auto hide-scrollbar sm:justify-center items-center gap-2 md:gap-3 py-4 scroll-smooth w-full -mx-4 px-4 sm:mx-0 sm:px-0 after:content-[''] after:w-px after:shrink-0 sm:after:hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-nowrap overflow-x-auto hide-scrollbar sm:justify-center items-center gap-2 md:gap-3 py-4 scroll-smooth px-4 w-full after:content-[''] after:w-4 after:shrink-0 sm:after:hidden">
           {systemTabs.map((tab, index) => {
             const IconComponent = tab.IconComponent;
             return (

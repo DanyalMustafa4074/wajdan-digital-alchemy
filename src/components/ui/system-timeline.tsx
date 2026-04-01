@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ScrollReveal } from './scroll-reveal';
-import { Target, Video, Zap, Megaphone, TrendingUp, Search, Users, FileText, MessageSquare, TestTube, ClipboardCheck, Palette, PenTool, FormInput, Calendar, Play, Mail, Clock, Bell, RefreshCw, BarChart3, Lightbulb, Layers, FlaskConical, Eye, UserPlus, LineChart, ArrowRight } from 'lucide-react';
+import { Search, Users, FileText, MessageSquare, TestTube, ClipboardCheck, Palette, PenTool, FormInput, Calendar, Play, Mail, Clock, Bell, RefreshCw, BarChart3, Lightbulb, Layers, FlaskConical, Eye, UserPlus, LineChart, ArrowRight } from 'lucide-react';
+import { TargetAnimation, FunnelAnimation, ZapAnimation, MegaphoneAnimation, ChartAnimation } from './animated-icons';
 
 interface LayerIcon {
   icon: React.ReactNode;
@@ -14,7 +15,7 @@ interface LayerIcon {
 interface SystemLayer {
   number: string;
   title: string;
-  icon: React.ReactNode;
+  animationType: 'target' | 'funnel' | 'zap' | 'megaphone' | 'chart';
   color: string;
   bgColor: string;
   icons: LayerIcon[];
@@ -25,7 +26,7 @@ const systemLayers: SystemLayer[] = [
   {
     number: '01',
     title: 'Offer Creation',
-    icon: <Target className="w-8 h-8" />,
+    animationType: 'target',
     color: '#FF6B35',
     bgColor: 'rgba(255,107,53,0.1)',
     icons: [
@@ -41,7 +42,7 @@ const systemLayers: SystemLayer[] = [
   {
     number: '02',
     title: 'Funnel + VSL',
-    icon: <Video className="w-8 h-8" />,
+    animationType: 'funnel',
     color: '#57A773',
     bgColor: 'rgba(87,167,115,0.1)',
     icons: [
@@ -50,14 +51,13 @@ const systemLayers: SystemLayer[] = [
       { icon: <PenTool className="w-5 h-5" />, label: 'Copy' },
       { icon: <FormInput className="w-5 h-5" />, label: 'Form' },
       { icon: <Calendar className="w-5 h-5" />, label: 'Booking' },
-      { icon: <Video className="w-5 h-5" />, label: 'Thanks' },
     ],
     stat: { value: '3×', label: 'Booking Rate' },
   },
   {
     number: '03',
     title: 'GHL + Automation',
-    icon: <Zap className="w-8 h-8" />,
+    animationType: 'zap',
     color: '#F6E27F',
     bgColor: 'rgba(246,226,127,0.1)',
     icons: [
@@ -66,22 +66,20 @@ const systemLayers: SystemLayer[] = [
       { icon: <Clock className="w-5 h-5" />, label: 'Nurture' },
       { icon: <Bell className="w-5 h-5" />, label: 'Reminders' },
       { icon: <RefreshCw className="w-5 h-5" />, label: 'Reactivate' },
-      { icon: <BarChart3 className="w-5 h-5" />, label: 'Track' },
     ],
     stat: { value: '18s', label: 'Response' },
   },
   {
     number: '04',
     title: 'Meta Campaigns',
-    icon: <Megaphone className="w-8 h-8" />,
-    color: '#264653',
-    bgColor: 'rgba(38,70,83,0.2)',
+    animationType: 'megaphone',
+    color: '#FF6B35',
+    bgColor: 'rgba(255,107,53,0.1)',
     icons: [
       { icon: <Lightbulb className="w-5 h-5" />, label: 'Strategy' },
       { icon: <Layers className="w-5 h-5" />, label: 'Architect' },
       { icon: <FlaskConical className="w-5 h-5" />, label: 'Test' },
       { icon: <Eye className="w-5 h-5" />, label: 'Optimize' },
-      { icon: <Users className="w-5 h-5" />, label: 'Retarget' },
       { icon: <BarChart3 className="w-5 h-5" />, label: 'Report' },
     ],
     stat: { value: '40%', label: 'Cost Drop' },
@@ -89,12 +87,10 @@ const systemLayers: SystemLayer[] = [
   {
     number: '05',
     title: 'Conversion Loop',
-    icon: <TrendingUp className="w-8 h-8" />,
+    animationType: 'chart',
     color: '#FF6B35',
     bgColor: 'rgba(255,107,53,0.1)',
     icons: [
-      { icon: <Zap className="w-5 h-5" />, label: 'API' },
-      { icon: <Target className="w-5 h-5" />, label: 'Events' },
       { icon: <RefreshCw className="w-5 h-5" />, label: 'Loop' },
       { icon: <LineChart className="w-5 h-5" />, label: 'Attribute' },
       { icon: <UserPlus className="w-5 h-5" />, label: 'Lookalike' },
@@ -103,6 +99,15 @@ const systemLayers: SystemLayer[] = [
     stat: { value: '84%', label: 'Show Rate' },
   },
 ];
+
+// Animation component mapping
+const AnimationComponents = {
+  target: TargetAnimation,
+  funnel: FunnelAnimation,
+  zap: ZapAnimation,
+  megaphone: MegaphoneAnimation,
+  chart: ChartAnimation,
+};
 
 const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
   const [activeLayer, setActiveLayer] = useState<string>('01');
@@ -115,9 +120,9 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
         </h2>
       </ScrollReveal>
 
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto">
         {/* Visual Layer Selector - Horizontal on Desktop */}
-        <div className="flex flex-nowrap overflow-x-auto hide-scrollbar sm:justify-center items-center gap-3 mb-12 py-4 w-full -mx-4 px-4 sm:mx-0 sm:px-0 after:content-[''] after:w-px after:shrink-0 sm:after:hidden">
+        <div className="flex flex-nowrap overflow-x-auto hide-scrollbar sm:justify-center items-center gap-3 mb-12 py-4 px-4 w-full after:content-[''] after:w-4 after:shrink-0 sm:after:hidden">
           {systemLayers.map((layer, index) => (
             <motion.button
               key={layer.number}
@@ -159,9 +164,10 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
           ))}
         </div>
 
-        {/* Active Layer Visual Display */}
-        <AnimatePresence mode="wait">
-          {systemLayers.filter(l => l.number === activeLayer).map(layer => (
+        <div className="px-4">
+          {/* Active Layer Visual Display */}
+          <AnimatePresence mode="wait">
+            {systemLayers.filter(l => l.number === activeLayer).map(layer => (
             <motion.div
               key={layer.number}
               initial={{ opacity: 0, y: 20 }}
@@ -175,14 +181,16 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
               }}
             >
               <div className="flex flex-col md:flex-row gap-8 items-center">
-                {/* Left: Main Icon + Title */}
+                {/* Left: Main Lottie Animation + Title */}
                 <div className="flex flex-col items-center text-center md:w-1/4">
                   <motion.div 
-                    className="w-24 h-24 rounded-3xl flex items-center justify-center mb-4"
-                    style={{ backgroundColor: layer.color }}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-28 h-28 rounded-3xl flex items-center justify-center mb-4 bg-black/30"
+                    whileHover={{ scale: 1.1 }}
                   >
-                    <div className="text-white">{layer.icon}</div>
+                    {(() => {
+                      const AnimComponent = AnimationComponents[layer.animationType];
+                      return <AnimComponent size={90} />;
+                    })()}
                   </motion.div>
                   <h3 className="text-2xl font-bold text-white">{layer.title}</h3>
                   {layer.stat && (
@@ -244,6 +252,7 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
               </React.Fragment>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </div>

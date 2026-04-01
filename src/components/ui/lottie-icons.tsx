@@ -657,7 +657,7 @@ export const LottieIcon: React.FC<LottieIconProps> = ({
   className,
   size = 64,
   loop = false,
-  autoplay = false,
+  autoplay = true,
   playOnHover = true,
   playOnView = true,
 }) => {
@@ -683,8 +683,8 @@ export const LottieIcon: React.FC<LottieIconProps> = ({
     <motion.div
       ref={containerRef}
       onMouseEnter={handleMouseEnter}
-      className={cn("cursor-pointer transition-transform", className)}
-      style={{ width: size, height: size }}
+      className={cn("cursor-pointer transition-transform flex items-center justify-center", className)}
+      style={{ width: size, height: size, minWidth: size, minHeight: size }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
@@ -694,6 +694,9 @@ export const LottieIcon: React.FC<LottieIconProps> = ({
         loop={loop}
         autoplay={autoplay}
         style={{ width: '100%', height: '100%' }}
+        rendererSettings={{
+          preserveAspectRatio: 'xMidYMid slice'
+        }}
       />
     </motion.div>
   );

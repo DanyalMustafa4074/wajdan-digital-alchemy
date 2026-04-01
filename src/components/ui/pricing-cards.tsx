@@ -85,11 +85,10 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
         {pricingTiers.map((tier, index) => (
           <ScrollReveal key={tier.name} delay={index * 0.1}>
             <motion.div
-              whileHover={{ y: -8 }}
               className={cn(
-                'relative h-full rounded-2xl p-8 transition-all duration-300',
+                'relative h-full rounded-2xl p-8 glass-card hover-lift transition-all duration-300',  
                 tier.popular
-                  ? 'bg-gradient-to-b from-brand-green/20 to-brand-dark border-2 border-brand-green/50'
+                  ? 'border-2 border-brand-green/80 shadow-[0_0_20px_rgba(87,167,115,0.15)] bg-gradient-to-b from-brand-green/5 to-transparent'
                   : 'bg-brand-dark/50 border border-white/10 hover:border-white/20'
               )}
             >
