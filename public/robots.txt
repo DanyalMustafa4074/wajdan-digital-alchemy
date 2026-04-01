@@ -12,3 +12,4 @@ Allow: /
 
 User-agent: *
 Allow: /
+Sitemap: https://wajdan-digital-alchemy.com/sitemap.xml

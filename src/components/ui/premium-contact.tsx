@@ -229,7 +229,7 @@ export function PremiumContact() {
               <Sparkles className="h-4 w-4 text-indigo-300" />
             </motion.div>
             <span className="text-sm font-medium text-white/80">
-              ✨ Let's Connect
+              Let's Connect
             </span>
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
           </motion.div>
@@ -318,13 +318,13 @@ export function PremiumContact() {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/40" />
+                      <User className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/40" />
                       <input
                         type="text"
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={(e) => handleInputChange('name', e.target.value)}
-                        className={`w-full pl-10 pr-4 py-4 bg-white/[0.08] border rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-indigo-400 transition-all ${
+                        className={`w-full pl-12 pr-4 min-h-[56px] text-base bg-white/[0.08] border rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all ${
                           errors.name ? 'border-red-400' : 'border-white/[0.15]'
                         }`}
                       />
@@ -340,13 +340,13 @@ export function PremiumContact() {
                     </div>
 
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/40" />
+                      <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/40" />
                       <input
                         type="email"
                         placeholder="Email Address"
                         value={formData.email}
                         onChange={(e) => handleInputChange('email', e.target.value)}
-                        className={`w-full pl-10 pr-4 py-4 bg-white/[0.08] border rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-indigo-400 transition-all ${
+                        className={`w-full pl-12 pr-4 min-h-[56px] text-base bg-white/[0.08] border rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all ${
                           errors.email ? 'border-red-400' : 'border-white/[0.15]'
                         }`}
                       />
@@ -362,25 +362,34 @@ export function PremiumContact() {
                     </div>
                   </div>
 
-                  <div className="relative">
-                    <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/40" />
-                    <input
-                      type="text"
-                      placeholder="Company (Optional)"
-                      value={formData.company}
-                      onChange={(e) => handleInputChange('company', e.target.value)}
-                      className="w-full pl-10 pr-4 py-4 bg-white/[0.08] border border-white/[0.15] rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-indigo-400 transition-all"
-                    />
+                  <div className="mb-6">
+                    <p className="text-white/80 mb-3 text-sm font-medium">Select your timeline</p>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                      {['ASAP', '1-2 Months', '3-6 Months', 'Just exploring'].map((timeline) => (
+                        <button
+                          key={timeline}
+                          type="button"
+                          onClick={() => handleInputChange('company', timeline)}
+                          className={`py-3 px-4 min-h-[56px] rounded-xl text-sm font-medium transition-all ${
+                            formData.company === timeline
+                              ? 'bg-indigo-500 text-white border-2 border-indigo-400 shadow-lg shadow-indigo-500/20'
+                              : 'bg-white/[0.05] text-white/60 border border-white/[0.1] hover:bg-white/[0.1]'
+                          }`}
+                        >
+                          {timeline}
+                        </button>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="relative">
-                    <MessageSquare className="absolute left-3 top-4 h-5 w-5 text-white/40" />
+                    <MessageSquare className="absolute left-4 top-4 h-5 w-5 text-white/40" />
                     <textarea
                       placeholder="Tell us about your project..."
-                      rows={6}
+                      rows={4}
                       value={formData.message}
                       onChange={(e) => handleInputChange('message', e.target.value)}
-                      className={`w-full pl-10 pr-4 py-4 bg-white/[0.08] border rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-indigo-400 transition-all resize-none ${
+                      className={`w-full pl-12 pr-4 py-4 min-h-[120px] text-base bg-white/[0.08] border rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all resize-none ${
                         errors.message ? 'border-red-400' : 'border-white/[0.15]'
                       }`}
                     />

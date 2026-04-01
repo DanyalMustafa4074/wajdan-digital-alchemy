@@ -1,224 +1,244 @@
-
-import { ArrowRight, CheckCircle, TrendingUp, Users, Zap, Star, Play, BarChart3, Palette, Video, Code, Megaphone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { HeroSection } from "@/components/ui/hero-section-dark";
-import { BentoGrid } from "@/components/ui/bento-grid";
-import { ShuffleCards } from "@/components/ui/testimonial-cards";
-import { PremiumContact } from "@/components/ui/premium-contact";
+import { motion } from "framer-motion";
+import { ArrowRight, Star } from "lucide-react";
 import WajdanNavbar from "@/components/WajdanNavbar";
+import { WajdanHero, VideoSection, LetterIntro } from "@/components/ui/wajdan-hero";
+import { ProblemSection } from "@/components/ui/problem-section";
+import { ComparisonTable } from "@/components/ui/comparison-table";
+import { SystemTimeline, SystemLayersSummary } from "@/components/ui/system-timeline";
+import { ProofSection, WhoIsThisFor, FinalCTA, RequirementsSection } from "@/components/ui/content-sections";
+import { GuaranteeSection } from "@/components/ui/guarantee-section";
+import { PricingCards } from "@/components/ui/pricing-cards";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { SystemTabsBar, SystemProgressIndicator, FloatingSystemNav } from "@/components/ui/system-tabs";
 
 const Index = () => {
-  // Services data for BentoGrid
-  const servicesData = [
-    {
-      title: "Meta Ads That Convert",
-      meta: "5.8x ROAS",
-      description: "Strategic Facebook & Instagram campaigns with advanced targeting and conversion optimization.",
-      icon: <Megaphone className="w-4 h-4 text-brand-orange" />,
-      status: "Live",
-      tags: ["Meta", "ROI", "Growth"],
-      colSpan: 2,
-      hasPersistentHover: true,
-    },
-    {
-      title: "Social Media Mastery", 
-      meta: "400% Growth",
-      description: "Build communities that buy with strategic content and engagement growth.",
-      icon: <Users className="w-4 h-4 text-brand-green" />,
-      status: "Active",
-      tags: ["Community", "Content"],
-    },
-    {
-      title: "Content That Converts",
-      meta: "12% CTR",
-      description: "Strategic copy that educates, entertains, and drives action across all platforms.",
-      icon: <Zap className="w-4 h-4 text-brand-yellow" />,
-      tags: ["Copy", "Strategy"],
-      colSpan: 2,
-    },
-    {
-      title: "Design That Sells",
-      meta: "Brand Systems",
-      description: "Visual identity that commands attention and communicates value effectively.",
-      icon: <Palette className="w-4 h-4 text-brand-blue" />,
-      status: "Creative",
-      tags: ["Design", "Brand"],
-    },
-    {
-      title: "Video That Engages",
-      meta: "Pro Editing",
-      description: "Professional video content that tells your story and drives engagement.",
-      icon: <Video className="w-4 h-4 text-brand-orange" />,
-      tags: ["Video", "Story"],
-    },
-    {
-      title: "Websites That Work",
-      meta: "Conversion+",
-      description: "High-converting sites optimized for speed, mobile, and user experience.",
-      icon: <Code className="w-4 h-4 text-brand-green" />,
-      status: "Dev",
-      tags: ["Web", "UX"],
-    },
-  ];
-
-  // Testimonials data
-  const testimonialsData = [
-    {
-      id: 1,
-      testimonial: "Wajdan transformed our social media presence completely. Our engagement increased by 400% and sales followed suit.",
-      author: "Sarah Martinez - Founder, EcoLiving Co."
-    },
-    {
-      id: 2,
-      testimonial: "Our ROAS went from 2.1x to 5.8x in just 3 months. Their Meta ads strategy is phenomenal—every dollar multiplied.", 
-      author: "Michael Rodriguez - CEO, TechStart Solutions"
-    },
-    {
-      id: 3,
-      testimonial: "The website they built converts at 12%—triple our old site. Every element optimized for our customers' journey.",
-      author: "Jennifer Liu - Owner, Luxe Fashion Boutique"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen w-full overflow-x-hidden bg-brand-dark">
       {/* Navigation */}
       <WajdanNavbar />
+      
+      {/* Progress Indicator */}
+      <SystemProgressIndicator />
 
       {/* Hero Section */}
-      <HeroSection
-        title="Scaling Brands Smarter & Faster"
-        subtitle={{
-          regular: "Turn Your Brand Into A ",
-          gradient: "Growth Machine"
-        }}
-        description="We don't just run ads—we architect digital ecosystems that convert strangers into customers and customers into advocates. Data-backed strategy meets creative excellence."
-        ctaText="Get Your Free Growth Audit"
-        ctaHref="#contact"
-        bottomImage={{
-          light: "https://farmui.vercel.app/dashboard-light.png",
-          dark: "https://farmui.vercel.app/dashboard.png"
-        }}
-        gridOptions={{
-          angle: 65,
-          opacity: 0.3,
-          cellSize: 60,
-          lightLineColor: "#57A773",
-          darkLineColor: "#264653"
-        }}
-        className="pt-20"
-      />
+      <WajdanHero />
 
-      {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-brand-dark mb-4">
-              Your Complete Digital Growth Arsenal
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Every service designed to work together, creating a unified growth engine that scales your business.
-            </p>
-          </div>
-          
-          <BentoGrid items={servicesData} />
+      {/* Video Section */}
+      <VideoSection />
+
+      {/* Letter Introduction */}
+      <LetterIntro />
+
+      {/* Problem Section */}
+      <section className="bg-brand-dark">
+        <ProblemSection />
+      </section>
+
+      {/* Comparison Table - Before/After */}
+      <section className="bg-gradient-to-b from-brand-dark to-black">
+        <div className="max-w-7xl mx-auto px-4">
+          <ComparisonTable />
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-brand-dark text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
-              We're Not Just Another Agency—
-              <span className="text-brand-yellow">We're Your Growth Partners</span>
+      {/* The Bricks vs House Story - Visual Version */}
+      <section className="py-20 bg-black">
+        <div className="max-w-5xl mx-auto px-4">
+          <ScrollReveal className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              Bricks ≠ House
             </h2>
-            <p className="text-xl text-gray-300 mb-6 leading-relaxed max-w-4xl mx-auto">
-              Born from the frustration of seeing businesses struggle with cookie-cutter marketing approaches, Wajdan was built on a simple philosophy: every brand deserves a custom-crafted growth strategy.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-              <div className="flex items-center justify-center">
-                <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
-                <span>Data-Driven Decisions</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
-                <span>Creative Excellence</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
-                <span>Transparent Reporting</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <CheckCircle className="w-6 h-6 text-brand-green mr-3" />
-                <span>Scalable Systems</span>
-              </div>
-            </div>
+          </ScrollReveal>
+
+          {/* Visual Comparison */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <ScrollReveal delay={0.1}>
+              <motion.div 
+                className="bg-red-950/20 border border-red-500/20 rounded-2xl p-8 text-center h-full"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="text-6xl mb-4">🧱</div>
+                <h3 className="text-2xl font-bold text-red-400 mb-2">What You Got</h3>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {['Traffic', 'Leads', 'Reports'].map((item, i) => (
+                    <motion.span 
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-sm"
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <motion.div 
+                className="bg-brand-orange/10 border border-brand-orange/30 rounded-2xl p-8 text-center h-full"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="text-6xl mb-4">🏠</div>
+                <h3 className="text-2xl font-bold text-brand-orange mb-2">What You Need</h3>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {['Offer', 'Funnel', 'CRM', 'Automation', 'Ads'].map((item, i) => (
+                    <motion.span 
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="px-3 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-sm"
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            </ScrollReveal>
           </div>
+
+          {/* Solution */}
+          <ScrollReveal delay={0.3} className="text-center">
+            <motion.div 
+              className="bg-brand-dark/50 border border-brand-orange/20 rounded-2xl p-8"
+              whileHover={{ borderColor: 'rgba(255,107,53,0.5)' }}
+            >
+              <p className="text-xl text-gray-400 mb-2">Wajdan builds</p>
+              <motion.p 
+                className="text-3xl text-brand-orange font-bold mb-4"
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                The Complete System
+              </motion.p>
+              <div className="flex items-center justify-center gap-4 text-white text-lg font-medium">
+                <span>5 layers</span>
+                <Star className="w-4 h-4 text-brand-orange" />
+                <span>1 system</span>
+                <Star className="w-4 h-4 text-brand-orange" />
+                <span>0 gaps</span>
+              </div>
+            </motion.div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-slate-900">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Real Results, Real Stories
-            </h2>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Don't just take our word for it. See how we've helped businesses achieve extraordinary growth.
-            </p>
-          </div>
+      {/* System Tabs Navigation */}
+      <SystemTabsBar />
 
-          <ShuffleCards testimonials={testimonialsData} />
+      {/* System Timeline - 5 Layers */}
+      <section id="system" className="bg-gradient-to-b from-black to-brand-dark">
+        <div id="layer-1">
+          <SystemTimeline />
         </div>
+        <SystemLayersSummary className="pb-20" />
       </section>
 
-      {/* Contact Section */}
-      <PremiumContact />
+      {/* Proof Section */}
+      <section id="results" className="bg-brand-dark">
+        <ProofSection />
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="bg-gradient-to-b from-brand-dark to-black">
+        <PricingCards />
+      </section>
+
+      {/* Guarantee Section */}
+      <section className="bg-black">
+        <GuaranteeSection />
+      </section>
+
+      {/* Who Is This For */}
+      <section className="bg-gradient-to-b from-black to-brand-dark">
+        <WhoIsThisFor />
+      </section>
+
+      {/* Requirements Section */}
+      <section className="bg-brand-dark">
+        <RequirementsSection />
+      </section>
+
+      {/* Final CTA */}
+      <section id="contact" className="bg-brand-dark">
+        <FinalCTA />
+      </section>
+
+      {/* Floating Navigation */}
+      <FloatingSystemNav />
 
       {/* Footer */}
-      <footer className="bg-brand-dark border-t border-brand-green/20 py-12 px-6">
+      <footer className="bg-brand-dark border-t border-brand-orange/20 py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-2xl font-bold text-brand-green mb-4">Wajdan</div>
-              <p className="text-gray-400 mb-4">
-                Your strategic partner for digital growth and modern marketing excellence.
+          <div className="grid md:grid-cols-4 gap-12">
+            <div className="md:col-span-2">
+              <motion.a 
+                href="/"
+                whileHover={{ scale: 1.05 }}
+                className="inline-block mb-6"
+              >
+                <img 
+                  src="/Wajdan Logo light.png" 
+                  alt="Wajdan" 
+                  className="h-10"
+                />
+              </motion.a>
+              <p className="text-gray-400 mb-6 leading-relaxed max-w-md">
+                Client Acquisition Systems for Immigration & Education Consultants. 
+                We build the complete infrastructure that turns Meta traffic into qualified, 
+                pre-nurtured, showed-up consultation bookings.
               </p>
-              <div className="text-brand-yellow font-semibold">hello@wajdandigital.com</div>
+              <div className="flex items-center gap-1 text-brand-orange mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-500 text-sm">
+                Trusted by consultancies across Europe, UAE & beyond
+              </p>
             </div>
+
             <div>
-              <h4 className="text-white font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Meta Advertising</li>
-                <li>Social Media Marketing</li>
-                <li>Content Creation</li>
-                <li>Graphic Design</li>
+              <h4 className="text-white font-semibold mb-6">The System</h4>
+              <ul className="space-y-3 text-gray-400">
+                <li className="hover:text-brand-orange transition-colors cursor-pointer">Offer Creation</li>
+                <li className="hover:text-brand-orange transition-colors cursor-pointer">Landing Page + VSL</li>
+                <li className="hover:text-brand-orange transition-colors cursor-pointer">GHL Automation</li>
+                <li className="hover:text-brand-orange transition-colors cursor-pointer">Meta Campaigns</li>
+                <li className="hover:text-brand-orange transition-colors cursor-pointer">Conversion Tracking</li>
               </ul>
             </div>
+
             <div>
-              <h4 className="text-white font-semibold mb-4">Solutions</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Video Editing</li>
-                <li>Website Development</li>
-                <li>Brand Strategy</li>
-                <li>Growth Consulting</li>
+              <h4 className="text-white font-semibold mb-6">Quick Links</h4>
+              <ul className="space-y-3 text-gray-400">
+                <li className="hover:text-brand-orange transition-colors cursor-pointer">Free Funnel Audit</li>
+                <li className="hover:text-brand-orange transition-colors cursor-pointer">How It Works</li>
+                <li className="hover:text-brand-orange transition-colors cursor-pointer">Pricing</li>
+                <li className="hover:text-brand-orange transition-colors cursor-pointer">Results</li>
               </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Free Strategy Call</li>
-                <li>Portfolio</li>
-                <li>Case Studies</li>
-                <li>Contact Us</li>
-              </ul>
+              <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.02 }}
+                className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-brand-orange text-white font-semibold rounded-lg text-sm shadow-lg shadow-brand-orange/25"
+              >
+                Book Free Audit
+                <ArrowRight className="w-4 h-4" />
+              </motion.a>
             </div>
           </div>
-          <div className="border-t border-brand-green/20 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Wajdan Digital Agency. All rights reserved. Built for growth, designed for results.</p>
+
+          <div className="border-t border-brand-orange/20 mt-12 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-500 text-sm">
+                © 2024 Wajdan. All rights reserved. Built for growth, designed for results.
+              </p>
+              <p className="text-gray-600 text-sm">
+                wajdan.co
+              </p>
+            </div>
           </div>
         </div>
       </footer>
