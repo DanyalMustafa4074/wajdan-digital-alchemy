@@ -43,10 +43,9 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
   reversed = false,
 }) => {
   const colorClasses = {
-    orange: 'bg-brand-orange text-white border-brand-orange',
-    green: 'bg-brand-orange text-white border-brand-orange',
+    orange: 'bg-brand-orange text-foreground border-brand-orange',
     yellow: 'bg-brand-yellow text-brand-dark border-brand-yellow',
-    blue: 'bg-brand-blue text-white border-brand-blue',
+    green: 'bg-brand-green text-foreground border-brand-green',
   };
 
   return (
@@ -68,16 +67,16 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
               >
                 {number}
               </motion.div>
-              <span className="text-gray-500 text-sm uppercase tracking-wider">Where every system begins</span>
+              <span className="text-gray-600 text-sm uppercase tracking-wider">Where every system begins</span>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
               {title}
             </h2>
             <h3 className="text-2xl text-brand-orange mb-6">
               {subtitle}
             </h3>
-            <p className="text-lg text-gray-400 leading-relaxed mb-8">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               {description}
             </p>
 
@@ -86,7 +85,7 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-3xl font-bold text-brand-orange">{stat.value}</div>
-                    <div className="text-xs text-gray-500">{stat.label}</div>
+                    <div className="text-xs text-gray-600">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -96,7 +95,7 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-orange text-white font-semibold rounded-xl hover:bg-brand-orange/90 transition-all shadow-lg shadow-brand-orange/25"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-orange text-foreground font-semibold rounded-xl hover:bg-brand-orange/90 transition-all shadow-lg shadow-brand-orange/25"
             >
               {ctaText}
               <ArrowRight className="w-4 h-4" />
@@ -113,11 +112,11 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
-                    <div className="relative z-10 w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-brand-orange mb-5 group-hover:bg-brand-orange/20 transition-colors shadow-inner">
+                    <div className="relative z-10 w-12 h-12 rounded-xl /5 flex items-center justify-center text-brand-orange mb-5 group-hover:bg-brand-orange/20 transition-colors shadow-inner">
                       {feature.icon}
                     </div>
-                    <h4 className="relative z-10 font-bold text-white mb-3 text-lg">{feature.title}</h4>
-                    <p className="relative z-10 text-sm text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">{feature.description}</p>
+                    <h4 className="relative z-10 font-bold text-foreground mb-3 text-lg">{feature.title}</h4>
+                    <p className="relative z-10 text-sm text-muted-foreground group-hover:text-muted-foreground transition-colors leading-relaxed">{feature.description}</p>
                   </motion.div>
                 </StaggerItem>
               ))}
@@ -130,7 +129,7 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
       <ScrollReveal delay={0.5} className="flex justify-center mt-12">
         <motion.a 
           href="#" 
-          className="flex flex-col items-center gap-2 text-gray-500 hover:text-brand-orange transition-colors"
+          className="flex flex-col items-center gap-2 text-gray-600 hover:text-brand-orange transition-colors"
           whileHover={{ scale: 1.1 }}
         >
           <span className="text-sm">See the next layer</span>
@@ -148,10 +147,10 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
 
 const Services = () => {
   const heroStats = [
-    { value: 5, suffix: '', label: 'System layers', decimals: 0 },
-    { value: 60, suffix: '', label: 'Days to results', decimals: 0 },
-    { value: 18, suffix: 's', label: 'Lead response time', decimals: 0 },
-    { value: 0, suffix: '', label: 'Long-term contracts', decimals: 0 },
+    { value: 5, suffix: '', label: 'System layers — all built before traffic goes live', decimals: 0 },
+    { value: 60, suffix: '', label: 'Days to see measurable improvement — or we work free', decimals: 0 },
+    { value: 18, suffix: 's', label: 'Average lead response time after system build', decimals: 0 },
+    { value: 0, suffix: '', label: 'Long-term contracts. Month to month. Earned every month.', decimals: 0 }
   ];
 
   const systemTabs = [
@@ -165,7 +164,7 @@ const Services = () => {
   const [activeTab, setActiveTab] = useState('01');
 
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-background">
       <WajdanNavbar />
 
       {/* Hero Section */}
@@ -220,7 +219,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6"
           >
             Not Services.
             <br />
@@ -231,7 +230,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-400 max-w-3xl mx-auto mb-10"
+            className="text-xl text-muted-foreground max-w-3xl mx-auto mb-10"
           >
             Most businesses lose clients not because demand is low — but because nothing was built to catch, 
             qualify, and convert the interest that already exists. We build the complete infrastructure that fixes that. End to end.
@@ -247,7 +246,7 @@ const Services = () => {
               href="#contact"
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255,107,53,0.35)" }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-8 py-4 bg-brand-orange text-white font-bold rounded-xl transition-all shadow-lg shadow-brand-orange/25"
+              className="flex items-center gap-2 px-8 py-4 bg-brand-orange text-foreground font-bold rounded-xl transition-all shadow-lg shadow-brand-orange/25"
             >
               Book a Free Funnel Audit
               <ArrowRight className="w-5 h-5" />
@@ -255,7 +254,7 @@ const Services = () => {
 
             <a
               href="#layer-1"
-              className="flex items-center gap-2 text-gray-400 hover:text-brand-orange transition-colors"
+              className="flex items-center gap-2 text-muted-foreground hover:text-brand-orange transition-colors"
             >
               See the full system
               <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
@@ -282,40 +281,40 @@ const Services = () => {
       <SystemProgressIndicator />
 
       {/* Comparison Table */}
-      <section className="bg-gradient-to-b from-brand-dark to-black">
+      <section className="bg-background pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-4">
           <ComparisonTable />
         </div>
       </section>
 
       {/* The Bricks Story */}
-      <section className="py-20 bg-black">
+      <section className="py-20 ">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <ScrollReveal>
-            <p className="text-gray-500 mb-8">Here's something nobody in this industry wants to say out loud.</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <p className="text-gray-600 mb-8">Here's something nobody in this industry wants to say out loud.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Most agencies sell you services the same way a builder sells you bricks.
             </h2>
-            <p className="text-xl text-gray-400 italic mb-8">Here are your bricks. Good luck with the house.</p>
+            <p className="text-xl text-muted-foreground italic mb-8">Here are your bricks. Good luck with the house.</p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <motion.div 
-              className="bg-brand-dark/50 border border-brand-orange/20 rounded-2xl p-8 mb-8"
+              className="bg-background/50 border border-brand-orange/20 rounded-2xl p-8 mb-8"
               whileHover={{ borderColor: 'rgba(255,107,53,0.5)' }}
             >
-              <p className="text-xl text-white mb-2">The problem isn't the bricks.</p>
+              <p className="text-xl text-foreground mb-2">The problem isn't the bricks.</p>
               <p className="text-2xl text-brand-orange font-bold">It's that nobody built the house.</p>
             </motion.div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <p className="text-gray-400 mb-6">
+            <p className="text-muted-foreground mb-6">
               You hired an agency that ran your Meta ads. The leads came in. Nothing was built to catch them, 
               qualify them, follow them up, pre-nurture them, or make sure they showed up.
             </p>
-            <p className="text-white text-lg mb-6">You paid for bricks. You needed a house.</p>
-            <p className="text-gray-500 italic mb-8">
+            <p className="text-foreground text-lg mb-6">You paid for bricks. You needed a house.</p>
+            <p className="text-gray-600 italic mb-8">
               (And before you ask — yes, we've seen this exact situation more times than we can count. 
               Same story. Different consultancy. Different agency. But the same missing infrastructure.)
             </p>
@@ -326,7 +325,7 @@ const Services = () => {
               className="bg-red-950/30 border border-red-500/20 rounded-xl p-6 mb-8"
               whileHover={{ scale: 1.02 }}
             >
-              <p className="text-xl text-gray-300 italic">
+              <p className="text-xl text-muted-foreground italic">
                 "The leads are coming in. Why isn't anyone booking?"
               </p>
               <p className="text-brand-orange font-semibold mt-4">
@@ -336,7 +335,7 @@ const Services = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.5}>
-            <p className="text-xl text-white mb-4">This is why Wajdan doesn't sell services.</p>
+            <p className="text-xl text-foreground mb-4">This is why Wajdan doesn't sell services.</p>
             <motion.p 
               className="text-2xl text-brand-orange font-bold mb-6"
               animate={{ scale: [1, 1.02, 1] }}
@@ -344,7 +343,7 @@ const Services = () => {
             >
               We sell a system. And the system only works when every part of it exists.
             </motion.p>
-            <div className="flex items-center justify-center gap-4 text-white text-xl font-bold">
+            <div className="flex items-center justify-center gap-4 text-foreground text-xl font-bold">
               <span>Five layers.</span>
               <span className="text-brand-orange">One system.</span>
               <span className="text-brand-yellow">Zero gaps.</span>
@@ -356,7 +355,7 @@ const Services = () => {
               href="#contact"
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255,107,53,0.35)" }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-brand-orange text-white font-bold rounded-xl transition-all shadow-lg shadow-brand-orange/25"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-brand-orange text-foreground font-bold rounded-xl transition-all shadow-lg shadow-brand-orange/25"
             >
               Book a Free Funnel Audit
               <ArrowRight className="w-5 h-5" />
@@ -371,14 +370,38 @@ const Services = () => {
           number="01"
           title="The Offer."
           subtitle="The Sauce That Waters Every Client's Mouth."
-          description="Most agencies start with the ad. We start with what the ad is selling. Because an ad for a bad offer is just expensive noise. Your leads are not bad because your targeting is wrong. They are not bad because your creative is weak. Your leads are bad because your offer is not compelling enough to attract serious people."
+          description="Most agencies start with the ad. We start with what the ad is selling. Because an ad for a bad offer is just expensive noise. Your leads are not bad because your targeting is wrong. They are not bad because your creative is weak. Your leads are bad because your offer is not compelling enough to attract serious people. An offer is not your service. An offer is what your ideal client is desperately searching for — phrased in their language, solving their exact pain — that nobody else in your market is giving them."
           features={[
-            { icon: <Search className="w-5 h-5" />, title: "Market Research", description: "Forums, competitor reviews, client language, real pain points. We find the gap nobody is filling." },
-            { icon: <Target className="w-5 h-5" />, title: "Competitor Audit", description: "We map what every other consultancy is saying. Then we figure out what they're all missing." },
-            { icon: <PenTool className="w-5 h-5" />, title: "Offer Architecture", description: "The offer statement, the positioning, the framing — everything your prospect reads before they decide to trust you." },
-            { icon: <MessageSquare className="w-5 h-5" />, title: "Messaging Framework", description: "Every headline, hook, and pain point — in language your ideal client actually uses. Not agency language." },
-            { icon: <TestTube className="w-5 h-5" />, title: "Offer Validation", description: "We stress-test the offer before it goes live. Does it survive contact with a real objection? We make sure it does." },
-            { icon: <FileCheck className="w-5 h-5" />, title: "Foundation Brief", description: "Everything documented and handed to every other part of the system. The offer becomes the DNA of the funnel, the VSL, and the ads." },
+              {
+                icon: <Search className="w-6 h-6" />,
+                title: "Market Research",
+                description: "Forums, competitor reviews, client language, real pain points. We find the gap nobody is filling."
+              },
+              {
+                icon: <Target className="w-6 h-6" />,
+                title: "Competitor Audit",
+                description: "We map what every other consultancy is saying. Then we figure out what they're all missing."
+              },
+              {
+                icon: <PenTool className="w-6 h-6" />,
+                title: "Offer Architecture",
+                description: "The offer statement, the positioning, the framing — everything your prospect reads before they decide whether to trust you."
+              },
+              {
+                icon: <MessageSquare className="w-6 h-6" />,
+                title: "Messaging Framework",
+                description: "Every headline, hook, and pain point — in language your ideal client actually uses. Not agency language. Their language."
+              },
+              {
+                icon: <TestTube className="w-6 h-6" />,
+                title: "Offer Validation",
+                description: "We stress-test the offer before it goes live. Does it survive contact with a real objection? We make sure it does."
+              },
+              {
+                icon: <FileCheck className="w-6 h-6" />,
+                title: "Foundation Brief",
+                description: "Everything documented and handed to every other part of the system. The offer becomes the DNA of the funnel, the VSL, and the ads."
+              }
           ]}
           ctaText="Get Your Offer Built"
           color="orange"
@@ -386,24 +409,43 @@ const Services = () => {
       </section>
 
       {/* Layer 2: Landing Page + VSL */}
-      <section id="layer-2" className="bg-brand-dark border-t border-brand-orange/10 scroll-mt-32">
+      <section id="layer-2" className="bg-background border-t border-brand-orange/10 scroll-mt-32">
         <SystemLayerDetail
           number="02"
           title="Landing Page + VSL."
           subtitle="Not a Template. The Ambush."
-          description="By the time your prospect fills the form — they should already trust you, believe in your system, and be half-sold. If that's not happening, your funnel is a speed bump, not a conversion machine. Most landing pages in this industry are embarrassing. A headline. A stock photo. Three bullet points. A form. A Submit button. And everyone wonders why conversion rate is 8%."
+          description="By the time your prospect fills the form — they should already trust you, believe in your system, and be half-sold. If that's not happening, your funnel is a speed bump, not a conversion machine. Most landing pages in this industry are embarrassing. A headline. A stock photo. Three bullet points. A form. A Submit button. And everyone wonders why conversion rate is 8%. A real consultation funnel is an experience — not a page."
           features={[
-            { icon: <Clapperboard className="w-5 h-5" />, title: "VSL Script", description: "Full word-for-word script. Hook, pain, reframe, system, guarantee, CTA. Written in your voice." },
-            { icon: <Layout className="w-5 h-5" />, title: "Landing Page Design", description: "Custom designed for your offer and your market. Not a template. Built to convert your specific prospect." },
-            { icon: <PenTool className="w-5 h-5" />, title: "Full Copywriting", description: "Every headline, subheading, pain point, proof point, and CTA. Written to persuade — not to describe." },
-            { icon: <FormInput className="w-5 h-5" />, title: "Qualification Form", description: "Smart questions that qualify intent before the prospect reaches your calendar. Only serious people get through." },
-            { icon: <Calendar className="w-5 h-5" />, title: "Booking Integration", description: "Calendar connected, confirmation page built, full flow tested before a single lead hits it." },
-            { icon: <MonitorPlay className="w-5 h-5" />, title: "Thank-You Page + Video", description: "Post-booking nurture video that reduces no-shows before the day arrives. Most agencies skip this entirely." },
-          ]}
-          stats={[
-            { value: "3×", label: "higher booking rate vs generic pages" },
-            { value: "84%", label: "show rate after VSL + pre-nurture" },
-            { value: "40%", label: "drop in cost per qualified booking" },
+              {
+                icon: <Clapperboard className="w-6 h-6" />,
+                title: "VSL Script",
+                description: "Full word-for-word script. Hook, pain, reframe, system, guarantee, CTA. Written in your voice."
+              },
+              {
+                icon: <Layout className="w-6 h-6" />,
+                title: "Landing Page Design",
+                description: "Custom designed for your offer and your market. Not a template. Built to convert your specific prospect."
+              },
+              {
+                icon: <PenTool className="w-6 h-6" />,
+                title: "Full Copywriting",
+                description: "Every headline, subheading, pain point, proof point, and CTA. Written to persuade — not to describe."
+              },
+              {
+                icon: <FormInput className="w-6 h-6" />,
+                title: "Qualification Form",
+                description: "Smart questions that qualify intent before the prospect reaches your calendar. Only serious people get through."
+              },
+              {
+                icon: <Calendar className="w-6 h-6" />,
+                title: "Booking Integration",
+                description: "Calendar connected, confirmation page built, full flow tested before a single lead hits it."
+              },
+              {
+                icon: <MonitorPlay className="w-6 h-6" />,
+                title: "Thank-You Page + Video",
+                description: "Post-booking nurture video that reduces no-shows before the day arrives. Most agencies skip this entirely."
+              }
           ]}
           ctaText="Build My Funnel"
           color="green"
@@ -412,49 +454,91 @@ const Services = () => {
       </section>
 
       {/* Layer 3: GHL + Automation */}
-      <section id="layer-3" className="bg-brand-dark border-t border-brand-orange/10 scroll-mt-32">
-        <SystemLayerDetail
-          number="03"
-          title="GHL Pipeline + Automation."
-          subtitle="Zero Cracks. Zero Excuses."
-          description="Your team is human. Humans forget. Humans get busy. Humans respond 18 hours later. The system never does. And that difference is the difference between a booked consultation and a cold lead. A lead submits a form at 9:47pm. They're thinking about their visa. Their study application. Their business setup. They're warm. They're ready."
-          features={[
-            { icon: <Bot className="w-5 h-5" />, title: "Full GHL Build", description: "Complete GoHighLevel setup. Pipeline stages, contact tagging, lead routing. Built for your firm — not a snapshot." },
-            { icon: <Zap className="w-5 h-5" />, title: "Instant SMS + Email", description: "30-second SMS. 2-minute email with agenda. Triggered the moment the form is submitted. Every time." },
-            { icon: <Mail className="w-5 h-5" />, title: "Pre-Call Nurture Sequence", description: "48-hour email sequence that answers objections, builds trust, sets expectations. Makes showing up feel obvious." },
-            { icon: <Bell className="w-5 h-5" />, title: "Reminder System", description: "24-hour, 2-hour, and 15-minute reminders. No-show rate drops dramatically. Because they actually remember." },
-            { icon: <RefreshCw className="w-5 h-5" />, title: "Reactivation Flows", description: "For no-shows. For cold leads. For enquiries that never converted. The system keeps working after the human stops." },
-            { icon: <BarChart3 className="w-5 h-5" />, title: "Pipeline Reporting", description: "Every lead at every stage. Who submitted. Who booked. Who showed. Who closed. No more guessing." },
-          ]}
-          ctaText="Build My Automation System"
-          color="yellow"
-        />
-      </section>
+      <section id="layer-3" className="bg-background border-t border-brand-orange/10 scroll-mt-32">
+                  <SystemLayerDetail
+            number="03"
+            title="GHL Workspace Config."
+            subtitle="The Net That Catches Everything."
+            description="If you don't track it, you can't close it. And if you rely on staff to manually follow up with every lead, you are burning money. The human follow-up fails because humans have calendars. Software doesn't. Our GHL automation is the backbone of the system. Every lead captured. Every prospect nurtured. Every outcome tracked."
+            features={[
+              {
+                icon: <Database className="w-6 h-6" />,
+                title: "GHL Account Setup",
+                description: "Full workspace configuration, custom pipelines, tagged stages. Built specifically for immigration."
+              },
+              {
+                icon: <Bot className="w-6 h-6" />,
+                title: "Automated Nurture Sequences",
+                description: "SMS & Email flows triggered the second a form is submitted."
+              },
+              {
+                icon: <MessageSquare className="w-6 h-6" />,
+                title: "Missed-Call Text Back",
+                description: "Instantly messages anyone who calls your office while your staff is busy."
+              },
+              {
+                icon: <Bell className="w-6 h-6" />,
+                title: "Appointment Reminders",
+                description: "24h, 2h, and 15m automated reminders. Drops no-shows to near zero."
+              },
+              {
+                icon: <Star className="w-6 h-6" />,
+                title: "Review Management",
+                description: "Automated request to satisfied clients to boost your Google My Business ranking."
+              },
+              {
+                icon: <UserCheck className="w-6 h-6" />,
+                title: "Staff Training & Handover",
+                description: "We don't just build it. We teach your team how to use it."
+              }
+            ]}
+            ctaText="Automate My Backend"
+            color="green"
+          />
 
-      {/* Layer 4: Meta Campaigns */}
-      <section id="layer-4" className="bg-brand-dark border-t border-brand-orange/10 scroll-mt-32">
-        <SystemLayerDetail
-          number="04"
-          title="Meta Campaigns."
-          subtitle="Now They Have Somewhere to Land."
-          description="Most agencies start here. We end here. Because traffic without a system is just money leaving your account and going nowhere. Traffic into a complete system? That's a machine. By the time we turn on a Meta campaign — three things have already been built: the offer is proven, the funnel pre-warms every prospect, and the GHL system catches them the second they submit and never lets go."
-          features={[
-            { icon: <Palette className="w-5 h-5" />, title: "Creative Strategy", description: "Hook angles, ad copy, creative brief — built from the offer. Not recycled. Written for your market." },
-            { icon: <Target className="w-5 h-5" />, title: "Campaign Architecture", description: "Cold traffic, retargeting, warm audiences. Each layer has a purpose. Nothing runs without a reason." },
-            { icon: <FlaskConical className="w-5 h-5" />, title: "Creative Testing", description: "Multiple hooks. Multiple angles. Fast testing. Losers killed fast. Winners scaled. Budget goes where it works." },
-            { icon: <Activity className="w-5 h-5" />, title: "Weekly Optimisation", description: "Not monthly. Because a week of a bad campaign costs real money. We watch the numbers every day." },
-            { icon: <RotateCw className="w-5 h-5" />, title: "Retargeting Sequences", description: "Page visitors. VSL viewers. Form abandons. Everyone who showed interest gets a second chance to convert." },
-            { icon: <FileBarChart className="w-5 h-5" />, title: "Weekly Reporting", description: "CPL, booked calls, show rate, qualified booking rate. Not impressions. The metrics that tell you if it's working." },
-          ]}
-          ctaText="Launch My Meta Campaign"
-          color="blue"
-          reversed
-        />
-      </section>
+          <SystemLayerDetail
+            number="04"
+            title="Meta Ads + Retargeting."
+            subtitle="Fuel For The Engine."
+            description="You don't need 'more followers' and you don't need 'brand awareness'. You need people sitting in front of you with their credit cards. We build direct-response Meta campaigns designed for one outcome: pushing qualified traffic into the funnel we just built. We run the traffic. The offer gets the click. The funnel books the call. The automation gets them to show up."
+            features={[
+              {
+                icon: <Target className="w-6 h-6" />,
+                title: "Campaign Strategy",
+                description: "Objective-driven ad strategy using CBOs and precise audience segmentation."
+              },
+              {
+                icon: <Palette className="w-6 h-6" />,
+                title: "Ad Creative & Copy",
+                description: "Scrolling-stopping visuals combined with direct-response copywriting."
+              },
+              {
+                icon: <RotateCw className="w-6 h-6" />,
+                title: "Retargeting Architecture",
+                description: "Specific ad sequences tailored for people who clicked but didn't book."
+              },
+              {
+                icon: <Link2 className="w-6 h-6" />,
+                title: "Meta Pixel & CAPI Implementation",
+                description: "Server-side tracking to ensure no data is lost to iOS updates."
+              },
+              {
+                icon: <FlaskConical className="w-6 h-6" />,
+                title: "A/B Split Testing",
+                description: "Continuous testing of hooks, headlines, and creatives to lower acquisition costs."
+              },
+              {
+                icon: <Activity className="w-6 h-6" />,
+                title: "Weekly Performance Alignment",
+                description: "Transparent reporting. We show you the cost per booking, not vanity metrics."
+              }
+            ]}
+            ctaText="Start Getting Leads"
+            color="orange"
+            reversed={true}
+          />
 
-      {/* Layer 5: Conversion Data Loop */}
-      <section id="layer-5" className="bg-brand-dark border-t border-brand-orange/10 scroll-mt-32">
-        <SystemLayerDetail
+<SystemLayerDetail
           number="05"
           title="Conversion Data Back to Meta."
           subtitle="Campaigns That Compound."
@@ -473,13 +557,13 @@ const Services = () => {
       </section>
 
       {/* Five Layers Summary */}
-      <section className="py-20 bg-gradient-to-b from-brand-dark to-black">
+      <section className="py-20 bg-background pt-24 pb-12">
         <div className="max-w-5xl mx-auto px-4">
           <ScrollReveal className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Five Layers. One Machine.
             </h2>
-            <p className="text-gray-400">
+            <p className="text-muted-foreground">
               Remove any one layer and the whole thing leaks. This is the complete system — in the exact sequence we build it.
             </p>
           </ScrollReveal>
@@ -495,11 +579,11 @@ const Services = () => {
               <ScrollReveal key={layer.num} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-brand-dark/50 border border-white/10 rounded-xl p-5 text-center min-w-[160px] cursor-pointer hover:border-brand-orange/30 transition-colors"
+                  className="bg-background/50 border border-black/10 rounded-xl p-5 text-center min-w-[160px] cursor-pointer hover:border-brand-orange/30 transition-colors"
                 >
                   <div className="flex justify-center mb-3">{layer.icon}</div>
-                  <div className="text-sm font-bold text-white mb-1">{layer.title}</div>
-                  <div className="text-xs text-gray-500">{layer.desc}</div>
+                  <div className="text-sm font-bold text-foreground mb-1">{layer.title}</div>
+                  <div className="text-xs text-gray-600">{layer.desc}</div>
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -508,7 +592,7 @@ const Services = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="bg-black">
+      <section id="pricing" className="">
         <PricingCards />
       </section>
 
@@ -518,7 +602,7 @@ const Services = () => {
       </section>
 
       {/* Final CTA */}
-      <section id="contact" className="bg-brand-dark">
+      <section id="contact" className="bg-background">
         <FinalCTA />
       </section>
 

@@ -65,7 +65,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				// Wajdan Brand Colors - PRIMARY IS ORANGE
-				'brand-dark': '#0D1B1E',
+				'brand-dark': '#111110',
 				'brand-orange': '#FF6B35',
 				'brand-green': '#57A773',
 				'brand-yellow': '#F6E27F',

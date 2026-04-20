@@ -1,4 +1,8 @@
+const fs = require('fs');
 
+const contentSectionsPath = 'src/components/ui/content-sections.tsx';
+
+const newContentSectionsContent = `
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from './scroll-reveal';
@@ -181,3 +185,7 @@ export const FinalCTA = () => {
     </section>
   );
 };
+`;
+
+fs.writeFileSync(contentSectionsPath, newContentSectionsContent);
+console.log('ContentSections successfully updated to aggressive high-converting style!');

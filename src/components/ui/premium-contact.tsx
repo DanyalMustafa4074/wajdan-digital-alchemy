@@ -228,7 +228,7 @@ export function PremiumContact() {
             >
               <Sparkles className="h-4 w-4 text-indigo-300" />
             </motion.div>
-            <span className="text-sm font-medium text-white/80">
+            <span className="text-sm font-medium text-black/80">
               Let's Connect
             </span>
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
@@ -261,7 +261,7 @@ export function PremiumContact() {
           </motion.h2>
           
           <motion.p 
-            className="text-xl sm:text-2xl text-white/60 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl sm:text-2xl text-black/60 max-w-4xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
             Ready to transform your business? Let's start a conversation about your goals and how we can help you achieve them.
@@ -281,14 +281,14 @@ export function PremiumContact() {
               variants={fadeInUp}
             >
               <motion.div
-                className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-white/20 flex items-center justify-center mx-auto mb-3"
+                className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-black/20 flex items-center justify-center mx-auto mb-3"
                 whileHover={{ rotateY: 180 }}
                 transition={{ duration: 0.6 }}
               >
                 <stat.icon className="w-6 h-6 text-indigo-300" />
               </motion.div>
               <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-              <div className="text-white/60 text-sm">{stat.label}</div>
+              <div className="text-black/60 text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -301,7 +301,7 @@ export function PremiumContact() {
           >
             <div>
               <h3 className="text-3xl font-bold text-white mb-4">Send us a message</h3>
-              <p className="text-white/60 text-lg">
+              <p className="text-black/60 text-lg">
                 Tell us about your project and we'll get back to you within 24 hours.
               </p>
             </div>
@@ -318,7 +318,7 @@ export function PremiumContact() {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="relative">
-                      <User className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/40" />
+                      <User className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-black/40" />
                       <input
                         type="text"
                         placeholder="Your Name"
@@ -340,7 +340,7 @@ export function PremiumContact() {
                     </div>
 
                     <div className="relative">
-                      <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/40" />
+                      <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-black/40" />
                       <input
                         type="email"
                         placeholder="Email Address"
@@ -363,7 +363,7 @@ export function PremiumContact() {
                   </div>
 
                   <div className="mb-6">
-                    <p className="text-white/80 mb-3 text-sm font-medium">Select your timeline</p>
+                    <p className="text-black/80 mb-3 text-sm font-medium">Select your timeline</p>
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                       {['ASAP', '1-2 Months', '3-6 Months', 'Just exploring'].map((timeline) => (
                         <button
@@ -373,7 +373,7 @@ export function PremiumContact() {
                           className={`py-3 px-4 min-h-[56px] rounded-xl text-sm font-medium transition-all ${
                             formData.company === timeline
                               ? 'bg-indigo-500 text-white border-2 border-indigo-400 shadow-lg shadow-indigo-500/20'
-                              : 'bg-white/[0.05] text-white/60 border border-white/[0.1] hover:bg-white/[0.1]'
+                              : 'bg-white/[0.05] text-black/60 border border-white/[0.1] hover:bg-white/[0.1]'
                           }`}
                         >
                           {timeline}
@@ -383,7 +383,7 @@ export function PremiumContact() {
                   </div>
 
                   <div className="relative">
-                    <MessageSquare className="absolute left-4 top-4 h-5 w-5 text-white/40" />
+                    <MessageSquare className="absolute left-4 top-4 h-5 w-5 text-black/40" />
                     <textarea
                       placeholder="Tell us about your project..."
                       rows={4}
@@ -450,7 +450,7 @@ export function PremiumContact() {
                     <CheckCircle className="w-10 h-10 text-green-400" />
                   </motion.div>
                   <h3 className="text-2xl font-bold text-white mb-4">Message Sent!</h3>
-                  <p className="text-white/60 text-lg mb-6">
+                  <p className="text-black/60 text-lg mb-6">
                     Thank you for reaching out. We'll get back to you within 24 hours.
                   </p>
                   <motion.button
@@ -476,7 +476,7 @@ export function PremiumContact() {
           >
             <div>
               <h3 className="text-3xl font-bold text-white mb-4">Other ways to reach us</h3>
-              <p className="text-white/60 text-lg">
+              <p className="text-black/60 text-lg">
                 Choose the method that works best for you.
               </p>
             </div>
@@ -492,7 +492,7 @@ export function PremiumContact() {
                 >
                   <div className="flex items-center gap-4">
                     <motion.div
-                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${method.gradient} border border-white/20 flex items-center justify-center`}
+                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${method.gradient} border border-black/20 flex items-center justify-center`}
                       whileHover={{ scale: 1.1, rotateY: 180 }}
                       transition={{ duration: 0.6 }}
                     >
@@ -500,10 +500,10 @@ export function PremiumContact() {
                     </motion.div>
                     <div className="flex-1">
                       <h4 className="text-xl font-semibold text-white mb-1">{method.title}</h4>
-                      <p className="text-white/60 text-sm mb-2">{method.description}</p>
+                      <p className="text-black/60 text-sm mb-2">{method.description}</p>
                       <p className="text-white font-medium">{method.value}</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-white/40 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-5 h-5 text-black/40 group-hover:text-white group-hover:translate-x-1 transition-all" />
                   </div>
                 </motion.a>
               ))}
@@ -515,7 +515,7 @@ export function PremiumContact() {
               variants={fadeInUp}
             >
               <h4 className="text-lg font-semibold text-white mb-3">Quick Response Guarantee</h4>
-              <p className="text-white/80 text-sm leading-relaxed">
+              <p className="text-black/80 text-sm leading-relaxed">
                 We pride ourselves on rapid response times. All inquiries are typically answered within 2 hours during business hours, 
                 and we'll schedule a call within 24 hours to discuss your project in detail.
               </p>

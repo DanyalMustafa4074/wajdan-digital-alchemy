@@ -4,133 +4,75 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ScrollReveal } from './scroll-reveal';
-import { Phone, Calendar, Clock, Database, ArrowDown, ArrowRight, Puzzle, Check } from 'lucide-react';
+import { ArrowDown, AlertCircle } from 'lucide-react';
 
-const ProblemSection: React.FC<{ className?: string }> = ({ className }) => {
+export const ProblemSection: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className={cn('py-20', className)}>
-      {/* Visual Problem Diagram */}
-      <div className="max-w-6xl mx-auto px-4">
-        <ScrollReveal className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            The <span className="text-red-400">Half-Service</span> Trap
-          </h2>
-        </ScrollReveal>
-
-        {/* Visual Split Diagram */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* What You Pay For */}
-          <ScrollReveal delay={0.1}>
-            <div className="bg-brand-dark/50 border border-white/10 rounded-2xl p-8 h-full">
-              <div className="text-center mb-6">
-                <div className="inline-flex px-4 py-2 rounded-full bg-white/10 text-white font-semibold text-sm">
-                  What You Pay For
-                </div>
-              </div>
-              <div className="space-y-4">
-                {['Traffic', 'Leads', 'Dashboards'].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-brand-orange/10 border border-brand-orange/20"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-brand-orange/20 flex items-center justify-center">
-                      <Check className="w-5 h-5 text-brand-orange" />
-                    </div>
-                    <span className="text-white font-medium">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* What You Actually Get */}
-          <ScrollReveal delay={0.2}>
-            <div className="bg-red-950/20 border border-red-500/20 rounded-2xl p-8 h-full">
-              <div className="text-center mb-6">
-                <div className="inline-flex px-4 py-2 rounded-full bg-red-500/20 text-red-400 font-semibold text-sm">
-                  What's Missing
-                </div>
-              </div>
-              <div className="space-y-4">
-                {[
-                  { icon: <Phone className="w-5 h-5" />, label: 'Instant Response' },
-                  { icon: <Calendar className="w-5 h-5" />, label: 'Pre-Nurturing' },
-                  { icon: <Clock className="w-5 h-5" />, label: 'Reminders' },
-                  { icon: <Database className="w-5 h-5" />, label: 'CRM System' },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-red-950/30 border border-red-500/10"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-400">
-                      {item.icon}
-                    </div>
-                    <span className="text-gray-400 line-through">{item.label}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-
-        {/* Result Visual */}
-        <ScrollReveal className="max-w-3xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="w-32 h-32 rounded-2xl bg-red-500/10 border border-red-500/30 flex flex-col items-center justify-center"
-            >
-              <div className="text-4xl font-bold text-red-400">💰</div>
-              <div className="text-xs text-gray-400 mt-2">Ad Spend</div>
-            </motion.div>
-            
-            <ArrowRight className="w-8 h-8 text-gray-600 rotate-90 md:rotate-0" />
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="w-32 h-32 rounded-2xl bg-brand-dark/50 border border-white/10 flex flex-col items-center justify-center"
-            >
-              <Puzzle className="w-12 h-12 text-gray-500" />
-              <div className="text-xs text-gray-400 mt-2">Broken System</div>
-            </motion.div>
-            
-            <ArrowRight className="w-8 h-8 text-gray-600 rotate-90 md:rotate-0" />
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="w-32 h-32 rounded-2xl bg-red-950/30 border border-red-500/20 flex flex-col items-center justify-center"
-            >
-              <div className="text-4xl font-bold text-red-400">🔥</div>
-              <div className="text-xs text-gray-400 mt-2">Wasted $$$</div>
-            </motion.div>
+    <div className={cn('py-24 bg-[#fafaf8]', className)}>
+      <div className="max-w-4xl mx-auto px-4 md:px-8">
+        
+        <ScrollReveal>
+          <div className="mb-20 text-center">
+            <h2 className="text-5xl md:text-7xl font-black text-foreground mb-6 uppercase tracking-tighter leading-none inline-block pb-2 border-b-8 border-[#cf5230]">
+              We Call It The Half-Service Trap.
+            </h2>
           </div>
         </ScrollReveal>
 
-        {/* Solution Tease */}
-        <ScrollReveal delay={0.3} className="mt-16 text-center">
-          <motion.div
-            className="inline-flex flex-col items-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            <ArrowDown className="w-8 h-8 text-brand-orange animate-bounce mb-4" />
-            <p className="text-3xl font-bold text-white mb-2">
-              The Solution?
+        <ScrollReveal delay={0.1}>
+          <div className="prose-lg mx-auto text-center md:text-left">
+            <p className="text-xl md:text-3xl font-medium text-foreground leading-relaxed mb-10">
+              You pay for a complete marketing service. You receive the top half — <span className="font-black bg-gray-200 px-2 py-1">traffic and leads.</span>
             </p>
-            <p className="text-xl text-brand-orange font-semibold">
-              Build the other half.
+            <p className="text-xl md:text-2xl font-medium text-foreground leading-relaxed mb-12">
+              The bottom half — <span className="font-bold underline decoration-red-500 underline-offset-4">offer creation, qualification, CRM infrastructure, automation, follow-up sequences, no-show reduction</span> — was never built.
             </p>
-          </motion.div>
+            
+            <div className="bg-red-50 border-x-8 border-red-600 p-8 md:p-12 my-16 rotate-1 shadow-lg">
+              <p className="text-2xl md:text-3xl font-black text-red-900 leading-tight uppercase tracking-tight text-center">
+                The agency hit their deliverable. The leads were real.<br/>
+                <span className="text-[#cf5230] block mt-4">The failure was invisible.</span>
+              </p>
+            </div>
+            
+            <p className="text-lg md:text-2xl font-bold text-foreground leading-relaxed text-center max-w-3xl mx-auto mb-20 italic bg-white p-6 border-2 border-gray-100 shadow-sm relative">
+               <AlertCircle className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 text-[#cf5230] bg-white rounded-full p-1" />
+              And it costs you more every month than their retainer ever did.
+            </p>
+
+            <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground font-medium mb-12 text-center md:text-left">
+              The profession of digital marketing has more incompetence per capita than almost any other industry on earth. Harsh? Yes. True? <span className="font-black text-foreground bg-yellow-200/50 px-2">Ask your Monday morning calendar.</span>
+            </p>
+          </div>
         </ScrollReveal>
+
+        <ScrollReveal delay={0.2}>
+          <div className="mt-24 p-10 md:p-16 bg-[#111110] text-[#fafaf8] text-center border-t-8 border-[#cf5230] -rotate-1 relative shadow-2xl">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-[#cf5230] opacity-20 transform rotate-45 translate-x-10 -translate-y-10"></div>
+            <h3 className="text-3xl md:text-5xl font-black uppercase mb-8 tracking-tighter leading-tight relative z-10">
+              So how do you fix something the entire industry pretends isn't broken?
+            </h3>
+            <h3 className="text-5xl md:text-7xl font-black uppercase text-[#cf5230] tracking-tighter relative z-10 mb-8">
+              You build the other half.
+            </h3>
+            
+            <p className="text-lg md:text-xl font-bold text-gray-400 italic mb-12 relative z-10">
+              (Can you hear that? That's the sound of every agency you've ever fired wishing they'd thought of this.)
+            </p>
+            
+            <motion.a 
+              href="#contact" 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center bg-white text-[#111110] font-black text-xl md:text-2xl px-10 py-6 uppercase tracking-wider hover:bg-gray-100 transition-colors shadow-[0_6px_0_0_#cf5230] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#cf5230] relative z-10"
+            >
+              Order A Free Funnel Audit
+              <ArrowDown className="w-6 h-6 ml-3 transform -rotate-90" />
+            </motion.a>
+          </div>
+        </ScrollReveal>
+
       </div>
     </div>
   );
 };
-
-export { ProblemSection };

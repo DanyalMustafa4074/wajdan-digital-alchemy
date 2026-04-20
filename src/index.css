@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 60 20% 97.6%;
+    --foreground: 60 3% 6.5%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 60 20% 97.6%;
+    --card-foreground: 60 3% 6.5%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 60 20% 97.6%;
+    --popover-foreground: 60 3% 6.5%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 60 3% 6.5%;
+    --primary-foreground: 60 20% 97.6%;
 
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-foreground: 60 3% 6.5%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent-foreground: 60 3% 6.5%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 60 20% 97.6%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 60 3% 6.5%;
 
     --radius: 0.5rem;
 
@@ -55,29 +55,29 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 60 3% 6.5%;
+    --foreground: 60 20% 97.6%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 60 3% 6.5%;
+    --card-foreground: 60 20% 97.6%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 60 3% 6.5%;
+    --popover-foreground: 60 20% 97.6%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 60 20% 97.6%;
+    --primary-foreground: 60 3% 6.5%;
 
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 60 20% 97.6%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
     --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 60 20% 97.6%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 60 20% 97.6%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
@@ -252,7 +252,7 @@
 
 /* Advanced Mesh Gradient Background */
 .mesh-bg {
-  background-color: #0D1B1E;
+  background-color: #111110;
   background-image: 
     radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
     radial-gradient(at 50% 0%, hsla(225,39%,30%,0.1) 0, transparent 50%), 
@@ -260,7 +260,7 @@
 }
 
 .mesh-bg-brand {
-  background-color: #0D1B1E;
+  background-color: #111110;
   background-image: 
     radial-gradient(circle at 15% 50%, rgba(255, 107, 53, 0.15), transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(87, 167, 115, 0.15), transparent 25%),
@@ -323,4 +323,17 @@
     justify-content: center;
     /* Ensure no section exceeds 100vh if possible, or allow internal scroll */
   }
+}
+
+/* Utilities */
+@layer utilities {
+  .animate-slide-up { animation: slide-up 0.6s ease-out both; }
+  .animate-fade-in { animation: fade-in 0.6s ease-out both; }
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
 }

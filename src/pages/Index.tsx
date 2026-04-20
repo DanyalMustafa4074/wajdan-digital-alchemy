@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import WajdanNavbar from "@/components/WajdanNavbar";
 import { Footer } from "@/components/Footer";
-import { WajdanHero, VideoSection, LetterIntro } from "@/components/ui/wajdan-hero";
+import { WajdanHero } from "@/components/ui/wajdan-hero";
 import { ProblemSection } from "@/components/ui/problem-section";
 import { ComparisonTable } from "@/components/ui/comparison-table";
 import { SystemTimeline, SystemLayersSummary } from "@/components/ui/system-timeline";
@@ -10,12 +10,13 @@ import { ProofSection, WhoIsThisFor, FinalCTA, RequirementsSection } from "@/com
 import { GuaranteeSection } from "@/components/ui/guarantee-section";
 import { PricingCards } from "@/components/ui/pricing-cards";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { SalesStory } from "@/components/ui/sales-story";
 import { SystemProgressIndicator, FloatingSystemNav } from "@/components/ui/system-tabs";
 import { AnimatedHeroIcons, TargetAnimation, FunnelAnimation, ZapAnimation, MegaphoneAnimation, ChartAnimation, RocketAnimation, SuccessAnimation } from "@/components/ui/animated-icons";
 
 const Index = () => {
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-brand-dark snap-container">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background snap-container">
       {/* Navigation */}
       <WajdanNavbar />
       
@@ -25,26 +26,23 @@ const Index = () => {
       {/* Hero Section */}
       <WajdanHero />
 
-      {/* Video Section */}
-      <VideoSection />
-
-      {/* Letter Introduction */}
-      <LetterIntro />
+      {/* Extreme Sales Story replacing old Video/Letter */}
+      <SalesStory />
 
       {/* Problem Section */}
-      <section className="bg-brand-dark py-12 md:py-20">
+      <section className="bg-background py-12 md:py-20">
         <ProblemSection />
       </section>
 
       {/* Comparison Table - Before/After */}
-      <section className="bg-gradient-to-b from-brand-dark to-black py-12 md:py-20">
+      <section className="bg-gradient-to-b from-background to-muted py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <ComparisonTable />
         </div>
       </section>
 
       {/* The Bricks vs House Story - Visual Version */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-muted">
         <div className="max-w-5xl mx-auto px-4">
           <ScrollReveal className="text-center mb-12">
             <motion.p 
@@ -54,10 +52,10 @@ const Index = () => {
             >
               The Complete System
             </motion.p>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Bricks ≠ House
             </h2>
-            <div className="flex items-center justify-center gap-4 text-white text-lg font-medium">
+            <div className="flex items-center justify-center gap-4 text-foreground text-lg font-medium">
               <span>5 layers</span>
               <Star className="w-4 h-4 text-brand-orange" />
               <span>1 system</span>
@@ -72,7 +70,7 @@ const Index = () => {
               <motion.div
                 className="glass-card border-red-500/20 hover-lift rounded-2xl p-8 text-center h-full relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-red-950/10 pointer-events-none" />
+                <div className="absolute inset-0 bg-red-500/5 pointer-events-none" />
                 <div className="relative z-10 text-6xl mb-4">🧱</div>
                 <h3 className="relative z-10 text-2xl font-bold text-red-400 mb-2 text-glow">What You Got</h3>
                 <div className="relative z-10 flex flex-wrap justify-center gap-2">
@@ -134,7 +132,7 @@ const Index = () => {
                 <div className="flex items-center justify-center">
                   <SuccessAnimation size={80} className="mx-auto mb-4" />
                 </div>
-                <p className="text-xl text-gray-300 mb-2 font-medium tracking-wide">Wajdan builds</p>
+                <p className="text-xl text-muted-foreground mb-2 font-medium tracking-wide">Wajdan builds</p>
                 <motion.p 
                   className="text-4xl text-brand-orange font-bold mb-4 text-glow"
                   animate={{ scale: [1, 1.02, 1] }}
@@ -142,7 +140,7 @@ const Index = () => {
               >
                 The Complete System
               </motion.p>
-              <div className="flex items-center justify-center gap-4 text-white text-lg font-medium">
+              <div className="flex items-center justify-center gap-4 text-foreground text-lg font-medium">
                 <span>5 layers</span>
                 <Star className="w-4 h-4 text-brand-orange" />
                 <span>1 system</span>
@@ -156,7 +154,7 @@ const Index = () => {
       </section>
 
       {/* System Timeline - 5 Layers */}
-      <section id="system" className="bg-gradient-to-b from-black to-brand-dark">
+      <section id="system" className="bg-gradient-to-b from-background to-background">
         <div id="layer-1">
           <SystemTimeline />
         </div>
@@ -164,10 +162,10 @@ const Index = () => {
       </section>
 
       {/* Services Discovery */}
-      <section className="bg-black/50 border-y border-brand-orange/10">
+      <section className="bg-muted/50 border-y border-brand-orange/10">
         <div className="max-w-4xl mx-auto px-4 py-16 text-center">
           <ScrollReveal>
-            <p className="text-gray-400 text-lg mb-6">
+            <p className="text-muted-foreground text-lg mb-6">
               Want to see how each layer works in detail?
             </p>
             <motion.a
@@ -184,32 +182,32 @@ const Index = () => {
       </section>
 
       {/* Proof Section */}
-      <section id="results" className="bg-brand-dark">
+      <section id="results" className="bg-background">
         <ProofSection />
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="bg-gradient-to-b from-brand-dark to-black">
+      <section id="pricing" className="bg-gradient-to-b from-background to-muted">
         <PricingCards />
       </section>
 
       {/* Guarantee Section */}
-      <section className="bg-black">
+      <section className="bg-muted">
         <GuaranteeSection />
       </section>
 
       {/* Who Is This For */}
-      <section className="bg-gradient-to-b from-black to-brand-dark">
+      <section className="bg-gradient-to-b from-background to-background">
         <WhoIsThisFor />
       </section>
 
       {/* Requirements Section */}
-      <section className="bg-brand-dark">
+      <section className="bg-background">
         <RequirementsSection />
       </section>
 
       {/* Final CTA */}
-      <section id="contact" className="bg-brand-dark">
+      <section id="contact" className="bg-background">
         <FinalCTA />
       </section>
 

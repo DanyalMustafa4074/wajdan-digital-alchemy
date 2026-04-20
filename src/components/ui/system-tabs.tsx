@@ -136,7 +136,7 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
         "py-4 transition-all duration-300 z-40",
         isSticky 
           ? "fixed top-[72px] left-0 right-0 bg-brand-dark/95 backdrop-blur-lg border-b border-brand-orange/20 shadow-xl" 
-          : "relative bg-black/50 border-y border-white/10",
+          : "relative bg-black/50 border-y border-black/10",
         className
       )}
     >
@@ -157,7 +157,7 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
                   "relative flex shrink-0 items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300",
                   activeTab === tab.id
                     ? "bg-brand-orange text-white shadow-lg shadow-brand-orange/30"
-                    : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                    : "bg-black/5 text-muted-foreground hover:bg-black/10 hover:text-white border border-black/10"
                 )}
               >
                 {/* Active indicator */}
@@ -267,7 +267,7 @@ export const FloatingSystemNav: React.FC = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                   onClick={() => scrollToSection(tab.sectionId)}
-                  className="w-full flex items-center gap-3 px-4 py-3 text-left text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors group"
+                  className="w-full flex items-center gap-3 px-4 py-3 text-left text-muted-foreground hover:text-white hover:bg-black/5 rounded-lg transition-colors group"
                 >
                   <IconComponent size={28} />
                   <div>

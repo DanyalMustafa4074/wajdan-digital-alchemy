@@ -1,4 +1,8 @@
+const fs = require('fs');
 
+const comparisonTablePath = 'src/components/ui/comparison-table.tsx';
+
+const newComparisonTableContent = `
 "use client";
 
 import React from 'react';
@@ -182,3 +186,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
 };
 
 export { ComparisonTable };
+`;
+
+fs.writeFileSync(comparisonTablePath, newComparisonTableContent);
+console.log('ComparisonTable updated to dark high-conversion UX theme');

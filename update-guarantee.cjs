@@ -1,4 +1,7 @@
+const fs = require('fs');
 
+const guaranteePath = 'src/components/ui/guarantee-section.tsx';
+const newGuaranteeContent = `
 "use client";
 
 import React from 'react';
@@ -135,3 +138,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
 };
 
 export { GuaranteeSection };
+`;
+
+fs.writeFileSync(guaranteePath, newGuaranteeContent);
+console.log('GuaranteeSection updated successfully');

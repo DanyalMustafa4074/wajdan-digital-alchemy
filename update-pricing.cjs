@@ -1,4 +1,8 @@
+const fs = require('fs');
 
+const pricingPath = 'src/components/ui/pricing-cards.tsx';
+
+const newPricingContent = `
 "use client";
 
 import React from 'react';
@@ -183,3 +187,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
 };
 
 export { PricingCards };
+`;
+
+fs.writeFileSync(pricingPath, newPricingContent);
+console.log('PricingCards updated to high-conversion dark UX theme');

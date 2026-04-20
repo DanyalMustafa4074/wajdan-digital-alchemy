@@ -72,7 +72,7 @@ const StatsBar: React.FC<StatsBarProps> = ({
     ? 'bg-brand-dark border-brand-green/20' 
     : 'bg-white border-gray-200';
   const textClass = variant === 'dark' ? 'text-white' : 'text-brand-dark';
-  const labelClass = variant === 'dark' ? 'text-gray-400' : 'text-gray-600';
+  const labelClass = variant === 'dark' ? 'text-muted-foreground' : 'text-gray-600';
   const valueClass = variant === 'dark' ? 'text-brand-yellow' : 'text-brand-green';
 
   return (
@@ -129,7 +129,7 @@ const HeroStats: React.FC<HeroStatsProps> = ({ stats, className }) => {
           <div className="text-3xl md:text-4xl font-bold text-brand-yellow mb-1">
             {stat.value}
           </div>
-          <div className="text-sm text-gray-400 uppercase tracking-wider">
+          <div className="text-sm text-muted-foreground uppercase tracking-wider">
             {stat.label}
           </div>
         </motion.div>

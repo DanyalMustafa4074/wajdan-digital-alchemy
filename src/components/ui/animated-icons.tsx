@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Lottie from 'lottie-react';
+const LottieComponent = (Lottie as any).default || Lottie;
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import {
@@ -47,7 +48,7 @@ export const RocketAnimation: React.FC<AnimatedIconProps> = ({ className, size =
       transition={{ duration: 0.5 }}
       style={{ width: size, height: size, minWidth: size, minHeight: size }}
     >
-      <Lottie
+      <LottieComponent
         animationData={rocketAnimation}
         loop={loop}
         autoplay={autoplay}
@@ -69,7 +70,7 @@ export const TargetAnimation: React.FC<AnimatedIconProps> = ({ className, size =
       transition={{ duration: 0.5 }}
       style={{ width: size, height: size, minWidth: size, minHeight: size }}
     >
-      <Lottie
+      <LottieComponent
         animationData={targetAnimation}
         loop={loop}
         autoplay={autoplay}
@@ -91,7 +92,7 @@ export const ChartAnimation: React.FC<AnimatedIconProps> = ({ className, size = 
       transition={{ duration: 0.5 }}
       style={{ width: size, height: size, minWidth: size, minHeight: size }}
     >
-      <Lottie
+      <LottieComponent
         animationData={chartAnimation}
         loop={loop}
         autoplay={autoplay}
@@ -113,7 +114,7 @@ export const ZapAnimation: React.FC<AnimatedIconProps> = ({ className, size = 80
       transition={{ duration: 0.5 }}
       style={{ width: size, height: size, minWidth: size, minHeight: size }}
     >
-      <Lottie
+      <LottieComponent
         animationData={zapAnimation}
         loop={loop}
         autoplay={autoplay}
@@ -135,7 +136,7 @@ export const FunnelAnimation: React.FC<AnimatedIconProps> = ({ className, size =
       transition={{ duration: 0.5 }}
       style={{ width: size, height: size, minWidth: size, minHeight: size }}
     >
-      <Lottie
+      <LottieComponent
         animationData={funnelAnimation}
         loop={loop}
         autoplay={autoplay}
@@ -157,7 +158,7 @@ export const SuccessAnimation: React.FC<AnimatedIconProps> = ({ className, size 
       transition={{ duration: 0.5 }}
       style={{ width: size, height: size, minWidth: size, minHeight: size }}
     >
-      <Lottie
+      <LottieComponent
         animationData={successAnimation}
         loop={loop}
         autoplay={autoplay}
@@ -179,7 +180,7 @@ export const MegaphoneAnimation: React.FC<AnimatedIconProps> = ({ className, siz
       transition={{ duration: 0.5 }}
       style={{ width: size, height: size, minWidth: size, minHeight: size }}
     >
-      <Lottie
+      <LottieComponent
         animationData={megaphoneAnimation}
         loop={loop}
         autoplay={autoplay}
@@ -205,7 +206,7 @@ export const AnimatedHeroIcons: React.FC<{ className?: string }> = ({ className 
         className="flex flex-col items-center gap-3 p-4 rounded-xl bg-brand-dark/30 border border-white/5 hover:border-brand-orange/30 transition-all cursor-pointer"
       >
         <TargetAnimation size={64} autoplay={true} loop={true} />
-        <span className="text-sm font-medium text-gray-300">Offer</span>
+        <span className="text-sm font-medium text-muted-foreground">Offer</span>
       </motion.div>
       <motion.div
         whileHover={{ scale: 1.15, y: -8 }}
@@ -213,7 +214,7 @@ export const AnimatedHeroIcons: React.FC<{ className?: string }> = ({ className 
         className="flex flex-col items-center gap-3 p-4 rounded-xl bg-brand-dark/30 border border-white/5 hover:border-brand-orange/30 transition-all cursor-pointer"
       >
         <FunnelAnimation size={64} autoplay={true} loop={true} />
-        <span className="text-sm font-medium text-gray-300">Funnel</span>
+        <span className="text-sm font-medium text-muted-foreground">Funnel</span>
       </motion.div>
       <motion.div
         whileHover={{ scale: 1.15, y: -8 }}
@@ -221,7 +222,7 @@ export const AnimatedHeroIcons: React.FC<{ className?: string }> = ({ className 
         className="flex flex-col items-center gap-3 p-4 rounded-xl bg-brand-dark/30 border border-white/5 hover:border-brand-orange/30 transition-all cursor-pointer"
       >
         <ZapAnimation size={64} autoplay={true} loop={true} />
-        <span className="text-sm font-medium text-gray-300">Automation</span>
+        <span className="text-sm font-medium text-muted-foreground">Automation</span>
       </motion.div>
       <motion.div
         whileHover={{ scale: 1.15, y: -8 }}
@@ -229,7 +230,7 @@ export const AnimatedHeroIcons: React.FC<{ className?: string }> = ({ className 
         className="flex flex-col items-center gap-3 p-4 rounded-xl bg-brand-dark/30 border border-white/5 hover:border-brand-orange/30 transition-all cursor-pointer"
       >
         <MegaphoneAnimation size={64} autoplay={true} loop={true} />
-        <span className="text-sm font-medium text-gray-300">Ads</span>
+        <span className="text-sm font-medium text-muted-foreground">Ads</span>
       </motion.div>
       <motion.div
         whileHover={{ scale: 1.15, y: -8 }}
@@ -237,7 +238,7 @@ export const AnimatedHeroIcons: React.FC<{ className?: string }> = ({ className 
         className="flex flex-col items-center gap-3 p-4 rounded-xl bg-brand-dark/30 border border-white/5 hover:border-brand-orange/30 transition-all cursor-pointer"
       >
         <ChartAnimation size={64} autoplay={true} loop={true} />
-        <span className="text-sm font-medium text-gray-300">Results</span>
+        <span className="text-sm font-medium text-muted-foreground">Results</span>
       </motion.div>
     </div>
   );
@@ -279,7 +280,7 @@ export const AnimatedLayerCard: React.FC<LayerCardProps> = ({
         'flex flex-col items-center gap-3 p-6 rounded-2xl border transition-all',
         isActive
           ? 'bg-brand-orange/10 border-brand-orange/50 shadow-lg shadow-brand-orange/20'
-          : 'bg-brand-dark/50 border-white/10 hover:border-brand-orange/30'
+          : 'bg-brand-dark/50 border-black/10 hover:border-brand-orange/30'
       )}
     >
       <div className="flex items-center justify-center">
@@ -288,13 +289,13 @@ export const AnimatedLayerCard: React.FC<LayerCardProps> = ({
       <div className="text-center">
         <span className={cn(
           'text-xs font-bold',
-          isActive ? 'text-brand-orange' : 'text-gray-500'
+          isActive ? 'text-brand-orange' : 'text-gray-600'
         )}>
           {number}
         </span>
         <p className={cn(
           'text-sm font-medium',
-          isActive ? 'text-white' : 'text-gray-400'
+          isActive ? 'text-white' : 'text-muted-foreground'
         )}>
           {title}
         </p>

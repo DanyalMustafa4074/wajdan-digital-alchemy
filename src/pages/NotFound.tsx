@@ -27,7 +27,7 @@ const NotFound = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-xl text-gray-400 mb-8"
+          className="text-xl text-muted-foreground mb-8"
         >
           Oops! This page doesn't exist
         </motion.p>

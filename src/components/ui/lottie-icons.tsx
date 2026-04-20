@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
+const LottieComponent = (Lottie as any).default || Lottie;
 import { motion, useInView, useAnimation, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -656,7 +657,7 @@ export const LottieIcon: React.FC<LottieIconProps> = ({
   animationData,
   className,
   size = 64,
-  loop = false,
+  loop = true,
   autoplay = true,
   playOnHover = true,
   playOnView = true,
@@ -667,11 +668,10 @@ export const LottieIcon: React.FC<LottieIconProps> = ({
   const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
-    if (isInView && playOnView && !hasPlayed && lottieRef.current) {
+    if (isInView && playOnView && lottieRef.current) {
       lottieRef.current.goToAndPlay(0);
-      if (!loop) setHasPlayed(true);
     }
-  }, [isInView, playOnView, hasPlayed, loop]);
+  }, [isInView, playOnView]);
 
   const handleMouseEnter = () => {
     if (playOnHover && lottieRef.current) {
@@ -688,7 +688,7 @@ export const LottieIcon: React.FC<LottieIconProps> = ({
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Lottie
+      <LottieComponent
         lottieRef={lottieRef}
         animationData={animationData}
         loop={loop}

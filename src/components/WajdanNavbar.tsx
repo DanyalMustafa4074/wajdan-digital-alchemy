@@ -56,7 +56,7 @@ function WajdanNavbar({ className }: { className?: string }) {
                 <a
                   key={item.name}
                   href={item.url}
-                  className="text-gray-400 hover:text-white transition-colors text-sm font-medium relative group"
+                  className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium relative group"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all group-hover:w-full" />
@@ -67,7 +67,7 @@ function WajdanNavbar({ className }: { className?: string }) {
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-5 py-2.5 bg-brand-orange text-white text-sm font-semibold rounded-lg hover:bg-brand-orange/90 transition-all shadow-lg shadow-brand-orange/25"
+                className="flex items-center gap-2 px-5 py-2.5 bg-brand-orange text-foreground text-sm font-semibold rounded-lg hover:bg-brand-orange/90 transition-all shadow-lg shadow-brand-orange/25"
               >
                 Book Free Audit
                 <ArrowRight className="w-4 h-4" />
@@ -77,7 +77,7 @@ function WajdanNavbar({ className }: { className?: string }) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-3 -mr-2 text-white hover:bg-white/10 rounded-lg transition-colors flex items-center justify-center min-w-[48px] min-h-[48px]"
+              className="md:hidden p-3 -mr-2 text-foreground hover:bg-white/10 rounded-lg transition-colors flex items-center justify-center min-w-[48px] min-h-[48px]"
               aria-label="Toggle Navigation Menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -94,7 +94,7 @@ function WajdanNavbar({ className }: { className?: string }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[72px] z-40 bg-brand-dark/98 backdrop-blur-lg border-b border-brand-orange/20 md:hidden"
+            className="fixed inset-x-0 top-[72px] z-40 bg-background/98 backdrop-blur-lg border-b border-brand-orange/20 md:hidden"
           >
             <nav className="flex flex-col p-6 space-y-4">
               {navItems.map((item) => (
@@ -110,7 +110,7 @@ function WajdanNavbar({ className }: { className?: string }) {
               <a
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 px-6 py-4 bg-brand-orange hover:bg-brand-orange/90 text-white font-semibold rounded-xl mt-6 shadow-lg shadow-brand-orange/20 transition-all min-h-[56px] text-lg"
+                className="flex items-center justify-center gap-2 px-6 py-4 bg-brand-orange hover:bg-brand-orange/90 text-foreground font-semibold rounded-xl mt-6 shadow-lg shadow-brand-orange/20 transition-all min-h-[56px] text-lg"
               >
                 Book Free Audit
                 <ArrowRight className="w-5 h-5" />
