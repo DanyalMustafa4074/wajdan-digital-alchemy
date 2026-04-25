@@ -13,6 +13,8 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { SalesStory } from "@/components/ui/sales-story";
 import { SystemProgressIndicator, FloatingSystemNav } from "@/components/ui/system-tabs";
 import { AnimatedHeroIcons, TargetAnimation, FunnelAnimation, ZapAnimation, MegaphoneAnimation, ChartAnimation, RocketAnimation, SuccessAnimation } from "@/components/ui/animated-icons";
+import { LogoMarquee } from "@/components/ui/logo-marquee";
+import { GrowthChart } from "@/components/ui/growth-chart";
 
 const Index = () => {
   return (
@@ -26,6 +28,9 @@ const Index = () => {
       {/* Hero Section */}
       <WajdanHero />
 
+      {/* Trusted-by logo marquee — King Kong-style 2-row infinite scroll */}
+      <LogoMarquee />
+
       {/* Extreme Sales Story replacing old Video/Letter */}
       <SalesStory />
 
@@ -35,52 +40,41 @@ const Index = () => {
       </section>
 
       {/* Comparison Table - Before/After */}
-      <section className="bg-gradient-to-b from-background to-muted py-12 md:py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <ComparisonTable />
-        </div>
-      </section>
+      <ComparisonTable />
 
-      {/* The Bricks vs House Story - Visual Version */}
-      <section className="py-20 bg-muted">
+      {/* The Bricks vs House Story */}
+      <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <ScrollReveal className="text-center mb-12">
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-brand-orange mb-4 font-semibold tracking-wider uppercase"
-            >
-              The Complete System
-            </motion.p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Bricks ≠ House
+            <p className="text-[#cf5230] mb-4 font-bold tracking-[0.2em] uppercase text-sm">The Complete System</p>
+            <h2 className="text-4xl md:text-6xl font-black text-[#111110] mb-6 uppercase tracking-tight">
+              Bricks <span className="text-[#cf5230]">≠</span> House
             </h2>
-            <div className="flex items-center justify-center gap-4 text-foreground text-lg font-medium">
+            <div className="flex items-center justify-center gap-4 text-[#111110] text-lg font-black uppercase tracking-tight">
               <span>5 layers</span>
-              <Star className="w-4 h-4 text-brand-orange" />
+              <Star className="w-4 h-4 text-[#cf5230] fill-[#cf5230]" />
               <span>1 system</span>
-              <Star className="w-4 h-4 text-brand-orange" />
+              <Star className="w-4 h-4 text-[#cf5230] fill-[#cf5230]" />
               <span>0 gaps</span>
             </div>
           </ScrollReveal>
 
-          {/* Visual Comparison */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <ScrollReveal delay={0.1}>
               <motion.div
-                className="glass-card border-red-500/20 hover-lift rounded-2xl p-8 text-center h-full relative overflow-hidden"
+                whileHover={{ y: -4 }}
+                className="bg-[#fafaf8] border-2 border-neutral-200 p-8 text-center h-full shadow-[8px_8px_0_0_#111110]"
               >
-                <div className="absolute inset-0 bg-red-500/5 pointer-events-none" />
-                <div className="relative z-10 text-6xl mb-4">🧱</div>
-                <h3 className="relative z-10 text-2xl font-bold text-red-400 mb-2 text-glow">What You Got</h3>
-                <div className="relative z-10 flex flex-wrap justify-center gap-2">
+                <div className="text-6xl mb-4">🧱</div>
+                <h3 className="text-2xl font-black text-[#111110] mb-4 uppercase tracking-tight">What You Got</h3>
+                <div className="flex flex-wrap justify-center gap-2">
                   {['Traffic', 'Leads', 'Reports'].map((item, i) => (
-                    <motion.span 
+                    <motion.span
                       key={i}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ delay: i * 0.1 }}
-                      className="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-sm"
+                      className="px-3 py-1 bg-white border border-neutral-300 text-neutral-600 text-sm font-bold"
                     >
                       {item}
                     </motion.span>
@@ -90,63 +84,56 @@ const Index = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <motion.div 
-                className="glass-card hover-lift border-brand-orange/30 rounded-2xl p-8 text-center h-full relative overflow-hidden"
+              <motion.div
+                whileHover={{ y: -4 }}
+                className="bg-[#111110] text-white p-8 text-center h-full shadow-[8px_8px_0_0_#cf5230]"
               >
-                <div className="absolute inset-0 bg-brand-orange/5 pointer-events-none" />
-                <div className="relative z-10">
-                  <div className="flex items-center justify-center">
-                    <RocketAnimation size={96} className="mx-auto mb-4" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-brand-orange mb-2 text-glow">What You Need</h3>
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {['Offer', 'Funnel', 'CRM', 'Automation', 'Ads'].map((item, i) => (
-                      <motion.span 
-                        key={i}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: i * 0.1 }}
-                        className="px-3 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-sm font-semibold border border-brand-orange/20"
-                      >
-                        {item}
-                      </motion.span>
-                    ))}
-                  </div>
+                <div className="flex items-center justify-center">
+                  <RocketAnimation size={96} className="mx-auto mb-4" />
+                </div>
+                <h3 className="text-2xl font-black text-[#cf5230] mb-4 uppercase tracking-tight">What You Need</h3>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {['Offer', 'Funnel', 'CRM', 'Automation', 'Ads'].map((item, i) => (
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="px-3 py-1 bg-[#cf5230]/15 text-[#cf5230] text-sm font-bold border border-[#cf5230]/40"
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
                 </div>
               </motion.div>
             </ScrollReveal>
           </div>
 
-          {/* 5 Layer Animated Icons */}
           <ScrollReveal delay={0.25} className="mb-12">
             <AnimatedHeroIcons className="py-8" />
           </ScrollReveal>
 
-          {/* Solution */}
           <ScrollReveal delay={0.3} className="text-center">
-            <motion.div 
-              className="glass-card hover-lift border-brand-orange/20 rounded-2xl p-8 relative overflow-hidden"
+            <motion.div
+              className="bg-[#fafaf8] border-2 border-neutral-200 p-8 shadow-[8px_8px_0_0_#cf5230]"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-orange/5 to-transparent pointer-events-none" />
-              <div className="relative z-10">
-                <div className="flex items-center justify-center">
-                  <SuccessAnimation size={80} className="mx-auto mb-4" />
-                </div>
-                <p className="text-xl text-muted-foreground mb-2 font-medium tracking-wide">Wajdan builds</p>
-                <motion.p 
-                  className="text-4xl text-brand-orange font-bold mb-4 text-glow"
-                  animate={{ scale: [1, 1.02, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+              <div className="flex items-center justify-center">
+                <SuccessAnimation size={80} className="mx-auto mb-4" />
+              </div>
+              <p className="text-xl text-neutral-600 mb-2 font-bold uppercase tracking-wide">Wajdan builds</p>
+              <motion.p
+                className="text-3xl md:text-4xl text-[#cf5230] font-black mb-4 uppercase tracking-tight"
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
               >
                 The Complete System
               </motion.p>
-              <div className="flex items-center justify-center gap-4 text-foreground text-lg font-medium">
+              <div className="flex items-center justify-center gap-4 text-[#111110] text-lg font-black uppercase tracking-tight">
                 <span>5 layers</span>
-                <Star className="w-4 h-4 text-brand-orange" />
+                <Star className="w-4 h-4 text-[#cf5230] fill-[#cf5230]" />
                 <span>1 system</span>
-                <Star className="w-4 h-4 text-brand-orange" />
+                <Star className="w-4 h-4 text-[#cf5230] fill-[#cf5230]" />
                 <span>0 gaps</span>
-              </div>
               </div>
             </motion.div>
           </ScrollReveal>
@@ -162,17 +149,17 @@ const Index = () => {
       </section>
 
       {/* Services Discovery */}
-      <section className="bg-muted/50 border-y border-brand-orange/10">
+      <section className="bg-white border-y border-neutral-200">
         <div className="max-w-4xl mx-auto px-4 py-16 text-center">
           <ScrollReveal>
-            <p className="text-muted-foreground text-lg mb-6">
+            <p className="text-neutral-700 text-lg mb-6 font-medium">
               Want to see how each layer works in detail?
             </p>
             <motion.a
               href="/services"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-brand-orange/10 border border-brand-orange/40 text-brand-orange font-semibold rounded-lg hover:bg-brand-orange/20 transition-all"
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#111110] text-white font-black uppercase tracking-wider shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1 transition-all"
             >
               Explore the System Layers
               <ArrowRight className="w-4 h-4" />
@@ -180,6 +167,9 @@ const Index = () => {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Growth Chart — visual proof curve */}
+      <GrowthChart />
 
       {/* Proof Section */}
       <section id="results" className="bg-background">

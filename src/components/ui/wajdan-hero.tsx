@@ -36,11 +36,31 @@ export const WajdanHero = () => {
                 <span className="text-sm font-medium text-slate-500">— 3 min</span>
               </button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[800px] p-0 bg-transparent border-none shadow-none">
-              <div className="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-2xl relative flex items-center justify-center">
-                <div className="text-center text-slate-400">
-                  <PlayCircle className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                  <p>VSL Video Integration Placeholder</p>
+            <DialogContent className="sm:max-w-[900px] p-0 bg-transparent border-none shadow-none">
+              <div className="aspect-video w-full bg-[#111110] overflow-hidden shadow-2xl relative">
+                {/* Dummy looping placeholder video — swap src for the real VSL when available */}
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster="/placeholder.svg"
+                  src="https://cdn.coverr.co/videos/coverr-typing-on-the-laptop-2330/1080p.mp4"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111110]/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 pointer-events-none">
+                  <div>
+                    <p className="text-[#cf5230] text-xs font-black uppercase tracking-[0.2em] mb-1">
+                      Wajdan System Walkthrough
+                    </p>
+                    <p className="text-white text-sm md:text-base font-bold">
+                      How we build the complete acquisition machine — in 3 minutes.
+                    </p>
+                  </div>
+                  <span className="bg-[#cf5230] text-white text-xs font-black uppercase tracking-widest px-3 py-1.5">
+                    Demo
+                  </span>
                 </div>
               </div>
             </DialogContent>

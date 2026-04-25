@@ -4,7 +4,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ScrollReveal } from './scroll-reveal';
-import { Search, Users, FileText, MessageSquare, TestTube, ClipboardCheck, Palette, PenTool, FormInput, Calendar, Play, Mail, Clock, Bell, RefreshCw, BarChart3, Lightbulb, Layers, FlaskConical, Eye, UserPlus, LineChart, ArrowRight } from 'lucide-react';
+import {
+  Search, Users, FileText, MessageSquare, TestTube, ClipboardCheck,
+  Palette, PenTool, FormInput, Calendar, Play, Mail, Clock, Bell,
+  RefreshCw, BarChart3, Lightbulb, Layers, FlaskConical, Eye,
+  UserPlus, LineChart, ArrowRight, Target, Megaphone, Zap,
+} from 'lucide-react';
 import { TargetAnimation, FunnelAnimation, ZapAnimation, MegaphoneAnimation, ChartAnimation } from './animated-icons';
 
 interface LayerIcon {
@@ -15,20 +20,22 @@ interface LayerIcon {
 interface SystemLayer {
   number: string;
   title: string;
+  summaryIcon: React.ReactNode;
   animationType: 'target' | 'funnel' | 'zap' | 'megaphone' | 'chart';
-  color: string;
-  bgColor: string;
   icons: LayerIcon[];
   stat?: { value: string; label: string };
 }
+
+// Single accent color across all layers — neutrals + brand rust.
+const ACCENT = '#cf5230';
+const ACCENT_BG = 'rgba(207, 82, 48, 0.08)';
 
 const systemLayers: SystemLayer[] = [
   {
     number: '01',
     title: 'Offer Creation',
+    summaryIcon: <Target className="w-6 h-6" />,
     animationType: 'target',
-    color: '#FF6B35',
-    bgColor: 'rgba(255,107,53,0.1)',
     icons: [
       { icon: <Search className="w-5 h-5" />, label: 'Research' },
       { icon: <Users className="w-5 h-5" />, label: 'Competitor' },
@@ -42,9 +49,8 @@ const systemLayers: SystemLayer[] = [
   {
     number: '02',
     title: 'Funnel + VSL',
+    summaryIcon: <Play className="w-6 h-6" />,
     animationType: 'funnel',
-    color: '#57A773',
-    bgColor: 'rgba(87,167,115,0.1)',
     icons: [
       { icon: <Play className="w-5 h-5" />, label: 'VSL' },
       { icon: <Palette className="w-5 h-5" />, label: 'Design' },
@@ -57,9 +63,8 @@ const systemLayers: SystemLayer[] = [
   {
     number: '03',
     title: 'GHL + Automation',
+    summaryIcon: <Zap className="w-6 h-6" />,
     animationType: 'zap',
-    color: '#F6E27F',
-    bgColor: 'rgba(246,226,127,0.1)',
     icons: [
       { icon: <Layers className="w-5 h-5" />, label: 'Pipeline' },
       { icon: <Mail className="w-5 h-5" />, label: 'Instant' },
@@ -72,9 +77,8 @@ const systemLayers: SystemLayer[] = [
   {
     number: '04',
     title: 'Meta Campaigns',
+    summaryIcon: <Megaphone className="w-6 h-6" />,
     animationType: 'megaphone',
-    color: '#FF6B35',
-    bgColor: 'rgba(255,107,53,0.1)',
     icons: [
       { icon: <Lightbulb className="w-5 h-5" />, label: 'Strategy' },
       { icon: <Layers className="w-5 h-5" />, label: 'Architect' },
@@ -87,9 +91,8 @@ const systemLayers: SystemLayer[] = [
   {
     number: '05',
     title: 'Conversion Loop',
+    summaryIcon: <LineChart className="w-6 h-6" />,
     animationType: 'chart',
-    color: '#FF6B35',
-    bgColor: 'rgba(255,107,53,0.1)',
     icons: [
       { icon: <RefreshCw className="w-5 h-5" />, label: 'Loop' },
       { icon: <LineChart className="w-5 h-5" />, label: 'Attribute' },
@@ -100,7 +103,6 @@ const systemLayers: SystemLayer[] = [
   },
 ];
 
-// Animation component mapping
 const AnimationComponents = {
   target: TargetAnimation,
   funnel: FunnelAnimation,
@@ -113,159 +115,133 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
   const [activeLayer, setActiveLayer] = useState<string>('01');
 
   return (
-    <div className={cn('py-20', className)}>
-      <ScrollReveal className="text-center mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-          Five Layers. <span className="text-brand-orange">One System.</span>
+    <div className={cn('py-20 bg-[#fafaf8]', className)}>
+      <ScrollReveal className="text-center mb-12 px-4">
+        <p className="text-[#cf5230] text-sm font-bold uppercase tracking-[0.2em] mb-4">The Wajdan System</p>
+        <h2 className="text-4xl md:text-6xl font-black text-[#111110] uppercase tracking-tighter leading-none">
+          Five Layers. <span className="text-[#cf5230]">One System.</span>
         </h2>
+        <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto font-medium">
+          Remove any one layer and the whole thing leaks. This is the complete sequence — built in this exact order, before traffic goes live.
+        </p>
       </ScrollReveal>
 
       <div className="max-w-6xl mx-auto">
-        {/* Visual Layer Selector - Horizontal on Desktop */}
         <div className="flex flex-nowrap overflow-x-auto hide-scrollbar sm:justify-center items-center gap-3 mb-12 py-4 px-4 w-full after:content-[''] after:w-4 after:shrink-0 sm:after:hidden">
-          {systemLayers.map((layer, index) => (
-            <motion.button
-              key={layer.number}
-              onClick={() => setActiveLayer(layer.number)}
-              className={cn(
-                'relative flex shrink-0 items-center gap-3 px-5 py-3 rounded-full border transition-all',
-                activeLayer === layer.number
-                  ? 'border-transparent'
-                  : 'border-white/10 bg-brand-dark/50 hover:border-white/20'
-              )}
-              style={{
-                backgroundColor: activeLayer === layer.number ? layer.bgColor : undefined,
-                borderColor: activeLayer === layer.number ? layer.color : undefined,
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <span 
-                className="text-sm font-bold"
-                style={{ color: activeLayer === layer.number ? layer.color : '#9CA3AF' }}
+          {systemLayers.map((layer) => {
+            const isActive = activeLayer === layer.number;
+            return (
+              <motion.button
+                key={layer.number}
+                onClick={() => setActiveLayer(layer.number)}
+                className={cn(
+                  'relative flex shrink-0 items-center gap-3 px-5 py-3 rounded-full border-2 transition-all',
+                  isActive
+                    ? 'bg-[#cf5230] border-[#cf5230] text-white shadow-[0_4px_0_0_#111110]'
+                    : 'bg-white border-neutral-200 text-neutral-600 hover:border-[#cf5230]/40'
+                )}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {layer.number}
-              </span>
-              <span className={cn(
-                'font-medium',
-                activeLayer === layer.number ? 'text-white' : 'text-gray-400'
-              )}>
-                {layer.title}
-              </span>
-              {activeLayer === layer.number && (
-                <motion.div
-                  layoutId="activeIndicator"
-                  className="absolute inset-0 rounded-full border-2"
-                  style={{ borderColor: layer.color }}
-                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-            </motion.button>
-          ))}
+                <span className="text-sm font-black tracking-wider">{layer.number}</span>
+                <span className="font-bold uppercase tracking-tight text-sm">{layer.title}</span>
+              </motion.button>
+            );
+          })}
         </div>
 
         <div className="px-4">
-          {/* Active Layer Visual Display */}
           <AnimatePresence mode="wait">
-            {systemLayers.filter(l => l.number === activeLayer).map(layer => (
-            <motion.div
-              key={layer.number}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-3xl border p-8 md:p-12"
-              style={{ 
-                backgroundColor: layer.bgColor,
-                borderColor: `${layer.color}40`,
-              }}
-            >
-              <div className="flex flex-col md:flex-row gap-8 items-center">
-                {/* Left: Main Lottie Animation + Title */}
-                <div className="flex flex-col items-center text-center md:w-1/4">
-                  <motion.div 
-                    className="w-28 h-28 rounded-3xl flex items-center justify-center mb-4 bg-black/30"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    {(() => {
-                      const AnimComponent = AnimationComponents[layer.animationType];
-                      return <AnimComponent size={90} />;
-                    })()}
-                  </motion.div>
-                  <h3 className="text-2xl font-bold text-white">{layer.title}</h3>
-                  {layer.stat && (
-                    <div className="mt-4">
-                      <div className="text-4xl font-bold" style={{ color: layer.color }}>
-                        {layer.stat.value}
+            {systemLayers.filter((l) => l.number === activeLayer).map((layer) => (
+              <motion.div
+                key={layer.number}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="rounded-3xl border-2 border-neutral-200 bg-white p-8 md:p-12 shadow-[0_8px_30px_rgba(17,17,16,0.06)]"
+                style={{ backgroundImage: `radial-gradient(circle at 20% 0%, ${ACCENT_BG}, transparent 60%)` }}
+              >
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  <div className="flex flex-col items-center text-center md:w-1/4">
+                    <motion.div
+                      className="w-28 h-28 rounded-3xl flex items-center justify-center mb-4 bg-[#fafaf8] border border-neutral-200"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {(() => {
+                        const AnimComponent = AnimationComponents[layer.animationType];
+                        return <AnimComponent size={90} />;
+                      })()}
+                    </motion.div>
+                    <span className="text-xs font-bold tracking-widest text-[#cf5230] uppercase mb-1">Layer {layer.number}</span>
+                    <h3 className="text-2xl font-black text-[#111110] uppercase tracking-tight">{layer.title}</h3>
+                    {layer.stat && (
+                      <div className="mt-4">
+                        <div className="text-4xl font-black text-[#cf5230]">{layer.stat.value}</div>
+                        <div className="text-sm text-neutral-500 font-bold uppercase tracking-wider">{layer.stat.label}</div>
                       </div>
-                      <div className="text-sm text-gray-400">{layer.stat.label}</div>
-                    </div>
-                  )}
-                </div>
+                    )}
+                  </div>
 
-                {/* Right: Icon Grid */}
-                <div className="flex-1">
-                  <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-                    {layer.icons.map((item, idx) => (
-                      <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: idx * 0.08 }}
-                        whileHover={{ scale: 1.15, y: -5 }}
-                        className="flex flex-col items-center gap-2 p-4 rounded-xl bg-black/20 border border-white/5 hover:border-white/20 transition-colors cursor-pointer"
-                      >
-                        <div style={{ color: layer.color }}>{item.icon}</div>
-                        <span className="text-xs text-gray-400">{item.label}</span>
-                      </motion.div>
-                    ))}
+                  <div className="flex-1">
+                    <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+                      {layer.icons.map((item, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: idx * 0.08 }}
+                          whileHover={{ scale: 1.08, y: -4 }}
+                          className="flex flex-col items-center gap-2 p-4 rounded-xl bg-[#fafaf8] border border-neutral-200 hover:border-[#cf5230]/40 transition-colors cursor-pointer"
+                        >
+                          <div style={{ color: ACCENT }}>{item.icon}</div>
+                          <span className="text-xs text-neutral-600 font-semibold">{item.label}</span>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-
-        {/* Flow Indicator */}
-        <div className="flex justify-center mt-8">
-          <div className="flex items-center gap-2 text-gray-500 text-sm">
-            {systemLayers.map((layer, idx) => (
-              <React.Fragment key={layer.number}>
-                <motion.div
-                  className={cn(
-                    'w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold cursor-pointer transition-all',
-                    activeLayer === layer.number 
-                      ? 'text-white' 
-                      : 'bg-white/5 text-gray-500 hover:bg-white/10'
-                  )}
-                  style={{
-                    backgroundColor: activeLayer === layer.number ? layer.color : undefined,
-                  }}
-                  onClick={() => setActiveLayer(layer.number)}
-                  whileHover={{ scale: 1.2 }}
-                >
-                  {layer.number}
-                </motion.div>
-                {idx < systemLayers.length - 1 && (
-                  <ArrowRight className="w-4 h-4 text-gray-600" />
-                )}
-              </React.Fragment>
+              </motion.div>
             ))}
+          </AnimatePresence>
+
+          <div className="flex justify-center mt-10">
+            <div className="flex items-center gap-2 text-neutral-500 text-sm">
+              {systemLayers.map((layer, idx) => (
+                <React.Fragment key={layer.number}>
+                  <motion.button
+                    type="button"
+                    aria-label={`Go to layer ${layer.number}: ${layer.title}`}
+                    onClick={() => setActiveLayer(layer.number)}
+                    whileHover={{ scale: 1.15 }}
+                    className={cn(
+                      'w-9 h-9 rounded-full flex items-center justify-center text-xs font-black cursor-pointer transition-all border-2',
+                      activeLayer === layer.number
+                        ? 'bg-[#cf5230] border-[#cf5230] text-white'
+                        : 'bg-white border-neutral-200 text-neutral-500 hover:border-[#cf5230]/40'
+                    )}
+                  >
+                    {layer.number}
+                  </motion.button>
+                  {idx < systemLayers.length - 1 && (
+                    <ArrowRight className="w-4 h-4 text-neutral-400" />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
   );
 };
 
-// Simple 5-layer visual summary
 const SystemLayersSummary: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className={cn('py-12', className)}>
+    <div className={cn('py-12 bg-[#fafaf8]', className)}>
       <ScrollReveal className="text-center mb-8">
-        <h3 className="text-2xl md:text-3xl font-bold text-white">
-          Five Layers. Zero Gaps.
+        <h3 className="text-2xl md:text-3xl font-black text-[#111110] uppercase tracking-tight">
+          Five Layers. <span className="text-[#cf5230]">Zero Gaps.</span>
         </h3>
       </ScrollReveal>
 
@@ -274,19 +250,20 @@ const SystemLayersSummary: React.FC<{ className?: string }> = ({ className }) =>
           <React.Fragment key={layer.number}>
             <ScrollReveal delay={index * 0.1}>
               <motion.div
-                whileHover={{ scale: 1.1, y: -8 }}
-                className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 cursor-pointer border border-white/10"
-                style={{ backgroundColor: layer.bgColor }}
+                whileHover={{ scale: 1.08, y: -6 }}
+                className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 cursor-pointer bg-white border-2 border-neutral-200 hover:border-[#cf5230]/40 transition-colors"
               >
-                <div style={{ color: layer.color }}>{layer.icon}</div>
-                <span className="text-[10px] md:text-xs text-gray-400 text-center px-1">{layer.title.split(' + ')[0]}</span>
+                <div className="text-[#cf5230]">{layer.summaryIcon}</div>
+                <span className="text-[10px] md:text-xs text-neutral-600 font-bold text-center px-1">
+                  {layer.title.split(' + ')[0]}
+                </span>
               </motion.div>
             </ScrollReveal>
             {index < systemLayers.length - 1 && (
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="text-brand-orange"
+                className="text-[#cf5230]"
               >
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </motion.div>

@@ -64,13 +64,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Wajdan Brand Colors - PRIMARY IS ORANGE
+				// Wajdan Brand — neutrals + single accent (rust orange)
 				'brand-dark': '#111110',
-				'brand-orange': '#FF6B35',
-				'brand-green': '#57A773',
-				'brand-yellow': '#F6E27F',
-				'brand-blue': '#264653',
-				'brand-primary': '#FF6B35'
+				'brand-light': '#fafaf8',
+				'brand-orange': '#cf5230',
+				'brand-primary': '#cf5230',
+				// Legacy aliases mapped to brand to avoid breakage in any stale references.
+				'brand-green': '#cf5230',
+				'brand-yellow': '#cf5230',
+				'brand-blue': '#111110'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -198,10 +200,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(87, 167, 115, 0.3)'
+						boxShadow: '0 0 20px rgba(207, 82, 48, 0.25)'
 					},
 					'50%': {
-						boxShadow: '0 0 40px rgba(87, 167, 115, 0.6)'
+						boxShadow: '0 0 40px rgba(207, 82, 48, 0.5)'
 					}
 				},
 				'shimmer': {
@@ -242,7 +244,7 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'brand-gradient': 'linear-gradient(135deg, #57A773 0%, #F6E27F 50%, #57A773 100%)',
+				'brand-gradient': 'linear-gradient(135deg, #cf5230 0%, #111110 50%, #cf5230 100%)',
 			}
 		}
 	},

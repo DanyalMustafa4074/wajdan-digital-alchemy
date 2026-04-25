@@ -7,12 +7,18 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Build output
 node_modules
 dist
 dist-ssr
+.next
+out
+build
+.tsbuildinfo
+tsconfig.tsbuildinfo
 *.local
 
-# Editor directories and files
+# Editor
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -22,6 +28,46 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Env
 .env
 .env.local
 .env.*
+!.env.example
+
+# Generated artifacts
+*.tsbuildinfo
+*-errors.txt
+*-output.log
+*.log
+
+# Local screenshots / dev previews
+dev_preview*.png
+hero-section.png
+screenshot.png
+remedied-ui.png
+services_preview.png
+services_post_patch.png
+
+# Throwaway one-shot scripts (kept locally; do not ship)
+fix-css.cjs
+generator.js
+parse.js
+parse_claude.py
+patch_layers.js
+patch_layers.py
+read-content.cjs
+read-guarantee.cjs
+update-content-sections.cjs
+update-guarantee.cjs
+update-pricing.cjs
+update-sales.js
+update-table.cjs
+update-ui.cjs
+update_layers.js
+update_layers1and2.cjs
+update_layers3_5.cjs
+
+# Sandbox HTML artifacts pulled from Claude
+artifact1.html
+artifact2.html

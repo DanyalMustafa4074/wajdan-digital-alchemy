@@ -10,6 +10,8 @@ import { PricingCards } from "@/components/ui/pricing-cards";
 import { GuaranteeSection } from "@/components/ui/guarantee-section";
 import { FinalCTA } from "@/components/ui/content-sections";
 import { SystemTabsBar, SystemProgressIndicator, FloatingSystemNav } from "@/components/ui/system-tabs";
+import { LogoMarquee } from "@/components/ui/logo-marquee";
+import { GrowthChart } from "@/components/ui/growth-chart";
 import { cn } from '@/lib/utils';
 
 // System Layer Detailed Component
@@ -42,10 +44,11 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
   color,
   reversed = false,
 }) => {
+  // Single brand accent — neutrals + rust orange.
   const colorClasses = {
-    orange: 'bg-brand-orange text-foreground border-brand-orange',
-    yellow: 'bg-brand-yellow text-brand-dark border-brand-yellow',
-    green: 'bg-brand-green text-foreground border-brand-green',
+    orange: 'bg-[#cf5230] text-white border-[#cf5230]',
+    yellow: 'bg-[#cf5230] text-white border-[#cf5230]',
+    green: 'bg-[#cf5230] text-white border-[#cf5230]',
   };
 
   return (
@@ -168,43 +171,8 @@ const Services = () => {
       <WajdanNavbar />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="mesh-bg-brand" />
-          <motion.div
-            className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px] opacity-70"
-            animate={{
-              backgroundPosition: ['0px 0px', '48px 48px'],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
-          
-          {/* Floating Gradients & Particles */}
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-brand-orange/30 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                opacity: [0.3, 0.8, 0.3],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
+      <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden bg-[#fafaf8]">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
         <div className="relative max-w-5xl mx-auto px-4 text-center">
           <motion.div
@@ -212,18 +180,18 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             className="mb-6"
           >
-            <span className="text-brand-orange font-semibold">The Complete System</span>
+            <span className="text-[#cf5230] font-bold uppercase tracking-[0.2em] text-sm">The Complete System</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6"
+            className="text-5xl md:text-7xl lg:text-8xl font-black text-[#111110] mb-6 uppercase tracking-tighter leading-[0.95]"
           >
             Not Services.
             <br />
-            <span className="text-brand-orange">A System.</span>
+            <span className="text-[#cf5230]">A System.</span>
           </motion.h1>
 
           <motion.p
@@ -244,9 +212,9 @@ const Services = () => {
           >
             <motion.a
               href="#contact"
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255,107,53,0.35)" }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-8 py-4 bg-brand-orange text-foreground font-bold rounded-xl transition-all shadow-lg shadow-brand-orange/25"
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              className="flex items-center gap-2 px-8 py-5 bg-[#111110] text-white font-black uppercase tracking-wider transition-all shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1"
             >
               Book a Free Funnel Audit
               <ArrowRight className="w-5 h-5" />
@@ -254,7 +222,7 @@ const Services = () => {
 
             <a
               href="#layer-1"
-              className="flex items-center gap-2 text-muted-foreground hover:text-brand-orange transition-colors"
+              className="flex items-center gap-2 text-neutral-700 hover:text-[#cf5230] transition-colors font-bold"
             >
               See the full system
               <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
@@ -280,82 +248,81 @@ const Services = () => {
       {/* Progress Indicator */}
       <SystemProgressIndicator />
 
+      {/* Trusted-by logo marquee */}
+      <LogoMarquee />
+
+      {/* Growth comparison chart */}
+      <GrowthChart />
+
       {/* Comparison Table */}
-      <section className="bg-background pt-24 pb-12">
+      <section className="bg-background pt-12 pb-12">
         <div className="max-w-7xl mx-auto px-4">
           <ComparisonTable />
         </div>
       </section>
 
       {/* The Bricks Story */}
-      <section className="py-20 ">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <ScrollReveal>
-            <p className="text-gray-600 mb-8">Here's something nobody in this industry wants to say out loud.</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <p className="text-neutral-600 mb-6 font-medium">Here's something nobody in this industry wants to say out loud.</p>
+            <h2 className="text-3xl md:text-5xl font-black text-[#111110] mb-6 uppercase tracking-tight leading-tight">
               Most agencies sell you services the same way a builder sells you bricks.
             </h2>
-            <p className="text-xl text-muted-foreground italic mb-8">Here are your bricks. Good luck with the house.</p>
+            <p className="text-xl text-neutral-600 italic mb-8">Here are your bricks. Good luck with the house.</p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <motion.div 
-              className="bg-background/50 border border-brand-orange/20 rounded-2xl p-8 mb-8"
-              whileHover={{ borderColor: 'rgba(255,107,53,0.5)' }}
+            <motion.div
+              className="bg-[#fafaf8] border-2 border-neutral-200 p-8 mb-8 shadow-[8px_8px_0_0_#cf5230]"
+              whileHover={{ borderColor: '#cf5230' }}
             >
-              <p className="text-xl text-foreground mb-2">The problem isn't the bricks.</p>
-              <p className="text-2xl text-brand-orange font-bold">It's that nobody built the house.</p>
+              <p className="text-2xl text-[#111110] font-bold mb-2">The problem isn't the bricks.</p>
+              <p className="text-3xl text-[#cf5230] font-black uppercase tracking-tight">It's that nobody built the house.</p>
             </motion.div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <p className="text-muted-foreground mb-6">
-              You hired an agency that ran your Meta ads. The leads came in. Nothing was built to catch them, 
+            <p className="text-neutral-700 mb-6 leading-relaxed">
+              You hired an agency that ran your Meta ads. The leads came in. Nothing was built to catch them,
               qualify them, follow them up, pre-nurture them, or make sure they showed up.
             </p>
-            <p className="text-foreground text-lg mb-6">You paid for bricks. You needed a house.</p>
-            <p className="text-gray-600 italic mb-8">
-              (And before you ask — yes, we've seen this exact situation more times than we can count. 
-              Same story. Different consultancy. Different agency. But the same missing infrastructure.)
-            </p>
+            <p className="text-[#111110] text-lg font-bold mb-6">You paid for bricks. You needed a house.</p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <motion.div 
-              className="bg-red-950/30 border border-red-500/20 rounded-xl p-6 mb-8"
-              whileHover={{ scale: 1.02 }}
-            >
-              <p className="text-xl text-muted-foreground italic">
+            <div className="bg-[#111110] text-white p-8 mb-8 border-l-8 border-[#cf5230]">
+              <p className="text-xl text-neutral-300 italic mb-3">
                 "The leads are coming in. Why isn't anyone booking?"
               </p>
-              <p className="text-brand-orange font-semibold mt-4">
+              <p className="text-[#cf5230] font-bold text-lg">
                 Because the system that was supposed to convert them was never actually built.
               </p>
-            </motion.div>
+            </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.5}>
-            <p className="text-xl text-foreground mb-4">This is why Wajdan doesn't sell services.</p>
-            <motion.p 
-              className="text-2xl text-brand-orange font-bold mb-6"
+            <p className="text-xl text-[#111110] font-bold mb-4">This is why Wajdan doesn't sell services.</p>
+            <motion.p
+              className="text-2xl md:text-3xl text-[#cf5230] font-black uppercase tracking-tight mb-6"
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
               We sell a system. And the system only works when every part of it exists.
             </motion.p>
-            <div className="flex items-center justify-center gap-4 text-foreground text-xl font-bold">
+            <div className="flex items-center justify-center gap-3 text-[#111110] text-lg md:text-xl font-black uppercase tracking-tight flex-wrap">
               <span>Five layers.</span>
-              <span className="text-brand-orange">One system.</span>
-              <span className="text-brand-yellow">Zero gaps.</span>
+              <span className="text-[#cf5230]">One system.</span>
+              <span className="text-neutral-500">Zero gaps.</span>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.6} className="mt-8">
+          <ScrollReveal delay={0.6} className="mt-10">
             <motion.a
               href="#contact"
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255,107,53,0.35)" }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-brand-orange text-foreground font-bold rounded-xl transition-all shadow-lg shadow-brand-orange/25"
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center gap-2 px-8 py-5 bg-[#cf5230] text-white font-black uppercase tracking-wider shadow-[0_4px_0_0_#111110] hover:shadow-none hover:translate-y-1 transition-all"
             >
               Book a Free Funnel Audit
               <ArrowRight className="w-5 h-5" />
@@ -365,7 +332,7 @@ const Services = () => {
       </section>
 
       {/* Layer 1: Offer Creation */}
-      <section id="layer-1" className="bg-gradient-to-b from-black to-brand-dark scroll-mt-32">
+      <section id="layer-1" className="bg-[#fafaf8] scroll-mt-32">
         <SystemLayerDetail
           number="01"
           title="The Offer."
@@ -409,7 +376,7 @@ const Services = () => {
       </section>
 
       {/* Layer 2: Landing Page + VSL */}
-      <section id="layer-2" className="bg-background border-t border-brand-orange/10 scroll-mt-32">
+      <section id="layer-2" className="bg-white border-t border-neutral-200 scroll-mt-32">
         <SystemLayerDetail
           number="02"
           title="Landing Page + VSL."
@@ -454,7 +421,7 @@ const Services = () => {
       </section>
 
       {/* Layer 3: GHL + Automation */}
-      <section id="layer-3" className="bg-background border-t border-brand-orange/10 scroll-mt-32">
+      <section id="layer-3" className="bg-[#fafaf8] border-t border-neutral-200 scroll-mt-32">
                   <SystemLayerDetail
             number="03"
             title="GHL Workspace Config."
@@ -557,33 +524,34 @@ const Services = () => {
       </section>
 
       {/* Five Layers Summary */}
-      <section className="py-20 bg-background pt-24 pb-12">
+      <section className="py-20 bg-[#fafaf8]">
         <div className="max-w-5xl mx-auto px-4">
           <ScrollReveal className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Five Layers. One Machine.
+            <h2 className="text-4xl md:text-5xl font-black text-[#111110] mb-4 uppercase tracking-tight">
+              Five Layers. <span className="text-[#cf5230]">One Machine.</span>
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-neutral-600 max-w-2xl mx-auto">
               Remove any one layer and the whole thing leaks. This is the complete system — in the exact sequence we build it.
             </p>
           </ScrollReveal>
 
           <div className="flex flex-wrap justify-center gap-4">
             {[
-                { num: '01', icon: <Target className="w-6 h-6 text-brand-orange" />, title: 'Offer Creation', desc: 'Before any ad spend' },
-                { num: '02', icon: <Video className="w-6 h-6 text-brand-orange" />, title: 'Funnel + VSL', desc: 'Pre-warms every lead' },
-                { num: '03', icon: <Zap className="w-6 h-6 text-brand-orange" />, title: 'GHL + Automation', desc: 'Zero cracks. Zero excuses.' },
-                { num: '04', icon: <Megaphone className="w-6 h-6 text-brand-orange" />, title: 'Meta Campaigns', desc: 'Turned on last' },
-                { num: '05', icon: <TrendingUp className="w-6 h-6 text-brand-orange" />, title: 'Conversion Loop', desc: 'Gets smarter every month' },
+                { num: '01', icon: <Target className="w-6 h-6 text-[#cf5230]" />, title: 'Offer Creation', desc: 'Before any ad spend' },
+                { num: '02', icon: <Video className="w-6 h-6 text-[#cf5230]" />, title: 'Funnel + VSL', desc: 'Pre-warms every lead' },
+                { num: '03', icon: <Zap className="w-6 h-6 text-[#cf5230]" />, title: 'GHL + Automation', desc: 'Zero cracks. Zero excuses.' },
+                { num: '04', icon: <Megaphone className="w-6 h-6 text-[#cf5230]" />, title: 'Meta Campaigns', desc: 'Turned on last' },
+                { num: '05', icon: <TrendingUp className="w-6 h-6 text-[#cf5230]" />, title: 'Conversion Loop', desc: 'Gets smarter every month' },
             ].map((layer, index) => (
               <ScrollReveal key={layer.num} delay={index * 0.1}>
                 <motion.div
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-background/50 border border-black/10 rounded-xl p-5 text-center min-w-[160px] cursor-pointer hover:border-brand-orange/30 transition-colors"
+                  whileHover={{ scale: 1.04, y: -4 }}
+                  className="bg-white border-2 border-neutral-200 p-5 text-center min-w-[160px] cursor-pointer hover:border-[#cf5230]/40 transition-colors"
                 >
                   <div className="flex justify-center mb-3">{layer.icon}</div>
-                  <div className="text-sm font-bold text-foreground mb-1">{layer.title}</div>
-                  <div className="text-xs text-gray-600">{layer.desc}</div>
+                  <div className="text-xs font-black text-[#cf5230] mb-1">{layer.num}</div>
+                  <div className="text-sm font-black text-[#111110] mb-1 uppercase tracking-tight">{layer.title}</div>
+                  <div className="text-xs text-neutral-600 font-medium">{layer.desc}</div>
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -597,7 +565,7 @@ const Services = () => {
       </section>
 
       {/* Guarantee Section */}
-      <section className="bg-gradient-to-b from-black to-brand-dark">
+      <section>
         <GuaranteeSection />
       </section>
 
