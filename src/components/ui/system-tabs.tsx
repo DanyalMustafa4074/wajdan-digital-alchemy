@@ -208,13 +208,14 @@ export const SystemProgressIndicator: React.FC<{ className?: string }> = ({ clas
   const { scrollYProgress } = useScroll();
   const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
+  // Sits above the navbar so it never collides with the sticky tab bar.
   return (
     <motion.div
-      className={cn("fixed top-[64px] left-0 right-0 h-1 bg-neutral-200 z-50", className)}
+      className={cn("fixed top-0 left-0 right-0 h-[3px] bg-transparent z-[60] pointer-events-none", className)}
     >
       <motion.div
         style={{ width }}
-        className="h-full bg-[#cf5230]"
+        className="h-full bg-[#cf5230] origin-left"
       />
     </motion.div>
   );

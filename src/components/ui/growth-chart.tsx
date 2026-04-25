@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ScrollReveal } from './scroll-reveal';
+import { TiltCard } from './tilt-card';
 
 /*
  * King-Kong-inspired growth comparison chart.
@@ -30,7 +31,8 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <div className="bg-white border-2 border-neutral-200 p-6 md:p-12 shadow-[8px_8px_0_0_#111110]">
+          <TiltCard intensity={4} lift={18}>
+          <div className="sd-reveal bg-white border-2 border-neutral-200 p-6 md:p-12 shadow-[8px_8px_0_0_#111110]">
             <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}>
               <svg
                 viewBox="0 0 800 450"
@@ -208,6 +210,7 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
               </div>
             </div>
           </div>
+          </TiltCard>
         </ScrollReveal>
       </div>
     </section>

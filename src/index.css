@@ -250,6 +250,123 @@
   background: linear-gradient(90deg, transparent, #cf5230, transparent);
 }
 
+/*
+ * Modern web-animation APIs — progressive enhancements.
+ *
+ * Browsers without support fall through framer-motion's IntersectionObserver
+ * reveals, so the page never goes "blank" on Safari/Firefox.
+ */
+
+/* Scroll-driven page progress (Chromium 115+) */
+@supports (animation-timeline: scroll()) {
+  @keyframes sd-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .sd-progress {
+    transform-origin: 0 50%;
+    animation: sd-progress linear forwards;
+    animation-timeline: scroll(root);
+  }
+
+  /* Reveal-on-enter using view-timeline */
+  @keyframes sd-fade-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes sd-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .sd-reveal {
+    animation: sd-fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  .sd-reveal-fade {
+    animation: sd-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+  }
+
+  /* Section pin-and-scale for hero focal text */
+  @keyframes sd-hero-zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+  }
+
+  .sd-hero-zoom {
+    animation: sd-hero-zoom linear both;
+    animation-timeline: view();
+    animation-range: cover 0% exit 100%;
+  }
+}
+
+/* View Transitions API — cross-document & SPA */
+@supports (view-transition-name: none) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  ::view-transition-old(root) {
+    animation-name: vt-fade-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: vt-fade-in;
+  }
+
+  @keyframes vt-fade-out {
+    to { opacity: 0; transform: translateY(-12px); }
+  }
+  @keyframes vt-fade-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Named element continuity across pages */
+  .vt-logo { view-transition-name: wajdan-logo; }
+  .vt-hero-headline { view-transition-name: hero-headline; }
+  .vt-cta { view-transition-name: hero-cta; }
+}
+
+/* Native popover entry animation via @starting-style (Chromium 117+, Safari 17.4+) */
+[popover] {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+[popover]:popover-open {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease, overlay 0.25s ease allow-discrete, display 0.25s ease allow-discrete;
+}
+
+[popover] {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, overlay 0.25s ease allow-discrete, display 0.25s ease allow-discrete;
+}
+
+@starting-style {
+  [popover]:popover-open {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* 3D perspective root for tilt cards */
+.tilt-stage {
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+}
+
 /* Logo marquee — duplicated track gives seamless loop at -50% */
 @keyframes marquee-left {
   0% { transform: translateX(0); }

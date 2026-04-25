@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from './scroll-reveal';
 import { ArrowRight, Trophy, Target, CheckCircle, AlertCircle, ShieldAlert, BadgeCheck, Facebook, Instagram, Youtube, Plus, Smartphone, Zap, Monitor, Globe, BarChart3, Database } from 'lucide-react';
+import { TiltCard } from './tilt-card';
 
 export const ProofSection = () => {
   const metrics = [
@@ -38,17 +39,19 @@ export const ProofSection = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {metrics.map((m, i) => (
             <ScrollReveal key={m.value} delay={0.1 * (i + 1)}>
-              <div className="bg-white border-2 border-neutral-200 p-10 shadow-[8px_8px_0_0_#cf5230] relative overflow-hidden group hover:-translate-y-2 transition-all duration-300">
-                <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-7xl font-black text-[#cf5230] uppercase tracking-tighter">{m.value}</h3>
-                  <div className="text-neutral-300 group-hover:text-[#cf5230] transition-colors">{m.icon}</div>
+              <TiltCard intensity={6} lift={20} className="h-full">
+                <div className="bg-white border-2 border-neutral-200 p-10 shadow-[8px_8px_0_0_#cf5230] relative overflow-hidden group h-full">
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className="text-7xl font-black text-[#cf5230] uppercase tracking-tighter">{m.value}</h3>
+                    <div className="text-neutral-300 group-hover:text-[#cf5230] transition-colors">{m.icon}</div>
+                  </div>
+
+                  <p className="text-2xl font-black text-[#111110] mb-6 uppercase tracking-tight">{m.title}</p>
+                  <div className="h-1 w-16 bg-[#cf5230] mb-6" />
+
+                  <p className="text-neutral-600 font-medium text-lg italic leading-relaxed">{m.quote}</p>
                 </div>
-
-                <p className="text-2xl font-black text-[#111110] mb-6 uppercase tracking-tight">{m.title}</p>
-                <div className="h-1 w-16 bg-[#cf5230] mb-6" />
-
-                <p className="text-neutral-600 font-medium text-lg italic leading-relaxed">{m.quote}</p>
-              </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

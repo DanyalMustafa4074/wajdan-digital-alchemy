@@ -43,100 +43,110 @@ const Index = () => {
       <ComparisonTable />
 
       {/* The Bricks vs House Story */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4">
-          <ScrollReveal className="text-center mb-12">
-            <p className="text-[#cf5230] mb-4 font-bold tracking-[0.2em] uppercase text-sm">The Complete System</p>
-            <h2 className="text-4xl md:text-6xl font-black text-[#111110] mb-6 uppercase tracking-tight">
+      <section className="py-32 bg-[#fafaf8] relative overflow-hidden border-y-2 border-neutral-200">
+        <div className="max-w-6xl mx-auto px-4">
+          
+          <ScrollReveal className="text-center mb-16">
+            <p className="text-[#cf5230] font-bold tracking-[0.2em] uppercase text-sm mb-4">The Complete System</p>
+            <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-black text-[#111110] uppercase tracking-tighter leading-[0.85] mb-8">
               Bricks <span className="text-[#cf5230]">≠</span> House
             </h2>
-            <div className="flex items-center justify-center gap-4 text-[#111110] text-lg font-black uppercase tracking-tight">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-[#111110] text-lg md:text-2xl font-black uppercase tracking-tight py-6 border-y-2 border-neutral-200 max-w-3xl mx-auto">
               <span>5 layers</span>
-              <Star className="w-4 h-4 text-[#cf5230] fill-[#cf5230]" />
+              <Star className="w-6 h-6 text-[#cf5230] fill-[#cf5230]" />
               <span>1 system</span>
-              <Star className="w-4 h-4 text-[#cf5230] fill-[#cf5230]" />
+              <Star className="w-6 h-6 text-[#cf5230] fill-[#cf5230]" />
               <span>0 gaps</span>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            
+            {/* The Problem Narrative */}
             <ScrollReveal delay={0.1}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                className="bg-[#fafaf8] border-2 border-neutral-200 p-8 text-center h-full shadow-[8px_8px_0_0_#111110]"
-              >
-                <div className="text-6xl mb-4">🧱</div>
-                <h3 className="text-2xl font-black text-[#111110] mb-4 uppercase tracking-tight">What You Got</h3>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {['Traffic', 'Leads', 'Reports'].map((item, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="px-3 py-1 bg-white border border-neutral-300 text-neutral-600 text-sm font-bold"
-                    >
-                      {item}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
+               <h3 className="text-4xl md:text-5xl font-black text-[#cf5230] uppercase tracking-tighter leading-[0.9] mb-8">
+                 You paid for bricks.<br/>
+                 <span className="text-[#111110]">You needed a house.</span>
+               </h3>
+               
+               <div className="space-y-6 text-lg font-medium text-neutral-600 leading-relaxed">
+                 <p className="text-2xl font-bold text-[#111110] leading-tight">
+                   Here's something nobody in this industry wants to say out loud.
+                 </p>
+                 
+                 <p>Most agencies sell you services the exact same way a builder sells you bricks.</p>
+                 
+                 <p className="italic">
+                   "Here are your Facebook ads. Here is your SEO. Here is a landing page. Good luck with the house."
+                 </p>
+                 
+                 <p>
+                   The leads come in, but nothing was built to catch them, qualify them, follow them up, pre-nurture them, or guarantee they show up ready to buy.
+                 </p>
+                 
+                 <p className="text-[#111110] font-bold text-xl uppercase tracking-tight">
+                   The problem isn't the bricks. <br/> <span className="text-[#cf5230]">It's that nobody built the house.</span>
+                 </p>
+                 
+                 <div className="p-6 bg-[#111110] text-white border-l-4 border-[#cf5230] mt-8 shadow-[6px_6px_0_0_#cf5230]">
+                   <p className="text-base font-semibold italic text-neutral-300">
+                     "The leads are coming in. Why isn't anyone booking?"
+                   </p>
+                   <p className="mt-3 text-lg font-black uppercase tracking-wide text-[#cf5230]">
+                     Because the system that converts them was never actually built.
+                   </p>
+                 </div>
+               </div>
             </ScrollReveal>
 
+            {/* The Solution Architecture */}
             <ScrollReveal delay={0.2}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                className="bg-[#111110] text-white p-8 text-center h-full shadow-[8px_8px_0_0_#cf5230]"
-              >
-                <div className="flex items-center justify-center">
-                  <RocketAnimation size={96} className="mx-auto mb-4" />
-                </div>
-                <h3 className="text-2xl font-black text-[#cf5230] mb-4 uppercase tracking-tight">What You Need</h3>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {['Offer', 'Funnel', 'CRM', 'Automation', 'Ads'].map((item, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="px-3 py-1 bg-[#cf5230]/15 text-[#cf5230] text-sm font-bold border border-[#cf5230]/40"
-                    >
-                      {item}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
+               <div className="relative group">
+                  <div className="absolute inset-0 bg-[#cf5230] transform translate-x-4 translate-y-4 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
+                  <div className="relative bg-white border-2 border-neutral-200 p-8 md:p-12 z-10 flex flex-col items-center text-center">
+                     
+                     <div className="bg-[#fafaf8] p-6 rounded-full border-2 border-neutral-100 mb-8 shadow-sm">
+                       <TargetAnimation size={100} />
+                     </div>
+                     
+                     <h4 className="text-4xl font-black text-[#111110] uppercase tracking-tighter mb-4 leading-none">
+                       Wajdan Builds<br/>The System
+                     </h4>
+                     
+                     <p className="text-neutral-600 font-medium mb-10 text-base">
+                       We don't sell disconnected services. We build a single, ruthless growth architecture that runs from the first ad impression to the final closed deal. Remove one layer, and the whole thing leaks.
+                     </p>
+                     
+                     <div className="w-full space-y-3">
+                       {[
+                         { title: 'The Offer', text: 'Filter time-wasters immediately', Anim: TargetAnimation },
+                         { title: 'The Funnel', text: 'Capture and segment intent', Anim: FunnelAnimation },
+                         { title: 'The Automation', text: 'Trigger instant SMS/Email follow-up', Anim: ZapAnimation },
+                         { title: 'The Sales VSL', text: 'Pre-nurture trust before the call', Anim: MegaphoneAnimation },
+                         { title: 'The Traffic', text: 'Feed data back into Meta algorithm', Anim: ChartAnimation }
+                       ].map((layer, idx) => (
+                         <div key={idx} className="flex flex-col items-start p-4 bg-[#fafaf8] border-2 border-neutral-200 group-hover:border-[#cf5230]/40 transition-colors relative overflow-hidden shadow-[4px_4px_0_0_transparent] hover:shadow-[4px_4px_0_0_#cf5230] hover:-translate-y-1 duration-200 cursor-default">
+                           <div className="flex items-center gap-4 w-full relative z-10">
+                             <div className="w-14 h-14 bg-white rounded-xl shadow-sm border border-neutral-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                               <layer.Anim size={44} loop={true} autoplay={true} />
+                             </div>
+                             <div className="text-left">
+                               <span className="block font-black text-[#111110] uppercase tracking-wide text-sm md:text-base leading-tight">
+                                 {layer.title}
+                               </span>
+                               <span className="block text-[#cf5230] text-xs font-bold uppercase tracking-wider mt-1">
+                                 {layer.text}
+                               </span>
+                             </div>
+                           </div>
+                         </div>
+                       ))}
+                     </div>
+                     
+                  </div>
+               </div>
             </ScrollReveal>
           </div>
-
-          <ScrollReveal delay={0.25} className="mb-12">
-            <AnimatedHeroIcons className="py-8" />
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.3} className="text-center">
-            <motion.div
-              className="bg-[#fafaf8] border-2 border-neutral-200 p-8 shadow-[8px_8px_0_0_#cf5230]"
-            >
-              <div className="flex items-center justify-center">
-                <SuccessAnimation size={80} className="mx-auto mb-4" />
-              </div>
-              <p className="text-xl text-neutral-600 mb-2 font-bold uppercase tracking-wide">Wajdan builds</p>
-              <motion.p
-                className="text-3xl md:text-4xl text-[#cf5230] font-black mb-4 uppercase tracking-tight"
-                animate={{ scale: [1, 1.02, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                The Complete System
-              </motion.p>
-              <div className="flex items-center justify-center gap-4 text-[#111110] text-lg font-black uppercase tracking-tight">
-                <span>5 layers</span>
-                <Star className="w-4 h-4 text-[#cf5230] fill-[#cf5230]" />
-                <span>1 system</span>
-                <Star className="w-4 h-4 text-[#cf5230] fill-[#cf5230]" />
-                <span>0 gaps</span>
-              </div>
-            </motion.div>
-          </ScrollReveal>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { UrgencyPopover } from "@/components/ui/urgency-popover";
 
 export const WajdanHero = () => {
   return (
@@ -17,7 +18,7 @@ export const WajdanHero = () => {
         </div>
 
         {/* Main Headline - Maximum Impact King Kong Style */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-foreground max-w-5xl tracking-tighter leading-[1.05] mb-6 animate-slide-up animation-delay-100 uppercase">
+        <h1 className="vt-hero-headline text-4xl md:text-6xl lg:text-7xl font-black text-foreground max-w-5xl tracking-tighter leading-[1.05] mb-6 animate-slide-up animation-delay-100 uppercase">
           We Build The Most <span className="text-[#cf5230]">Ruthless & Effective System</span> for Rapid Scaling of Consultation Firms on Planet Earth <span className="text-gray-400 line-through decoration-red-600">— In 60 Days.</span>
         </h1>
 
@@ -66,13 +67,18 @@ export const WajdanHero = () => {
             </DialogContent>
           </Dialog>
 
-          <a 
-            href="#contact" 
-            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-5 text-lg font-bold text-white bg-[#111110] shadow-[0_4px_0_0_#cf5230] hover:bg-[#cf5230] hover:shadow-none hover:translate-y-1 transition-all uppercase tracking-wide"
+          <a
+            href="#contact"
+            className="vt-cta group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-5 text-lg font-bold text-white bg-[#111110] shadow-[0_4px_0_0_#cf5230] hover:bg-[#cf5230] hover:shadow-none hover:translate-y-1 transition-all uppercase tracking-wide"
           >
             <span>Show Me What's Broken — Free</span>
             <ArrowRight className="w-5 h-5" />
           </a>
+        </div>
+
+        {/* Native popover urgency notice */}
+        <div className="mb-12 -mt-4 animate-slide-up animation-delay-300">
+          <UrgencyPopover />
         </div>
 
         {/* Trust Indicators */}

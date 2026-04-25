@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ScrollReveal } from './scroll-reveal';
 import { Check, ArrowRight, Zap, Target, Flame } from 'lucide-react';
+import { TiltCard } from './tilt-card';
 
 interface PricingTier {
   name: string;
@@ -92,12 +93,18 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
       <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 relative z-10">
         {pricingTiers.map((tier, index) => (
           <ScrollReveal key={tier.name} delay={index * 0.1} className="flex">
+            <TiltCard
+              intensity={tier.popular ? 5 : 4}
+              lift={tier.popular ? 24 : 12}
+              gloss={tier.popular}
+              className={cn('w-full', tier.popular && 'lg:-translate-y-4')}
+            >
             <motion.div
               className={cn(
-                'relative w-full p-8 md:p-10 flex flex-col transition-all duration-300',
+                'relative w-full p-8 md:p-10 flex flex-col transition-all duration-300 h-full',
                 tier.popular
-                  ? 'bg-[#111110] border-2 border-[#cf5230] shadow-[8px_8px_0_0_#cf5230] lg:-translate-y-4'
-                  : 'bg-white border-2 border-neutral-200 hover:border-[#cf5230]/40 hover:-translate-y-1'
+                  ? 'bg-[#111110] border-2 border-[#cf5230] shadow-[8px_8px_0_0_#cf5230]'
+                  : 'bg-white border-2 border-neutral-200'
               )}
             >
               {tier.badge && (
@@ -199,6 +206,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
                 <ArrowRight className="w-5 h-5 ml-2" strokeWidth={3} />
               </motion.a>
             </motion.div>
+            </TiltCard>
           </ScrollReveal>
         ))}
       </div>

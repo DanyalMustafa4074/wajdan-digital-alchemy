@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { TransitionLink } from "@/components/ui/transition-link";
 
 function WajdanNavbar({ className }: { className?: string }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,7 +40,7 @@ function WajdanNavbar({ className }: { className?: string }) {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between">
-            <a href="/" className="flex items-center gap-2 group" aria-label="Home">
+            <TransitionLink to="/" className="flex items-center gap-2 group vt-logo" aria-label="Home">
               <motion.img
                 src="/Wajdan%20Logo%20light.png"
                 alt="Wajdan"
@@ -47,25 +48,25 @@ function WajdanNavbar({ className }: { className?: string }) {
                 whileHover={{ scale: 1.04 }}
                 transition={{ type: 'spring', stiffness: 400 }}
               />
-            </a>
+            </TransitionLink>
 
             <nav className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <a
+                <TransitionLink
                   key={item.name}
-                  href={item.url}
+                  to={item.url}
                   className="text-neutral-700 hover:text-[#111110] transition-colors text-sm font-bold relative group uppercase tracking-wide"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#cf5230] transition-all group-hover:w-full" />
-                </a>
+                </TransitionLink>
               ))}
 
               <motion.a
-                href="#contact"
+                href="/#contact"
                 whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.96 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#111110] text-white text-sm font-black uppercase tracking-wider shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1 transition-all"
+                className="vt-cta inline-flex items-center gap-2 px-5 py-2.5 bg-[#111110] text-white text-sm font-black uppercase tracking-wider shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1 transition-all"
               >
                 Book Free Audit
                 <ArrowRight className="w-4 h-4" />
@@ -94,17 +95,17 @@ function WajdanNavbar({ className }: { className?: string }) {
           >
             <nav className="flex flex-col p-6 space-y-2">
               {navItems.map((item) => (
-                <a
+                <TransitionLink
                   key={item.name}
-                  href={item.url}
+                  to={item.url}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="hover:bg-white transition-colors text-base font-bold uppercase tracking-wide py-3 px-4 rounded-lg text-[#111110] min-h-[48px] flex items-center"
                 >
                   {item.name}
-                </a>
+                </TransitionLink>
               ))}
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 px-6 py-4 bg-[#111110] text-white font-black uppercase tracking-wider mt-4 shadow-[0_4px_0_0_#cf5230] min-h-[56px] text-base"
               >
