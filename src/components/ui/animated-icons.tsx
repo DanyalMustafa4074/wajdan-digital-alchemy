@@ -1,33 +1,11 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
 const LottieComponent = (Lottie as any).default || Lottie;
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import {
-  targetAnimationData,
-  funnelAnimationData,
-  automationAnimationData,
-  megaphoneAnimationData,
-  chartAnimationData,
-  successAnimationData,
-  rocketAnimationData
-} from './lottie-icons';
 
-// ==========================================
-// PREMIUM LOTTIE ANIMATIONS FOR WAJDAN
-// Reusing animation data from lottie-icons
-// ==========================================
-
-// Use animation data from lottie-icons
-const rocketAnimation = rocketAnimationData;
-const targetAnimation = targetAnimationData;
-const chartAnimation = chartAnimationData;
-const zapAnimation = automationAnimationData;
-const funnelAnimation = funnelAnimationData;
-const successAnimation = successAnimationData;
-const megaphoneAnimation = megaphoneAnimationData;
 // ==========================================
 // ANIMATION COMPONENTS
 // ==========================================
@@ -39,51 +17,16 @@ interface AnimatedIconProps {
   autoplay?: boolean;
 }
 
-export const RocketAnimation: React.FC<AnimatedIconProps> = ({ className, size = 80, loop = true, autoplay = true }) => {
-  return (
-    <motion.div
-      className={cn('relative flex items-center justify-center', className)}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{ width: size, height: size, minWidth: size, minHeight: size }}
-    >
-      <LottieComponent
-        animationData={rocketAnimation}
-        loop={loop}
-        autoplay={autoplay}
-        style={{ width: '100%', height: '100%' }}
-        rendererSettings={{
-          preserveAspectRatio: 'xMidYMid slice'
-        }}
-      />
-    </motion.div>
-  );
-}
+const BaseAnimation: React.FC<AnimatedIconProps & { path: string }> = ({ path, className, size = 80, loop = true, autoplay = true }) => {
+  const [animationData, setAnimationData] = useState<any>(null);
 
-export const TargetAnimation: React.FC<AnimatedIconProps> = ({ className, size = 80, loop = true, autoplay = true }) => {
-  return (
-    <motion.div
-      className={cn('relative flex items-center justify-center', className)}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{ width: size, height: size, minWidth: size, minHeight: size }}
-    >
-      <LottieComponent
-        animationData={targetAnimation}
-        loop={loop}
-        autoplay={autoplay}
-        style={{ width: '100%', height: '100%' }}
-        rendererSettings={{
-          preserveAspectRatio: 'xMidYMid slice'
-        }}
-      />
-    </motion.div>
-  );
-}
+  useEffect(() => {
+    fetch(path)
+      .then(res => res.json())
+      .then(data => setAnimationData(data))
+      .catch(err => console.error('Failed to load animation:', path, err));
+  }, [path]);
 
-export const ChartAnimation: React.FC<AnimatedIconProps> = ({ className, size = 80, loop = true, autoplay = true }) => {
   return (
     <motion.div
       className={cn('relative flex items-center justify-center', className)}
@@ -92,106 +35,29 @@ export const ChartAnimation: React.FC<AnimatedIconProps> = ({ className, size = 
       transition={{ duration: 0.5 }}
       style={{ width: size, height: size, minWidth: size, minHeight: size }}
     >
-      <LottieComponent
-        animationData={chartAnimation}
-        loop={loop}
-        autoplay={autoplay}
-        style={{ width: '100%', height: '100%' }}
-        rendererSettings={{
-          preserveAspectRatio: 'xMidYMid slice'
-        }}
-      />
+      {animationData && (
+        <LottieComponent
+          animationData={animationData}
+          loop={loop}
+          autoplay={autoplay}
+          style={{ width: '100%', height: '100%' }}
+          rendererSettings={{
+            preserveAspectRatio: 'xMidYMid slice'
+          }}
+        />
+      )}
     </motion.div>
   );
-}
+};
 
-export const ZapAnimation: React.FC<AnimatedIconProps> = ({ className, size = 80, loop = true, autoplay = true }) => {
-  return (
-    <motion.div
-      className={cn('relative flex items-center justify-center', className)}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{ width: size, height: size, minWidth: size, minHeight: size }}
-    >
-      <LottieComponent
-        animationData={zapAnimation}
-        loop={loop}
-        autoplay={autoplay}
-        style={{ width: '100%', height: '100%' }}
-        rendererSettings={{
-          preserveAspectRatio: 'xMidYMid slice'
-        }}
-      />
-    </motion.div>
-  );
-}
+export const RocketAnimation: React.FC<AnimatedIconProps> = (props) => <BaseAnimation path="/animations/rocket.json" {...props} />;
+export const TargetAnimation: React.FC<AnimatedIconProps> = (props) => <BaseAnimation path="/animations/target.json" {...props} />;
+export const ChartAnimation: React.FC<AnimatedIconProps> = (props) => <BaseAnimation path="/animations/chart.json" {...props} />;
+export const ZapAnimation: React.FC<AnimatedIconProps> = (props) => <BaseAnimation path="/animations/zap.json" {...props} />;
+export const FunnelAnimation: React.FC<AnimatedIconProps> = (props) => <BaseAnimation path="/animations/funnel.json" {...props} />;
+export const SuccessAnimation: React.FC<AnimatedIconProps> = (props) => <BaseAnimation path="/animations/success.json" {...props} />;
+export const MegaphoneAnimation: React.FC<AnimatedIconProps> = (props) => <BaseAnimation path="/animations/megaphone.json" {...props} />;
 
-export const FunnelAnimation: React.FC<AnimatedIconProps> = ({ className, size = 80, loop = true, autoplay = true }) => {
-  return (
-    <motion.div
-      className={cn('relative flex items-center justify-center', className)}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{ width: size, height: size, minWidth: size, minHeight: size }}
-    >
-      <LottieComponent
-        animationData={funnelAnimation}
-        loop={loop}
-        autoplay={autoplay}
-        style={{ width: '100%', height: '100%' }}
-        rendererSettings={{
-          preserveAspectRatio: 'xMidYMid slice'
-        }}
-      />
-    </motion.div>
-  );
-}
-
-export const SuccessAnimation: React.FC<AnimatedIconProps> = ({ className, size = 80, loop = true, autoplay = true }) => {
-  return (
-    <motion.div
-      className={cn('relative flex items-center justify-center', className)}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{ width: size, height: size, minWidth: size, minHeight: size }}
-    >
-      <LottieComponent
-        animationData={successAnimation}
-        loop={loop}
-        autoplay={autoplay}
-        style={{ width: '100%', height: '100%' }}
-        rendererSettings={{
-          preserveAspectRatio: 'xMidYMid slice'
-        }}
-      />
-    </motion.div>
-  );
-}
-
-export const MegaphoneAnimation: React.FC<AnimatedIconProps> = ({ className, size = 80, loop = true, autoplay = true }) => {
-  return (
-    <motion.div
-      className={cn('relative flex items-center justify-center', className)}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{ width: size, height: size, minWidth: size, minHeight: size }}
-    >
-      <LottieComponent
-        animationData={megaphoneAnimation}
-        loop={loop}
-        autoplay={autoplay}
-        style={{ width: '100%', height: '100%' }}
-        rendererSettings={{
-          preserveAspectRatio: 'xMidYMid slice'
-        }}
-      />
-    </motion.div>
-  );
-}
 
 // ==========================================
 // ANIMATED HERO ICONS SECTION

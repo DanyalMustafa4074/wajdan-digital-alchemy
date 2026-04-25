@@ -43,7 +43,7 @@ function WajdanNavbar({ className }: { className?: string }) {
               <motion.img
                 src="/Wajdan%20Logo%20light.png"
                 alt="Wajdan"
-                className="h-8 md:h-10 w-auto invert contrast-100"
+                className="h-8 md:h-10 w-auto"
                 whileHover={{ scale: 1.04 }}
                 transition={{ type: 'spring', stiffness: 400 }}
               />
