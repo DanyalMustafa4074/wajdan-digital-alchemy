@@ -22,17 +22,45 @@ const colorOrange = "#cf5230";
 export const TargetAnimation: React.FC<AnimatedIconProps> = ({ size = 80, className }) => (
   <motion.div className={cn('relative flex items-center justify-center', className)} style={{ width: size, height: size }}>
     <svg width="100%" height="100%" viewBox="0 0 100 100" overflow="visible">
-      <circle cx="50" cy="50" r="40" stroke={colorDark} strokeWidth="4" fill="none" opacity={0.2} />
-      <circle cx="50" cy="50" r="25" stroke={colorOrange} strokeWidth="4" fill="none" opacity={0.4} />
+      {/* Target Base - Organic Concentric Circles */}
+      <circle cx="50" cy="50" r="40" stroke={colorDark} strokeWidth="2" fill="none" opacity={0.15} />
+      <circle cx="50" cy="50" r="30" stroke={colorOrange} strokeWidth="3" fill="none" opacity={0.3} />
+      <motion.circle cx="50" cy="50" r="20" stroke={colorOrange} strokeWidth="4" fill="none" opacity={0.5}
+        animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0.7, 0.5] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+      />
+      
+      {/* Bullseye reacting to the hit */}
       <motion.circle cx="50" cy="50" r="10" fill={colorOrange}
-        animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }} />
-      <motion.path d="M 95 5 L 56 44" stroke={colorDark} strokeWidth="5" strokeLinecap="round"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: [0, 1, 1], opacity: [0, 1, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: "easeOut", times: [0, 0.4, 1] }} />
-      <motion.path d="M 56 44 L 65 40 M 56 44 L 60 53" stroke={colorDark} strokeWidth="4" strokeLinecap="round" fill="none"
-        initial={{ opacity: 0 }} animate={{ opacity: [0, 1, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: "easeOut", times: [0, 0.4, 1] }} />
+        animate={{ 
+          scale: [1, 1, 1.5, 1, 1],
+          filter: ["brightness(1)", "brightness(1)", "brightness(1.5)", "brightness(1)", "brightness(1)"]
+        }} 
+        transition={{ repeat: Infinity, duration: 2, times: [0, 0.15, 0.2, 0.4, 1] }} 
+      />
+      
+      {/* Arrow flying in aggressively from top-right */}
+      <motion.g
+        initial={{ x: 60, y: -60, opacity: 0, scale: 0.5 }}
+        animate={{ 
+          x: [60, 0, 0, 0], 
+          y: [-60, 0, 0, 0], 
+          opacity: [0, 1, 1, 0],
+          scale: [0.5, 1, 1, 0.8]
+        }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 2, 
+          times: [0, 0.15, 0.8, 1], 
+          ease: [0.23, 1, 0.32, 1] // Aggressive snap
+        }}
+      >
+        <path d="M 40 -40 L 0 0" stroke={colorDark} strokeWidth="5" strokeLinecap="round" transform="translate(50, 50)" />
+        <path d="M 0 0 L 8 -4 M 0 0 L 4 -8" stroke={colorDark} strokeWidth="4" strokeLinecap="round" fill="none" transform="translate(50, 50)" />
+        
+        {/* Fletching/Feathers for the arrow */}
+        <path d="M 32 -32 L 42 -36 M 35 -35 L 45 -31" stroke={colorDark} strokeWidth="3" strokeLinecap="round" opacity={0.6} transform="translate(50, 50)" />
+      </motion.g>
     </svg>
   </motion.div>
 );
@@ -136,22 +164,41 @@ export const RocketAnimation: React.FC<AnimatedIconProps> = ({ size = 80, classN
 export const SuccessAnimation: React.FC<AnimatedIconProps> = ({ size = 80, className }) => (
   <motion.div className={cn('relative flex items-center justify-center', className)} style={{ width: size, height: size }}>
     <svg width="100%" height="100%" viewBox="0 0 100 100" overflow="visible">
-      {/* Circle draws first */}
-      <motion.circle cx="50" cy="50" r="40" stroke={colorOrange} strokeWidth="5" fill="none"
-        initial={{ pathLength: 0, opacity: 0 }} 
+      {/* Circle draws first - Organic feel */}
+      <motion.circle 
+        cx="50" cy="50" r="40" 
+        stroke={colorOrange} strokeWidth="5" fill="none"
+        strokeLinecap="round"
+        initial={{ pathLength: 0, pathOffset: 0 }} 
         animate={{ 
-          pathLength: [0, 1, 1, 1], 
-          opacity: [0, 1, 1, 0] 
+          pathLength: [0, 1, 1, 1],
+          opacity: [1, 1, 1, 0]
         }} 
-        transition={{ repeat: Infinity, duration: 3, times: [0, 0.4, 0.8, 1], ease: "easeInOut" }} />
+        transition={{ 
+          repeat: Infinity, 
+          duration: 3, 
+          times: [0, 0.4, 0.8, 1], 
+          ease: "easeInOut" 
+        }} 
+      />
       {/* Checkmark snaps right after circle starts */}
-      <motion.path d="M 30 50 L 45 65 L 70 35" stroke={colorDark} strokeWidth="7" fill="none" strokeLinecap="round" strokeLinejoin="round"
-        initial={{ pathLength: 0, opacity: 0 }} 
+      <motion.path 
+        d="M 30 52 L 45 67 L 72 38" 
+        stroke={colorDark} strokeWidth="8" fill="none" 
+        strokeLinecap="round" strokeLinejoin="round"
+        initial={{ pathLength: 0, scale: 0.8 }} 
         animate={{ 
-          pathLength: [0, 0, 1, 1], 
-          opacity: [0, 0, 1, 0] 
+          pathLength: [0, 0, 1, 1],
+          scale: [0.8, 0.8, 1.1, 1, 1],
+          opacity: [0, 0, 1, 1, 0]
         }} 
-        transition={{ repeat: Infinity, duration: 3, times: [0, 0.3, 0.5, 1], ease: "easeOut" }} />
+        transition={{ 
+          repeat: Infinity, 
+          duration: 3, 
+          times: [0, 0.35, 0.5, 0.8, 1], 
+          ease: "easeOut" 
+        }} 
+      />
     </svg>
   </motion.div>
 );
