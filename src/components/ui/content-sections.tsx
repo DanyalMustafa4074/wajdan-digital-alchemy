@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from './scroll-reveal';
-import { ArrowRight, Trophy, Target, CheckCircle, AlertCircle, ShieldAlert, BadgeCheck } from 'lucide-react';
+import { ArrowRight, Trophy, Target, CheckCircle, AlertCircle, ShieldAlert, BadgeCheck, Facebook, Instagram, Youtube, Plus, Smartphone, Zap, Monitor, Globe, BarChart3, Database } from 'lucide-react';
 
 export const ProofSection = () => {
   const metrics = [
@@ -132,9 +132,7 @@ export const RequirementsSection = () => {
   return null;
 };
 
-// Note: Lucide icons added for Facebook, Instagram, Youtube, Target, Plus, Smartphone, Zap
-import { Facebook, Instagram, Youtube, Target, Plus, Smartphone, Zap, Monitor, Globe, BarChart3, Database } from "lucide-react";
-
+// Note: Lucide icons for background animation
 const FloatingLogo = ({
   icon: Icon,
   color,
