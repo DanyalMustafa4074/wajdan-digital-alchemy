@@ -52,9 +52,9 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
         <ScrollReveal delay={0.3}>
           <motion.div
             whileHover={{ scale: 1.01 }}
-            className="bg-[#1a1a18] border-2 border-[#cf5230]/50 p-8 md:p-12 mb-12 relative overflow-hidden"
+            className="bg-[#1a1a18] border-2 border-[#cf5230]/50 p-8 md:p-12 mt-8 mb-12 relative"
           >
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-[#cf5230] text-white text-xs font-black uppercase tracking-widest shadow-lg">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-[#cf5230] text-white text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">
               The 60-Day Commitment
             </div>
 

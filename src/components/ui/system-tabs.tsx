@@ -140,8 +140,8 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
         className
       )}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-nowrap overflow-x-auto hide-scrollbar sm:justify-center items-center gap-2 md:gap-3 py-4 scroll-smooth px-4 w-full after:content-[''] after:w-4 after:shrink-0 sm:after:hidden">
+      <div className="max-w-6xl mx-auto w-full">
+        <div className="flex flex-nowrap overflow-x-auto hide-scrollbar lg:justify-center items-center justify-start gap-2 md:gap-3 py-4 scroll-smooth px-4 w-full after:content-[''] after:w-4 after:shrink-0 lg:after:hidden">
           {systemTabs.map((tab, index) => {
             const IconComponent = tab.IconComponent;
             return (
@@ -169,19 +169,19 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
                   />
                 )}
                 
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
                   {/* Lottie Icon */}
-                  <span className="hidden md:block">
+                  <span className="hidden md:block flex-shrink-0">
                     <IconComponent size={24} />
                   </span>
                   <span className={cn(
-                    "font-black",
+                    "font-black flex-shrink-0",
                     activeTab === tab.id ? "text-white" : "text-[#cf5230]"
                   )}>
                     {tab.num}
                   </span>
-                  <span className="hidden sm:inline">—</span>
-                  <span className="hidden sm:inline">{tab.label}</span>
+                  <span className="hidden sm:inline flex-shrink-0">—</span>
+                  <span className="hidden sm:inline flex-shrink-0">{tab.label}</span>
                 </span>
 
                 {/* Pulsing dot for active */}

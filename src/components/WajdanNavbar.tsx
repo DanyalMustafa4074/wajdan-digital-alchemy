@@ -41,9 +41,9 @@ function WajdanNavbar({ className }: { className?: string }) {
           <div className="flex items-center justify-between">
             <a href="/" className="flex items-center gap-2 group" aria-label="Home">
               <motion.img
-                src="/Wajdan Logo light.png"
+                src="/Wajdan%20Logo%20light.png"
                 alt="Wajdan"
-                className="h-8 md:h-10 w-auto"
+                className="h-8 md:h-10 w-auto invert contrast-100"
                 whileHover={{ scale: 1.04 }}
                 transition={{ type: 'spring', stiffness: 400 }}
               />

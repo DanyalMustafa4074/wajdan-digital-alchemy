@@ -126,8 +126,8 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
         </p>
       </ScrollReveal>
 
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-nowrap overflow-x-auto hide-scrollbar sm:justify-center items-center gap-3 mb-12 py-4 px-4 w-full after:content-[''] after:w-4 after:shrink-0 sm:after:hidden">
+      <div className="max-w-6xl mx-auto w-full">
+        <div className="flex flex-nowrap overflow-x-auto hide-scrollbar lg:justify-center items-center justify-start gap-3 mb-12 py-4 px-4 w-full after:content-[''] after:w-4 after:shrink-0 lg:after:hidden">
           {systemLayers.map((layer) => {
             const isActive = activeLayer === layer.number;
             return (
@@ -135,7 +135,7 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                 key={layer.number}
                 onClick={() => setActiveLayer(layer.number)}
                 className={cn(
-                  'relative flex shrink-0 items-center gap-3 px-5 py-3 rounded-full border-2 transition-all',
+                  'relative flex shrink-0 items-center justify-center gap-3 px-5 py-3 rounded-full border-2 transition-all whitespace-nowrap',
                   isActive
                     ? 'bg-[#cf5230] border-[#cf5230] text-white shadow-[0_4px_0_0_#111110]'
                     : 'bg-white border-neutral-200 text-neutral-600 hover:border-[#cf5230]/40'
@@ -143,8 +143,8 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="text-sm font-black tracking-wider">{layer.number}</span>
-                <span className="font-bold uppercase tracking-tight text-sm">{layer.title}</span>
+                <span className="text-sm font-black tracking-wider flex-shrink-0">{layer.number}</span>
+                <span className="font-bold uppercase tracking-tight text-sm flex-shrink-0">{layer.title}</span>
               </motion.button>
             );
           })}

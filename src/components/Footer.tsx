@@ -13,7 +13,7 @@ export const Footer = () => {
               className="inline-block mb-6"
             >
               <img
-                src="/Wajdan Logo light.png"
+                src="/Wajdan%20Logo%20light.png"
                 alt="Wajdan Digital Alchemy"
                 className="h-10 w-auto"
               />

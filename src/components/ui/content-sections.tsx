@@ -132,41 +132,77 @@ export const RequirementsSection = () => {
   return null;
 };
 
+// Note: Lucide icons added for Facebook, Instagram, Youtube, Target, Plus, Smartphone, Zap
+import { Facebook, Instagram, Youtube, Target, Plus, Smartphone, Zap, Monitor, Globe, BarChart3, Database } from "lucide-react";
+
+const FloatingLogo = ({
+  icon: Icon,
+  color,
+  top,
+  left,
+  delay,
+  duration,
+}: {
+  icon: React.ElementType;
+  color: string;
+  top: string;
+  left: string;
+  delay: number;
+  duration: number;
+}) => (
+  <motion.div
+    className="absolute hidden md:flex items-center justify-center w-16 h-16 rounded-3xl bg-[#1a1a18] border border-neutral-800 shadow-2xl opacity-60 hover:opacity-100 transition-opacity z-0"
+    style={{ top, left }}
+    initial={{ y: 0 }}
+    animate={{ y: [-15, 15, -15] }}
+    transition={{
+      repeat: Infinity,
+      duration,
+      delay,
+      ease: "easeInOut"
+    }}
+  >
+    <Icon className={`w-8 h-8 ${color}`} strokeWidth={2} />
+  </motion.div>
+);
+
 export const FinalCTA = () => {
   return (
-    <section className="py-32 bg-[#cf5230] relative overflow-hidden">
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+    <section className="relative py-32 md:py-48 bg-[#111110] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6">
+      
+      {/* Logos Floating in Background */}
+      <FloatingLogo icon={Facebook} color="text-blue-500" top="15%" left="10%" delay={0} duration={4.5} />
+      <FloatingLogo icon={Instagram} color="text-pink-500" top="20%" left="45%" delay={1} duration={5} />
+      <FloatingLogo icon={Target} color="text-red-500" top="10%" left="80%" delay={0.5} duration={4} />
+      <FloatingLogo icon={Youtube} color="text-red-600" top="70%" left="85%" delay={1.5} duration={5.5} />
+      <FloatingLogo icon={Database} color="text-yellow-500" top="80%" left="30%" delay={0.8} duration={4.8} />
+      <FloatingLogo icon={Monitor} color="text-[#cf5230]" top="60%" left="12%" delay={2} duration={6} />
+      <FloatingLogo icon={Globe} color="text-teal-500" top="35%" left="85%" delay={0.3} duration={4.1} />
+      <FloatingLogo icon={BarChart3} color="text-orange-500" top="85%" left="60%" delay={1.2} duration={5.2} />
 
-      <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <div className="relative z-10 text-center max-w-4xl mx-auto">
         <ScrollReveal>
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-8 uppercase tracking-tighter leading-[0.95] drop-shadow-md">
-            Ready to Stop Buying Bricks <br />
-            <span className="text-[#111110]">and Start Building the House?</span>
+          <h2 className="text-4xl md:text-6xl lg:text-[5rem] font-black text-[#fafaf8] uppercase tracking-tighter leading-[0.9] mb-12">
+            I Guess What We're <br/>
+            Trying To Say Is That You <br/>
+            Should Hit The Damn<br/>
+            Button
           </h2>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.1}>
-          <p className="text-xl md:text-2xl text-white/95 font-bold mb-12 max-w-2xl mx-auto leading-tight">
-            Thirty minutes. Free. We'll audit your current system and show you exactly where qualified leads are disappearing — and what the fix looks like for your firm.
-          </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2} className="flex flex-col items-center">
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.04, y: -3 }}
-            whileTap={{ scale: 0.96 }}
-            className="group relative inline-flex items-center justify-center gap-4 px-10 md:px-14 py-6 lg:py-7 bg-[#111110] text-white font-black uppercase tracking-widest text-lg lg:text-xl transition-all shadow-[0_8px_0_0_#fafaf8] hover:shadow-none hover:translate-y-2 w-full sm:w-auto"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block bg-[#8cc63f] hover:bg-[#7ebd34] text-black font-black uppercase text-xl md:text-3xl tracking-tight py-6 px-12 md:px-16 rounded shadow-[0_0_40px_rgba(140,198,63,0.3)] transition-all"
           >
-            <span className="relative z-10">Hit The Damn Button Already</span>
-            <ArrowRight className="relative z-10 w-7 h-7 group-hover:translate-x-2 transition-transform" strokeWidth={3} />
+            HIT THE DAMN BUTTON
           </motion.a>
-
-          <p className="text-[#111110] font-black uppercase tracking-widest mt-8 text-xs md:text-sm">
-            No commitment · 30 minutes · Specific to your consultancy · Based in Europe
-          </p>
         </ScrollReveal>
       </div>
+
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)]" />
     </section>
   );
 };
