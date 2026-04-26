@@ -24,33 +24,33 @@ export const ProofSection = () => {
   ];
 
   return (
-    <div className="py-24 bg-[#fafaf8] relative overflow-hidden">
+    <div className="py-16 md:py-24 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
-        <ScrollReveal className="text-center mb-20">
-          <h2 className="text-5xl md:text-7xl font-black text-[#111110] mb-6 uppercase tracking-tighter leading-none">
+        <ScrollReveal className="text-center mb-12 md:mb-20">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-[#111110] mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.05]">
             Proof<span className="text-[#cf5230]">!</span>
           </h2>
-          <div className="mt-4 flex justify-center">
-            <p className="text-base md:text-lg font-black text-white max-w-3xl px-6 py-3 bg-[#cf5230] -rotate-1 shadow-[0_8px_0_0_#111110] uppercase tracking-wider">
+          <div className="mt-4 flex justify-center px-2">
+            <p className="text-sm md:text-lg font-black text-white max-w-3xl px-4 sm:px-6 py-3 bg-[#cf5230] md:-rotate-1 shadow-[0_6px_0_0_#111110] md:shadow-[0_8px_0_0_#111110] uppercase tracking-wider leading-snug">
               Immigration & Education consultancy funnels we've built — and what happened after.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
           {metrics.map((m, i) => (
             <ScrollReveal key={m.value} delay={0.1 * (i + 1)}>
               <TiltCard intensity={6} lift={20} className="h-full">
-                <div className="bg-white border-2 border-neutral-200 p-10 shadow-[8px_8px_0_0_#cf5230] relative overflow-hidden group h-full">
-                  <div className="flex justify-between items-start mb-6">
-                    <h3 className="text-7xl font-black text-[#cf5230] uppercase tracking-tighter">{m.value}</h3>
-                    <div className="text-neutral-300 group-hover:text-[#cf5230] transition-colors">{m.icon}</div>
+                <div className="bg-white border-2 border-neutral-200 p-6 sm:p-8 md:p-10 shadow-[6px_6px_0_0_#cf5230] md:shadow-[8px_8px_0_0_#cf5230] relative overflow-hidden group h-full">
+                  <div className="flex justify-between items-start mb-5 md:mb-6 gap-4">
+                    <h3 className="text-5xl sm:text-6xl md:text-7xl font-black text-[#cf5230] uppercase tracking-tight md:tracking-tighter">{m.value}</h3>
+                    <div className="text-neutral-300 group-hover:text-[#cf5230] transition-colors flex-shrink-0">{m.icon}</div>
                   </div>
 
-                  <p className="text-2xl font-black text-[#111110] mb-6 uppercase tracking-tight">{m.title}</p>
-                  <div className="h-1 w-16 bg-[#cf5230] mb-6" />
+                  <p className="text-xl md:text-2xl font-black text-[#111110] mb-5 md:mb-6 uppercase tracking-tight leading-tight">{m.title}</p>
+                  <div className="h-1 w-12 md:w-16 bg-[#cf5230] mb-5 md:mb-6" />
 
-                  <p className="text-neutral-600 font-medium text-lg italic leading-relaxed">{m.quote}</p>
+                  <p className="text-neutral-600 font-medium text-base md:text-lg italic leading-relaxed">{m.quote}</p>
                 </div>
               </TiltCard>
             </ScrollReveal>
@@ -170,9 +170,9 @@ const FloatingLogo = ({
 
 export const FinalCTA = () => {
   return (
-    <section className="relative py-32 md:py-48 bg-[#111110] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6">
-      
-      {/* Logos Floating in Background */}
+    <section className="relative py-20 md:py-36 lg:py-48 bg-[#111110] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6">
+
+      {/* Floating logos hidden on small screens to keep CTA focal */}
       <FloatingLogo icon={Facebook} color="text-blue-500" top="15%" left="10%" delay={0} duration={4.5} />
       <FloatingLogo icon={Instagram} color="text-pink-500" top="20%" left="45%" delay={1} duration={5} />
       <FloatingLogo icon={Target} color="text-red-500" top="10%" left="80%" delay={0.5} duration={4} />
@@ -184,20 +184,18 @@ export const FinalCTA = () => {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <ScrollReveal>
-          <h2 className="text-4xl md:text-6xl lg:text-[5rem] font-black text-[#fafaf8] uppercase tracking-tighter leading-[0.9] mb-12">
-            I Guess What We're <br/>
-            Trying To Say Is That You <br/>
-            Should Hit The Damn<br/>
-            Button
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] font-black text-[#fafaf8] uppercase tracking-tight md:tracking-tighter leading-[1.05] md:leading-[0.9] mb-8 md:mb-12">
+            I Guess What We're Trying To Say Is That You Should{' '}
+            <span className="text-[#cf5230]">Hit The Damn Button</span>
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2} className="flex flex-col items-center">
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block bg-[#8cc63f] hover:bg-[#7ebd34] text-black font-black uppercase text-xl md:text-3xl tracking-tight py-6 px-12 md:px-16 rounded shadow-[0_0_40px_rgba(140,198,63,0.3)] transition-all"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="inline-block w-full sm:w-auto bg-[#8cc63f] hover:bg-[#7ebd34] text-black font-black uppercase text-base sm:text-xl md:text-3xl tracking-tight py-4 md:py-6 px-8 sm:px-12 md:px-16 rounded shadow-[0_0_40px_rgba(140,198,63,0.3)] transition-all"
           >
             HIT THE DAMN BUTTON
           </motion.a>

@@ -25,7 +25,7 @@ const systemTabs: SystemTab[] = [
   { 
     id: 'offer', 
     num: '01', 
-    label: 'Offer Creation', 
+    label: 'Offer', 
     sectionId: 'layer-1',
     IconComponent: OfferIcon,
     color: 'brand-orange'
@@ -41,7 +41,7 @@ const systemTabs: SystemTab[] = [
   {
     id: 'automation',
     num: '03',
-    label: 'GHL + Automation',
+    label: 'Automation',
     sectionId: 'layer-3',
     IconComponent: AutomationIcon,
     color: 'brand-orange'
@@ -49,7 +49,7 @@ const systemTabs: SystemTab[] = [
   { 
     id: 'campaigns', 
     num: '04', 
-    label: 'Meta Campaigns', 
+    label: 'Meta Ads', 
     sectionId: 'layer-4',
     IconComponent: AdsIcon,
     color: 'brand-orange'
@@ -57,7 +57,7 @@ const systemTabs: SystemTab[] = [
   { 
     id: 'tracking', 
     num: '05', 
-    label: 'Conversion Tracking', 
+    label: 'Tracking', 
     sectionId: 'layer-5',
     IconComponent: AnalyticsIcon,
     color: 'brand-orange'
@@ -125,7 +125,7 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
   };
 
   return (
-    <div ref={containerRef} className="w-full relative h-[88px]">
+    <div ref={containerRef} className="w-full relative min-h-[88px] h-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -139,7 +139,7 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
         )}
       >
         <div className="max-w-6xl mx-auto w-full relative">
-          <div className="flex flex-nowrap overflow-x-auto hide-scrollbar lg:justify-center items-center justify-start gap-2 md:gap-3 py-2 scroll-smooth px-4 w-full">
+          <div className="flex flex-wrap items-center justify-start lg:justify-center gap-2 md:gap-3 py-2 px-4 w-full">
             {systemTabs.map((tab, index) => {
               const IconComponent = tab.IconComponent;
               return (
@@ -152,7 +152,7 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className={cn(
-                    "relative flex shrink-0 items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300 z-10",
+                    "relative flex shrink-0 items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300 z-10 lg:px-2 lg:py-2 lg:gap-1 lg:text-[12px]",
                     activeTab === tab.id
                       ? "bg-[#cf5230] text-white shadow-[0_4px_0_0_#111110]"
                       : "bg-white text-neutral-600 hover:text-[#111110] border border-neutral-200 hover:border-[#cf5230]/40 shadow-sm"
@@ -170,7 +170,7 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
                   <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
                     {/* Lottie Icon */}
                     <span className="hidden md:block flex-shrink-0">
-                      <IconComponent size={24} />
+                      <IconComponent size={20} />
                     </span>
                     <span className={cn(
                       "font-black flex-shrink-0",
@@ -195,8 +195,6 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
                 </motion.button>
               );
             })}
-            {/* Explicit spacer to prevent cutoff on mobile */}
-            <div className="w-8 shrink-0 lg:hidden h-px pointer-events-none" />
           </div>
         </div>
       </motion.div>
