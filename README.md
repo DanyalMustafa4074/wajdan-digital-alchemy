@@ -54,15 +54,17 @@ npm run dev
 
 This project is built with:
 
-- Vite
+- Next.js (App Router)
 - TypeScript
 - React
-- shadcn-ui
+- shadcn/ui
 - Tailwind CSS
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/15c406c2-505a-4091-8d14-d27048173f25) and click on Share -> Publish.
+Deploy with Vercel as a Next.js project. The repository includes a `vercel.json` file with `"framework": "nextjs"` to enforce framework detection.
+
+If deployment still fails with "No Next.js version detected", verify the Vercel **Root Directory** points to this repository root (the folder containing `package.json`).
 
 ## Can I connect a custom domain to my Lovable project?
 

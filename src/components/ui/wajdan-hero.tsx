@@ -34,16 +34,16 @@ export const WajdanHero = () => {
 
       <div className="container relative z-10 mx-auto px-4 md:px-6 flex flex-col items-center">
         {/* ───── Top copy area ───── */}
-        <div className="flex flex-col items-start text-left w-full max-w-4xl">
+        <div className="flex flex-col items-center text-center w-full max-w-6xl">
           <div className="inline-flex items-center px-4 py-1.5 mb-6 text-xs md:text-sm font-bold tracking-widest text-[#cf5230] uppercase bg-orange-50 border border-[#cf5230]/30 shadow-sm animate-fade-in">
             For Immigration & Education Consultancies
           </div>
 
-          <h1 className="vt-hero-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#111110] tracking-tighter leading-[0.98] mb-6 max-w-2xl animate-slide-up animation-delay-100 uppercase">
+          <h1 className="vt-hero-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#111110] tracking-tighter leading-[0.98] mb-6 max-w-5xl animate-slide-up animation-delay-100 uppercase">
             We Build The Most <span className="text-[#cf5230]">Ruthless & Effective System</span> for Rapid Scaling of Consultation Firms — In <span className="text-[#cf5230]">60 Days</span>.
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-neutral-700 font-medium max-w-xl mb-8 animate-slide-up animation-delay-200 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-neutral-700 font-medium max-w-3xl mb-8 animate-slide-up animation-delay-200 leading-relaxed">
             While every other agency sells you leads and disappears — we build the complete infrastructure that turns Meta traffic into qualified, pre-nurtured, showed-up consultation bookings.
             <span className="block mt-3 font-black uppercase tracking-tight text-[#111110] bg-yellow-200/60 px-2 py-1 -rotate-1 inline-block">
               Or we work for free.

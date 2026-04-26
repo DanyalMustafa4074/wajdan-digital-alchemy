@@ -429,7 +429,7 @@ const Services = () => {
 
       {/* Layer 3: GHL + Automation */}
       <section id="layer-3" className="bg-[#fafaf8] border-t border-neutral-200 scroll-mt-32">
-                  <SystemLayerDetail
+        <SystemLayerDetail
             number="03"
             title="GHL Workspace Config."
             subtitle="The Net That Catches Everything."
@@ -469,8 +469,11 @@ const Services = () => {
             ctaText="Automate My Backend"
             color="green"
           />
+      </section>
 
-          <SystemLayerDetail
+      {/* Layer 4: Meta Ads */}
+      <section id="layer-4" className="bg-white border-t border-neutral-200 scroll-mt-32">
+        <SystemLayerDetail
             number="04"
             title="Meta Ads + Retargeting."
             subtitle="Fuel For The Engine."
@@ -511,8 +514,11 @@ const Services = () => {
             color="orange"
             reversed={true}
           />
+      </section>
 
-<SystemLayerDetail
+      {/* Layer 5: Tracking */}
+      <section id="layer-5" className="bg-[#fafaf8] border-t border-neutral-200 scroll-mt-32">
+        <SystemLayerDetail
           number="05"
           title="Conversion Data Back to Meta."
           subtitle="Campaigns That Compound."
