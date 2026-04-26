@@ -1,58 +1,85 @@
 "use client";
 
 import React from 'react';
+import {
+  SiMeta,
+  SiGoogle,
+  SiInstagram,
+  SiFacebook,
+  SiYoutube,
+  SiTiktok,
+  SiWhatsapp,
+  SiGoogleads,
+  SiGoogleanalytics,
+  SiHubspot,
+  SiCalendly,
+  SiMailchimp,
+  SiZapier,
+  SiStripe,
+} from 'react-icons/si';
+import { FaLinkedinIn } from 'react-icons/fa';
 import { cn } from '@/lib/utils';
 
 /*
- * Two-row infinite logo marquee — King Kong style.
- * Uses pure CSS keyframes for smoothness. Each row has its content duplicated
- * so translateX(-50%) loops seamlessly.
+ * Two-row infinite marquee — real platform brand logos.
  *
- * Logos are presented as styled wordmarks rather than fetched brand assets to
- * avoid trademark issues until the client supplies real logos.
+ * Wajdan operates on the Meta / Google / GoHighLevel stack, so the marquee
+ * shows the platforms we actually run campaigns on rather than fake client
+ * logos. When real client logos become available, replace each `Mark`
+ * function below with an <img> tag.
  */
 
 interface LogoItem {
   name: string;
-  /** Optional unicode/text mark to suggest the kind of brand visually */
-  mark?: string;
+  Mark: React.FC<{ className?: string }>;
 }
 
+// GoHighLevel has no Simple Icon — render it as a typographic mark.
+const GhlMark: React.FC<{ className?: string }> = ({ className }) => (
+  <span className={cn('text-[1.7em] font-black tracking-tighter leading-none', className)}>
+    GHL
+  </span>
+);
+
 const ROW_ONE: LogoItem[] = [
-  { name: 'Visa Path Co.', mark: '✦' },
-  { name: 'BorderBridge' },
-  { name: 'Globescholar', mark: '◆' },
-  { name: 'Migrant.io' },
-  { name: 'Apex Education', mark: '▲' },
-  { name: 'Northstar Visa', mark: '★' },
-  { name: 'Atlas Consulting' },
-  { name: 'Skyline Migrate', mark: '◇' },
+  { name: 'Meta',                Mark: SiMeta },
+  { name: 'Google Ads',          Mark: SiGoogleads },
+  { name: 'Facebook',            Mark: SiFacebook },
+  { name: 'Instagram',           Mark: SiInstagram },
+  { name: 'YouTube',             Mark: SiYoutube },
+  { name: 'TikTok',              Mark: SiTiktok },
+  { name: 'LinkedIn',            Mark: FaLinkedinIn },
+  { name: 'GoHighLevel',         Mark: GhlMark },
 ];
 
 const ROW_TWO: LogoItem[] = [
-  { name: 'Pinnacle Education', mark: '⬢' },
-  { name: 'Nimbus Visa Co.' },
-  { name: 'Routeway', mark: '➤' },
-  { name: 'Vanta Migration' },
-  { name: 'Lumen Education', mark: '◉' },
-  { name: 'Compass Consulting', mark: '✧' },
-  { name: 'Beacon Visa' },
-  { name: 'Crossroads', mark: '⟡' },
+  { name: 'Google Analytics',    Mark: SiGoogleanalytics },
+  { name: 'WhatsApp',            Mark: SiWhatsapp },
+  { name: 'HubSpot',             Mark: SiHubspot },
+  { name: 'Calendly',            Mark: SiCalendly },
+  { name: 'Mailchimp',           Mark: SiMailchimp },
+  { name: 'Zapier',              Mark: SiZapier },
+  { name: 'Stripe',              Mark: SiStripe },
+  { name: 'Google',              Mark: SiGoogle },
 ];
 
 const LogoChip: React.FC<{ item: LogoItem }> = ({ item }) => (
-  <div className="shrink-0 flex items-center gap-3 px-7 py-4 bg-white border border-neutral-200 hover:border-[#cf5230]/40 transition-colors mx-3 min-w-[200px] justify-center">
-    {item.mark && <span className="text-[#cf5230] text-xl font-black">{item.mark}</span>}
-    <span className="font-black uppercase tracking-tight text-[#111110] text-base whitespace-nowrap">
+  <div className="shrink-0 flex items-center gap-3 px-7 py-4 bg-white border border-neutral-200 hover:border-[#cf5230]/40 transition-colors mx-3 min-w-[200px] justify-center group">
+    <item.Mark className="w-7 h-7 text-neutral-400 group-hover:text-[#cf5230] transition-colors" />
+    <span className="font-black uppercase tracking-tight text-[#111110] text-sm whitespace-nowrap">
       {item.name}
     </span>
   </div>
 );
 
-export const LogoMarquee: React.FC<{ className?: string; eyebrow?: string; heading?: string }> = ({
+export const LogoMarquee: React.FC<{
+  className?: string;
+  eyebrow?: string;
+  heading?: string;
+}> = ({
   className,
-  eyebrow = 'Trusted By',
-  heading = 'Immigration & education consultancies across Europe, UAE & beyond',
+  eyebrow = 'Built On The Platforms That Pay',
+  heading = 'Meta, Google, GoHighLevel and the full stack we wire into your funnel',
 }) => {
   return (
     <section className={cn('py-16 bg-[#fafaf8] overflow-hidden', className)}>

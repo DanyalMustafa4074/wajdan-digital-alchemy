@@ -1,48 +1,42 @@
-import { useLocation } from "react-router-dom";
+"use client";
+
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import Link from 'next/link';
 
 const NotFound = () => {
-  const location = useLocation();
-
   useEffect(() => {
     console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
+      "404 Error: User attempted to access non-existent route"
     );
-  }, [location.pathname]);
+  }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-brand-dark">
+    <div className="min-h-screen flex items-center justify-center bg-[#fafaf8]">
       <div className="text-center px-4">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-8xl md:text-9xl font-black text-brand-orange mb-4"
+          className="text-8xl md:text-9xl font-black text-[#cf5230] mb-4 tracking-tighter"
         >
           404
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-xl text-muted-foreground mb-8"
+          className="text-xl text-neutral-700 mb-8 font-bold uppercase tracking-tight"
         >
           Oops! This page doesn't exist
         </motion.p>
-        <motion.a 
-          href="/" 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orange/90 transition-all shadow-lg shadow-brand-orange/25"
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-[#111110] text-white font-black uppercase tracking-wider shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1 transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
           Return to Home
-        </motion.a>
+        </Link>
       </div>
     </div>
   );

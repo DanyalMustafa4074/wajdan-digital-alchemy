@@ -10,7 +10,13 @@ import {
   RefreshCw, BarChart3, Lightbulb, Layers, FlaskConical, Eye,
   UserPlus, LineChart, ArrowRight, Target, Megaphone, Zap,
 } from 'lucide-react';
-import { TargetAnimation, FunnelAnimation, ZapAnimation, MegaphoneAnimation, ChartAnimation } from './animated-icons';
+import {
+  OfferIcon as TargetAnimation,
+  FunnelIcon as FunnelAnimation,
+  AutomationIcon as ZapAnimation,
+  AdsIcon as MegaphoneAnimation,
+  AnalyticsIcon as ChartAnimation,
+} from './system-layer-icons';
 
 interface LayerIcon {
   icon: React.ReactNode;

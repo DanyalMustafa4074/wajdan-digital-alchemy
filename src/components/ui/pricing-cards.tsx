@@ -97,7 +97,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
               intensity={tier.popular ? 5 : 4}
               lift={tier.popular ? 24 : 12}
               gloss={tier.popular}
-              className={cn('w-full', tier.popular && 'lg:-translate-y-4')}
+              className={cn('w-full flex', tier.popular && 'lg:-translate-y-4')}
             >
             <motion.div
               className={cn(

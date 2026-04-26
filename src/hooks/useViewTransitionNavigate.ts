@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useNavigate, type NavigateOptions } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 type StartViewTransition = (cb: () => void | Promise<void>) => unknown;
 
@@ -7,22 +7,24 @@ interface DocumentWithVT extends Document {
   startViewTransition?: StartViewTransition;
 }
 
-/*
- * SPA navigation with the View Transitions API. Falls back to plain
- * navigate() in browsers that haven't shipped the API yet.
- */
 export function useViewTransitionNavigate() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return useCallback(
-    (to: string, opts?: NavigateOptions) => {
+    (to: string, opts?: any) => {
+      if (typeof window === 'undefined') {
+        router.push(to, opts);
+        return;
+      }
       const doc = document as DocumentWithVT;
       if (typeof doc.startViewTransition === 'function') {
-        doc.startViewTransition(() => navigate(to, opts));
+        doc.startViewTransition(() => {
+          router.push(to, opts);
+        });
       } else {
-        navigate(to, opts);
+        router.push(to, opts);
       }
     },
-    [navigate],
+    [router]
   );
 }

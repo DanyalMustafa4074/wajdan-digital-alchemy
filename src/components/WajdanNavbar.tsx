@@ -42,7 +42,7 @@ function WajdanNavbar({ className }: { className?: string }) {
           <div className="flex items-center justify-between">
             <TransitionLink to="/" className="flex items-center gap-2 group vt-logo" aria-label="Home">
               <motion.img
-                src="/Wajdan%20Logo%20light.png"
+                src="/Wajdan%20Logo%20dark.png"
                 alt="Wajdan"
                 className="h-8 md:h-10 w-auto"
                 whileHover={{ scale: 1.04 }}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from './scroll-reveal';
-import { ArrowRight, Trophy, Target, CheckCircle, AlertCircle, ShieldAlert, BadgeCheck, Facebook, Instagram, Youtube, Plus, Smartphone, Zap, Monitor, Globe, BarChart3, Database } from 'lucide-react';
+import { ArrowRight, Trophy, Target, CheckCircle, AlertCircle, ShieldAlert, BadgeCheck, Plus, Smartphone, Zap, Monitor, Globe, BarChart3, Database } from 'lucide-react';
+import { FaFacebook as Facebook, FaInstagram as Instagram, FaYoutube as Youtube } from 'react-icons/fa';
 import { TiltCard } from './tilt-card';
 
 export const ProofSection = () => {

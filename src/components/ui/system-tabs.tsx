@@ -3,14 +3,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { 
+import {
   OfferIcon,
   FunnelIcon,
   AutomationIcon,
   AdsIcon,
   AnalyticsIcon,
-  PulsingDot 
-} from './lottie-icons';
+  PulsingDot,
+} from './system-layer-icons';
 
 interface SystemTab {
   id: string;
@@ -72,19 +72,16 @@ interface SystemTabsBarProps {
 export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabChange }) => {
   const [activeTab, setActiveTab] = useState('offer');
   const [isSticky, setIsSticky] = useState(false);
-  const barRef = useRef<HTMLDivElement>(null);
-  const originalTop = useRef<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Track scroll position to highlight active section
+  // Track scroll position to highlight active section and handle sticky state
   useEffect(() => {
     const handleScroll = () => {
-      // Check if bar should be sticky
-      if (barRef.current) {
-        const rect = barRef.current.getBoundingClientRect();
-        if (originalTop.current === 0 && rect.top > 0) {
-          originalTop.current = rect.top + window.scrollY;
-        }
-        setIsSticky(window.scrollY > originalTop.current - 80);
+      // Provide smooth transition when sticking
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        // Sticky if container reaches near the navbar (64px offset)
+        setIsSticky(rect.top <= 64);
       }
 
       // Determine which section is in view
@@ -116,6 +113,7 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
     const element = document.getElementById(sectionId);
     if (element) {
       const offset = 100; // Account for sticky header
+      // scroll to precise location natively
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - offset;
 
@@ -127,79 +125,82 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
   };
 
   return (
-    <motion.div
-      ref={barRef}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={cn(
-        "py-4 transition-all duration-300 z-40",
-        isSticky
-          ? "fixed top-[64px] left-0 right-0 bg-[#fafaf8]/95 backdrop-blur-lg border-b border-neutral-200 shadow-sm"
-          : "relative bg-transparent border-y border-neutral-200",
-        className
-      )}
-    >
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="flex flex-nowrap overflow-x-auto hide-scrollbar lg:justify-center items-center justify-start gap-2 md:gap-3 py-4 scroll-smooth px-4 w-full after:content-[''] after:w-4 after:shrink-0 lg:after:hidden">
-          {systemTabs.map((tab, index) => {
-            const IconComponent = tab.IconComponent;
-            return (
-              <motion.button
-                key={tab.id}
-                onClick={() => scrollToSection(tab.sectionId, tab.id)}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className={cn(
-                  "relative flex shrink-0 items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300",
-                  activeTab === tab.id
-                    ? "bg-[#cf5230] text-white shadow-[0_4px_0_0_#111110]"
-                    : "bg-white text-neutral-600 hover:text-[#111110] border border-neutral-200 hover:border-[#cf5230]/40"
-                )}
-              >
-                {/* Active indicator */}
-                {activeTab === tab.id && (
-                  <motion.div
-                    layoutId="activeTabIndicator"
-                    className="absolute inset-0 bg-[#cf5230] rounded-xl"
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
-                
-                <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
-                  {/* Lottie Icon */}
-                  <span className="hidden md:block flex-shrink-0">
-                    <IconComponent size={24} />
+    <div ref={containerRef} className="w-full relative h-[88px]">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className={cn(
+          "py-4 transition-all duration-300 z-[45]",
+          isSticky
+            ? "fixed top-[64px] left-0 right-0 bg-[#fafaf8]/95 backdrop-blur-lg border-b border-neutral-200 shadow-sm"
+            : "absolute top-0 left-0 right-0 bg-transparent border-y border-neutral-200",
+          className
+        )}
+      >
+        <div className="max-w-6xl mx-auto w-full relative">
+          <div className="flex flex-nowrap overflow-x-auto hide-scrollbar lg:justify-center items-center justify-start gap-2 md:gap-3 py-2 scroll-smooth px-4 w-full">
+            {systemTabs.map((tab, index) => {
+              const IconComponent = tab.IconComponent;
+              return (
+                <motion.button
+                  key={tab.id}
+                  onClick={() => scrollToSection(tab.sectionId, tab.id)}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={cn(
+                    "relative flex shrink-0 items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300 z-10",
+                    activeTab === tab.id
+                      ? "bg-[#cf5230] text-white shadow-[0_4px_0_0_#111110]"
+                      : "bg-white text-neutral-600 hover:text-[#111110] border border-neutral-200 hover:border-[#cf5230]/40 shadow-sm"
+                  )}
+                >
+                  {/* Active indicator */}
+                  {activeTab === tab.id && (
+                    <motion.div
+                      layoutId="activeTabIndicator"
+                      className="absolute inset-0 bg-[#cf5230] rounded-xl -z-10"
+                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                    />
+                  )}
+                  
+                  <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
+                    {/* Lottie Icon */}
+                    <span className="hidden md:block flex-shrink-0">
+                      <IconComponent size={24} />
+                    </span>
+                    <span className={cn(
+                      "font-black flex-shrink-0",
+                      activeTab === tab.id ? "text-white" : "text-[#cf5230]"
+                    )}>
+                      {tab.num}
+                    </span>
+                    <span className="hidden sm:inline flex-shrink-0">—</span>
+                    <span className="hidden sm:inline flex-shrink-0">{tab.label}</span>
                   </span>
-                  <span className={cn(
-                    "font-black flex-shrink-0",
-                    activeTab === tab.id ? "text-white" : "text-[#cf5230]"
-                  )}>
-                    {tab.num}
-                  </span>
-                  <span className="hidden sm:inline flex-shrink-0">—</span>
-                  <span className="hidden sm:inline flex-shrink-0">{tab.label}</span>
-                </span>
 
-                {/* Pulsing dot for active */}
-                {activeTab === tab.id && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-1"
-                  >
-                    <PulsingDot color="bg-white" />
-                  </motion.div>
-                )}
-              </motion.button>
-            );
-          })}
+                  {/* Pulsing dot for active */}
+                  {activeTab === tab.id && (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="absolute -top-2 -right-2 z-50"
+                    >
+                      <PulsingDot color="bg-white" />
+                    </motion.div>
+                  )}
+                </motion.button>
+              );
+            })}
+            {/* Explicit spacer to prevent cutoff on mobile */}
+            <div className="w-8 shrink-0 lg:hidden h-px pointer-events-none" />
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 

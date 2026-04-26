@@ -1,6 +1,9 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, ArrowDown, Check, Star, Target, Video, Zap, Megaphone, TrendingUp, ChevronDown, Search, UserCheck, FileText, MessageSquare, TestTube, FileCheck, Clapperboard, Layout, PenTool, FormInput, Calendar, MonitorPlay, Bot, Mail, Bell, RefreshCw, BarChart3, Palette, FlaskConical, Activity, RotateCw, FileBarChart, Link2, CircleDot, Database, PieChart, Brain, LineChart } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowDown, Check, Star, Target, Video, Zap, Megaphone, TrendingUp, ChevronDown, Search, UserCheck, FileText, MessageSquare, TestTube, FileCheck, Clapperboard, Layout, PenTool, FormInput, Calendar, MonitorPlay, Bot, Mail, Bell, RefreshCw, BarChart3, Palette, FlaskConical, Activity, RotateCw, FileBarChart, Link2, CircleDot, Database, PieChart, Brain, LineChart } from 'lucide-react';
+import Link from 'next/link';
 import WajdanNavbar from "@/components/WajdanNavbar";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
@@ -12,6 +15,7 @@ import { FinalCTA } from "@/components/ui/content-sections";
 import { SystemTabsBar, SystemProgressIndicator, FloatingSystemNav } from "@/components/ui/system-tabs";
 import { LogoMarquee } from "@/components/ui/logo-marquee";
 import { GrowthChart } from "@/components/ui/growth-chart";
+import { PipelineFlow } from "@/components/ui/pipeline-flow";
 import { cn } from '@/lib/utils';
 
 // System Layer Detailed Component
@@ -171,23 +175,23 @@ const Services = () => {
       <WajdanNavbar />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden bg-[#fafaf8]">
+      <section className="relative pt-20 pb-10 md:pt-32 md:pb-20 overflow-hidden bg-[#fafaf8]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
         <div className="relative max-w-5xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6"
+            className="mb-4 md:mb-6"
           >
-            <span className="text-[#cf5230] font-bold uppercase tracking-[0.2em] text-sm">The Complete System</span>
+            <span className="text-[#cf5230] font-bold uppercase tracking-[0.2em] text-xs md:text-sm">The Complete System</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black text-[#111110] mb-6 uppercase tracking-tighter leading-[0.95]"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#111110] mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[0.95]"
           >
             Not Services.
             <br />
@@ -198,9 +202,9 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto mb-10"
+            className="text-base sm:text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed"
           >
-            Most businesses lose clients not because demand is low — but because nothing was built to catch, 
+            Most businesses lose clients not because demand is low — but because nothing was built to catch,
             qualify, and convert the interest that already exists. We build the complete infrastructure that fixes that. End to end.
           </motion.p>
 
@@ -208,13 +212,13 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center mb-10 md:mb-12"
           >
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.96 }}
-              className="flex items-center gap-2 px-8 py-5 bg-[#111110] text-white font-black uppercase tracking-wider transition-all shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1"
+              className="flex items-center justify-center gap-2 px-6 sm:px-8 py-4 md:py-5 bg-[#111110] text-white font-black uppercase tracking-wider text-sm md:text-base transition-all shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1"
             >
               Book a Free Funnel Audit
               <ArrowRight className="w-5 h-5" />
@@ -222,7 +226,7 @@ const Services = () => {
 
             <a
               href="#layer-1"
-              className="flex items-center gap-2 text-neutral-700 hover:text-[#cf5230] transition-colors font-bold"
+              className="flex items-center justify-center gap-2 text-neutral-700 hover:text-[#cf5230] transition-colors font-bold text-sm md:text-base"
             >
               See the full system
               <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
@@ -254,6 +258,9 @@ const Services = () => {
       {/* Growth comparison chart */}
       <GrowthChart />
 
+      {/* Lead lifecycle pipeline */}
+      <PipelineFlow />
+
       {/* Comparison Table */}
       <section className="bg-background pt-12 pb-12">
         <div className="max-w-7xl mx-auto px-4">
@@ -262,67 +269,67 @@ const Services = () => {
       </section>
 
       {/* The Bricks Story */}
-      <section className="py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <ScrollReveal>
-            <p className="text-neutral-600 mb-6 font-medium">Here's something nobody in this industry wants to say out loud.</p>
-            <h2 className="text-3xl md:text-5xl font-black text-[#111110] mb-6 uppercase tracking-tight leading-tight">
+            <p className="text-neutral-600 mb-4 md:mb-6 font-medium text-sm md:text-base">Here's something nobody in this industry wants to say out loud.</p>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#111110] mb-5 md:mb-6 uppercase tracking-tight leading-tight">
               Most agencies sell you services the same way a builder sells you bricks.
             </h2>
-            <p className="text-xl text-neutral-600 italic mb-8">Here are your bricks. Good luck with the house.</p>
+            <p className="text-base md:text-xl text-neutral-600 italic mb-8">Here are your bricks. Good luck with the house.</p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <motion.div
-              className="bg-[#fafaf8] border-2 border-neutral-200 p-8 mb-8 shadow-[8px_8px_0_0_#cf5230]"
+              className="bg-[#fafaf8] border-2 border-neutral-200 p-6 md:p-8 mb-8 shadow-[6px_6px_0_0_#cf5230] md:shadow-[8px_8px_0_0_#cf5230]"
               whileHover={{ borderColor: '#cf5230' }}
             >
-              <p className="text-2xl text-[#111110] font-bold mb-2">The problem isn't the bricks.</p>
-              <p className="text-3xl text-[#cf5230] font-black uppercase tracking-tight">It's that nobody built the house.</p>
+              <p className="text-xl md:text-2xl text-[#111110] font-bold mb-2">The problem isn't the bricks.</p>
+              <p className="text-2xl md:text-3xl text-[#cf5230] font-black uppercase tracking-tight leading-tight">It's that nobody built the house.</p>
             </motion.div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <p className="text-neutral-700 mb-6 leading-relaxed">
+            <p className="text-neutral-700 mb-5 md:mb-6 leading-relaxed text-base md:text-lg">
               You hired an agency that ran your Meta ads. The leads came in. Nothing was built to catch them,
               qualify them, follow them up, pre-nurture them, or make sure they showed up.
             </p>
-            <p className="text-[#111110] text-lg font-bold mb-6">You paid for bricks. You needed a house.</p>
+            <p className="text-[#111110] text-base md:text-lg font-bold mb-6">You paid for bricks. You needed a house.</p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <div className="bg-[#111110] text-white p-8 mb-8 border-l-8 border-[#cf5230]">
-              <p className="text-xl text-neutral-300 italic mb-3">
+            <div className="bg-[#111110] text-white p-6 md:p-8 mb-8 border-l-4 md:border-l-8 border-[#cf5230] text-left">
+              <p className="text-base md:text-xl text-neutral-300 italic mb-3">
                 "The leads are coming in. Why isn't anyone booking?"
               </p>
-              <p className="text-[#cf5230] font-bold text-lg">
+              <p className="text-[#cf5230] font-bold text-base md:text-lg leading-snug">
                 Because the system that was supposed to convert them was never actually built.
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.5}>
-            <p className="text-xl text-[#111110] font-bold mb-4">This is why Wajdan doesn't sell services.</p>
+            <p className="text-base md:text-xl text-[#111110] font-bold mb-4">This is why Wajdan doesn't sell services.</p>
             <motion.p
-              className="text-2xl md:text-3xl text-[#cf5230] font-black uppercase tracking-tight mb-6"
+              className="text-xl sm:text-2xl md:text-3xl text-[#cf5230] font-black uppercase tracking-tight mb-6 leading-snug"
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
               We sell a system. And the system only works when every part of it exists.
             </motion.p>
-            <div className="flex items-center justify-center gap-3 text-[#111110] text-lg md:text-xl font-black uppercase tracking-tight flex-wrap">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 text-[#111110] text-sm sm:text-base md:text-xl font-black uppercase tracking-tight flex-wrap">
               <span>Five layers.</span>
               <span className="text-[#cf5230]">One system.</span>
               <span className="text-neutral-500">Zero gaps.</span>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.6} className="mt-10">
+          <ScrollReveal delay={0.6} className="mt-8 md:mt-10">
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.96 }}
-              className="inline-flex items-center gap-2 px-8 py-5 bg-[#cf5230] text-white font-black uppercase tracking-wider shadow-[0_4px_0_0_#111110] hover:shadow-none hover:translate-y-1 transition-all"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 sm:px-8 py-4 md:py-5 bg-[#cf5230] text-white font-black uppercase tracking-wider text-sm md:text-base shadow-[0_4px_0_0_#111110] hover:shadow-none hover:translate-y-1 transition-all"
             >
               Book a Free Funnel Audit
               <ArrowRight className="w-5 h-5" />
