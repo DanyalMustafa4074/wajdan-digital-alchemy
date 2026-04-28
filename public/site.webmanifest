@@ -1,21 +1,27 @@
 {
   "name": "Wajdan Digital Alchemy",
   "short_name": "Wajdan",
-  "description": "Complete Digital Solutions for Businesses",
+  "description": "Complete digital growth systems — offers, funnels, automation, ads, analytics. One system, zero gaps.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#cf5230",
+  "lang": "en-US",
+  "categories": ["business", "marketing", "productivity"],
   "icons": [
     {
-      "src": "/Wajdan Logo light.png",
+      "src": "/Wajdan%20Logo%20light.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/Wajdan Logo light.png",
+      "src": "/Wajdan%20Logo%20light.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

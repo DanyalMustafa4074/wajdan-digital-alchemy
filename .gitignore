@@ -71,3 +71,6 @@ update_layers3_5.cjs
 # Sandbox HTML artifacts pulled from Claude
 artifact1.html
 artifact2.html
+
+.vercel
+.env*.local
