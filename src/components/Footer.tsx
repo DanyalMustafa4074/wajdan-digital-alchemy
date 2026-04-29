@@ -12,11 +12,22 @@ export const Footer = () => {
               whileHover={{ scale: 1.04 }}
               className="inline-block mb-6"
             >
-              <img
-                src="/Wajdan%20Logo%20dark.png"
-                alt="Wajdan Digital Alchemy"
-                className="h-10 w-auto"
-              />
+              {/* Use <picture> to serve light/dark variants based on user preference */}
+              <picture>
+                <source
+                  srcSet="/Wajdan%20Logo%20light.png"
+                  media="(prefers-color-scheme: light)"
+                />
+                <source
+                  srcSet="/Wajdan%20Logo%20dark.png"
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img
+                  src="/Wajdan%20Logo%20dark.png"
+                  alt="Wajdan Digital Alchemy"
+                  className="h-10 w-auto"
+                />
+              </picture>
             </motion.a>
             <p className="text-neutral-400 mb-6 leading-relaxed max-w-md text-sm md:text-base">
               Client Acquisition Systems for Immigration & Education Consultants.
