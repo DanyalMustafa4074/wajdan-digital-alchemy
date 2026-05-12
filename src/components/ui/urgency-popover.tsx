@@ -44,8 +44,8 @@ export const UrgencyPopover: React.FC<{ className?: string }> = ({ className }) 
         whileTap={{ scale: 0.96 }}
         onClick={() => togglePopover(true)}
         // popovertarget activates the native control automatically.
-        // @ts-expect-error popovertarget is a valid HTML attr not yet typed in React.
-        popovertarget={popoverId}
+        // @ts-expect-error popoverTarget is a valid HTML attr not yet typed in React.
+        popoverTarget={popoverId}
         className={cn(
           'inline-flex items-center gap-2 px-4 py-2 bg-[#cf5230] text-white text-xs font-black uppercase tracking-widest shadow-[0_4px_0_0_#111110] hover:shadow-none hover:translate-y-1 transition-all',
           className,
@@ -80,7 +80,7 @@ export const UrgencyPopover: React.FC<{ className?: string }> = ({ className }) 
             <X className="w-5 h-5" />
           </button>
         </div>
-        <p className="text-neutral-700 leading-relaxed mb-5">
+        <p className="text-neutral-700 leading-loose mb-5">
           We onboard a maximum of <strong className="text-[#cf5230] font-black">6 consultancies</strong> each
           month so every system gets built properly. When the spots fill, the next intake opens the following month.
         </p>

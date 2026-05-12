@@ -83,7 +83,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
               <h3 className="text-white font-black text-lg md:text-xl mb-2 uppercase tracking-wide">
                 Strict Limit: 6 Clients Per Month
               </h3>
-              <p className="text-neutral-400 font-medium text-sm md:text-base leading-relaxed">
+              <p className="text-neutral-400 font-medium text-sm md:text-base leading-loose">
                 We refuse to spread our team thin. High-performance funnels require focus. When the 6 spots are filled, you go on the waitlist. No exceptions.
               </p>
             </div>

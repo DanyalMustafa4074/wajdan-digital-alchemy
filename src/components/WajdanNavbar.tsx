@@ -10,8 +10,7 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'How It Works', url: '/#system' },
-    { name: 'Services', url: '/services' },
+    { name: "What you're missing?", url: '/services' },
     { name: 'About', url: '/about' },
     { name: 'Results', url: '/#results' },
     { name: 'Pricing', url: '/#pricing' },
@@ -109,7 +108,7 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
                   key={item.name}
                   to={item.url}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="hover:bg-white transition-colors text-base font-bold uppercase tracking-wide py-3 px-4 rounded-lg text-[#111110] min-h-[48px] flex items-center"
+                  className="hover:bg-white transition-colors text-base leading-loose font-bold uppercase tracking-wide py-3 px-4 rounded-lg text-[#111110] min-h-[48px] flex items-center"
                 >
                   {item.name}
                 </TransitionLink>

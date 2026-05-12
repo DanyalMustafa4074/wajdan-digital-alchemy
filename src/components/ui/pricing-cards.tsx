@@ -159,7 +159,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
 
               <p
                 className={cn(
-                  'text-base mb-8 leading-relaxed font-medium',
+                  'text-base mb-8 leading-loose font-medium',
                   tier.popular ? 'text-neutral-300' : 'text-neutral-600'
                 )}
               >

@@ -72,7 +72,7 @@ export const WhoIsThisFor = () => {
                 {fits.map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-[#cf5230] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-neutral-700 font-medium text-base md:text-lg leading-relaxed">{item}</span>
+                    <span className="text-neutral-700 font-medium text-base md:text-lg leading-loose">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -91,7 +91,7 @@ export const WhoIsThisFor = () => {
                 {noFits.map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <AlertCircle className="w-6 h-6 text-[#cf5230] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-neutral-300 font-medium text-base md:text-lg leading-relaxed">{item}</span>
+                    <span className="text-neutral-300 font-medium text-base md:text-lg leading-loose">{item}</span>
                   </li>
                 ))}
               </ul>

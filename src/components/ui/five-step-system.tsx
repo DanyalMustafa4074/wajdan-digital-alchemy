@@ -69,7 +69,7 @@ export const FiveStepSystem = () => {
                        <span className="text-5xl font-black text-[#cf5230]/20">{step.id}</span>
                        <h3 className="text-3xl font-bold">{step.title}</h3>
                      </div>
-                     <p className="text-xl text-gray-400 leading-relaxed border-l-2 border-[#cf5230] pl-6">
+                     <p className="text-xl text-gray-400 leading-loose border-l-2 border-[#cf5230] pl-6">
                        {step.description}
                      </p>
                   </div>

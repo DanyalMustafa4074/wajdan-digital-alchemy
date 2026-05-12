@@ -21,10 +21,10 @@ export const ProblemSection: React.FC<{ className?: string }> = ({ className }) 
 
         <ScrollReveal delay={0.1}>
           <div className="prose-lg mx-auto text-center md:text-left">
-            <p className="text-lg sm:text-xl md:text-3xl font-medium text-foreground leading-relaxed mb-8 md:mb-10">
+            <p className="text-lg sm:text-xl md:text-3xl font-medium text-foreground leading-loose mb-8 md:mb-10">
               You pay for a complete marketing service. You receive the top half — <span className="font-black bg-gray-200 px-2 py-1">traffic and leads.</span>
             </p>
-            <p className="text-base sm:text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-10 md:mb-12">
+            <p className="text-base sm:text-lg md:text-2xl font-medium text-foreground leading-loose mb-10 md:mb-12">
               The bottom half — <span className="font-bold underline decoration-red-500 underline-offset-4">offer creation, qualification, CRM infrastructure, automation, follow-up sequences, no-show reduction</span> — was never built.
             </p>
 
@@ -35,7 +35,7 @@ export const ProblemSection: React.FC<{ className?: string }> = ({ className }) 
               </p>
             </div>
 
-            <p className="text-base md:text-2xl font-bold text-foreground leading-relaxed text-center max-w-3xl mx-auto mb-16 md:mb-20 italic bg-white p-6 md:p-8 pt-10 md:pt-8 border-2 border-gray-100 shadow-sm relative">
+            <p className="text-base md:text-2xl font-bold text-foreground leading-loose text-center max-w-3xl mx-auto mb-16 md:mb-20 italic bg-white p-6 md:p-8 pt-10 md:pt-8 border-2 border-gray-100 shadow-sm relative">
                <AlertCircle className="absolute -top-5 md:-top-6 left-1/2 -translate-x-1/2 w-10 h-10 md:w-12 md:h-12 text-[#cf5230] bg-white rounded-full p-1" />
               And it costs you more every month than their retainer ever did.
             </p>

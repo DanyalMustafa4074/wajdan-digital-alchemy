@@ -318,7 +318,7 @@ function FeaturedCard({ member }: { member: TeamMember }) {
           </p>
         </div>
         {/* Bottom: bio */}
-        <p className="relative z-10 text-white/80 text-[11px] md:text-xs leading-relaxed">
+        <p className="relative z-10 text-white/80 text-[11px] md:text-xs leading-loose">
           {member.bio}
         </p>
       </div>

@@ -87,7 +87,7 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
             <h3 className="text-2xl text-brand-orange mb-6">
               {subtitle}
             </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-lg text-muted-foreground leading-loose mb-8">
               {description}
             </p>
 
@@ -127,7 +127,7 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
                       {feature.icon}
                     </div>
                     <h4 className="relative z-10 font-bold text-foreground mb-3 text-lg">{feature.title}</h4>
-                    <p className="relative z-10 text-sm text-muted-foreground group-hover:text-muted-foreground transition-colors leading-relaxed">{feature.description}</p>
+                    <p className="relative z-10 text-sm text-muted-foreground group-hover:text-muted-foreground transition-colors leading-loose">{feature.description}</p>
                   </motion.div>
                 </StaggerItem>
               ))}
@@ -214,7 +214,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto mb-8 md:mb-10 leading-loose"
           >
             Most businesses lose clients not because demand is low — but because nothing was built to catch,
             qualify, and convert the interest that already exists. We build the complete infrastructure that fixes that. End to end.

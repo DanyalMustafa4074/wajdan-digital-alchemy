@@ -19,7 +19,7 @@ export const Footer = () => {
                 className="h-10 w-auto"
               />
             </motion.a>
-            <p className="text-neutral-400 mb-6 leading-relaxed max-w-md text-sm md:text-base">
+            <p className="text-neutral-400 mb-6 leading-loose max-w-md text-sm md:text-base">
               Client Acquisition Systems for Education Consultancies.
               We build the complete infrastructure that turns Meta traffic into qualified,
               pre-nurtured, showed-up consultation bookings.

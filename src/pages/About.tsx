@@ -160,7 +160,7 @@ const About = () => {
                   <em className="not-italic text-[#cf5230]">Out of Frustration.</em>
                 </h2>
 
-                <div className="space-y-5 text-[#111110]/70 text-base md:text-lg leading-relaxed">
+                <div className="space-y-5 text-[#111110]/70 text-base md:text-lg leading-loose">
                   <p>
                     You're good at what you do. Great, actually. Your clients get visas. Students land placements. Lives change.
                   </p>
@@ -185,7 +185,7 @@ const About = () => {
               <div className="space-y-6">
                 {/* Quote block */}
                 <div className="bg-[#111110] rounded-2xl p-8 border-l-4 border-[#cf5230]">
-                  <p className="text-[#fafaf8] text-lg md:text-xl font-medium leading-relaxed mb-4">
+                  <p className="text-[#fafaf8] text-lg md:text-xl font-medium leading-loose mb-4">
                     "Marketers lie. Numbers don't. Every system we deploy has been tested — on our own business first, then on our clients' businesses. We don't guess. We engineer."
                   </p>
                   <p className="text-[#cf5230] text-sm font-black uppercase tracking-widest">
@@ -260,7 +260,7 @@ const About = () => {
                   <h3 className="text-lg font-black uppercase tracking-tight text-[#111110] mb-3">
                     {v.title}
                   </h3>
-                  <p className="text-[#111110]/60 text-sm leading-relaxed">{v.body}</p>
+                  <p className="text-[#111110]/60 text-sm leading-loose">{v.body}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -281,7 +281,7 @@ const About = () => {
                 <br />
                 Growth System.
               </h2>
-              <p className="text-neutral-400 text-base md:text-lg leading-relaxed mb-8">
+              <p className="text-neutral-400 text-base md:text-lg leading-loose mb-8">
                 Every consultancy we work with gets the same thing — a fully integrated system, not disconnected tactics. Five layers that work together so your calendar fills itself.
               </p>
               <TransitionLink
@@ -340,7 +340,7 @@ const About = () => {
               <br />
               <span className="text-[#cf5230]">Start Receiving Them.</span>
             </h2>
-            <p className="text-[#111110]/60 text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-[#111110]/60 text-lg md:text-xl mb-10 max-w-xl mx-auto leading-loose">
               Book a free strategy call. We'll audit your current acquisition setup and show you exactly where the gaps are — no fluff, no pitch decks, just clarity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
