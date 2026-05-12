@@ -319,6 +319,25 @@ const Services = () => {
           ]}
           ctaText="Get Your Offer Built"
           color="orange"
+          extraContent={
+            <div className="pt-8">
+              <div className="text-center mb-10">
+                <h4 className="text-2xl md:text-3xl font-bold text-foreground">The Offer In Action</h4>
+                <p className="text-muted-foreground mt-3">Examples of high-converting offers architecture.</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
+                  <img src="/The Offer ScreenShots/screenshot.png" alt="Offer Example 1" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                </motion.div>
+                <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
+                  <img src="/The Offer ScreenShots/screenshot (1).png" alt="Offer Example 2" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                </motion.div>
+                <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
+                  <img src="/The Offer ScreenShots/screenshot (2).png" alt="Offer Example 3" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                </motion.div>
+              </div>
+            </div>
+          }
         />
       </section>
 
