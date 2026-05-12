@@ -327,13 +327,13 @@ const Services = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
-                  <img src="/The Offer ScreenShots/screenshot.png" alt="Offer Example 1" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src="/The%20Offer%20ScreenShots/screenshot.png" alt="Offer Example 1" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </motion.div>
                 <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
-                  <img src="/The Offer ScreenShots/screenshot (1).png" alt="Offer Example 2" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src="/The%20Offer%20ScreenShots/screenshot%20(1).png" alt="Offer Example 2" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </motion.div>
                 <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
-                  <img src="/The Offer ScreenShots/screenshot (2).png" alt="Offer Example 3" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src="/The%20Offer%20ScreenShots/screenshot%20(2).png" alt="Offer Example 3" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </motion.div>
               </div>
             </div>
