@@ -12,6 +12,7 @@ function WajdanNavbar({ className }: { className?: string }) {
   const navItems = [
     { name: 'How It Works', url: '/#system' },
     { name: 'Services', url: '/services' },
+    { name: 'About', url: '/about' },
     { name: 'Results', url: '/#results' },
     { name: 'Pricing', url: '/#pricing' },
   ];

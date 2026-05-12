@@ -39,10 +39,6 @@ export const ProblemSection: React.FC<{ className?: string }> = ({ className }) 
                <AlertCircle className="absolute -top-5 md:-top-6 left-1/2 -translate-x-1/2 w-10 h-10 md:w-12 md:h-12 text-[#cf5230] bg-white rounded-full p-1" />
               And it costs you more every month than their retainer ever did.
             </p>
-
-            <p className="text-base sm:text-lg md:text-2xl leading-relaxed text-neutral-600 font-medium mb-12 text-center md:text-left">
-              The profession of digital marketing has more incompetence per capita than almost any other industry on earth. Harsh? Yes. True? <span className="font-black text-foreground bg-yellow-200/50 px-2">Ask your Monday morning calendar.</span>
-            </p>
           </div>
         </ScrollReveal>
 

@@ -3,7 +3,6 @@
 import { ArrowRight, Volume2, VolumeX } from "lucide-react";
 import { useRef, useState } from "react";
 import { UrgencyPopover } from "@/components/ui/urgency-popover";
-import { LiveActivityFeed } from "@/components/ui/live-activity-feed";
 
 /*
  * Hero is stacked vertically:
@@ -36,7 +35,7 @@ export const WajdanHero = () => {
         {/* ───── Top copy area ───── */}
         <div className="flex flex-col items-center text-center w-full max-w-6xl">
           <div className="inline-flex items-center px-4 py-1.5 mb-6 text-xs md:text-sm font-bold tracking-widest text-[#cf5230] uppercase bg-orange-50 border border-[#cf5230]/30 shadow-sm animate-fade-in">
-            For Immigration & Education Consultancies
+            For Consultancies
           </div>
 
           <h1 className="vt-hero-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#111110] tracking-tighter leading-[0.98] mb-6 max-w-5xl animate-slide-up animation-delay-100 uppercase">
@@ -49,6 +48,58 @@ export const WajdanHero = () => {
               Or we work for free.
             </span>
           </p>
+
+          <div className="flex flex-col gap-6 w-full max-w-4xl mb-12 animate-slide-up animation-delay-200">
+            <div className="relative bg-[#111110] shadow-[12px_12px_0_0_#cf5230] border-2 border-[#111110]">
+              <div className="relative aspect-video w-full overflow-hidden">
+                <video
+                  ref={videoRef}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  poster="/placeholder.svg"
+                  src="https://cdn.coverr.co/videos/coverr-typing-on-the-laptop-2330/1080p.mp4"
+                  aria-label="Wajdan system walkthrough"
+                />
+
+                {/* Top-left running badge */}
+                <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#cf5230] text-white px-3 py-1.5 shadow-md">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
+                  </span>
+                  <span className="text-[10px] font-black uppercase tracking-widest">Live Demo</span>
+                </div>
+
+                {/* Mute toggle */}
+                <button
+                  type="button"
+                  onClick={toggleMute}
+                  aria-label={muted ? 'Unmute video' : 'Mute video'}
+                  className="absolute top-4 right-4 w-10 h-10 bg-white/95 hover:bg-white transition-colors flex items-center justify-center shadow-md"
+                >
+                  {muted ? (
+                    <VolumeX className="w-5 h-5 text-[#111110]" />
+                  ) : (
+                    <Volume2 className="w-5 h-5 text-[#cf5230]" />
+                  )}
+                </button>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111110]/85 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
+                  <p className="text-[#cf5230] text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-1">
+                    Wajdan System Walkthrough — 3 min
+                  </p>
+                  <p className="text-white text-sm md:text-base font-bold leading-tight">
+                    How we build the complete acquisition machine.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full max-w-lg mb-6 animate-slide-up animation-delay-300">
             <a
@@ -85,61 +136,6 @@ export const WajdanHero = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* ───── Bottom VSL + live feed ───── */}
-        <div className="flex flex-col gap-6 w-full max-w-4xl mt-12 md:mt-16 animate-slide-up animation-delay-200">
-          <div className="relative bg-[#111110] shadow-[12px_12px_0_0_#cf5230] border-2 border-[#111110]">
-            <div className="relative aspect-video w-full overflow-hidden">
-              <video
-                ref={videoRef}
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                poster="/placeholder.svg"
-                src="https://cdn.coverr.co/videos/coverr-typing-on-the-laptop-2330/1080p.mp4"
-                aria-label="Wajdan system walkthrough"
-              />
-
-              {/* Top-left running badge */}
-              <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#cf5230] text-white px-3 py-1.5 shadow-md">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
-                </span>
-                <span className="text-[10px] font-black uppercase tracking-widest">Live Demo</span>
-              </div>
-
-              {/* Mute toggle */}
-              <button
-                type="button"
-                onClick={toggleMute}
-                aria-label={muted ? 'Unmute video' : 'Mute video'}
-                className="absolute top-4 right-4 w-10 h-10 bg-white/95 hover:bg-white transition-colors flex items-center justify-center shadow-md"
-              >
-                {muted ? (
-                  <VolumeX className="w-5 h-5 text-[#111110]" />
-                ) : (
-                  <Volume2 className="w-5 h-5 text-[#cf5230]" />
-                )}
-              </button>
-
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111110]/85 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
-                <p className="text-[#cf5230] text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-1">
-                  Wajdan System Walkthrough — 3 min
-                </p>
-                <p className="text-white text-sm md:text-base font-bold leading-tight">
-                  How we build the complete acquisition machine.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <LiveActivityFeed className="hidden md:block" />
         </div>
       </div>
     </section>

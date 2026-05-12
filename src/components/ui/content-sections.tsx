@@ -6,23 +6,6 @@ import { FaFacebook as Facebook, FaInstagram as Instagram, FaYoutube as Youtube 
 import { TiltCard } from './tilt-card';
 
 export const ProofSection = () => {
-  const metrics = [
-    {
-      value: '3×',
-      title: 'More Qualified Bookings',
-      icon: <Trophy className="w-12 h-12" strokeWidth={1.5} />,
-      quote:
-        '"Within 60 days of the new offer and VSL going live, our sales team\'s closing rate jumped because the objections were handled before the call even started."',
-    },
-    {
-      value: '70%',
-      title: 'Avg. Show-Up Rate',
-      icon: <Target className="w-12 h-12" strokeWidth={1.5} />,
-      quote:
-        '"The automated SMS and email nurture sequence completely eliminated the \'ghosting\' problem we had with our previous generic agency."',
-    },
-  ];
-
   return (
     <div className="py-16 md:py-24 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
@@ -32,29 +15,17 @@ export const ProofSection = () => {
           </h2>
           <div className="mt-4 flex justify-center px-2">
             <p className="text-sm md:text-lg font-black text-white max-w-3xl px-4 sm:px-6 py-3 bg-[#cf5230] md:-rotate-1 shadow-[0_6px_0_0_#111110] md:shadow-[0_8px_0_0_#111110] uppercase tracking-wider leading-snug">
-              Immigration & Education consultancy funnels we've built — and what happened after.
+              Consultancy funnels we've built — and what happened after.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
-          {metrics.map((m, i) => (
-            <ScrollReveal key={m.value} delay={0.1 * (i + 1)}>
-              <TiltCard intensity={6} lift={20} className="h-full">
-                <div className="bg-white border-2 border-neutral-200 p-6 sm:p-8 md:p-10 shadow-[6px_6px_0_0_#cf5230] md:shadow-[8px_8px_0_0_#cf5230] relative overflow-hidden group h-full">
-                  <div className="flex justify-between items-start mb-5 md:mb-6 gap-4">
-                    <h3 className="text-5xl sm:text-6xl md:text-7xl font-black text-[#cf5230] uppercase tracking-tight md:tracking-tighter">{m.value}</h3>
-                    <div className="text-neutral-300 group-hover:text-[#cf5230] transition-colors flex-shrink-0">{m.icon}</div>
-                  </div>
-
-                  <p className="text-xl md:text-2xl font-black text-[#111110] mb-5 md:mb-6 uppercase tracking-tight leading-tight">{m.title}</p>
-                  <div className="h-1 w-12 md:w-16 bg-[#cf5230] mb-5 md:mb-6" />
-
-                  <p className="text-neutral-600 font-medium text-base md:text-lg italic leading-relaxed">{m.quote}</p>
-                </div>
-              </TiltCard>
-            </ScrollReveal>
-          ))}
+        <div className="mt-12 md:mt-16 w-full max-w-4xl mx-auto border-4 border-black rounded-lg overflow-hidden shadow-[12px_12px_0_0_#cf5230]">
+          <img 
+            src="/magnific_change-img1-bg-to-img2-bg_2954621788.png" 
+            alt="Dashboard Proof of Results" 
+            className="w-full h-auto object-cover block"
+          />
         </div>
       </div>
     </div>
@@ -63,7 +34,7 @@ export const ProofSection = () => {
 
 export const WhoIsThisFor = () => {
   const fits = [
-    'You run an immigration or education consultancy already getting leads — but far fewer qualified consultations than you\'re paying for',
+    'You run an education consultancy already getting leads — but far fewer qualified consultations than you\'re paying for',
     'You\'ve been burned by at least one agency that promised results and delivered Monday morning excuses',
     'You want to measure marketing by booked calls and show rates — not impressions, clicks, and CPL',
     'You\'re ready to invest in a complete system — not another month of hoping the ads improve on their own',
@@ -84,7 +55,7 @@ export const WhoIsThisFor = () => {
             Who This Is <span className="text-[#cf5230] border-b-4 border-[#cf5230] pb-1">For</span>.
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto font-medium">
-            And who should probably close this tab right now.
+            Make sure to Read this so you dont waste our time.
           </p>
         </ScrollReveal>
 
@@ -195,7 +166,7 @@ export const FinalCTA = () => {
             href="#contact"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="inline-block w-full sm:w-auto bg-[#8cc63f] hover:bg-[#7ebd34] text-black font-black uppercase text-base sm:text-xl md:text-3xl tracking-tight py-4 md:py-6 px-8 sm:px-12 md:px-16 rounded shadow-[0_0_40px_rgba(140,198,63,0.3)] transition-all"
+            className="inline-block w-full sm:w-auto bg-[#cf5230] hover:bg-[#b04528] text-white font-black uppercase text-base sm:text-xl md:text-3xl tracking-tight py-4 md:py-6 px-8 sm:px-12 md:px-16 rounded shadow-[0_0_40px_rgba(207,82,48,0.3)] transition-all"
           >
             HIT THE DAMN BUTTON
           </motion.a>

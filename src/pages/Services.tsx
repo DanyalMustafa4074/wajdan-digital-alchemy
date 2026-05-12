@@ -35,6 +35,7 @@ interface SystemLayerDetailProps {
   ctaText: string;
   color: string;
   reversed?: boolean;
+  nextLayerId?: string;
 }
 
 const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
@@ -47,6 +48,7 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
   ctaText,
   color,
   reversed = false,
+  nextLayerId,
 }) => {
   // Single brand accent — neutrals + rust orange.
   const colorClasses = {
@@ -133,21 +135,23 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
       </div>
 
       {/* Scroll indicator */}
-      <ScrollReveal delay={0.5} className="flex justify-center mt-12">
-        <motion.a 
-          href="#" 
-          className="flex flex-col items-center gap-2 text-gray-600 hover:text-brand-orange transition-colors"
-          whileHover={{ scale: 1.1 }}
-        >
-          <span className="text-sm">See the next layer</span>
-          <motion.div
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+      {nextLayerId && (
+        <ScrollReveal delay={0.5} className="flex justify-center mt-12">
+          <motion.a 
+            href={`#${nextLayerId}`}
+            className="flex flex-col items-center gap-2 text-gray-600 hover:text-brand-orange transition-colors"
+            whileHover={{ scale: 1.1 }}
           >
-            <ArrowDown className="w-5 h-5" />
-          </motion.div>
-        </motion.a>
-      </ScrollReveal>
+            <span className="text-sm">See the next layer</span>
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ArrowDown className="w-5 h-5" />
+            </motion.div>
+          </motion.a>
+        </ScrollReveal>
+      )}
     </section>
   );
 };
@@ -255,9 +259,6 @@ const Services = () => {
       {/* Trusted-by logo marquee */}
       <LogoMarquee />
 
-      {/* Growth comparison chart */}
-      <GrowthChart />
-
       {/* Lead lifecycle pipeline */}
       <PipelineFlow />
 
@@ -268,80 +269,11 @@ const Services = () => {
         </div>
       </section>
 
-      {/* The Bricks Story */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <ScrollReveal>
-            <p className="text-neutral-600 mb-4 md:mb-6 font-medium text-sm md:text-base">Here's something nobody in this industry wants to say out loud.</p>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#111110] mb-5 md:mb-6 uppercase tracking-tight leading-tight">
-              Most agencies sell you services the same way a builder sells you bricks.
-            </h2>
-            <p className="text-base md:text-xl text-neutral-600 italic mb-8">Here are your bricks. Good luck with the house.</p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.2}>
-            <motion.div
-              className="bg-[#fafaf8] border-2 border-neutral-200 p-6 md:p-8 mb-8 shadow-[6px_6px_0_0_#cf5230] md:shadow-[8px_8px_0_0_#cf5230]"
-              whileHover={{ borderColor: '#cf5230' }}
-            >
-              <p className="text-xl md:text-2xl text-[#111110] font-bold mb-2">The problem isn't the bricks.</p>
-              <p className="text-2xl md:text-3xl text-[#cf5230] font-black uppercase tracking-tight leading-tight">It's that nobody built the house.</p>
-            </motion.div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.3}>
-            <p className="text-neutral-700 mb-5 md:mb-6 leading-relaxed text-base md:text-lg">
-              You hired an agency that ran your Meta ads. The leads came in. Nothing was built to catch them,
-              qualify them, follow them up, pre-nurture them, or make sure they showed up.
-            </p>
-            <p className="text-[#111110] text-base md:text-lg font-bold mb-6">You paid for bricks. You needed a house.</p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.4}>
-            <div className="bg-[#111110] text-white p-6 md:p-8 mb-8 border-l-4 md:border-l-8 border-[#cf5230] text-left">
-              <p className="text-base md:text-xl text-neutral-300 italic mb-3">
-                "The leads are coming in. Why isn't anyone booking?"
-              </p>
-              <p className="text-[#cf5230] font-bold text-base md:text-lg leading-snug">
-                Because the system that was supposed to convert them was never actually built.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.5}>
-            <p className="text-base md:text-xl text-[#111110] font-bold mb-4">This is why Wajdan doesn't sell services.</p>
-            <motion.p
-              className="text-xl sm:text-2xl md:text-3xl text-[#cf5230] font-black uppercase tracking-tight mb-6 leading-snug"
-              animate={{ scale: [1, 1.02, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              We sell a system. And the system only works when every part of it exists.
-            </motion.p>
-            <div className="flex items-center justify-center gap-2 sm:gap-3 text-[#111110] text-sm sm:text-base md:text-xl font-black uppercase tracking-tight flex-wrap">
-              <span>Five layers.</span>
-              <span className="text-[#cf5230]">One system.</span>
-              <span className="text-neutral-500">Zero gaps.</span>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.6} className="mt-8 md:mt-10">
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.96 }}
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 sm:px-8 py-4 md:py-5 bg-[#cf5230] text-white font-black uppercase tracking-wider text-sm md:text-base shadow-[0_4px_0_0_#111110] hover:shadow-none hover:translate-y-1 transition-all"
-            >
-              Book a Free Funnel Audit
-              <ArrowRight className="w-5 h-5" />
-            </motion.a>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Layer 1: Offer Creation */}
       <section id="layer-1" className="bg-[#fafaf8] scroll-mt-32">
         <SystemLayerDetail
           number="01"
+          nextLayerId="layer-2"
           title="The Offer."
           subtitle="The Sauce That Waters Every Client's Mouth."
           description="Most agencies start with the ad. We start with what the ad is selling. Because an ad for a bad offer is just expensive noise. Your leads are not bad because your targeting is wrong. They are not bad because your creative is weak. Your leads are bad because your offer is not compelling enough to attract serious people. An offer is not your service. An offer is what your ideal client is desperately searching for — phrased in their language, solving their exact pain — that nobody else in your market is giving them."
@@ -386,6 +318,7 @@ const Services = () => {
       <section id="layer-2" className="bg-white border-t border-neutral-200 scroll-mt-32">
         <SystemLayerDetail
           number="02"
+          nextLayerId="layer-3"
           title="Landing Page + VSL."
           subtitle="Not a Template. The Ambush."
           description="By the time your prospect fills the form — they should already trust you, believe in your system, and be half-sold. If that's not happening, your funnel is a speed bump, not a conversion machine. Most landing pages in this industry are embarrassing. A headline. A stock photo. Three bullet points. A form. A Submit button. And everyone wonders why conversion rate is 8%. A real consultation funnel is an experience — not a page."
@@ -431,6 +364,7 @@ const Services = () => {
       <section id="layer-3" className="bg-[#fafaf8] border-t border-neutral-200 scroll-mt-32">
         <SystemLayerDetail
             number="03"
+            nextLayerId="layer-4"
             title="GHL Workspace Config."
             subtitle="The Net That Catches Everything."
             description="If you don't track it, you can't close it. And if you rely on staff to manually follow up with every lead, you are burning money. The human follow-up fails because humans have calendars. Software doesn't. Our GHL automation is the backbone of the system. Every lead captured. Every prospect nurtured. Every outcome tracked."
@@ -438,7 +372,7 @@ const Services = () => {
               {
                 icon: <Database className="w-6 h-6" />,
                 title: "GHL Account Setup",
-                description: "Full workspace configuration, custom pipelines, tagged stages. Built specifically for immigration."
+                description: "Full workspace configuration, custom pipelines, tagged stages. Built specifically for consultancies."
               },
               {
                 icon: <Bot className="w-6 h-6" />,
@@ -475,6 +409,7 @@ const Services = () => {
       <section id="layer-4" className="bg-white border-t border-neutral-200 scroll-mt-32">
         <SystemLayerDetail
             number="04"
+            nextLayerId="cta"
             title="Meta Ads + Retargeting."
             subtitle="Fuel For The Engine."
             description="You don't need 'more followers' and you don't need 'brand awareness'. You need people sitting in front of you with their credit cards. We build direct-response Meta campaigns designed for one outcome: pushing qualified traffic into the funnel we just built. We run the traffic. The offer gets the click. The funnel books the call. The automation gets them to show up."

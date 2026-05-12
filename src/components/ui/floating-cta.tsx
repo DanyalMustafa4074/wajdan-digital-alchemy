@@ -65,7 +65,7 @@ export const FinalCTA = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           viewport={{ once: true }}
-          className="inline-block mt-4 bg-[#8cc63f] hover:bg-[#7ebd34] text-black font-black uppercase text-xl md:text-3xl tracking-tight py-6 px-12 md:px-16 rounded shadow-[0_0_40px_rgba(140,198,63,0.3)] transition-all"
+          className="inline-block mt-4 bg-[#cf5230] hover:bg-[#b04528] text-white font-black uppercase text-xl md:text-3xl tracking-tight py-6 px-12 md:px-16 rounded shadow-[0_0_40px_rgba(207,82,48,0.3)] transition-all"
         >
           HIT THE DAMN BUTTON
         </motion.a>

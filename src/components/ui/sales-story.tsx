@@ -16,7 +16,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
               URGENT WARNING
             </div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-red-600 mb-3 md:mb-4 uppercase tracking-tight md:tracking-tighter mt-4 leading-snug md:leading-tight">
-              Most immigration consultancies running Meta ads are paying for a half-built system.
+              Most education consultancies running Meta ads are paying for a half-built system.
             </h2>
             <p className="text-red-950 font-bold m-0 text-sm sm:text-base md:text-xl leading-relaxed">
               Here's the other half — and why it's costing you more than the retainer itself.
@@ -26,14 +26,14 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
 
         <ScrollReveal delay={0.1}>
           <p className="text-lg sm:text-xl md:text-2xl leading-relaxed font-bold mb-6 md:mb-8 text-foreground uppercase tracking-tight">
-            Dear Immigration & Education Consultancy Owner,
+            You.
           </p>
           <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground mx-auto mb-6 font-medium">
-            If you want to stop watching money leave your ad account every week while your calendar sits half empty — and finally build a system where qualified, pre-nurtured, ready-to-buy prospects actually show up to your consultations —
+            Yeah you are the consultancy owner who wants to stop watching money leave your ad account every week while your calendar sits half empty. The one who wants a system where qualified, pre-nurtured, ready-to-buy prospects actually show up to your consultations.
           </p>
           <div className="my-8 md:my-10 text-center">
             <p className="text-base sm:text-lg md:text-2xl leading-snug text-foreground mx-auto font-black bg-[#cf5230] text-white p-3 inline-block md:-rotate-1 shadow-[4px_4px_0_0_#000]">
-              Then I promise you: this is the most important page you will read this year.
+              Then I promise you: this is the most important f*cking page you will read this year.
             </p>
           </div>
           <p className="text-sm md:text-lg leading-relaxed text-neutral-500 mx-auto mb-12 md:mb-16 italic text-center w-full">
@@ -64,40 +64,25 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
           </p>
 
           <div className="bg-red-500 text-white p-5 md:p-6 my-8 md:my-10 font-bold text-base sm:text-lg md:text-2xl text-center shadow-inner leading-snug">
-            And the two sets of numbers had almost nothing to do with each other.
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-4 mb-10 text-center">
-            <div className="bg-white p-5 md:p-6 border-2 border-gray-200 shadow-sm text-gray-800 text-sm font-bold italic relative">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-4xl text-gray-300">"</span>
-              The leads need more time to warm up.
-            </div>
-            <div className="bg-white p-5 md:p-6 border-2 border-gray-200 shadow-sm text-gray-800 text-sm font-bold italic relative">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-4xl text-gray-300">"</span>
-              We just need to let the algorithm learn.
-            </div>
-            <div className="bg-white p-5 md:p-6 border-2 border-gray-200 shadow-sm text-gray-800 text-sm font-bold italic relative">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-4xl text-gray-300">"</span>
-              Can we get a slightly bigger budget for next month?
-            </div>
+            And those two numbers? Pure Instagram vs reality.
           </div>
 
           <p className="text-xl sm:text-2xl font-black leading-snug text-foreground mb-8 text-center uppercase tracking-tight">
-            Meanwhile you're watching money leave your account.<br/><span className="text-[#cf5230]">Every. Single. Week.</span>
+            AND MEANWHILE? YOUR MONEY'S ON F*CKING FIRE.<br/><span className="text-[#cf5230]">EVERY. SINGLE. WEEK.</span>
           </p>
 
           <ul className="space-y-5 md:space-y-6 mb-12 md:mb-16 pl-2 md:pl-8">
             <li className="flex items-start gap-3 md:gap-4">
               <X className="w-6 h-6 md:w-8 md:h-8 text-red-600 mt-1 flex-shrink-0" />
-              <span className="text-base md:text-xl font-bold text-gray-800">Paying for leads that never answer the phone.</span>
+              <span className="text-base md:text-xl font-bold text-gray-800">Paying for leads who don't even pick up the phone.</span>
             </li>
             <li className="flex items-start gap-3 md:gap-4">
               <X className="w-6 h-6 md:w-8 md:h-8 text-red-600 mt-1 flex-shrink-0" />
-              <span className="text-base md:text-xl font-bold text-gray-800">Paying for bookings that don't show up.</span>
+              <span className="text-base md:text-xl font-bold text-gray-800">Paying for "booked" calls that ghost you before the day arrives.</span>
             </li>
             <li className="flex items-start gap-3 md:gap-4">
               <X className="w-6 h-6 md:w-8 md:h-8 text-red-600 mt-1 flex-shrink-0" />
-              <span className="text-base md:text-xl font-bold text-gray-800 leading-snug">Paying for a Monday morning report that tells you everything except the one thing you actually need to know:</span>
+              <span className="text-base md:text-xl font-bold text-gray-800 leading-snug">Paying for a Monday morning PDF that tells you everything — except whether any of it ever turns into a paying client.</span>
             </li>
           </ul>
         </ScrollReveal>
@@ -125,7 +110,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             Any agency can fill a form. Any agency can lower your cost per click. Any agency can produce a dashboard that looks like progress.
           </p>
           <div className="p-6 sm:p-8 md:p-10 bg-red-50 border-4 border-red-600 font-black text-base sm:text-lg md:text-2xl mb-8 text-center leading-snug uppercase tracking-tight shadow-[6px_6px_0_0_#dc2626] md:shadow-[8px_8px_0_0_#dc2626] md:-rotate-1">
-            What almost no agency ever builds — what nobody built for you — is the <span className="text-red-700 bg-yellow-300 px-1 md:px-2 py-0.5 md:py-1">system</span> that takes that lead from the moment they submit a form and never lets go until they're sitting in front of you.
+            <span className="text-red-700 bg-yellow-300 px-1 md:px-2 py-0.5 md:py-1">from the moment they click your ad and never let go until they are sitting ...</span>
           </div>
           <p className="text-sm md:text-lg font-bold leading-relaxed text-neutral-500 italic mb-12 md:mb-16 text-center max-w-2xl mx-auto">
             (That gap — between form submission and a qualified, pre-nurtured, showed-up consultation? That's where your money goes. Every. Single. Time.)
@@ -137,9 +122,6 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
               That's not bad targeting.<br/>
               <span className="text-red-600 block mt-2">That's your worst fear.</span>
             </h2>
-            <p className="text-base sm:text-xl md:text-2xl font-bold mt-6 md:mt-8 uppercase tracking-wide text-gray-500">
-              And it is precisely, exactly, specifically what we were built to fix.
-            </p>
           </div>
 
           <div className="p-6 sm:p-8 md:p-12 border-4 border-black bg-white shadow-[8px_8px_0_0_#cf5230] md:shadow-[12px_12px_0_0_#cf5230] mb-8 text-center relative overflow-hidden">
@@ -147,7 +129,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase mb-3 md:mb-4 tracking-tight md:tracking-tighter text-gray-400 line-through">We don't start with your ads.</h3>
             <h3 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#cf5230] uppercase mb-6 md:mb-8 tracking-tight md:tracking-tighter leading-[1.05]">We start with your offer.</h3>
             <p className="text-base md:text-xl font-medium text-gray-800 leading-relaxed max-w-2xl mx-auto mb-8 md:mb-10">
-              The offer your ideal immigration or education client is desperately searching for — that nobody in your market is actually giving them. We find that gap. We craft the offer that fills it. Then — and only then — do we build everything else around it.
+              The offer your ideal education client is desperately searching for — that nobody in your market is actually giving them. We find that gap. We craft the offer that fills it. Then — and only then — do we build everything else around it.
             </p>
             <motion.a
               href="#contact"

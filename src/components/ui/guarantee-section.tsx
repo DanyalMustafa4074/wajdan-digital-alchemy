@@ -43,12 +43,6 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
           </h2>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
-          <p className="text-base sm:text-lg md:text-2xl text-neutral-400 mb-10 md:mb-12 font-medium max-w-2xl mx-auto leading-relaxed">
-            Because — unlike every agency that has ever promised you the world and delivered a Monday morning report full of vanity metrics — we don't get paid unless the system actually produces better consultation bookings.
-          </p>
-        </ScrollReveal>
-
         <ScrollReveal delay={0.3}>
           <motion.div
             whileHover={{ scale: 1.01 }}
@@ -65,21 +59,16 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.4}>
-          <div className="grid sm:grid-cols-2 gap-3 mb-12 md:mb-16 text-left max-w-3xl mx-auto">
-            {noPayingFor.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.05 * index }}
-                className="flex items-center gap-3 md:gap-4 bg-[#161614] p-3 md:p-4 border border-neutral-800"
-              >
-                <div className="w-7 h-7 md:w-8 md:h-8 bg-[#cf5230]/10 flex items-center justify-center flex-shrink-0 border border-[#cf5230]/30">
-                  <X className="text-[#cf5230] w-4 h-4 md:w-5 md:h-5" strokeWidth={3} />
-                </div>
-                <span className="text-neutral-300 font-semibold text-xs sm:text-sm md:text-base leading-snug">{item}</span>
-              </motion.div>
-            ))}
+          <div className="text-xl md:text-3xl font-black text-white tracking-tight mb-12 flex flex-col gap-2 uppercase">
+            <span>The offer's rotting for 4 years Cuz We Always delivered</span>
+            <span className="text-[#cf5230] mt-4">Five Layers. Zero Gaps.</span>
+            <div className="flex flex-col text-lg md:text-xl text-neutral-400 mt-2 space-y-1">
+              <span>Offer Creation</span>
+              <span>Funnel</span>
+              <span>GHL</span>
+              <span>Meta Campaigns</span>
+              <span>Conversion Loop</span>
+            </div>
           </div>
         </ScrollReveal>
 
@@ -119,7 +108,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
               ))}
             </div>
             <p className="text-neutral-500 font-bold text-xs md:text-sm uppercase tracking-widest">
-              Trusted by Immigration & Education consultancies across Europe, UAE & beyond
+              Trusted by consultancies across Europe, UAE & beyond
             </p>
           </div>
         </ScrollReveal>

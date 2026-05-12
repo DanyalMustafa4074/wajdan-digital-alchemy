@@ -30,7 +30,7 @@ export const Footer = () => {
               </picture>
             </motion.a>
             <p className="text-neutral-400 mb-6 leading-relaxed max-w-md text-sm md:text-base">
-              Client Acquisition Systems for Immigration & Education Consultants.
+              Client Acquisition Systems for Education Consultancies.
               We build the complete infrastructure that turns Meta traffic into qualified,
               pre-nurtured, showed-up consultation bookings.
             </p>
@@ -51,6 +51,7 @@ export const Footer = () => {
               <li><a href="/#results" className="hover:text-[#cf5230] transition-colors">Results</a></li>
               <li><a href="/#pricing" className="hover:text-[#cf5230] transition-colors">Pricing</a></li>
               <li><a href="/services" className="hover:text-[#cf5230] transition-colors">Services</a></li>
+              <li><a href="/about" className="hover:text-[#cf5230] transition-colors">About</a></li>
               <li><a href="/#contact" className="hover:text-[#cf5230] transition-colors">Contact</a></li>
             </ul>
           </div>

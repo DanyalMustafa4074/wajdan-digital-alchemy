@@ -39,7 +39,7 @@ const pricingTiers: PricingTier[] = [
   },
   {
     name: 'Monthly Management',
-    price: '$1,500/month',
+    price: '$2,000/month',
     priceSubtext: 'Ad spend separate. No long-term contract.',
     description:
       'After the system is built. We run the campaigns, optimise weekly, and earn the retainer every single month.',

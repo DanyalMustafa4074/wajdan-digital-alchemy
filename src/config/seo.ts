@@ -42,4 +42,5 @@ export const SOCIAL_PROFILES = [
 export const NAV_LINKS = [
   { name: "Home", url: `${SITE_URL}/` },
   { name: "Services", url: `${SITE_URL}/services` },
+  { name: "About", url: `${SITE_URL}/about` },
 ];
