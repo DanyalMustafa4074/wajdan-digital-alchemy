@@ -5,7 +5,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TransitionLink } from "@/components/ui/transition-link";
 
-function WajdanNavbar({ className }: { className?: string }) {
+function WajdanNavbar({ className, theme = "light" }: { className?: string, theme?: "light" | "dark" }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -43,7 +43,7 @@ function WajdanNavbar({ className }: { className?: string }) {
           <div className="flex items-center justify-between">
             <TransitionLink to="/" className="flex items-center gap-2 group vt-logo" aria-label="Home">
               <motion.img
-                src="/Wajdan%20Logo%20dark.png"
+                src={theme === "dark" && !isScrolled ? "/Wajdan%20Logo%20light.png" : "/Wajdan%20Logo%20dark.png"}
                 alt="Wajdan"
                 className="h-8 md:h-10 w-auto"
                 whileHover={{ scale: 1.04 }}
@@ -56,7 +56,10 @@ function WajdanNavbar({ className }: { className?: string }) {
                 <TransitionLink
                   key={item.name}
                   to={item.url}
-                  className="text-neutral-700 hover:text-[#111110] transition-colors text-sm font-bold relative group uppercase tracking-wide"
+                  className={cn(
+                    "transition-colors text-sm font-bold relative group uppercase tracking-wide",
+                    theme === "dark" && !isScrolled ? "text-neutral-200 hover:text-white" : "text-neutral-700 hover:text-[#111110]"
+                  )}
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#cf5230] transition-all group-hover:w-full" />
@@ -67,7 +70,10 @@ function WajdanNavbar({ className }: { className?: string }) {
                 href="/#contact"
                 whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.96 }}
-                className="vt-cta inline-flex items-center gap-2 px-5 py-2.5 bg-[#111110] text-white text-sm font-black uppercase tracking-wider shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1 transition-all"
+                className={cn(
+                  "vt-cta inline-flex items-center gap-2 px-5 py-2.5 text-sm font-black uppercase tracking-wider shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1 transition-all",
+                  theme === "dark" && !isScrolled ? "bg-[#fafaf8] text-[#111110]" : "bg-[#111110] text-[#fafaf8]"
+                )}
               >
                 Book Free Audit
                 <ArrowRight className="w-4 h-4" />
@@ -76,7 +82,10 @@ function WajdanNavbar({ className }: { className?: string }) {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-3 -mr-2 text-[#111110] hover:bg-neutral-100 rounded-lg transition-colors flex items-center justify-center min-w-[48px] min-h-[48px]"
+              className={cn(
+                "md:hidden p-3 -mr-2 rounded-lg transition-colors flex items-center justify-center min-w-[48px] min-h-[48px]",
+                theme === "dark" && !isScrolled ? "text-white hover:bg-neutral-800" : "text-[#111110] hover:bg-neutral-100"
+              )}
               aria-label="Toggle Navigation Menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

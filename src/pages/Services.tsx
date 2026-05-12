@@ -36,6 +36,7 @@ interface SystemLayerDetailProps {
   color: string;
   reversed?: boolean;
   nextLayerId?: string;
+  extraContent?: React.ReactNode;
 }
 
 const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
@@ -49,6 +50,7 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
   color,
   reversed = false,
   nextLayerId,
+  extraContent,
 }) => {
   // Single brand accent — neutrals + rust orange.
   const colorClasses = {
@@ -132,6 +134,12 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
             </StaggerContainer>
           </div>
         </div>
+
+        {extraContent && (
+          <div className="mt-16 sm:mt-20">
+            {extraContent}
+          </div>
+        )}
       </div>
 
       {/* Scroll indicator */}
@@ -357,6 +365,32 @@ const Services = () => {
           ctaText="Build My Funnel"
           color="green"
           reversed
+          extraContent={
+            <div className="w-full">
+              <ScrollReveal>
+                <div className="text-center mb-10">
+                  <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight leading-tight max-w-4xl mx-auto">
+                    Some landing pages we've<br />hand-crafted that convert<br />like crazy
+                  </h3>
+                </div>
+              </ScrollReveal>
+              <StaggerContainer staggerDelay={0.05} className="grid grid-cols-2 md:grid-cols-4 gap-4 px-2">
+                {[...Array(12)].map((_, i) => (
+                  <StaggerItem key={i}>
+                    <div className="w-full overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 aspect-[3/4] relative group">
+                      <div className="absolute inset-0 bg-neutral-900/10 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
+                      <img 
+                        src="/placeholder.svg" 
+                        alt="Landing Page Design Example" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
+          }
         />
       </section>
 

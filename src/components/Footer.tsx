@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 export const Footer = () => {
   return (
@@ -12,22 +13,11 @@ export const Footer = () => {
               whileHover={{ scale: 1.04 }}
               className="inline-block mb-6"
             >
-              {/* Use <picture> to serve light/dark variants based on user preference */}
-              <picture>
-                <source
-                  srcSet="/Wajdan%20Logo%20light.png"
-                  media="(prefers-color-scheme: light)"
-                />
-                <source
-                  srcSet="/Wajdan%20Logo%20dark.png"
-                  media="(prefers-color-scheme: dark)"
-                />
-                <img
-                  src="/Wajdan%20Logo%20dark.png"
-                  alt="Wajdan Digital Alchemy"
-                  className="h-10 w-auto"
-                />
-              </picture>
+              <img
+                src="/Wajdan%20Logo%20light.png"
+                alt="Wajdan Digital Alchemy"
+                className="h-10 w-auto"
+              />
             </motion.a>
             <p className="text-neutral-400 mb-6 leading-relaxed max-w-md text-sm md:text-base">
               Client Acquisition Systems for Education Consultancies.
@@ -73,29 +63,26 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Partner stamps — King Kong style row near footer end */}
+        {/* Social Links & Copyright */}
         <div className="border-t border-neutral-800 mt-16 pt-10">
-          <p className="text-neutral-500 text-xs font-bold uppercase tracking-[0.2em] mb-5 text-center md:text-left">
-            We work the platforms that pay
-          </p>
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 md:gap-10 mb-10 opacity-80">
-            {['Meta Ads', 'Google Ads', 'GoHighLevel', 'TikTok Ads', 'YouTube Ads', 'Conversions API'].map((p) => (
-              <span
-                key={p}
-                className="text-neutral-400 hover:text-[#cf5230] transition-colors text-sm font-black uppercase tracking-wider"
-              >
-                {p}
-              </span>
-            ))}
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-neutral-900">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-neutral-500 text-sm text-center md:text-left">
               © {new Date().getFullYear()} Wajdan Digital Alchemy. Client acquisition systems for consultancies.
             </p>
-            <p className="text-[#cf5230] font-black tracking-widest text-sm">
-              WAJDAN.CO
-            </p>
+            <div className="flex items-center gap-6">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#cf5230] transition-colors" aria-label="Facebook">
+                <FaFacebook className="w-5 h-5" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#cf5230] transition-colors" aria-label="Instagram">
+                <FaInstagram className="w-5 h-5" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#cf5230] transition-colors" aria-label="LinkedIn">
+                <FaLinkedin className="w-5 h-5" />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#cf5230] transition-colors" aria-label="YouTube">
+                <FaYoutube className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

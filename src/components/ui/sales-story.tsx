@@ -63,9 +63,9 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             And then you looked at your actual booked consultations.
           </p>
 
-          <div className="bg-red-500 text-white p-5 md:p-6 my-8 md:my-10 font-bold text-base sm:text-lg md:text-2xl text-center shadow-inner leading-snug">
+          <p className="text-xl sm:text-2xl md:text-3xl font-black leading-snug text-[#cf5230] my-8 md:my-10 text-center uppercase tracking-tight">
             And those two numbers? Pure Instagram vs reality.
-          </div>
+          </p>
 
           <p className="text-xl sm:text-2xl font-black leading-snug text-foreground mb-8 text-center uppercase tracking-tight">
             AND MEANWHILE? YOUR MONEY'S ON F*CKING FIRE.<br/><span className="text-[#cf5230]">EVERY. SINGLE. WEEK.</span>

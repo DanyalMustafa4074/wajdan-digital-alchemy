@@ -52,7 +52,7 @@ const PRESS = [
 const About = () => {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background">
-      <WajdanNavbar />
+      <WajdanNavbar theme="dark" />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative bg-[#111110] pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">

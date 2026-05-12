@@ -22,7 +22,7 @@ export const ProofSection = () => {
 
         <div className="mt-12 md:mt-16 w-full max-w-4xl mx-auto border-4 border-black rounded-lg overflow-hidden shadow-[12px_12px_0_0_#cf5230]">
           <img 
-            src="/magnific_change-img1-bg-to-img2-bg_2954621788.png" 
+            src="/Wajdan_Dashboards_blurred%20(1).png" 
             alt="Dashboard Proof of Results" 
             className="w-full h-auto object-cover block"
           />

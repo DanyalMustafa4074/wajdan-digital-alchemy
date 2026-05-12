@@ -32,14 +32,20 @@ interface ClientLogoItem {
 }
 
 const CLIENT_LOGOS: ClientLogoItem[] = [
-  { id: 1, name: "Client 1", imageUrl: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=128&h=128&fit=crop&q=80" },
-  { id: 2, name: "Client 2", imageUrl: "https://images.unsplash.com/photo-1620288627223-fa94d6e9f1a2?w=128&h=128&fit=crop&q=80" },
-  { id: 3, name: "Client 3", imageUrl: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=128&h=128&fit=crop&q=80" },
-  { id: 4, name: "Client 4", imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=128&h=128&fit=crop&q=80" },
-  { id: 5, name: "Client 5", imageUrl: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=128&h=128&fit=crop&q=80" },
-  { id: 6, name: "Client 6", imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&q=80" },
-  { id: 7, name: "Client 7", imageUrl: "https://images.unsplash.com/photo-1517430816045-df4b7ef11df2?w=128&h=128&fit=crop&q=80" },
-  { id: 8, name: "Client 8", imageUrl: "https://images.unsplash.com/photo-1552581234-26160f608093?w=128&h=128&fit=crop&q=80" },
+  { id: 1, name: "Aspire Edge", imageUrl: "/client%20logos/ASPIRE%20EDGE%20CONSULTANTS.jpg" },
+  { id: 2, name: "Double Entry Academy", imageUrl: "/client%20logos/DOUBE%20ENTRY%20ACADEMY.jpg" },
+  { id: 3, name: "Global Minds", imageUrl: "/client%20logos/GLOBAL%20MINDS%20CONSULTANTS.jpg" },
+  { id: 4, name: "Hainan Corporate Services", imageUrl: "/client%20logos/HAINAN%20CORPORATE%20SERVICES%20GROUP.jpg" },
+  { id: 5, name: "Indus Bazaar", imageUrl: "/client%20logos/Indus%20Bazaar.jpg" },
+  { id: 6, name: "IRT Consultants", imageUrl: "/client%20logos/IRT%20CONSULTANTS.jpg" },
+  { id: 7, name: "One Roof Consultants", imageUrl: "/client%20logos/ONE%20ROOF%20CONSULTATS.jpg" },
+  { id: 8, name: "Pantree", imageUrl: "/client%20logos/PANTREE.jpg" },
+  { id: 9, name: "Portfolyio", imageUrl: "/client%20logos/PORTFOLYIO.png" },
+  { id: 10, name: "Spectrum Consulting", imageUrl: "/client%20logos/Spectrum%20Consulting.jpg" },
+  { id: 11, name: "Study Prime", imageUrl: "/client%20logos/STUDY%20PRIME.jpg" },
+  { id: 12, name: "Verticalsols", imageUrl: "/client%20logos/VERTICALSOLS.jpg" },
+  { id: 13, name: "Wisdom Weavers", imageUrl: "/client%20logos/WISDOM%20WEAVERS.jpg" },
+  { id: 14, name: "Zarveen", imageUrl: "/client%20logos/ZARVEEN.jpg" },
 ];
 
 interface FeatureLogoItem {
@@ -67,17 +73,17 @@ const ClientLogoChip: React.FC<{ item: ClientLogoItem }> = ({ item }) => (
     <img 
       src={item.imageUrl} 
       alt={item.name} 
-      className="w-16 h-16 object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+      className="w-16 h-16 object-contain transition-all duration-300"
     />
   </div>
 );
 
 const FeatureLogoChip: React.FC<{ item: FeatureLogoItem }> = ({ item }) => (
   <div className="shrink-0 flex items-center gap-3 px-7 py-4 bg-white border border-neutral-200 transition-colors mx-3 min-w-[200px] justify-center group overflow-hidden">
-    <div className={cn("w-10 h-10 flex items-center justify-center filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300", item.colorClass)}>
+    <div className={cn("w-10 h-10 flex items-center justify-center transition-all duration-300", item.colorClass)}>
       {React.cloneElement(item.icon as React.ReactElement, { className: 'w-full h-full' })}
     </div>
-    <span className="font-bold text-neutral-400 group-hover:text-neutral-800 transition-colors duration-300 uppercase tracking-widest text-sm">
+    <span className="font-bold text-neutral-800 transition-colors duration-300 uppercase tracking-widest text-sm">
       {item.name}
     </span>
   </div>
