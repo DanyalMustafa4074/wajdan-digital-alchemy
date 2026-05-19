@@ -32,13 +32,13 @@ const withSteps = [
 const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
   return (
     <div className={cn('py-8 md:py-14 relative overflow-hidden bg-[#fafaf8]', className)}>
-      <ScrollReveal className="text-center mb-16 relative z-10 px-4">
-        <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">Without vs With</p>
-        <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-tight">
+        <ScrollReveal className="text-center mb-16 relative z-10 px-4">
+        <p className="text-[#E54D2E] text-lg sm:text-xl font-bold uppercase tracking-[0.2em] mb-4">Without vs With</p>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-tight">
           What Your Funnel Looks Like<br/>
           <span className="text-[#E54D2E]">Right Now vs After.</span>
         </h2>
-        <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium">
+        <p className="text-xl sm:text-2xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
           You don't need a thousand words to understand the problem. This is it.
         </p>
       </ScrollReveal>
@@ -64,20 +64,20 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
                     className="flex items-center gap-5"
                   >
                     <div className="relative flex flex-col items-center">
-                      <div className="w-14 h-14 bg-[#fafaf8] border-2 border-neutral-200 flex items-center justify-center text-neutral-500">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#fafaf8] border-2 border-neutral-200 flex items-center justify-center text-neutral-500">
                         {step.icon}
                       </div>
                       {i < withoutSteps.length - 1 && <div className="w-0.5 h-6 bg-neutral-200 my-2" />}
                     </div>
-                    <div className="text-base md:text-lg font-bold text-neutral-700">{step.label}</div>
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-neutral-700">{step.label}</div>
                   </motion.div>
                 ))}
               </div>
 
               <motion.div className="mt-8 p-8 bg-[#fafaf8] border-2 border-neutral-200 text-center" whileHover={{ scale: 1.01 }}>
-                <div className="text-neutral-500 text-sm uppercase tracking-widest font-black mb-2">Average Show Rate</div>
+                <div className="text-neutral-500 text-base sm:text-lg uppercase tracking-widest font-black mb-2">Average Show Rate</div>
                 <motion.div
-                  className="text-6xl md:text-7xl font-black text-[#1A1110]"
+                  className="text-7xl md:text-8xl font-black text-[#1A1110]"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ type: 'spring', delay: 0.4 }}

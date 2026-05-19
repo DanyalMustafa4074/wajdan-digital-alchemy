@@ -42,9 +42,9 @@ export const WajdanHero = () => {
             We Build The Most <span className="text-[#E54D2E]">Ruthless & Effective System</span> for Rapid Scaling of Consultation Firms — In <span className="text-[#E54D2E]">60 Days</span>.
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-xl text-neutral-700 font-medium max-w-3xl mb-8 animate-slide-up animation-delay-200 leading-loose">
+          <p className="text-xl sm:text-2xl md:text-3xl text-neutral-700 font-medium max-w-4xl mb-8 animate-slide-up animation-delay-200 leading-relaxed">
             While every other agency sells you leads and disappears — we build the complete infrastructure that turns Meta traffic into qualified, pre-nurtured, showed-up consultation bookings.
-            <span className="block mt-3 font-black uppercase tracking-tight text-[#1A1110] bg-yellow-200/60 px-2 py-1 -rotate-1 inline-block">
+            <span className="block mt-4 font-black uppercase tracking-tight text-[#1A1110] bg-yellow-200/60 px-3 py-2 -rotate-1 inline-block">
               Or we work for free.
             </span>
           </p>
