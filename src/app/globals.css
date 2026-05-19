@@ -335,6 +335,19 @@
   .vt-cta { view-transition-name: hero-cta; }
 }
 
+/*
+ * Boldonse safety net.
+ * Boldonse glyph bounds extend ~1.25x past the nominal font-size,
+ * so any line-height under 1.3 will cause physical line overlap when
+ * a heading wraps. Inside @layer base so Tailwind utilities can still
+ * override on a per-element basis when an explicit smaller value is set.
+ */
+@layer base {
+  .font-heading {
+    line-height: 1.35;
+  }
+}
+
 /* Native popover entry animation via @starting-style (Chromium 117+, Safari 17.4+) */
 [popover] {
   border: none;
