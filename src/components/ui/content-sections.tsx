@@ -143,19 +143,21 @@ export const FinalCTA = () => {
   return (
     <section className="relative py-14 md:py-20 bg-[#140E0E] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6">
 
-      {/* Floating logos hidden on small screens to keep CTA focal */}
-      <FloatingLogo icon={Facebook} color="text-white/60" top="15%" left="10%" delay={0} duration={4.5} />
-      <FloatingLogo icon={Instagram} color="text-[#E54D2E]/70" top="20%" left="45%" delay={1} duration={5} />
-      <FloatingLogo icon={Target} color="text-white/60" top="10%" left="80%" delay={0.5} duration={4} />
-      <FloatingLogo icon={Youtube} color="text-[#E54D2E]/70" top="70%" left="85%" delay={1.5} duration={5.5} />
-      <FloatingLogo icon={Database} color="text-white/60" top="80%" left="30%" delay={0.8} duration={4.8} />
-      <FloatingLogo icon={Monitor} color="text-[#E54D2E]/70" top="60%" left="12%" delay={2} duration={6} />
-      <FloatingLogo icon={Globe} color="text-white/60" top="35%" left="85%" delay={0.3} duration={4.1} />
-      <FloatingLogo icon={BarChart3} color="text-[#E54D2E]/70" top="85%" left="60%" delay={1.2} duration={5.2} />
+      {/* Floating logos — locked in z-0 layer so they never render above the text */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <FloatingLogo icon={Facebook} color="text-white/60" top="15%" left="10%" delay={0} duration={4.5} />
+        <FloatingLogo icon={Instagram} color="text-[#E54D2E]/70" top="20%" left="45%" delay={1} duration={5} />
+        <FloatingLogo icon={Target} color="text-white/60" top="10%" left="80%" delay={0.5} duration={4} />
+        <FloatingLogo icon={Youtube} color="text-[#E54D2E]/70" top="70%" left="85%" delay={1.5} duration={5.5} />
+        <FloatingLogo icon={Database} color="text-white/60" top="80%" left="30%" delay={0.8} duration={4.8} />
+        <FloatingLogo icon={Monitor} color="text-[#E54D2E]/70" top="60%" left="12%" delay={2} duration={6} />
+        <FloatingLogo icon={Globe} color="text-white/60" top="35%" left="85%" delay={0.3} duration={4.1} />
+        <FloatingLogo icon={BarChart3} color="text-[#E54D2E]/70" top="85%" left="60%" delay={1.2} duration={5.2} />
+      </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <ScrollReveal>
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] text-[#fafaf8] uppercase tracking-tight md:tracking-tighter leading-[1.2] mb-8 md:mb-12">
+          <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#fafaf8] uppercase tracking-tight leading-[1.2] mb-8 md:mb-12">
             I Guess What We're Trying To Say Is That You Should{' '}
             <span className="text-[#E54D2E]">Hit The Damn Button</span>
           </h2>
@@ -166,7 +168,7 @@ export const FinalCTA = () => {
             href="#contact"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="inline-block w-full sm:w-auto bg-[#E54D2E] text-white font-black uppercase text-base sm:text-xl md:text-3xl tracking-tight py-4 md:py-6 px-8 sm:px-12 md:px-16 shadow-[0_6px_0_0_#B83521] hover:shadow-none hover:translate-y-[6px] transition-all"
+            className="inline-block w-full sm:w-auto bg-[#E54D2E] text-white font-black uppercase text-sm sm:text-base md:text-lg tracking-wider py-4 md:py-5 px-8 sm:px-12 md:px-16 shadow-[0_6px_0_0_#B83521] hover:shadow-none hover:translate-y-[6px] transition-all"
           >
             HIT THE DAMN BUTTON
           </motion.a>
