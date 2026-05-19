@@ -141,7 +141,8 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                 key={layer.number}
                 onClick={() => setActiveLayer(layer.number)}
                 className={cn(
-                  'relative flex shrink-0 items-center justify-center gap-3 px-6 py-4 rounded-full border-2 transition-all whitespace-nowrap',
+                  // reduced padding & tighter text to prevent overflow on small screens
+                  'relative flex shrink-0 items-center justify-center gap-3 px-4 py-2 rounded-full border-2 transition-all whitespace-nowrap',
                   isActive
                     ? 'bg-[#E54D2E] border-[#E54D2E] text-white shadow-[0_4px_0_0_#111110]'
                     : 'bg-white border-neutral-200 text-neutral-600 hover:border-[#E54D2E]/40'
@@ -149,8 +150,8 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="text-lg sm:text-xl font-black tracking-wider flex-shrink-0">{layer.number}</span>
-                <span className="font-bold uppercase tracking-tight text-base sm:text-lg flex-shrink-0">{layer.title}</span>
+                <span className="text-sm sm:text-base font-black tracking-wider flex-shrink-0">{layer.number}</span>
+                <span className="font-bold uppercase tracking-tight text-xs sm:text-sm md:text-base flex-shrink-0">{layer.title}</span>
               </motion.button>
             );
           })}
