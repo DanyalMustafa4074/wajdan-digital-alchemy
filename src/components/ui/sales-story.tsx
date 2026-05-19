@@ -27,7 +27,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mt-4 mb-4 tracking-tight md:tracking-tighter uppercase leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mt-4 mb-4 tracking-tight md:tracking-tighter uppercase leading-[1.3]">
             You've probably already<br/><span className="text-red-600 underline decoration-red-200">tried the ads thing.</span>
           </h2>
           <div className="w-20 h-2 bg-brand-orange mb-10" />
@@ -74,7 +74,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
 
         <ScrollReveal delay={0.3}>
           <div className="bg-[#140E0E] text-[#fafaf8] p-8 sm:p-10 md:p-14 text-center border-b-[8px] md:border-b-[12px] border-[#E54D2E] mb-12 md:mb-16 md:rotate-1">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.1]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.3]">
               Why is none of this<br/><span className="text-[#E54D2E]">turning into actual clients?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-lg text-gray-300 font-medium max-w-2xl mx-auto leading-[1.7]">
@@ -103,7 +103,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
 
           <div className="text-center mb-12 md:mb-20 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[200px] bg-red-50 blur-3xl rounded-full opacity-50 -z-10"></div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground uppercase tracking-tight md:tracking-tighter leading-[1.1] mb-6 relative z-10">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground uppercase tracking-tight md:tracking-tighter leading-[1.3] mb-6 relative z-10">
               That's not bad targeting.<br/>
               <span className="text-red-600 block mt-2">That's your worst fear.</span>
             </h2>

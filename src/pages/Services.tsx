@@ -263,7 +263,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter leading-[1.05]"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter leading-[1.25]"
           >
             Not Services.
             <br />
@@ -451,7 +451,7 @@ const Services = () => {
             <div className="w-full">
               <ScrollReveal>
                 <div className="text-center mb-14">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground uppercase tracking-tight leading-[1.05] max-w-4xl mx-auto">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground uppercase tracking-tight leading-[1.3] max-w-4xl mx-auto">
                     Landing pages we've<br />built that convert<br />like crazy
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground mt-5 leading-relaxed">Click any to view full size</p>

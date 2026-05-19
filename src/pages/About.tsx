@@ -75,7 +75,7 @@ const About = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05] mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.25] mb-8"
           >
             The team
             <br />
@@ -408,7 +408,7 @@ const About = () => {
             <p className="text-[#E54D2E] text-xs font-black uppercase tracking-[0.25em] mb-6">
               I Guess What We're Trying To Say Is...
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#1A1110] leading-[1.05] mb-7">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#1A1110] leading-[1.3] mb-7">
               You should hit
               <br />
               <span className="text-[#E54D2E]">this button.</span>

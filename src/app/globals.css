@@ -343,8 +343,9 @@
  * override on a per-element basis when an explicit smaller value is set.
  */
 @layer base {
+  /* Boldonse needs generous breathing room between wrapped lines. */
   .font-heading {
-    line-height: 1.35;
+    line-height: 1.5;
   }
 }
 
