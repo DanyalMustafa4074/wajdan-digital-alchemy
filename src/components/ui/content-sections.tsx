@@ -1,9 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from './scroll-reveal';
-import { ArrowRight, Trophy, Target, CheckCircle, AlertCircle, ShieldAlert, BadgeCheck, Plus, Smartphone, Zap, Monitor, Globe, BarChart3, Database } from 'lucide-react';
-import { FaFacebook as Facebook, FaInstagram as Instagram, FaYoutube as Youtube } from 'react-icons/fa';
-import { TiltCard } from './tilt-card';
+import { CheckCircle, AlertCircle, ShieldAlert, BadgeCheck } from 'lucide-react';
 
 export const ProofSection = () => {
   return (
@@ -107,53 +105,12 @@ export const RequirementsSection = () => {
   return null;
 };
 
-// Note: Lucide icons for background animation
-const FloatingLogo = ({
-  icon: Icon,
-  color,
-  top,
-  left,
-  delay,
-  duration,
-}: {
-  icon: React.ElementType;
-  color: string;
-  top: string;
-  left: string;
-  delay: number;
-  duration: number;
-}) => (
-  <motion.div
-    className="absolute hidden md:flex items-center justify-center w-16 h-16 rounded-3xl bg-[#1F1513] border border-neutral-800 shadow-2xl opacity-60 hover:opacity-100 transition-opacity z-0"
-    style={{ top, left }}
-    initial={{ y: 0 }}
-    animate={{ y: [-15, 15, -15] }}
-    transition={{
-      repeat: Infinity,
-      duration,
-      delay,
-      ease: "easeInOut"
-    }}
-  >
-    <Icon className={`w-8 h-8 ${color}`} strokeWidth={2} />
-  </motion.div>
-);
 
 export const FinalCTA = () => {
   return (
     <section className="relative py-14 md:py-20 bg-[#140E0E] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6">
 
-      {/* Floating logos — locked in z-0 layer so they never render above the text */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <FloatingLogo icon={Facebook} color="text-white/60" top="15%" left="10%" delay={0} duration={4.5} />
-        <FloatingLogo icon={Instagram} color="text-[#E54D2E]/70" top="20%" left="45%" delay={1} duration={5} />
-        <FloatingLogo icon={Target} color="text-white/60" top="10%" left="80%" delay={0.5} duration={4} />
-        <FloatingLogo icon={Youtube} color="text-[#E54D2E]/70" top="70%" left="85%" delay={1.5} duration={5.5} />
-        <FloatingLogo icon={Database} color="text-white/60" top="80%" left="30%" delay={0.8} duration={4.8} />
-        <FloatingLogo icon={Monitor} color="text-[#E54D2E]/70" top="60%" left="12%" delay={2} duration={6} />
-        <FloatingLogo icon={Globe} color="text-white/60" top="35%" left="85%" delay={0.3} duration={4.1} />
-        <FloatingLogo icon={BarChart3} color="text-[#E54D2E]/70" top="85%" left="60%" delay={1.2} duration={5.2} />
-      </div>
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(229,77,46,0.12) 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <ScrollReveal>
