@@ -6,7 +6,7 @@ import { Check, X } from 'lucide-react';
 
 export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <section className={cn('py-8 md:py-14 bg-background', className)}>
+    <section className={cn('py-8 md:py-14 bg-background overflow-x-hidden', className)}>
       <div className="max-w-3xl mx-auto px-4 md:px-8 prose-lg">
 
         <ScrollReveal delay={0.1}>

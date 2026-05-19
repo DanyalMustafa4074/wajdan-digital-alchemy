@@ -104,7 +104,7 @@ export const WajdanHero = () => {
           <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full max-w-lg mb-6 animate-slide-up animation-delay-300">
             <a
               href="#contact"
-              className="vt-cta group relative inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-black text-white bg-[#140E0E] shadow-[0_4px_0_0_#E54D2E] hover:bg-[#E54D2E] hover:shadow-none hover:translate-y-1 transition-all uppercase tracking-wide"
+              className="vt-cta group relative inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-black text-white bg-[#140E0E] shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all uppercase tracking-wide"
             >
               Show Me What's Broken — Free
               <ArrowRight className="w-5 h-5" />

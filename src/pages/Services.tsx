@@ -263,7 +263,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#1A1110] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter leading-[0.95]"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#1A1110] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter leading-[1.0]"
           >
             Not Services.
             <br />

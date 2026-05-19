@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";

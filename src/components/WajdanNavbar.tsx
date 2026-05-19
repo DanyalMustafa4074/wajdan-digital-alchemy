@@ -100,7 +100,10 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[64px] z-40 bg-[#fafaf8]/98 backdrop-blur-lg border-b border-neutral-200 md:hidden"
+            className={cn(
+              "fixed inset-x-0 z-40 bg-[#fafaf8]/98 backdrop-blur-lg border-b border-neutral-200 md:hidden",
+              isScrolled ? "top-[56px]" : "top-[72px]"
+            )}
           >
             <nav className="flex flex-col p-6 space-y-2">
               {navItems.map((item) => (

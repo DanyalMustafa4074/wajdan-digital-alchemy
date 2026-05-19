@@ -75,7 +75,7 @@ const About = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[0.9] mb-8"
+            className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.0] mb-8"
           >
             The team
             <br />

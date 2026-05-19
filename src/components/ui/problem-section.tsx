@@ -8,7 +8,7 @@ import { ArrowDown, AlertCircle } from 'lucide-react';
 
 export const ProblemSection: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className={cn('py-10 md:py-14 bg-[#fafaf8]', className)}>
+    <div className={cn('py-10 md:py-14 bg-[#fafaf8] overflow-x-hidden', className)}>
       <div className="max-w-4xl mx-auto px-4 md:px-8">
 
         <ScrollReveal>
