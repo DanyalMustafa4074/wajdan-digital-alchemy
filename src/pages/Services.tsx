@@ -84,15 +84,15 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
               <span className="text-gray-500 text-sm uppercase tracking-[0.2em] font-bold">Where every system begins</span>
             </div>
 
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-foreground mb-5 tracking-tight leading-[1.0]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-5 tracking-tight leading-[1.05]">
               {title}
             </h2>
-            <h3 className="text-2xl md:text-3xl font-bold text-brand-orange mb-7 leading-snug">
+            <h3 className="text-lg md:text-xl font-bold text-brand-orange mb-7 leading-snug">
               {subtitle}
             </h3>
 
             {!hideDescription && (
-              <p className="text-xl md:text-2xl text-muted-foreground leading-[1.75] mb-10">
+              <p className="text-base md:text-lg text-muted-foreground leading-[1.7] mb-10">
                 {description}
               </p>
             )}
@@ -134,7 +134,7 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
                       <div className="relative z-10 w-16 h-16 rounded-2xl bg-brand-orange/10 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-inner [&>svg]:w-8 [&>svg]:h-8">
                         {feature.icon}
                       </div>
-                      <h4 className="relative z-10 font-black text-foreground text-lg md:text-xl tracking-tight leading-snug">{feature.title}</h4>
+                      <h4 className="relative z-10 font-black text-foreground text-base md:text-lg tracking-tight leading-snug">{feature.title}</h4>
                     </motion.div>
                   </StaggerItem>
                 ))}
@@ -150,8 +150,8 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
                       <div className="relative z-10 w-14 h-14 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-6 group-hover:bg-brand-orange/20 transition-colors shadow-inner [&>svg]:w-7 [&>svg]:h-7">
                         {feature.icon}
                       </div>
-                      <h4 className="relative z-10 font-black text-foreground mb-3 text-xl tracking-tight">{feature.title}</h4>
-                      <p className="relative z-10 text-base text-muted-foreground group-hover:text-muted-foreground transition-colors leading-[1.7]">{feature.description}</p>
+                      <h4 className="relative z-10 font-black text-foreground mb-3 text-lg tracking-tight">{feature.title}</h4>
+                      <p className="relative z-10 text-sm md:text-base text-muted-foreground group-hover:text-muted-foreground transition-colors leading-[1.7]">{feature.description}</p>
                     </motion.div>
                   </StaggerItem>
                 ))}
@@ -263,7 +263,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#1A1110] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter leading-[1.0]"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter leading-[1.05]"
           >
             Not Services.
             <br />
@@ -274,7 +274,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg sm:text-xl md:text-2xl text-neutral-700 max-w-3xl mx-auto mb-10 md:mb-12 leading-[1.75]"
+            className="text-base sm:text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto mb-10 md:mb-12 leading-[1.7]"
           >
             Most businesses lose clients not because demand is low — but because nothing was built to catch,
             qualify, and convert the interest that already exists. We build the complete infrastructure that fixes that. End to end.
@@ -383,8 +383,8 @@ const Services = () => {
           extraContent={
             <div className="pt-8">
               <div className="text-center mb-12">
-                <h4 className="text-3xl md:text-5xl font-black text-foreground tracking-tight">The Offer In Action</h4>
-                <p className="text-xl text-muted-foreground mt-4 leading-relaxed">Examples of high-converting offers architecture.</p>
+                <h4 className="text-2xl md:text-3xl font-black text-foreground tracking-tight leading-[1.15]">The Offer In Action</h4>
+                <p className="text-base md:text-lg text-muted-foreground mt-4 leading-relaxed">Examples of high-converting offers architecture.</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <motion.div whileHover={{ y: -6 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
@@ -451,10 +451,10 @@ const Services = () => {
             <div className="w-full">
               <ScrollReveal>
                 <div className="text-center mb-14">
-                  <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-foreground uppercase tracking-tight leading-[1.0] max-w-4xl mx-auto">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground uppercase tracking-tight leading-[1.05] max-w-4xl mx-auto">
                     Landing pages we've<br />built that convert<br />like crazy
                   </h3>
-                  <p className="text-xl text-muted-foreground mt-5 leading-relaxed">Click any to view full size</p>
+                  <p className="text-base md:text-lg text-muted-foreground mt-5 leading-relaxed">Click any to view full size</p>
                 </div>
               </ScrollReveal>
               <StaggerContainer staggerDelay={0.04} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2">
@@ -601,10 +601,10 @@ const Services = () => {
       <section className="py-24 md:py-32 bg-[#fafaf8]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal className="text-center mb-14">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-[#1A1110] mb-5 uppercase tracking-tight leading-[1.0]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] mb-5 uppercase tracking-tight leading-[1.05]">
               Five Layers. <span className="text-[#E54D2E]">One Machine.</span>
             </h2>
-            <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl mx-auto leading-[1.7]">
+            <p className="text-base md:text-lg text-neutral-600 max-w-2xl mx-auto leading-[1.7]">
               Remove any one layer and the whole thing leaks. This is the complete system — in the exact sequence we build it.
             </p>
           </ScrollReveal>

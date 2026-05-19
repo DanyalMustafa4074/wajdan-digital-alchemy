@@ -131,10 +131,10 @@ export function TeamCarousel() {
         <p className="text-[#E54D2E] text-xs font-bold uppercase tracking-[0.25em] mb-4">
           The People
         </p>
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#fafaf8] leading-none mb-3">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.1] mb-3">
           Meet The Architects
         </h2>
-        <p className="text-lg md:text-xl text-neutral-500 italic font-medium">
+        <p className="text-base md:text-lg text-neutral-500 italic font-medium">
           the people behind your growth system
         </p>
       </div>

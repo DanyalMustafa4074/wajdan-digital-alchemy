@@ -21,7 +21,7 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
       <div className="max-w-6xl mx-auto px-4">
         <ScrollReveal className="text-center mb-12">
           <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">The Curve That Closes</p>
-          <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-[0.95]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
             Same Ad Spend.<br />
             <span className="text-[#E54D2E]">Twice the Booked Calls.</span>
           </h2>

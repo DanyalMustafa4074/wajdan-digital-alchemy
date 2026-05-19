@@ -75,7 +75,7 @@ const About = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.0] mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05] mb-8"
           >
             The team
             <br />
@@ -89,7 +89,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-xl md:text-2xl text-neutral-400 max-w-2xl mx-auto mb-12 leading-[1.75]"
+            className="text-base md:text-lg text-neutral-400 max-w-2xl mx-auto mb-12 leading-[1.7]"
           >
             We're trying to make growing consultancies a whole lot easier, faster, and more
             predictable — for every consultant who deserves a full calendar.
@@ -130,9 +130,9 @@ const About = () => {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="space-y-7 text-[#1A1110] text-lg md:text-xl leading-[1.8]">
+            <div className="space-y-6 text-[#1A1110] text-base md:text-lg leading-[1.75]">
 
-              <p className="font-black text-2xl md:text-3xl text-[#1A1110]">
+              <p className="font-black text-xl md:text-2xl text-[#1A1110]">
                 It looks like you like reading.
               </p>
 
@@ -144,7 +144,7 @@ const About = () => {
                 Either way — welcome.
               </p>
 
-              <p className="text-[#E54D2E] font-bold text-xl md:text-2xl">
+              <p className="text-[#E54D2E] font-bold text-lg md:text-xl">
                 Your arrival here is probably not an accident.
               </p>
 
@@ -233,7 +233,7 @@ const About = () => {
                 Alright, but enough about us.
               </p>
 
-              <p className="text-[#E54D2E] font-bold text-xl md:text-2xl">
+              <p className="text-[#E54D2E] font-bold text-lg md:text-xl">
                 We wanna know about you.
               </p>
 
@@ -265,10 +265,10 @@ const About = () => {
             <p className="text-[#E54D2E] text-xs font-black uppercase tracking-[0.25em] mb-4">
               Our Offering
             </p>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.0] mb-5">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05] mb-5">
               The complete system.
             </h2>
-            <p className="text-neutral-400 text-xl md:text-2xl max-w-2xl mx-auto leading-[1.75]">
+            <p className="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto leading-[1.7]">
               Every consultancy we work with gets one thing — a fully integrated 5-layer
               system. Not disconnected tactics.
             </p>
@@ -301,10 +301,10 @@ const About = () => {
                   <p className="text-[#E54D2E] text-xs font-black uppercase tracking-[0.2em] mb-3">
                     {card.label}
                   </p>
-                  <h3 className="text-3xl md:text-4xl font-black text-[#fafaf8] uppercase tracking-tight mb-4 leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-black text-[#fafaf8] uppercase tracking-tight mb-4 leading-[1.15]">
                     {card.title}
                   </h3>
-                  <p className="text-neutral-400 text-lg leading-[1.75] mb-8 flex-1">
+                  <p className="text-neutral-400 text-base leading-[1.7] mb-8 flex-1">
                     {card.desc}
                   </p>
                   <TransitionLink
@@ -350,10 +350,10 @@ const About = () => {
             <p className="text-[#E54D2E] text-xs font-black uppercase tracking-[0.25em] mb-4">
               The People
             </p>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.0] mb-3">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05] mb-3">
               Meet The Team
             </h2>
-            <p className="text-neutral-500 text-xl md:text-2xl italic font-medium leading-relaxed">
+            <p className="text-neutral-500 text-base md:text-lg italic font-medium leading-relaxed">
               Two operators obsessed with one thing — filling your calendar.
             </p>
           </ScrollReveal>
@@ -381,7 +381,7 @@ const About = () => {
                   </div>
 
                   {/* Name */}
-                  <h3 className="text-2xl md:text-3xl font-black text-[#fafaf8] uppercase tracking-tight mb-1.5">
+                  <h3 className="text-xl md:text-2xl font-black text-[#fafaf8] uppercase tracking-tight mb-1.5">
                     {member.name}
                   </h3>
 
@@ -391,7 +391,7 @@ const About = () => {
                   </p>
 
                   {/* Bio */}
-                  <p className="text-neutral-400 text-base md:text-lg leading-[1.75] max-w-sm">
+                  <p className="text-neutral-400 text-sm md:text-base leading-[1.7] max-w-sm">
                     {member.bio}
                   </p>
                 </motion.div>
@@ -408,12 +408,12 @@ const About = () => {
             <p className="text-[#E54D2E] text-xs font-black uppercase tracking-[0.25em] mb-6">
               I Guess What We're Trying To Say Is...
             </p>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#1A1110] leading-[1.0] mb-7">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#1A1110] leading-[1.05] mb-7">
               You should hit
               <br />
               <span className="text-[#E54D2E]">this button.</span>
             </h2>
-            <p className="text-[#1A1110]/60 text-xl md:text-2xl mb-12 max-w-xl mx-auto leading-[1.75]">
+            <p className="text-[#1A1110]/60 text-base md:text-lg mb-12 max-w-xl mx-auto leading-[1.7]">
               Book a free strategy call. We'll audit your current acquisition setup and show you
               exactly where the leaks are — no fluff, no pitch decks, just clarity.
             </p>

@@ -8,7 +8,7 @@ export const ProofSection = () => {
     <div className="py-10 md:py-14 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-12 md:mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-[#1A1110] mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.05]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.1]">
             Proof<span className="text-[#E54D2E]">!</span>
           </h2>
           <div className="mt-4 flex justify-center px-2">
@@ -49,10 +49,10 @@ export const WhoIsThisFor = () => {
     <section className="py-14 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-[1.1]">
             Who This Is <span className="text-[#E54D2E] border-b-4 border-[#E54D2E] pb-1">For</span>.
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto font-medium">
+          <p className="text-base text-neutral-600 max-w-2xl mx-auto font-medium">
             Make sure to Read this so you dont waste our time.
           </p>
         </ScrollReveal>
