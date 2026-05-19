@@ -47,7 +47,7 @@ export const FiveStepSystem = () => {
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-20 max-w-4xl mx-auto">
-            <h2 className="font-heading text-4xl md:text-6xl uppercase text-[#E54D2E] tracking-tighter leading-tight mb-6">
+            <h2 className="font-heading text-4xl md:text-6xl uppercase text-[#E54D2E] tracking-tighter leading-[1.4] md:leading-[1.4] mb-6">
               Our 5-Step Alchemy System
             </h2>
             <p className="text-xl text-gray-400">

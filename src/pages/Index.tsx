@@ -52,7 +52,7 @@ const Index = () => {
         <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
           <ScrollReveal>
             <p className="text-[#E54D2E] text-xs font-bold uppercase tracking-[0.25em] mb-4 text-center">The Real Problem</p>
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#fafaf8] uppercase tracking-tighter leading-[1.5] text-center mb-6">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#fafaf8] uppercase tracking-tighter leading-[1.5] sm:leading-[1.5] md:leading-[1.5] lg:leading-[1.5] text-center mb-6">
               Bricks <span className="text-[#E54D2E]">≠</span> House.
             </h2>
             <p className="text-base md:text-lg text-neutral-400 font-medium text-center max-w-2xl mx-auto mb-16 leading-relaxed">

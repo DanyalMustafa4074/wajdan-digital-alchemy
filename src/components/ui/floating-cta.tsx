@@ -50,7 +50,7 @@ export const FinalCTA = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-4xl md:text-6xl lg:text-[5rem] font-black text-[#fafaf8] uppercase tracking-tighter leading-[1.5] mb-8"
+          className="font-heading text-4xl md:text-6xl lg:text-[5rem] font-black text-[#fafaf8] uppercase tracking-tighter leading-[1.5] md:leading-[1.5] lg:leading-[1.5] mb-8"
         >
           I Guess What We're <br/>
           Trying To Say Is That You <br/>
