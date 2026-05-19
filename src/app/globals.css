@@ -345,7 +345,7 @@
 @layer base {
   /* Boldonse needs generous breathing room between wrapped lines. */
   .font-heading {
-    line-height: 1.5;
+    line-height: 1.7;
   }
 }
 
