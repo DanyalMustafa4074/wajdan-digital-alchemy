@@ -99,7 +99,7 @@ export const LogoMarquee: React.FC<{
   heading = 'Meta, Google, GoHighLevel and the full stack we wire into your funnel',
 }) => {
   return (
-    <section className={cn('py-16 bg-[#fafaf8] overflow-hidden', className)}>
+    <section className={cn('py-8 bg-[#fafaf8] overflow-hidden', className)}>
       <div className="max-w-6xl mx-auto px-4 text-center mb-10">
         <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-3">{eyebrow}</p>
         <h3 className="text-2xl md:text-3xl font-black text-[#1A1110] uppercase tracking-tight max-w-3xl mx-auto leading-tight">

@@ -7,7 +7,7 @@ import { TiltCard } from './tilt-card';
 
 export const ProofSection = () => {
   return (
-    <div className="py-16 md:py-24 bg-[#fafaf8] relative overflow-hidden">
+    <div className="py-10 md:py-14 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-12 md:mb-20">
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-[#1A1110] mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.05]">
@@ -48,7 +48,7 @@ export const WhoIsThisFor = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#fafaf8] relative overflow-hidden">
+    <section className="py-14 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight">
@@ -141,7 +141,7 @@ const FloatingLogo = ({
 
 export const FinalCTA = () => {
   return (
-    <section className="relative py-20 md:py-36 lg:py-48 bg-[#140E0E] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6">
+    <section className="relative py-14 md:py-20 bg-[#140E0E] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6">
 
       {/* Floating logos hidden on small screens to keep CTA focal */}
       <FloatingLogo icon={Facebook} color="text-white/60" top="15%" left="10%" delay={0} duration={4.5} />
@@ -155,7 +155,7 @@ export const FinalCTA = () => {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <ScrollReveal>
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] font-black text-[#fafaf8] uppercase tracking-tight md:tracking-tighter leading-[1.15] mb-8 md:mb-12">
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] text-[#fafaf8] uppercase tracking-tight md:tracking-tighter leading-[1.2] mb-8 md:mb-12">
             I Guess What We're Trying To Say Is That You Should{' '}
             <span className="text-[#E54D2E]">Hit The Damn Button</span>
           </h2>

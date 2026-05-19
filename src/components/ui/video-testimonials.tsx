@@ -36,7 +36,7 @@ const testimonials = [
 
 export const VideoTestimonials = () => {
   return (
-    <section className="py-24 bg-[#140E0E] relative text-white">
+    <section className="py-14 bg-[#140E0E] relative text-white">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16 max-w-3xl mx-auto">

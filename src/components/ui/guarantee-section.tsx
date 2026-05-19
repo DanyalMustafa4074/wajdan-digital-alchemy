@@ -21,7 +21,7 @@ const noPayingFor = [
 
 const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
   return (
-    <div className={cn('py-16 md:py-24 relative overflow-hidden bg-[#140E0E]', className)}>
+    <div className={cn('py-10 md:py-14 relative overflow-hidden bg-[#140E0E]', className)}>
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#E54D2E]/60 to-transparent" />
 
       <div className="relative max-w-4xl mx-auto px-4 text-center z-10">

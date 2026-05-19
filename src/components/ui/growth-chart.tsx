@@ -17,7 +17,7 @@ import { TiltCard } from './tilt-card';
 
 export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <section className={cn('py-24 bg-[#fafaf8] overflow-hidden', className)}>
+    <section className={cn('py-14 bg-[#fafaf8] overflow-hidden', className)}>
       <div className="max-w-6xl mx-auto px-4">
         <ScrollReveal className="text-center mb-12">
           <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">The Curve That Closes</p>

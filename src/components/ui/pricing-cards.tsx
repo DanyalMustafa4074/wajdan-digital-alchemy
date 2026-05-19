@@ -79,7 +79,7 @@ const pricingTiers: PricingTier[] = [
 
 const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className={cn('py-24 bg-[#fafaf8] relative overflow-hidden', className)}>
+    <div className={cn('py-14 bg-[#fafaf8] relative overflow-hidden', className)}>
       <ScrollReveal className="text-center mb-16 relative z-10 px-4">
         <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">Pricing</p>
         <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight">

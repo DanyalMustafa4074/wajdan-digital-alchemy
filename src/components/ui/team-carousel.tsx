@@ -105,7 +105,7 @@ export function TeamCarousel() {
   const nextNext = TEAM[(active + 2) % total];
 
   return (
-    <section className="bg-[#140E0E] py-24 overflow-hidden relative">
+    <section className="bg-[#140E0E] py-14 overflow-hidden relative">
       {/* Decorative arch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none select-none">
         <svg width="640" height="320" viewBox="0 0 640 320" fill="none">

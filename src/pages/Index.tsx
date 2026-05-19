@@ -47,12 +47,12 @@ const Index = () => {
       <SalesStory />
 
       {/* Bricks ≠ House */}
-      <section className="bg-[#140E0E] py-20 md:py-32 overflow-hidden relative">
+      <section className="bg-[#140E0E] py-12 md:py-20 overflow-hidden relative">
         <div className="absolute inset-0 pointer-events-none select-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(229,77,46,0.04) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
           <ScrollReveal>
             <p className="text-[#E54D2E] text-xs font-bold uppercase tracking-[0.25em] mb-4 text-center">The Real Problem</p>
-            <h2 className="font-heading text-5xl sm:text-6xl md:text-8xl font-black text-[#fafaf8] uppercase tracking-tighter leading-none text-center mb-6">
+            <h2 className="font-heading text-5xl sm:text-6xl md:text-8xl text-[#fafaf8] uppercase tracking-tighter leading-[1.1] text-center mb-6">
               Bricks <span className="text-[#E54D2E]">≠</span> House.
             </h2>
             <p className="text-xl md:text-2xl text-neutral-400 font-medium text-center max-w-2xl mx-auto mb-16 leading-relaxed">
@@ -119,7 +119,7 @@ const Index = () => {
       </section>
 
       {/* Problem Section */}
-      <section className="bg-background py-12 md:py-20">
+      <section className="bg-background py-8 md:py-12">
         <ProblemSection />
       </section>
 

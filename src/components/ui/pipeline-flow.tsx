@@ -31,7 +31,7 @@ const STEPS: PipelineStep[] = [
 
 export const PipelineFlow: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <section className={cn('py-24 bg-white border-y-2 border-neutral-200', className)}>
+    <section className={cn('py-14 bg-white border-y-2 border-neutral-200', className)}>
       <div className="max-w-6xl mx-auto px-4">
         <ScrollReveal className="text-center mb-16">
           <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">

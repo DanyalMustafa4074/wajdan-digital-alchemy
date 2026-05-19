@@ -121,7 +121,7 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
   const [activeLayer, setActiveLayer] = useState<string>('01');
 
   return (
-    <div className={cn('py-20 bg-[#fafaf8]', className)}>
+    <div className={cn('py-12 bg-[#fafaf8]', className)}>
       <ScrollReveal className="text-center mb-12 px-4">
         <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">The Wajdan System</p>
         <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-none">

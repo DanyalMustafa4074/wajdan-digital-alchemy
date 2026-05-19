@@ -25,7 +25,7 @@ export const WajdanHero = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] overflow-hidden bg-background pt-24 md:pt-28 pb-16">
+    <section className="relative overflow-hidden bg-background pt-20 md:pt-24 pb-10">
       {/* Subtle grid backdrop */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)]" />
@@ -38,7 +38,7 @@ export const WajdanHero = () => {
             For Consultancies
           </div>
 
-          <h1 className="vt-hero-headline font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] tracking-tighter leading-[1.2] mb-6 max-w-5xl animate-slide-up animation-delay-100 uppercase">
+          <h1 className="vt-hero-headline font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1A1110] tracking-tighter leading-tight mb-6 max-w-5xl animate-slide-up animation-delay-100 uppercase">
             We Build The Most <span className="text-[#E54D2E]">Ruthless & Effective System</span> for Rapid Scaling of Consultation Firms — In <span className="text-[#E54D2E]">60 Days</span>.
           </h1>
 
