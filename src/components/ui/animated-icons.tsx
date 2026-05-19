@@ -30,8 +30,8 @@ interface AnimatedIconProps {
   autoplay?: boolean;
 }
 
-const INK = '#111110';
-const ACCENT = '#cf5230';
+const INK = '#140E0E';
+const ACCENT = '#E54D2E';
 
 // ─────────────────────────────────────────────────────────────────────
 // Hero icons row — used in Index Bricks ≠ House section
@@ -49,7 +49,7 @@ export const AnimatedHeroIcons: React.FC<{ className?: string }> = ({ className 
         key={label}
         whileHover={{ scale: 1.1, y: -6 }}
         whileTap={{ scale: 0.96 }}
-        className="flex flex-col items-center gap-3 p-4 rounded-xl bg-white border border-neutral-200 hover:border-[#cf5230]/40 transition-all cursor-pointer shadow-sm"
+        className="flex flex-col items-center gap-3 p-4 rounded-xl bg-white border border-neutral-200 hover:border-[#E54D2E]/40 transition-all cursor-pointer shadow-sm"
       >
         <Anim size={64} />
         <span className="text-xs font-black uppercase tracking-wider text-neutral-700">{label}</span>

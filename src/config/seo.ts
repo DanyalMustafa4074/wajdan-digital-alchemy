@@ -1,4 +1,4 @@
-export const SITE_URL = "https://wajdan.co";
+export const SITE_URL = "https://wajdan.hu";
 
 export const SITE_NAME = "Wajdan Digital Alchemy";
 
@@ -24,9 +24,9 @@ export const SITE_KEYWORDS = [
 
 export const TWITTER_HANDLE = "@wajdandigital";
 
-export const GA_MEASUREMENT_ID = "G-LWWNZGBRKJ";
+export const GA_MEASUREMENT_ID = "G-1TK9EY6CWF";
 
-export const GOOGLE_SITE_VERIFICATION = "1U4dBB9ZdGYYqqNoTRRd0By3d9CUViFrVNTg_rzZKNg";
+export const GOOGLE_SITE_VERIFICATION = "xUXImFxdVvhkmX1Liq1eaii-bbkFRd1rYvCzAQ2OEDc";
 
 export const ORG_LOGO = `${SITE_URL}/Wajdan%20Logo%20light.png`;
 

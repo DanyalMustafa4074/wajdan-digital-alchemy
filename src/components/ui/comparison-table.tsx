@@ -33,10 +33,10 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
   return (
     <div className={cn('py-12 md:py-20 relative overflow-hidden bg-[#fafaf8]', className)}>
       <ScrollReveal className="text-center mb-16 relative z-10 px-4">
-        <p className="text-[#cf5230] text-sm font-bold uppercase tracking-[0.2em] mb-4">Without vs With</p>
-        <h2 className="text-4xl md:text-6xl font-black text-[#111110] mb-6 uppercase tracking-tight leading-tight">
+        <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">Without vs With</p>
+        <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-tight">
           What Your Funnel Looks Like<br/>
-          <span className="text-[#cf5230]">Right Now vs After.</span>
+          <span className="text-[#E54D2E]">Right Now vs After.</span>
         </h2>
         <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium">
           You don't need a thousand words to understand the problem. This is it.
@@ -48,7 +48,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
           <ScrollReveal delay={0.1} className="relative h-full">
             <div className="bg-white border-2 border-neutral-200 p-8 md:p-10 h-full flex flex-col shadow-[8px_8px_0_0_#111110]">
               <div className="text-center mb-10">
-                <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#111110] text-white">
+                <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#140E0E] text-white">
                   <X className="w-5 h-5" strokeWidth={3} />
                   <span className="font-black uppercase tracking-wider text-sm">Without the System</span>
                 </div>
@@ -77,7 +77,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
               <motion.div className="mt-8 p-8 bg-[#fafaf8] border-2 border-neutral-200 text-center" whileHover={{ scale: 1.01 }}>
                 <div className="text-neutral-500 text-sm uppercase tracking-widest font-black mb-2">Average Show Rate</div>
                 <motion.div
-                  className="text-6xl md:text-7xl font-black text-[#111110]"
+                  className="text-6xl md:text-7xl font-black text-[#1A1110]"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ type: 'spring', delay: 0.4 }}
@@ -89,9 +89,9 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2} className="relative h-full">
-            <div className="bg-[#111110] text-white p-8 md:p-10 h-full flex flex-col shadow-[8px_8px_0_0_#cf5230]">
+            <div className="bg-[#140E0E] text-white p-8 md:p-10 h-full flex flex-col shadow-[8px_8px_0_0_#E54D2E]">
               <div className="text-center mb-10">
-                <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#cf5230] text-white">
+                <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E54D2E] text-white">
                   <Check className="w-5 h-5" strokeWidth={3} />
                   <span className="font-black uppercase tracking-wider text-sm">With the Wajdan System</span>
                 </div>
@@ -107,20 +107,20 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
                     className="flex items-center gap-5"
                   >
                     <div className="relative flex flex-col items-center">
-                      <div className="w-14 h-14 bg-[#cf5230]/15 border-2 border-[#cf5230] flex items-center justify-center text-[#cf5230]">
+                      <div className="w-14 h-14 bg-[#E54D2E]/15 border-2 border-[#E54D2E] flex items-center justify-center text-[#E54D2E]">
                         {step.icon}
                       </div>
-                      {i < withSteps.length - 1 && <div className="w-0.5 h-6 bg-[#cf5230]/40 my-2" />}
+                      {i < withSteps.length - 1 && <div className="w-0.5 h-6 bg-[#E54D2E]/40 my-2" />}
                     </div>
                     <div className="text-base md:text-lg font-bold text-white">{step.label}</div>
                   </motion.div>
                 ))}
               </div>
 
-              <motion.div className="mt-8 p-8 bg-[#cf5230]/10 border-2 border-[#cf5230] text-center" whileHover={{ scale: 1.01 }}>
-                <div className="text-[#cf5230] text-sm uppercase tracking-widest font-black mb-2">After the System</div>
+              <motion.div className="mt-8 p-8 bg-[#E54D2E]/10 border-2 border-[#E54D2E] text-center" whileHover={{ scale: 1.01 }}>
+                <div className="text-[#E54D2E] text-sm uppercase tracking-widest font-black mb-2">After the System</div>
                 <motion.div
-                  className="text-6xl md:text-7xl font-black text-[#cf5230]"
+                  className="text-6xl md:text-7xl font-black text-[#E54D2E]"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ type: 'spring', delay: 0.4 }}
@@ -143,10 +143,10 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.04, y: -4 }}
-                className="bg-white border-2 border-neutral-200 hover:border-[#cf5230]/40 transition-colors p-6 md:p-8 text-center"
+                className="bg-white border-2 border-neutral-200 hover:border-[#E54D2E]/40 transition-colors p-6 md:p-8 text-center"
               >
                 <motion.div
-                  className="text-4xl md:text-5xl font-black mb-3 tracking-tighter text-[#cf5230]"
+                  className="text-4xl md:text-5xl font-black mb-3 tracking-tighter text-[#E54D2E]"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ type: 'spring', delay: i * 0.08 }}

@@ -105,20 +105,20 @@ export function TeamCarousel() {
   const nextNext = TEAM[(active + 2) % total];
 
   return (
-    <section className="bg-[#111110] py-24 overflow-hidden relative">
+    <section className="bg-[#140E0E] py-24 overflow-hidden relative">
       {/* Decorative arch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none select-none">
         <svg width="640" height="320" viewBox="0 0 640 320" fill="none">
           <path
             d="M0 320 A320 320 0 0 1 640 320"
-            stroke="#cf5230"
+            stroke="#E54D2E"
             strokeWidth="1.5"
             strokeOpacity="0.25"
             fill="none"
           />
           <path
             d="M60 320 A260 260 0 0 1 580 320"
-            stroke="#cf5230"
+            stroke="#E54D2E"
             strokeWidth="1"
             strokeOpacity="0.12"
             fill="none"
@@ -128,7 +128,7 @@ export function TeamCarousel() {
 
       {/* Heading */}
       <div className="text-center mb-14 px-4 relative z-10">
-        <p className="text-[#cf5230] text-xs font-bold uppercase tracking-[0.25em] mb-4">
+        <p className="text-[#E54D2E] text-xs font-bold uppercase tracking-[0.25em] mb-4">
           The People
         </p>
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#fafaf8] leading-none mb-3">
@@ -157,7 +157,7 @@ export function TeamCarousel() {
         <button
           onClick={() => advance(-1)}
           aria-label="Previous team member"
-          className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-full border border-white/10 bg-white/5 backdrop-blur flex items-center justify-center text-white hover:border-[#cf5230] hover:bg-[#cf5230]/15 transition-all z-20"
+          className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-full border border-white/10 bg-white/5 backdrop-blur flex items-center justify-center text-white hover:border-[#E54D2E] hover:bg-[#E54D2E]/15 transition-all z-20"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -211,7 +211,7 @@ export function TeamCarousel() {
         <button
           onClick={() => advance(1)}
           aria-label="Next team member"
-          className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-full border border-white/10 bg-white/5 backdrop-blur flex items-center justify-center text-white hover:border-[#cf5230] hover:bg-[#cf5230]/15 transition-all z-20"
+          className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-full border border-white/10 bg-white/5 backdrop-blur flex items-center justify-center text-white hover:border-[#E54D2E] hover:bg-[#E54D2E]/15 transition-all z-20"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -235,19 +235,19 @@ export function TeamCarousel() {
         <button
           onClick={() => setPlaying((p) => !p)}
           aria-label={playing ? "Pause" : "Play"}
-          className="w-14 h-14 rounded-full bg-[#fafaf8] flex-shrink-0 flex items-center justify-center shadow-[0_4px_0_0_#cf5230] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#cf5230] transition-all"
+          className="w-14 h-14 rounded-full bg-[#fafaf8] flex-shrink-0 flex items-center justify-center shadow-[0_4px_0_0_#E54D2E] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#E54D2E] transition-all"
         >
           {playing ? (
-            <Pause className="w-5 h-5 text-[#111110]" />
+            <Pause className="w-5 h-5 text-[#1A1110]" />
           ) : (
-            <Play className="w-5 h-5 text-[#111110] translate-x-0.5" />
+            <Play className="w-5 h-5 text-[#1A1110] translate-x-0.5" />
           )}
         </button>
 
         {/* Progress bar */}
         <div className="flex-1 h-[2px] bg-white/10 rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#cf5230] rounded-full"
+            className="h-full bg-[#E54D2E] rounded-full"
             style={{ width: `${progress}%`, transition: "width 0.05s linear" }}
           />
         </div>
@@ -262,7 +262,7 @@ export function TeamCarousel() {
               className={cn(
                 "h-[6px] rounded-full transition-all duration-300",
                 i === active
-                  ? "w-6 bg-[#cf5230]"
+                  ? "w-6 bg-[#E54D2E]"
                   : "w-[6px] bg-white/25 hover:bg-white/50"
               )}
             />
@@ -293,11 +293,11 @@ const featuredVariants = {
 
 function FeaturedCard({ member }: { member: TeamMember }) {
   return (
-    <div className="flex h-[360px] md:h-[400px] rounded-2xl overflow-hidden shadow-[0_24px_80px_rgba(207,82,48,0.22)] border border-white/5">
+    <div className="flex h-[360px] md:h-[400px] rounded-2xl overflow-hidden shadow-[0_24px_80px_rgba(229,77,46,0.22)] border border-white/5">
       {/* Orange info panel */}
       <div
         className="w-[48%] flex-shrink-0 relative overflow-hidden flex flex-col justify-between p-6 md:p-8"
-        style={{ backgroundColor: "#cf5230" }}
+        style={{ backgroundColor: "#E54D2E" }}
       >
         {/* Dot-grid pattern */}
         <div
@@ -324,7 +324,7 @@ function FeaturedCard({ member }: { member: TeamMember }) {
       </div>
 
       {/* Photo panel */}
-      <div className="flex-1 bg-[#1a1a18] relative overflow-hidden">
+      <div className="flex-1 bg-[#1F1513] relative overflow-hidden">
         {member.image ? (
           <img
             src={member.image}
@@ -334,7 +334,7 @@ function FeaturedCard({ member }: { member: TeamMember }) {
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#1e1210] to-[#111110]">
-            <span className="text-6xl md:text-7xl font-black text-[#cf5230]/35 leading-none select-none">
+            <span className="text-6xl md:text-7xl font-black text-[#E54D2E]/35 leading-none select-none">
               {member.initials}
             </span>
           </div>
@@ -376,7 +376,7 @@ function ThumbCard({
         />
       ) : (
         <div className="w-full h-full bg-gradient-to-br from-[#1c1c1a] to-[#2a1510] flex items-center justify-center">
-          <span className="text-5xl font-black text-[#cf5230]/30 select-none">
+          <span className="text-5xl font-black text-[#E54D2E]/30 select-none">
             {member.initials}
           </span>
         </div>
@@ -387,7 +387,7 @@ function ThumbCard({
         <p className="text-white text-sm font-black uppercase tracking-tight leading-tight">
           {member.name}
         </p>
-        <p className="text-[#cf5230] text-[10px] font-medium">{member.role}</p>
+        <p className="text-[#E54D2E] text-[10px] font-medium">{member.role}</p>
       </div>
     </div>
   );

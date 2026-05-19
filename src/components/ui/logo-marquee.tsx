@@ -69,7 +69,7 @@ const ROW_ONE = CLIENT_LOGOS;
 const ROW_TWO = [...FEATURE_LOGOS, ...FEATURE_LOGOS];
 
 const ClientLogoChip: React.FC<{ item: ClientLogoItem }> = ({ item }) => (
-  <div className="shrink-0 flex items-center gap-3 px-7 py-4 bg-white border border-neutral-200 hover:border-[#cf5230]/40 transition-colors mx-3 min-w-[200px] justify-center group overflow-hidden">
+  <div className="shrink-0 flex items-center gap-3 px-7 py-4 bg-white border border-neutral-200 hover:border-[#E54D2E]/40 transition-colors mx-3 min-w-[200px] justify-center group overflow-hidden">
     <img 
       src={item.imageUrl} 
       alt={item.name} 
@@ -101,8 +101,8 @@ export const LogoMarquee: React.FC<{
   return (
     <section className={cn('py-16 bg-[#fafaf8] overflow-hidden', className)}>
       <div className="max-w-6xl mx-auto px-4 text-center mb-10">
-        <p className="text-[#cf5230] text-sm font-bold uppercase tracking-[0.2em] mb-3">{eyebrow}</p>
-        <h3 className="text-2xl md:text-3xl font-black text-[#111110] uppercase tracking-tight max-w-3xl mx-auto leading-tight">
+        <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-3">{eyebrow}</p>
+        <h3 className="text-2xl md:text-3xl font-black text-[#1A1110] uppercase tracking-tight max-w-3xl mx-auto leading-tight">
           {heading}
         </h3>
       </div>

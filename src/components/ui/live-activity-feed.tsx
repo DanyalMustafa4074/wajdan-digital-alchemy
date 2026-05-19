@@ -46,7 +46,7 @@ export const LiveActivityFeed: React.FC<{ className?: string }> = ({ className }
   return (
     <div
       className={cn(
-        'bg-white border-2 border-neutral-200 shadow-[8px_8px_0_0_#cf5230] p-5 w-full max-w-md',
+        'bg-white border-2 border-neutral-200 shadow-[8px_8px_0_0_#E54D2E] p-5 w-full max-w-md',
         className,
       )}
       aria-live="polite"
@@ -54,10 +54,10 @@ export const LiveActivityFeed: React.FC<{ className?: string }> = ({ className }
       <div className="flex items-center justify-between mb-4 pb-3 border-b border-neutral-200">
         <div className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#cf5230] opacity-75" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#cf5230]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E54D2E] opacity-75" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#E54D2E]" />
           </span>
-          <span className="text-xs font-black uppercase tracking-[0.2em] text-[#111110]">
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-[#1A1110]">
             Live System
           </span>
         </div>
@@ -80,11 +80,11 @@ export const LiveActivityFeed: React.FC<{ className?: string }> = ({ className }
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 className="flex items-center gap-3 p-3 bg-[#fafaf8] border border-neutral-200"
               >
-                <div className="w-9 h-9 bg-white border border-[#cf5230]/30 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-4 h-4 text-[#cf5230]" strokeWidth={2.5} />
+                <div className="w-9 h-9 bg-white border border-[#E54D2E]/30 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-4 h-4 text-[#E54D2E]" strokeWidth={2.5} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-black text-[#111110] uppercase tracking-tight truncate">
+                  <p className="text-sm font-black text-[#1A1110] uppercase tracking-tight truncate">
                     {event.label}
                   </p>
                   <p className="text-xs font-medium text-neutral-600 truncate">

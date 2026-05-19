@@ -35,7 +35,7 @@ const pricingTiers: PricingTier[] = [
       'Conversions API integration',
     ],
     cta: 'Claim Your Build',
-    icon: <Target className="w-7 h-7 text-[#cf5230]" />,
+    icon: <Target className="w-7 h-7 text-[#E54D2E]" />,
   },
   {
     name: 'Monthly Management',
@@ -73,7 +73,7 @@ const pricingTiers: PricingTier[] = [
     ],
     cta: 'Add Talent',
     badge: 'Add-on',
-    icon: <Zap className="w-7 h-7 text-[#cf5230]" />,
+    icon: <Zap className="w-7 h-7 text-[#E54D2E]" />,
   },
 ];
 
@@ -81,9 +81,9 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={cn('py-24 bg-[#fafaf8] relative overflow-hidden', className)}>
       <ScrollReveal className="text-center mb-16 relative z-10 px-4">
-        <p className="text-[#cf5230] text-sm font-bold uppercase tracking-[0.2em] mb-4">Pricing</p>
-        <h2 className="text-4xl md:text-6xl font-black text-[#111110] mb-6 uppercase tracking-tight">
-          Simple Pricing. <span className="text-[#cf5230]">No Surprises.</span>
+        <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">Pricing</p>
+        <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight">
+          Simple Pricing. <span className="text-[#E54D2E]">No Surprises.</span>
         </h2>
         <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto font-medium">
           We build the whole system. You run your consultancy. Here's what that looks like.
@@ -103,7 +103,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
               className={cn(
                 'relative w-full p-8 md:p-10 flex flex-col transition-all duration-300 h-full',
                 tier.popular
-                  ? 'bg-[#111110] border-2 border-[#cf5230] shadow-[8px_8px_0_0_#cf5230]'
+                  ? 'bg-[#140E0E] border-2 border-[#E54D2E] shadow-[8px_8px_0_0_#E54D2E]'
                   : 'bg-white border-2 border-neutral-200'
               )}
             >
@@ -112,8 +112,8 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
                   className={cn(
                     'absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 text-xs font-black tracking-widest uppercase whitespace-nowrap',
                     tier.popular
-                      ? 'bg-[#cf5230] text-white'
-                      : 'bg-[#111110] text-white'
+                      ? 'bg-[#E54D2E] text-white'
+                      : 'bg-[#140E0E] text-white'
                   )}
                 >
                   {tier.badge}
@@ -124,7 +124,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
                 <div
                   className={cn(
                     'w-14 h-14 flex items-center justify-center mb-6',
-                    tier.popular ? 'bg-[#cf5230]/15 border border-[#cf5230]/40' : 'bg-[#fafaf8] border border-neutral-200'
+                    tier.popular ? 'bg-[#E54D2E]/15 border border-[#E54D2E]/40' : 'bg-[#fafaf8] border border-neutral-200'
                   )}
                 >
                   {tier.icon}
@@ -132,7 +132,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
                 <h3
                   className={cn(
                     'text-2xl font-black mb-3 uppercase tracking-tight',
-                    tier.popular ? 'text-white' : 'text-[#111110]'
+                    tier.popular ? 'text-white' : 'text-[#1A1110]'
                   )}
                 >
                   {tier.name}
@@ -140,7 +140,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
                 <div
                   className={cn(
                     'text-3xl lg:text-4xl font-black mb-2 tracking-tighter',
-                    tier.popular ? 'text-[#cf5230]' : 'text-[#111110]'
+                    tier.popular ? 'text-[#E54D2E]' : 'text-[#1A1110]'
                   )}
                 >
                   {tier.price}
@@ -173,10 +173,10 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
                       <div
                         className={cn(
                           'mt-1 p-1 rounded-full flex-shrink-0',
-                          tier.popular ? 'bg-[#cf5230]/20' : 'bg-[#cf5230]/10'
+                          tier.popular ? 'bg-[#E54D2E]/20' : 'bg-[#E54D2E]/10'
                         )}
                       >
-                        <Check className="w-3.5 h-3.5 text-[#cf5230]" strokeWidth={3} />
+                        <Check className="w-3.5 h-3.5 text-[#E54D2E]" strokeWidth={3} />
                       </div>
                       <span
                         className={cn(
@@ -198,8 +198,8 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
                 className={cn(
                   'flex items-center justify-center w-full py-4 px-6 font-black uppercase tracking-wider transition-all text-sm md:text-base',
                   tier.popular
-                    ? 'bg-[#cf5230] text-white shadow-[0_4px_0_0_#fafaf8] hover:shadow-none hover:translate-y-1'
-                    : 'bg-[#111110] text-white shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1'
+                    ? 'bg-[#E54D2E] text-white shadow-[0_4px_0_0_#fafaf8] hover:shadow-none hover:translate-y-1'
+                    : 'bg-[#140E0E] text-white shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1'
                 )}
               >
                 {tier.cta}

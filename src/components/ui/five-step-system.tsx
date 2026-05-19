@@ -43,11 +43,11 @@ const steps = [
 
 export const FiveStepSystem = () => {
   return (
-    <section className="py-24 bg-[#1a1a19] text-white">
+    <section className="py-24 bg-[#140E0E] text-white">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-20 max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-black uppercase text-[#cf5230] tracking-tighter mb-6">
+            <h2 className="text-4xl md:text-6xl font-black uppercase text-[#E54D2E] tracking-tighter mb-6">
               Our 5-Step Alchemy System
             </h2>
             <p className="text-xl text-gray-400">
@@ -66,10 +66,10 @@ export const FiveStepSystem = () => {
                   {/* Text Content */}
                   <div className={`space-y-6 ${isEven ? 'md:order-2' : ''}`}>
                      <div className="flex items-center gap-4">
-                       <span className="text-5xl font-black text-[#cf5230]/20">{step.id}</span>
+                       <span className="text-5xl font-black text-[#E54D2E]/20">{step.id}</span>
                        <h3 className="text-3xl font-bold">{step.title}</h3>
                      </div>
-                     <p className="text-xl text-gray-400 leading-loose border-l-2 border-[#cf5230] pl-6">
+                     <p className="text-xl text-gray-400 leading-loose border-l-2 border-[#E54D2E] pl-6">
                        {step.description}
                      </p>
                   </div>
@@ -80,7 +80,7 @@ export const FiveStepSystem = () => {
                        <div className="aspect-[4/3] relative">
                          <img src={step.imagePlaceholder} className="w-full h-full object-cover opacity-80" alt={step.title} />
                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
-                            <step.icon className="w-12 h-12 text-[#cf5230] mb-4" />
+                            <step.icon className="w-12 h-12 text-[#E54D2E] mb-4" />
                          </div>
                        </div>
                     </div>

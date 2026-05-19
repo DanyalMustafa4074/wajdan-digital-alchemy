@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Boldonse, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Providers } from "./providers";
@@ -18,10 +18,18 @@ import {
   NAV_LINKS,
 } from "@/config/seo";
 
-const inter = Inter({
+const boldonse = Boldonse({
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-boldonse",
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -187,7 +195,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationLd) }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${boldonse.variable} ${jakarta.variable}`}>
         <Providers>{children}</Providers>
 
         <Script

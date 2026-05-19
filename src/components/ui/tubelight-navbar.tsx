@@ -52,7 +52,7 @@ export function NavBar({ items, className }: NavBarProps) {
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                 item.isButton
-                  ? "bg-[#cf5230] text-white hover:bg-[#b54424] border-2 border-[#cf5230]"
+                  ? "bg-[#E54D2E] text-white hover:bg-[#B83521] border-2 border-[#E54D2E]"
                   : "text-foreground/80 hover:text-primary",
                 !item.isButton && isActive && "bg-muted text-primary",
               )}

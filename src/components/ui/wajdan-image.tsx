@@ -53,16 +53,16 @@ export const WajdanImage: React.FC<WajdanImageProps> = ({
 };
 
 const Placeholder: React.FC<{ label: string }> = ({ label }) => (
-  <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_30%_20%,rgba(207,82,48,0.12),transparent_55%),linear-gradient(135deg,#fafaf8_0%,#ececea_100%)] border-2 border-dashed border-neutral-300">
+  <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_30%_20%,rgba(229,77,46,0.12),transparent_55%),linear-gradient(135deg,#fafaf8_0%,#ececea_100%)] border-2 border-dashed border-neutral-300">
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       className="flex flex-col items-center text-center px-6"
     >
       <div className="w-12 h-12 bg-white border border-neutral-200 flex items-center justify-center mb-3 shadow-sm">
-        <ImageIcon className="w-6 h-6 text-[#cf5230]" />
+        <ImageIcon className="w-6 h-6 text-[#E54D2E]" />
       </div>
-      <p className="text-xs font-black uppercase tracking-[0.2em] text-[#cf5230] mb-1">
+      <p className="text-xs font-black uppercase tracking-[0.2em] text-[#E54D2E] mb-1">
         {label}
       </p>
       <p className="text-[11px] font-bold uppercase tracking-wider text-neutral-500">

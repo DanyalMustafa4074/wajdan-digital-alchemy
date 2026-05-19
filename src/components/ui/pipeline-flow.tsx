@@ -34,12 +34,12 @@ export const PipelineFlow: React.FC<{ className?: string }> = ({ className }) =>
     <section className={cn('py-24 bg-white border-y-2 border-neutral-200', className)}>
       <div className="max-w-6xl mx-auto px-4">
         <ScrollReveal className="text-center mb-16">
-          <p className="text-[#cf5230] text-sm font-bold uppercase tracking-[0.2em] mb-4">
+          <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">
             What Actually Happens
           </p>
-          <h2 className="text-4xl md:text-6xl font-black text-[#111110] uppercase tracking-tighter leading-[0.95]">
+          <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-[0.95]">
             The Lead Lifecycle.<br />
-            <span className="text-[#cf5230]">Every Single Time.</span>
+            <span className="text-[#E54D2E]">Every Single Time.</span>
           </h2>
           <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto font-medium">
             From the second a prospect submits a form to the second they sit in front of you — automated, monitored, and impossible to forget.
@@ -55,7 +55,7 @@ export const PipelineFlow: React.FC<{ className?: string }> = ({ className }) =>
             />
             <motion.div
               aria-hidden
-              className="absolute top-10 left-[10%] h-1 bg-[#cf5230] hidden md:block origin-left"
+              className="absolute top-10 left-[10%] h-1 bg-[#E54D2E] hidden md:block origin-left"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: [0, 1, 1, 0] }}
               transition={{
@@ -80,19 +80,19 @@ export const PipelineFlow: React.FC<{ className?: string }> = ({ className }) =>
                     className="flex flex-col items-center text-center"
                   >
                     <motion.div
-                      className="relative w-20 h-20 bg-white border-2 border-[#cf5230] flex items-center justify-center mb-4 shadow-[0_4px_0_0_#111110]"
+                      className="relative w-20 h-20 bg-white border-2 border-[#E54D2E] flex items-center justify-center mb-4 shadow-[0_4px_0_0_#111110]"
                       whileHover={{ y: -4 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <Icon className="w-9 h-9 text-[#cf5230]" strokeWidth={2.2} />
-                      <span className="absolute -top-3 -right-3 bg-[#111110] text-white text-xs font-black px-2 py-0.5 uppercase tracking-wider">
+                      <Icon className="w-9 h-9 text-[#E54D2E]" strokeWidth={2.2} />
+                      <span className="absolute -top-3 -right-3 bg-[#140E0E] text-white text-xs font-black px-2 py-0.5 uppercase tracking-wider">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                     </motion.div>
-                    <p className="text-sm md:text-base font-black uppercase tracking-tight text-[#111110]">
+                    <p className="text-sm md:text-base font-black uppercase tracking-tight text-[#1A1110]">
                       {step.label}
                     </p>
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#cf5230] mt-1">
+                    <p className="text-xs font-bold uppercase tracking-widest text-[#E54D2E] mt-1">
                       {step.time}
                     </p>
                   </motion.div>

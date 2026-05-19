@@ -65,14 +65,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				// Wajdan Brand — neutrals + single accent (rust orange)
-				'brand-dark': '#111110',
+				'brand-dark': '#140E0E',
 				'brand-light': '#fafaf8',
-				'brand-orange': '#cf5230',
-				'brand-primary': '#cf5230',
+				'brand-orange': '#E54D2E',
+				'brand-primary': '#E54D2E',
 				// Legacy aliases mapped to brand to avoid breakage in any stale references.
-				'brand-green': '#cf5230',
-				'brand-yellow': '#cf5230',
-				'brand-blue': '#111110'
+				'brand-green': '#E54D2E',
+				'brand-yellow': '#E54D2E',
+				'brand-blue': '#140E0E'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -241,10 +241,15 @@ export default {
 				'shimmer': 'shimmer 2s linear infinite',
 				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite'
 			},
+			fontFamily: {
+				heading: ['var(--font-boldonse)', 'Boldonse', 'system-ui', 'sans-serif'],
+				sans: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+				body: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'brand-gradient': 'linear-gradient(135deg, #cf5230 0%, #111110 50%, #cf5230 100%)',
+				'brand-gradient': 'linear-gradient(135deg, #E54D2E 0%, #140E0E 50%, #E54D2E 100%)',
 			}
 		}
 	},

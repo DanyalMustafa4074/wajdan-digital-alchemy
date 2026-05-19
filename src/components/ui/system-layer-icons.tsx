@@ -20,9 +20,9 @@ import { cn } from '@/lib/utils';
  *  - uses the brand rust-orange exclusively
  */
 
-const ACCENT = '#cf5230';
-const ACCENT_SOFT = 'rgba(207, 82, 48, 0.15)';
-const INK = '#111110';
+const ACCENT = '#E54D2E';
+const ACCENT_SOFT = 'rgba(229, 77, 46, 0.15)';
+const INK = '#140E0E';
 
 interface IconProps {
   size?: number;
@@ -346,7 +346,7 @@ export const AnalyticsIcon: React.FC<IconProps> = ({ size = 64, className }) => 
 /* ---------------------------------------------------------------- */
 export const PulsingDot: React.FC<{ className?: string; color?: string }> = ({
   className,
-  color = 'bg-[#cf5230]',
+  color = 'bg-[#E54D2E]',
 }) => (
   <span className={cn('relative flex h-3 w-3', className)}>
     <span className={cn('animate-ping absolute inline-flex h-full w-full rounded-full opacity-75', color)} />

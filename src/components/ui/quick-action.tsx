@@ -15,17 +15,17 @@ export const QuickAction = () => {
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             className="absolute bottom-16 left-0 mb-4 flex flex-col gap-3"
           >
-            <a href="tel:+123456789" className="flex items-center gap-3 bg-[#111110] text-white py-2 px-4 rounded-full shadow-lg hover:bg-neutral-800 transition-colors">
+            <a href="tel:+123456789" className="flex items-center gap-3 bg-[#140E0E] text-white py-2 px-4 rounded-full shadow-lg hover:bg-neutral-800 transition-colors">
               <span className="text-sm font-bold">Call Us</span>
-              <Phone className="w-4 h-4 text-[#cf5230]" />
+              <Phone className="w-4 h-4 text-[#E54D2E]" />
             </a>
-            <a href="#contact" onClick={() => setIsOpen(false)} className="flex items-center gap-3 bg-[#111110] text-white py-2 px-4 rounded-full shadow-lg hover:bg-neutral-800 transition-colors">
+            <a href="#contact" onClick={() => setIsOpen(false)} className="flex items-center gap-3 bg-[#140E0E] text-white py-2 px-4 rounded-full shadow-lg hover:bg-neutral-800 transition-colors">
               <span className="text-sm font-bold">Message</span>
-              <MessageSquare className="w-4 h-4 text-[#cf5230]" />
+              <MessageSquare className="w-4 h-4 text-[#E54D2E]" />
             </a>
-            <a href="mailto:hello@wajdan.co" className="flex items-center gap-3 bg-[#111110] text-white py-2 px-4 rounded-full shadow-lg hover:bg-neutral-800 transition-colors">
+            <a href="mailto:hello@wajdan.co" className="flex items-center gap-3 bg-[#140E0E] text-white py-2 px-4 rounded-full shadow-lg hover:bg-neutral-800 transition-colors">
               <span className="text-sm font-bold">Email</span>
-              <Mail className="w-4 h-4 text-[#cf5230]" />
+              <Mail className="w-4 h-4 text-[#E54D2E]" />
             </a>
           </motion.div>
         )}
@@ -33,7 +33,7 @@ export const QuickAction = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-[#cf5230] text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-[#b04324] transition-all hover:scale-105 active:scale-95"
+        className="w-14 h-14 bg-[#E54D2E] text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-[#b04324] transition-all hover:scale-105 active:scale-95"
       >
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}

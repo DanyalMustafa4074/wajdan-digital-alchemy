@@ -33,8 +33,8 @@ interface SystemLayer {
 }
 
 // Single accent color across all layers — neutrals + brand rust.
-const ACCENT = '#cf5230';
-const ACCENT_BG = 'rgba(207, 82, 48, 0.08)';
+const ACCENT = '#E54D2E';
+const ACCENT_BG = 'rgba(229, 77, 46, 0.08)';
 
 const systemLayers: SystemLayer[] = [
   {
@@ -123,9 +123,9 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={cn('py-20 bg-[#fafaf8]', className)}>
       <ScrollReveal className="text-center mb-12 px-4">
-        <p className="text-[#cf5230] text-sm font-bold uppercase tracking-[0.2em] mb-4">The Wajdan System</p>
-        <h2 className="text-4xl md:text-6xl font-black text-[#111110] uppercase tracking-tighter leading-none">
-          Five Layers. <span className="text-[#cf5230]">One System.</span>
+        <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">The Wajdan System</p>
+        <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-none">
+          Five Layers. <span className="text-[#E54D2E]">One System.</span>
         </h2>
         <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto font-medium">
           Remove any one layer and the whole thing leaks. This is the complete sequence — built in this exact order, before traffic goes live.
@@ -143,8 +143,8 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                 className={cn(
                   'relative flex shrink-0 items-center justify-center gap-3 px-5 py-3 rounded-full border-2 transition-all whitespace-nowrap',
                   isActive
-                    ? 'bg-[#cf5230] border-[#cf5230] text-white shadow-[0_4px_0_0_#111110]'
-                    : 'bg-white border-neutral-200 text-neutral-600 hover:border-[#cf5230]/40'
+                    ? 'bg-[#E54D2E] border-[#E54D2E] text-white shadow-[0_4px_0_0_#111110]'
+                    : 'bg-white border-neutral-200 text-neutral-600 hover:border-[#E54D2E]/40'
                 )}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
@@ -179,11 +179,11 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                         return <AnimComponent size={90} />;
                       })()}
                     </motion.div>
-                    <span className="text-xs font-bold tracking-widest text-[#cf5230] uppercase mb-1">Layer {layer.number}</span>
-                    <h3 className="text-2xl font-black text-[#111110] uppercase tracking-tight">{layer.title}</h3>
+                    <span className="text-xs font-bold tracking-widest text-[#E54D2E] uppercase mb-1">Layer {layer.number}</span>
+                    <h3 className="text-2xl font-black text-[#1A1110] uppercase tracking-tight">{layer.title}</h3>
                     {layer.stat && (
                       <div className="mt-4">
-                        <div className="text-4xl font-black text-[#cf5230]">{layer.stat.value}</div>
+                        <div className="text-4xl font-black text-[#E54D2E]">{layer.stat.value}</div>
                         <div className="text-sm text-neutral-500 font-bold uppercase tracking-wider">{layer.stat.label}</div>
                       </div>
                     )}
@@ -198,7 +198,7 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: idx * 0.08 }}
                           whileHover={{ scale: 1.08, y: -4 }}
-                          className="flex flex-col items-center gap-2 p-4 rounded-xl bg-[#fafaf8] border border-neutral-200 hover:border-[#cf5230]/40 transition-colors cursor-pointer"
+                          className="flex flex-col items-center gap-2 p-4 rounded-xl bg-[#fafaf8] border border-neutral-200 hover:border-[#E54D2E]/40 transition-colors cursor-pointer"
                         >
                           <div style={{ color: ACCENT }}>{item.icon}</div>
                           <span className="text-xs text-neutral-600 font-semibold">{item.label}</span>
@@ -223,8 +223,8 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                     className={cn(
                       'w-9 h-9 rounded-full flex items-center justify-center text-xs font-black cursor-pointer transition-all border-2',
                       activeLayer === layer.number
-                        ? 'bg-[#cf5230] border-[#cf5230] text-white'
-                        : 'bg-white border-neutral-200 text-neutral-500 hover:border-[#cf5230]/40'
+                        ? 'bg-[#E54D2E] border-[#E54D2E] text-white'
+                        : 'bg-white border-neutral-200 text-neutral-500 hover:border-[#E54D2E]/40'
                     )}
                   >
                     {layer.number}
@@ -246,8 +246,8 @@ const SystemLayersSummary: React.FC<{ className?: string }> = ({ className }) =>
   return (
     <div className={cn('py-12 bg-[#fafaf8]', className)}>
       <ScrollReveal className="text-center mb-8">
-        <h3 className="text-2xl md:text-3xl font-black text-[#111110] uppercase tracking-tight">
-          Five Layers. <span className="text-[#cf5230]">Zero Gaps.</span>
+        <h3 className="text-2xl md:text-3xl font-black text-[#1A1110] uppercase tracking-tight">
+          Five Layers. <span className="text-[#E54D2E]">Zero Gaps.</span>
         </h3>
       </ScrollReveal>
 
@@ -257,9 +257,9 @@ const SystemLayersSummary: React.FC<{ className?: string }> = ({ className }) =>
             <ScrollReveal delay={index * 0.1}>
               <motion.div
                 whileHover={{ scale: 1.08, y: -6 }}
-                className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 cursor-pointer bg-white border-2 border-neutral-200 hover:border-[#cf5230]/40 transition-colors"
+                className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 cursor-pointer bg-white border-2 border-neutral-200 hover:border-[#E54D2E]/40 transition-colors"
               >
-                <div className="text-[#cf5230]">{layer.summaryIcon}</div>
+                <div className="text-[#E54D2E]">{layer.summaryIcon}</div>
                 <span className="text-[10px] md:text-xs text-neutral-600 font-bold text-center px-1">
                   {layer.title.split(' + ')[0]}
                 </span>
@@ -269,7 +269,7 @@ const SystemLayersSummary: React.FC<{ className?: string }> = ({ className }) =>
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="text-[#cf5230]"
+                className="text-[#E54D2E]"
               >
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </motion.div>

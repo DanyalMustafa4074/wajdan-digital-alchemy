@@ -6,7 +6,7 @@
  * Wajdan Design System — Light mode default.
  * Palette locked to:
  *   Neutrals: #fafaf8 (background) / #111110 (ink) / off-white & near-black tints
- *   Accent:   #cf5230 (brand rust)
+ *   Accent:   #E54D2E (brand rust)
  * Off-brand colors (#0d1b1e, #020617 silver, brand-blue, brand-yellow, brand-green) are removed.
  */
 
@@ -21,7 +21,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 60 3% 6.5%;
 
-    --primary: 14 65% 50%;             /* #cf5230 */
+    --primary: 10 78% 54%;             /* #E54D2E */
     --primary-foreground: 60 20% 97.6%;
 
     --secondary: 60 9% 92%;
@@ -30,7 +30,7 @@
     --muted: 60 9% 95%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 14 65% 50%;
+    --accent: 10 78% 54%;
     --accent-foreground: 60 20% 97.6%;
 
     --destructive: 0 75% 45%;
@@ -38,7 +38,7 @@
 
     --border: 0 0% 89%;
     --input: 0 0% 89%;
-    --ring: 14 65% 50%;
+    --ring: 10 78% 54%;
 
     --radius: 0.5rem;
 
@@ -96,11 +96,16 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-boldonse), 'Boldonse', system-ui, sans-serif;
+    text-transform: uppercase;
   }
 
   ::-webkit-scrollbar {
@@ -112,12 +117,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #cf5230;
+    background: #E54D2E;
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #b54424;
+    background: #B83521;
   }
 }
 
@@ -128,8 +133,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(207, 82, 48, 0.25); }
-  50% { box-shadow: 0 0 40px rgba(207, 82, 48, 0.5); }
+  0%, 100% { box-shadow: 0 0 20px rgba(229, 77, 46, 0.25); }
+  50% { box-shadow: 0 0 40px rgba(229, 77, 46, 0.5); }
 }
 
 @keyframes shimmer {
@@ -188,7 +193,7 @@
 
 /* Brand gradient text — single-accent on neutrals (no green/yellow) */
 .text-gradient {
-  background: linear-gradient(135deg, #cf5230, #111110, #cf5230);
+  background: linear-gradient(135deg, #E54D2E, #111110, #E54D2E);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -220,13 +225,13 @@
 
 .hover-lift:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px -12px rgba(207, 82, 48, 0.25);
-  border-color: rgba(207, 82, 48, 0.4);
+  box-shadow: 0 25px 50px -12px rgba(229, 77, 46, 0.25);
+  border-color: rgba(229, 77, 46, 0.4);
 }
 
 /* Brand text shadow */
 .text-glow {
-  text-shadow: 0 0 20px rgba(207, 82, 48, 0.35);
+  text-shadow: 0 0 20px rgba(229, 77, 46, 0.35);
 }
 
 /* Focus ring for accessibility */
@@ -247,7 +252,7 @@
   transform: translateX(-50%);
   width: 100px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #cf5230, transparent);
+  background: linear-gradient(90deg, transparent, #E54D2E, transparent);
 }
 
 /*

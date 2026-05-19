@@ -47,7 +47,7 @@ export const UrgencyPopover: React.FC<{ className?: string }> = ({ className }) 
         // @ts-expect-error popoverTarget is a valid HTML attr not yet typed in React.
         popoverTarget={popoverId}
         className={cn(
-          'inline-flex items-center gap-2 px-4 py-2 bg-[#cf5230] text-white text-xs font-black uppercase tracking-widest shadow-[0_4px_0_0_#111110] hover:shadow-none hover:translate-y-1 transition-all',
+          'inline-flex items-center gap-2 px-4 py-2 bg-[#E54D2E] text-white text-xs font-black uppercase tracking-widest shadow-[0_4px_0_0_#111110] hover:shadow-none hover:translate-y-1 transition-all',
           className,
         )}
       >
@@ -60,34 +60,34 @@ export const UrgencyPopover: React.FC<{ className?: string }> = ({ className }) 
         id={popoverId}
         // @ts-expect-error popover attribute not yet typed in React.
         popover="auto"
-        className="fixed inset-0 m-auto h-fit w-[min(90vw,28rem)] bg-white border-2 border-[#111110] shadow-[8px_8px_0_0_#cf5230] p-6"
+        className="fixed inset-0 m-auto h-fit w-[min(90vw,28rem)] bg-white border-2 border-[#111110] shadow-[8px_8px_0_0_#E54D2E] p-6"
       >
         <div className="flex items-start justify-between gap-4 mb-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#cf5230]/10 border border-[#cf5230]/40 flex items-center justify-center">
-              <AlertTriangle className="w-5 h-5 text-[#cf5230]" strokeWidth={2.5} />
+            <div className="w-10 h-10 bg-[#E54D2E]/10 border border-[#E54D2E]/40 flex items-center justify-center">
+              <AlertTriangle className="w-5 h-5 text-[#E54D2E]" strokeWidth={2.5} />
             </div>
-            <h3 className="text-lg font-black uppercase tracking-tight text-[#111110]">
+            <h3 className="text-lg font-black uppercase tracking-tight text-[#1A1110]">
               Strict capacity
             </h3>
           </div>
           <button
             type="button"
             onClick={() => togglePopover(false)}
-            className="text-neutral-500 hover:text-[#111110] transition-colors"
+            className="text-neutral-500 hover:text-[#1A1110] transition-colors"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
         <p className="text-neutral-700 leading-loose mb-5">
-          We onboard a maximum of <strong className="text-[#cf5230] font-black">6 consultancies</strong> each
+          We onboard a maximum of <strong className="text-[#E54D2E] font-black">6 consultancies</strong> each
           month so every system gets built properly. When the spots fill, the next intake opens the following month.
         </p>
         <a
           href="#contact"
           onClick={() => togglePopover(false)}
-          className="inline-flex items-center gap-2 px-5 py-3 bg-[#111110] text-white font-black uppercase tracking-wider text-sm shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1 transition-all"
+          className="inline-flex items-center gap-2 px-5 py-3 bg-[#140E0E] text-white font-black uppercase tracking-wider text-sm shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all"
         >
           Apply for this month
         </a>

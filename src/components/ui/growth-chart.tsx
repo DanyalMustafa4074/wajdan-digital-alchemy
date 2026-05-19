@@ -20,10 +20,10 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
     <section className={cn('py-24 bg-[#fafaf8] overflow-hidden', className)}>
       <div className="max-w-6xl mx-auto px-4">
         <ScrollReveal className="text-center mb-12">
-          <p className="text-[#cf5230] text-sm font-bold uppercase tracking-[0.2em] mb-4">The Curve That Closes</p>
-          <h2 className="text-4xl md:text-6xl font-black text-[#111110] uppercase tracking-tighter leading-[0.95]">
+          <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">The Curve That Closes</p>
+          <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-[0.95]">
             Same Ad Spend.<br />
-            <span className="text-[#cf5230]">Twice the Booked Calls.</span>
+            <span className="text-[#E54D2E]">Twice the Booked Calls.</span>
           </h2>
           <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto font-medium">
             What happens when leads stop falling through the cracks — and the algorithm finally optimises for clients, not form-fillers.
@@ -52,8 +52,8 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
                 </g>
 
                 {/* Axes */}
-                <line x1="60" y1="360" x2="760" y2="360" stroke="#111110" strokeWidth="2" />
-                <line x1="60" y1="80" x2="60" y2="360" stroke="#111110" strokeWidth="2" />
+                <line x1="60" y1="360" x2="760" y2="360" stroke="#140E0E" strokeWidth="2" />
+                <line x1="60" y1="80" x2="60" y2="360" stroke="#140E0E" strokeWidth="2" />
 
                 {/* Y-axis label */}
                 <text
@@ -61,7 +61,7 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
                   fontFamily="Plus Jakarta Sans, system-ui, sans-serif"
                   fontWeight="700"
                   fontSize="14"
-                  fill="#111110"
+                  fill="#140E0E"
                   letterSpacing="0.1em"
                   textAnchor="middle"
                 >
@@ -75,7 +75,7 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
                   fontFamily="Plus Jakarta Sans, system-ui, sans-serif"
                   fontWeight="700"
                   fontSize="14"
-                  fill="#111110"
+                  fill="#140E0E"
                   letterSpacing="0.1em"
                   textAnchor="middle"
                 >
@@ -99,7 +99,7 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
                 <motion.path
                   d="M 70 320 C 200 290, 320 220, 460 160 S 700 100, 750 90"
                   fill="none"
-                  stroke="#cf5230"
+                  stroke="#E54D2E"
                   strokeWidth="6"
                   strokeLinecap="round"
                   initial={{ pathLength: 0 }}
@@ -147,14 +147,14 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.4, delay: 2.0 }}
                 >
-                  <circle cx="750" cy="90" r="9" fill="#cf5230" />
+                  <circle cx="750" cy="90" r="9" fill="#E54D2E" />
                   <text
                     x="710"
                     y="65"
                     fontFamily="Plus Jakarta Sans, system-ui, sans-serif"
                     fontWeight="900"
                     fontSize="32"
-                    fill="#cf5230"
+                    fill="#E54D2E"
                     textAnchor="end"
                   >
                     +18
@@ -165,7 +165,7 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
                     fontFamily="Plus Jakarta Sans, system-ui, sans-serif"
                     fontWeight="700"
                     fontSize="12"
-                    fill="#cf5230"
+                    fill="#E54D2E"
                     letterSpacing="0.1em"
                     textAnchor="end"
                   >
@@ -191,19 +191,19 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
             {/* Stat strip under chart */}
             <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t-2 border-neutral-200">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-[#cf5230]">3×</div>
+                <div className="text-3xl md:text-4xl font-black text-[#E54D2E]">3×</div>
                 <div className="text-xs md:text-sm font-black uppercase tracking-wider text-neutral-600 mt-1">
                   More Bookings
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-[#cf5230]">84%</div>
+                <div className="text-3xl md:text-4xl font-black text-[#E54D2E]">84%</div>
                 <div className="text-xs md:text-sm font-black uppercase tracking-wider text-neutral-600 mt-1">
                   Show Rate
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-[#cf5230]">40%</div>
+                <div className="text-3xl md:text-4xl font-black text-[#E54D2E]">40%</div>
                 <div className="text-xs md:text-sm font-black uppercase tracking-wider text-neutral-600 mt-1">
                   Lower Cost
                 </div>

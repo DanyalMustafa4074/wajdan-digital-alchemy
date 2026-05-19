@@ -18,7 +18,7 @@ const FloatingLogo = ({
   duration: number;
 }) => (
   <motion.div
-    className="absolute hidden md:flex items-center justify-center p-3 rounded-2xl bg-[#1a1a18] border border-neutral-800 shadow-2xl opacity-60 hover:opacity-100 transition-opacity z-0"
+    className="absolute hidden md:flex items-center justify-center p-3 rounded-2xl bg-[#1F1513] border border-neutral-800 shadow-2xl opacity-60 hover:opacity-100 transition-opacity z-0"
     style={{ top, left }}
     initial={{ y: 0 }}
     animate={{ y: [-15, 15, -15] }}
@@ -35,15 +35,15 @@ const FloatingLogo = ({
 
 export const FinalCTA = () => {
   return (
-    <section className="relative py-32 bg-[#111110] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6 border-b border-neutral-800">
+    <section className="relative py-32 bg-[#140E0E] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6 border-b border-neutral-800">
       
       {/* Logos Floating in Background */}
-      <FloatingLogo icon={Facebook} color="text-blue-500" top="15%" left="10%" delay={0} duration={4.5} />
-      <FloatingLogo icon={Instagram} color="text-pink-500" top="20%" left="45%" delay={1} duration={5} />
-      <FloatingLogo icon={Target} color="text-red-500" top="10%" left="80%" delay={0.5} duration={4} />
-      <FloatingLogo icon={Youtube} color="text-red-600" top="70%" left="85%" delay={1.5} duration={5.5} />
-      <FloatingLogo icon={Zap} color="text-yellow-500" top="80%" left="30%" delay={0.8} duration={4.8} />
-      <FloatingLogo icon={Smartphone} color="text-[#cf5230]" top="60%" left="12%" delay={2} duration={6} />
+      <FloatingLogo icon={Facebook} color="text-white/60" top="15%" left="10%" delay={0} duration={4.5} />
+      <FloatingLogo icon={Instagram} color="text-[#E54D2E]/70" top="20%" left="45%" delay={1} duration={5} />
+      <FloatingLogo icon={Target} color="text-white/60" top="10%" left="80%" delay={0.5} duration={4} />
+      <FloatingLogo icon={Youtube} color="text-[#E54D2E]/70" top="70%" left="85%" delay={1.5} duration={5.5} />
+      <FloatingLogo icon={Zap} color="text-white/60" top="80%" left="30%" delay={0.8} duration={4.8} />
+      <FloatingLogo icon={Smartphone} color="text-[#E54D2E]" top="60%" left="12%" delay={2} duration={6} />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <motion.h2 
@@ -65,7 +65,7 @@ export const FinalCTA = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           viewport={{ once: true }}
-          className="inline-block mt-4 bg-[#cf5230] hover:bg-[#b04528] text-white font-black uppercase text-xl md:text-3xl tracking-tight py-6 px-12 md:px-16 rounded shadow-[0_0_40px_rgba(207,82,48,0.3)] transition-all"
+          className="inline-block mt-4 bg-[#E54D2E] text-white font-black uppercase text-xl md:text-3xl tracking-tight py-6 px-12 md:px-16 shadow-[0_6px_0_0_#B83521] hover:shadow-none hover:translate-y-[6px] transition-all"
         >
           HIT THE DAMN BUTTON
         </motion.a>

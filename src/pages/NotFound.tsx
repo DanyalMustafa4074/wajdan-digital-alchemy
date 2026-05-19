@@ -18,7 +18,7 @@ const NotFound = () => {
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-8xl md:text-9xl font-black text-[#cf5230] mb-4 tracking-tighter"
+          className="text-8xl md:text-9xl font-black text-[#E54D2E] mb-4 tracking-tighter"
         >
           404
         </motion.h1>
@@ -32,7 +32,7 @@ const NotFound = () => {
         </motion.p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-[#111110] text-white font-black uppercase tracking-wider shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1 transition-all"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-[#140E0E] text-white font-black uppercase tracking-wider shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
           Return to Home

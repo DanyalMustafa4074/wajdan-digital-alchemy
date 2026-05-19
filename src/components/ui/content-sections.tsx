@@ -10,17 +10,17 @@ export const ProofSection = () => {
     <div className="py-16 md:py-24 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-12 md:mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-[#111110] mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.05]">
-            Proof<span className="text-[#cf5230]">!</span>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-[#1A1110] mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.05]">
+            Proof<span className="text-[#E54D2E]">!</span>
           </h2>
           <div className="mt-4 flex justify-center px-2">
-            <p className="text-sm md:text-lg font-black text-white max-w-3xl px-4 sm:px-6 py-3 bg-[#cf5230] md:-rotate-1 shadow-[0_6px_0_0_#111110] md:shadow-[0_8px_0_0_#111110] uppercase tracking-wider leading-snug">
+            <p className="text-sm md:text-lg font-black text-white max-w-3xl px-4 sm:px-6 py-3 bg-[#E54D2E] md:-rotate-1 shadow-[0_6px_0_0_#111110] md:shadow-[0_8px_0_0_#111110] uppercase tracking-wider leading-snug">
               Consultancy funnels we've built — and what happened after.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="mt-12 md:mt-16 w-full max-w-4xl mx-auto border-4 border-black rounded-lg overflow-hidden shadow-[12px_12px_0_0_#cf5230]">
+        <div className="mt-12 md:mt-16 w-full max-w-4xl mx-auto border-4 border-black rounded-lg overflow-hidden shadow-[12px_12px_0_0_#E54D2E]">
           <img 
             src="/Wajdan_Dashboards_blurred%20(1).png" 
             alt="Dashboard Proof of Results" 
@@ -51,8 +51,8 @@ export const WhoIsThisFor = () => {
     <section className="py-24 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-[#111110] mb-6 uppercase tracking-tight">
-            Who This Is <span className="text-[#cf5230] border-b-4 border-[#cf5230] pb-1">For</span>.
+          <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight">
+            Who This Is <span className="text-[#E54D2E] border-b-4 border-[#E54D2E] pb-1">For</span>.
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto font-medium">
             Make sure to Read this so you dont waste our time.
@@ -61,17 +61,17 @@ export const WhoIsThisFor = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           <ScrollReveal delay={0.1}>
-            <div className="bg-white border-2 border-neutral-200 p-8 h-full shadow-[8px_8px_0_0_#cf5230]">
+            <div className="bg-white border-2 border-neutral-200 p-8 h-full shadow-[8px_8px_0_0_#E54D2E]">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 bg-[#cf5230]/10 rounded-full flex items-center justify-center border-2 border-[#cf5230]/30">
-                  <BadgeCheck className="w-6 h-6 text-[#cf5230]" strokeWidth={3} />
+                <div className="w-12 h-12 bg-[#E54D2E]/10 rounded-full flex items-center justify-center border-2 border-[#E54D2E]/30">
+                  <BadgeCheck className="w-6 h-6 text-[#E54D2E]" strokeWidth={3} />
                 </div>
-                <h3 className="text-2xl font-black text-[#111110] uppercase tracking-wider">Perfect Fit</h3>
+                <h3 className="text-2xl font-black text-[#1A1110] uppercase tracking-wider">Perfect Fit</h3>
               </div>
               <ul className="space-y-5">
                 {fits.map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
-                    <CheckCircle className="w-6 h-6 text-[#cf5230] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <CheckCircle className="w-6 h-6 text-[#E54D2E] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                     <span className="text-neutral-700 font-medium text-base md:text-lg leading-loose">{item}</span>
                   </li>
                 ))}
@@ -80,7 +80,7 @@ export const WhoIsThisFor = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="bg-[#111110] border-2 border-[#111110] p-8 h-full shadow-[8px_8px_0_0_#cf5230]">
+            <div className="bg-[#140E0E] border-2 border-[#111110] p-8 h-full shadow-[8px_8px_0_0_#E54D2E]">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center border-2 border-white/30">
                   <ShieldAlert className="w-6 h-6 text-white" strokeWidth={3} />
@@ -90,7 +90,7 @@ export const WhoIsThisFor = () => {
               <ul className="space-y-5">
                 {noFits.map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
-                    <AlertCircle className="w-6 h-6 text-[#cf5230] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <AlertCircle className="w-6 h-6 text-[#E54D2E] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                     <span className="text-neutral-300 font-medium text-base md:text-lg leading-loose">{item}</span>
                   </li>
                 ))}
@@ -124,7 +124,7 @@ const FloatingLogo = ({
   duration: number;
 }) => (
   <motion.div
-    className="absolute hidden md:flex items-center justify-center w-16 h-16 rounded-3xl bg-[#1a1a18] border border-neutral-800 shadow-2xl opacity-60 hover:opacity-100 transition-opacity z-0"
+    className="absolute hidden md:flex items-center justify-center w-16 h-16 rounded-3xl bg-[#1F1513] border border-neutral-800 shadow-2xl opacity-60 hover:opacity-100 transition-opacity z-0"
     style={{ top, left }}
     initial={{ y: 0 }}
     animate={{ y: [-15, 15, -15] }}
@@ -141,7 +141,7 @@ const FloatingLogo = ({
 
 export const FinalCTA = () => {
   return (
-    <section className="relative py-20 md:py-36 lg:py-48 bg-[#111110] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6">
+    <section className="relative py-20 md:py-36 lg:py-48 bg-[#140E0E] overflow-hidden flex flex-col justify-center items-center px-4 md:px-6">
 
       {/* Floating logos hidden on small screens to keep CTA focal */}
       <FloatingLogo icon={Facebook} color="text-blue-500" top="15%" left="10%" delay={0} duration={4.5} />
@@ -149,7 +149,7 @@ export const FinalCTA = () => {
       <FloatingLogo icon={Target} color="text-red-500" top="10%" left="80%" delay={0.5} duration={4} />
       <FloatingLogo icon={Youtube} color="text-red-600" top="70%" left="85%" delay={1.5} duration={5.5} />
       <FloatingLogo icon={Database} color="text-yellow-500" top="80%" left="30%" delay={0.8} duration={4.8} />
-      <FloatingLogo icon={Monitor} color="text-[#cf5230]" top="60%" left="12%" delay={2} duration={6} />
+      <FloatingLogo icon={Monitor} color="text-[#E54D2E]" top="60%" left="12%" delay={2} duration={6} />
       <FloatingLogo icon={Globe} color="text-teal-500" top="35%" left="85%" delay={0.3} duration={4.1} />
       <FloatingLogo icon={BarChart3} color="text-orange-500" top="85%" left="60%" delay={1.2} duration={5.2} />
 
@@ -157,7 +157,7 @@ export const FinalCTA = () => {
         <ScrollReveal>
           <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] font-black text-[#fafaf8] uppercase tracking-tight md:tracking-tighter leading-[1.05] md:leading-[0.9] mb-8 md:mb-12">
             I Guess What We're Trying To Say Is That You Should{' '}
-            <span className="text-[#cf5230]">Hit The Damn Button</span>
+            <span className="text-[#E54D2E]">Hit The Damn Button</span>
           </h2>
         </ScrollReveal>
 
@@ -166,7 +166,7 @@ export const FinalCTA = () => {
             href="#contact"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="inline-block w-full sm:w-auto bg-[#cf5230] hover:bg-[#b04528] text-white font-black uppercase text-base sm:text-xl md:text-3xl tracking-tight py-4 md:py-6 px-8 sm:px-12 md:px-16 rounded shadow-[0_0_40px_rgba(207,82,48,0.3)] transition-all"
+            className="inline-block w-full sm:w-auto bg-[#E54D2E] hover:bg-[#b04528] text-white font-black uppercase text-base sm:text-xl md:text-3xl tracking-tight py-4 md:py-6 px-8 sm:px-12 md:px-16 rounded shadow-[0_0_40px_rgba(229,77,46,0.3)] transition-all"
           >
             HIT THE DAMN BUTTON
           </motion.a>

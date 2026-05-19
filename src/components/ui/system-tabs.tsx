@@ -154,15 +154,15 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
                   className={cn(
                     "relative flex shrink-0 items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300 z-10 lg:px-2 lg:py-2 lg:gap-1 lg:text-[12px]",
                     activeTab === tab.id
-                      ? "bg-[#cf5230] text-white shadow-[0_4px_0_0_#111110]"
-                      : "bg-white text-neutral-600 hover:text-[#111110] border border-neutral-200 hover:border-[#cf5230]/40 shadow-sm"
+                      ? "bg-[#E54D2E] text-white shadow-[0_4px_0_0_#111110]"
+                      : "bg-white text-neutral-600 hover:text-[#1A1110] border border-neutral-200 hover:border-[#E54D2E]/40 shadow-sm"
                   )}
                 >
                   {/* Active indicator */}
                   {activeTab === tab.id && (
                     <motion.div
                       layoutId="activeTabIndicator"
-                      className="absolute inset-0 bg-[#cf5230] rounded-xl -z-10"
+                      className="absolute inset-0 bg-[#E54D2E] rounded-xl -z-10"
                       transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     />
                   )}
@@ -174,7 +174,7 @@ export const SystemTabsBar: React.FC<SystemTabsBarProps> = ({ className, onTabCh
                     </span>
                     <span className={cn(
                       "font-black flex-shrink-0",
-                      activeTab === tab.id ? "text-white" : "text-[#cf5230]"
+                      activeTab === tab.id ? "text-white" : "text-[#E54D2E]"
                     )}>
                       {tab.num}
                     </span>
@@ -214,7 +214,7 @@ export const SystemProgressIndicator: React.FC<{ className?: string }> = ({ clas
     >
       <motion.div
         style={{ width }}
-        className="h-full bg-[#cf5230] origin-left"
+        className="h-full bg-[#E54D2E] origin-left"
       />
     </motion.div>
   );
@@ -267,11 +267,11 @@ export const FloatingSystemNav: React.FC = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                   onClick={() => scrollToSection(tab.sectionId)}
-                  className="w-full flex items-center gap-3 px-4 py-3 text-left text-neutral-700 hover:text-[#111110] hover:bg-[#fafaf8] rounded-lg transition-colors group"
+                  className="w-full flex items-center gap-3 px-4 py-3 text-left text-neutral-700 hover:text-[#1A1110] hover:bg-[#fafaf8] rounded-lg transition-colors group"
                 >
                   <IconComponent size={28} />
                   <div>
-                    <span className="text-[#cf5230] font-black mr-2">{tab.num}</span>
+                    <span className="text-[#E54D2E] font-black mr-2">{tab.num}</span>
                     <span className="text-sm font-semibold">{tab.label}</span>
                   </div>
                 </motion.button>
@@ -285,7 +285,7 @@ export const FloatingSystemNav: React.FC = () => {
         whileHover={{ scale: 1.1, rotate: 90 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-[#cf5230] text-white rounded-full shadow-[0_6px_0_0_#111110] flex items-center justify-center"
+        className="w-14 h-14 bg-[#E54D2E] text-white rounded-full shadow-[0_6px_0_0_#111110] flex items-center justify-center"
       >
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}

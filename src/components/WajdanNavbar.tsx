@@ -57,11 +57,11 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
                   to={item.url}
                   className={cn(
                     "transition-colors text-sm font-bold relative group uppercase tracking-wide",
-                    theme === "dark" && !isScrolled ? "text-neutral-200 hover:text-white" : "text-neutral-700 hover:text-[#111110]"
+                    theme === "dark" && !isScrolled ? "text-neutral-200 hover:text-white" : "text-neutral-700 hover:text-[#1A1110]"
                   )}
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#cf5230] transition-all group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E54D2E] transition-all group-hover:w-full" />
                 </TransitionLink>
               ))}
 
@@ -70,8 +70,8 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
                 whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.96 }}
                 className={cn(
-                  "vt-cta inline-flex items-center gap-2 px-5 py-2.5 text-sm font-black uppercase tracking-wider shadow-[0_4px_0_0_#cf5230] hover:shadow-none hover:translate-y-1 transition-all",
-                  theme === "dark" && !isScrolled ? "bg-[#fafaf8] text-[#111110]" : "bg-[#111110] text-[#fafaf8]"
+                  "vt-cta inline-flex items-center gap-2 px-5 py-2.5 text-sm font-black uppercase tracking-wider shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all",
+                  theme === "dark" && !isScrolled ? "bg-[#fafaf8] text-[#1A1110]" : "bg-[#140E0E] text-[#fafaf8]"
                 )}
               >
                 Book Free Audit
@@ -83,7 +83,7 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={cn(
                 "md:hidden p-3 -mr-2 rounded-lg transition-colors flex items-center justify-center min-w-[48px] min-h-[48px]",
-                theme === "dark" && !isScrolled ? "text-white hover:bg-neutral-800" : "text-[#111110] hover:bg-neutral-100"
+                theme === "dark" && !isScrolled ? "text-white hover:bg-neutral-800" : "text-[#1A1110] hover:bg-neutral-100"
               )}
               aria-label="Toggle Navigation Menu"
             >
@@ -108,7 +108,7 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
                   key={item.name}
                   to={item.url}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="hover:bg-white transition-colors text-base leading-loose font-bold uppercase tracking-wide py-3 px-4 rounded-lg text-[#111110] min-h-[48px] flex items-center"
+                  className="hover:bg-white transition-colors text-base leading-loose font-bold uppercase tracking-wide py-3 px-4 rounded-lg text-[#1A1110] min-h-[48px] flex items-center"
                 >
                   {item.name}
                 </TransitionLink>
@@ -116,7 +116,7 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
               <a
                 href="/#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 px-6 py-4 bg-[#111110] text-white font-black uppercase tracking-wider mt-4 shadow-[0_4px_0_0_#cf5230] min-h-[56px] text-base"
+                className="flex items-center justify-center gap-2 px-6 py-4 bg-[#140E0E] text-white font-black uppercase tracking-wider mt-4 shadow-[0_4px_0_0_#E54D2E] min-h-[56px] text-base"
               >
                 Book Free Audit
                 <ArrowRight className="w-5 h-5" />

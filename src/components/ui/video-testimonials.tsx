@@ -36,11 +36,11 @@ const testimonials = [
 
 export const VideoTestimonials = () => {
   return (
-    <section className="py-24 bg-[#111110] relative text-white">
+    <section className="py-24 bg-[#140E0E] relative text-white">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-6 text-[#cf5230]">
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-6 text-[#E54D2E]">
               Don't Just Take Our Word For It
             </h2>
             <p className="text-xl text-gray-400 font-medium">
@@ -61,14 +61,14 @@ export const VideoTestimonials = () => {
                 
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-[#cf5230] rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(207,82,48,0.5)]">
+                  <div className="w-16 h-16 bg-[#E54D2E] rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(229,77,46,0.5)]">
                     <Play className="w-8 h-8 text-white fill-white" />
                   </div>
                 </div>
 
                 {/* Details */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-2xl font-black text-[#cf5230] uppercase mb-1">{t.result}</h3>
+                  <h3 className="text-2xl font-black text-[#E54D2E] uppercase mb-1">{t.result}</h3>
                   <p className="text-white font-bold">{t.name}</p>
                   <p className="text-gray-400 text-sm">{t.company}</p>
                 </div>
