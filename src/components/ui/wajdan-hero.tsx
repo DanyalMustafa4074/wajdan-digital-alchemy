@@ -38,7 +38,7 @@ export const WajdanHero = () => {
             For Consultancies
           </div>
 
-          <h1 className="vt-hero-headline font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1A1110] tracking-tighter leading-[1.35] sm:leading-[1.35] md:leading-[1.35] lg:leading-[1.35] mb-6 max-w-4xl animate-slide-up animation-delay-100 uppercase">
+          <h1 className="vt-hero-headline font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1A1110] tracking-tighter leading-[1.5] sm:leading-[1.5] md:leading-[1.5] lg:leading-[1.5] mb-6 max-w-6xl animate-slide-up animation-delay-100 uppercase">
             We Build The Most <span className="text-[#E54D2E]">Ruthless & Effective System</span> for Rapid Scaling of Consultation Firms — In <span className="text-[#E54D2E]">60 Days</span>.
           </h1>
 
