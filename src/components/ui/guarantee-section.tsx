@@ -37,7 +37,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-5 md:mb-6 uppercase tracking-tight leading-[1.05]">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-5 md:mb-6 uppercase tracking-tight leading-[1.35] sm:leading-[1.35] md:leading-[1.35]">
             How the Hell Can We <br />
             <span className="text-[#E54D2E]">Guarantee Results?</span>
           </h2>
@@ -52,7 +52,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
               The 60-Day Commitment
             </div>
 
-            <blockquote className="text-lg sm:text-xl md:text-3xl text-white font-black leading-snug md:leading-tight mt-6 mb-2 tracking-tight">
+            <blockquote className="text-xl sm:text-2xl md:text-3xl text-white font-black leading-snug md:leading-tight mt-6 mb-2 tracking-tight">
               "If we don't improve the quality of your consultation bookings within the first 60 days — we continue optimising your system at <span className="text-[#E54D2E]">no management fee</span> until we do."
             </blockquote>
           </motion.div>

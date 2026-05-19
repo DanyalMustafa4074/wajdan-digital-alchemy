@@ -38,11 +38,11 @@ export const WajdanHero = () => {
             For Consultancies
           </div>
 
-          <h1 className="vt-hero-headline font-heading text-2xl sm:text-3xl md:text-3xl lg:text-4xl text-[#1A1110] tracking-tighter leading-[2] sm:leading-[2] md:leading-[2] lg:leading-[2] mb-6 max-w-4xl animate-slide-up animation-delay-100 uppercase">
+          <h1 className="vt-hero-headline font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1A1110] tracking-tighter leading-[1.35] sm:leading-[1.35] md:leading-[1.35] lg:leading-[1.35] mb-6 max-w-4xl animate-slide-up animation-delay-100 uppercase">
             We Build The Most <span className="text-[#E54D2E]">Ruthless & Effective System</span> for Rapid Scaling of Consultation Firms — In <span className="text-[#E54D2E]">60 Days</span>.
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-neutral-700 font-medium max-w-3xl mb-8 animate-slide-up animation-delay-200 leading-loose">
+          <p className="text-lg sm:text-xl md:text-xl text-neutral-700 font-medium max-w-3xl mb-8 animate-slide-up animation-delay-200 leading-loose">
             While every other agency sells you leads and disappears — we build the complete infrastructure that turns Meta traffic into qualified, pre-nurtured, showed-up consultation bookings.
             <span className="block mt-3 font-black uppercase tracking-tight text-[#1A1110] bg-yellow-200/60 px-2 py-1 -rotate-1 inline-block">
               Or we work for free.
@@ -104,14 +104,14 @@ export const WajdanHero = () => {
           <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full max-w-lg mb-6 animate-slide-up animation-delay-300">
             <a
               href="#contact"
-              className="vt-cta group relative inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-black text-white bg-[#140E0E] shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all uppercase tracking-wide"
+              className="vt-cta group relative inline-flex items-center justify-center gap-2 px-7 py-4 text-base md:text-lg font-black text-white bg-[#140E0E] shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all uppercase tracking-wide"
             >
               Show Me What's Broken — Free
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
               href="#system"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-black text-[#1A1110] bg-white border-2 border-neutral-200 hover:border-[#E54D2E] transition-all uppercase tracking-wide"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base md:text-lg font-black text-[#1A1110] bg-white border-2 border-neutral-200 hover:border-[#E54D2E] transition-all uppercase tracking-wide"
             >
               See The System
             </a>
@@ -130,7 +130,7 @@ export const WajdanHero = () => {
             ].map((label) => (
               <div key={label} className="flex flex-col gap-2">
                 <span className="w-8 h-1 bg-[#E54D2E]" />
-                <span className="text-xs md:text-sm font-black text-[#1A1110] uppercase tracking-tight leading-tight">
+                <span className="text-sm md:text-base font-black text-[#1A1110] uppercase tracking-tight leading-tight">
                   {label}
                 </span>
               </div>

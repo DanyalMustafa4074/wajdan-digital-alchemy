@@ -114,7 +114,7 @@ export const FinalCTA = () => {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <ScrollReveal>
-          <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#fafaf8] uppercase tracking-tight leading-[2] sm:leading-[2] md:leading-[2] lg:leading-[2] xl:leading-[2] mb-8 md:mb-12">
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#fafaf8] uppercase tracking-tight leading-[1.35] sm:leading-[1.35] md:leading-[1.35] lg:leading-[1.35] mb-8 md:mb-12">
             I Guess What We're Trying To Say Is That You Should{' '}
             <span className="text-[#E54D2E]">Hit The Damn Button</span>
           </h2>
