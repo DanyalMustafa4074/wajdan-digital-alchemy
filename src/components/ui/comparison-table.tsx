@@ -107,20 +107,20 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
                     className="flex items-center gap-5"
                   >
                     <div className="relative flex flex-col items-center">
-                      <div className="w-14 h-14 bg-[#E54D2E]/15 border-2 border-[#E54D2E] flex items-center justify-center text-[#E54D2E]">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#E54D2E]/15 border-2 border-[#E54D2E] flex items-center justify-center text-[#E54D2E]">
                         {step.icon}
                       </div>
                       {i < withSteps.length - 1 && <div className="w-0.5 h-6 bg-[#E54D2E]/40 my-2" />}
                     </div>
-                    <div className="text-base md:text-lg font-bold text-white">{step.label}</div>
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">{step.label}</div>
                   </motion.div>
                 ))}
               </div>
 
               <motion.div className="mt-8 p-8 bg-[#E54D2E]/10 border-2 border-[#E54D2E] text-center" whileHover={{ scale: 1.01 }}>
-                <div className="text-[#E54D2E] text-sm uppercase tracking-widest font-black mb-2">After the System</div>
+                <div className="text-[#E54D2E] text-base sm:text-lg uppercase tracking-widest font-black mb-2">After the System</div>
                 <motion.div
-                  className="text-6xl md:text-7xl font-black text-[#E54D2E]"
+                  className="text-7xl md:text-8xl font-black text-[#E54D2E]"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ type: 'spring', delay: 0.4 }}
@@ -146,7 +146,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
                 className="bg-white border-2 border-neutral-200 hover:border-[#E54D2E]/40 transition-colors p-6 md:p-8 text-center"
               >
                 <motion.div
-                  className="text-4xl md:text-5xl font-black mb-3 tracking-tighter text-[#E54D2E]"
+                  className="text-4xl sm:text-5xl md:text-6xl font-black mb-3 tracking-tighter text-[#E54D2E]"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ type: 'spring', delay: i * 0.08 }}
