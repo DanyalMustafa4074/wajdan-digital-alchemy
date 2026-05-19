@@ -75,7 +75,7 @@ const About = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.25] mb-8"
+            className="text-neutral-400 text-xl sm:text-2xl md:text-3xl max-w-2xl mx-auto mb-12 leading-relaxed"
           >
             The team
             <br />
@@ -89,7 +89,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-base md:text-lg text-neutral-400 max-w-2xl mx-auto mb-12 leading-[1.7]"
+            className="text-xl sm:text-2xl md:text-3xl text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
             We're trying to make growing consultancies a whole lot easier, faster, and more
             predictable — for every consultant who deserves a full calendar.
@@ -103,14 +103,14 @@ const About = () => {
           >
             <TransitionLink
               to="/#pricing"
-              className="inline-flex items-center justify-center gap-2 bg-[#E54D2E] text-white px-8 py-4 font-black uppercase tracking-wider text-sm shadow-[0_4px_0_0_#B83521] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#B83521] transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-[#E54D2E] text-white px-8 py-4 font-black uppercase tracking-wider text-lg md:text-xl shadow-[0_4px_0_0_#B83521] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#B83521] transition-all"
             >
               Work With Us
               <ArrowRight className="w-4 h-4" />
             </TransitionLink>
             <TransitionLink
               to="/services"
-              className="inline-flex items-center justify-center gap-2 bg-white/5 text-[#fafaf8] border border-white/10 px-8 py-4 font-black uppercase tracking-wider text-sm hover:bg-white/10 transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-white/5 text-[#fafaf8] border border-white/10 px-8 py-4 font-black uppercase tracking-wider text-lg md:text-xl hover:bg-white/10 transition-all"
             >
               See Our Services
             </TransitionLink>
@@ -124,13 +124,13 @@ const About = () => {
 
           {/* Updated date */}
           <ScrollReveal>
-            <p className="text-neutral-400 text-sm font-medium mb-10 border-b border-neutral-200 pb-5">
+            <p className="text-neutral-400 text-base font-medium mb-10 border-b border-neutral-200 pb-5">
               Updated: 19th of May, 2026
             </p>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="space-y-6 text-[#1A1110] text-base md:text-lg leading-[1.75]">
+            <div className="space-y-6 text-[#1A1110] text-xl sm:text-2xl md:text-3xl leading-relaxed">
 
               <p className="font-black text-xl md:text-2xl text-[#1A1110]">
                 It looks like you like reading.
@@ -203,7 +203,7 @@ const About = () => {
                       "📍 Active in 12+ countries",
                       "🔒 Zero long-term contracts — earned every month",
                     ].map((item, i) => (
-                      <li key={i} className="text-[#1A1110]/80 text-base md:text-lg leading-relaxed">
+                      <li key={i} className="text-[#1A1110]/80 text-xl md:text-2xl leading-relaxed">
                         {item}
                       </li>
                     ))}
@@ -268,7 +268,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05] mb-5">
               The complete system.
             </h2>
-            <p className="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto leading-[1.7]">
+            <p className="text-neutral-400 text-xl sm:text-2xl md:text-3xl max-w-2xl mx-auto leading-relaxed">
               Every consultancy we work with gets one thing — a fully integrated 5-layer
               system. Not disconnected tactics.
             </p>
@@ -304,12 +304,12 @@ const About = () => {
                   <h3 className="text-2xl md:text-3xl font-black text-[#fafaf8] uppercase tracking-tight mb-4 leading-[1.15]">
                     {card.title}
                   </h3>
-                  <p className="text-neutral-400 text-base leading-[1.7] mb-8 flex-1">
+                  <p className="text-neutral-400 text-xl sm:text-2xl md:text-3xl leading-relaxed mb-8 flex-1">
                     {card.desc}
                   </p>
                   <TransitionLink
                     to={card.href}
-                    className="inline-flex items-center justify-center gap-2 bg-[#E54D2E] text-white px-7 py-4 font-black uppercase tracking-wider text-sm shadow-[0_4px_0_0_#B83521] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#B83521] transition-all"
+                    className="inline-flex items-center justify-center gap-2 bg-[#E54D2E] text-white px-7 py-4 font-black uppercase tracking-wider text-base md:text-lg shadow-[0_4px_0_0_#B83521] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#B83521] transition-all"
                   >
                     {card.cta}
                     <ArrowRight className="w-4 h-4" />
@@ -353,7 +353,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05] mb-3">
               Meet The Team
             </h2>
-            <p className="text-neutral-500 text-base md:text-lg italic font-medium leading-relaxed">
+            <p className="text-neutral-500 text-xl md:text-2xl italic font-medium leading-relaxed">
               Two operators obsessed with one thing — filling your calendar.
             </p>
           </ScrollReveal>
@@ -391,7 +391,7 @@ const About = () => {
                   </p>
 
                   {/* Bio */}
-                  <p className="text-neutral-400 text-sm md:text-base leading-[1.7] max-w-sm">
+                  <p className="text-neutral-400 text-base md:text-lg leading-relaxed max-w-sm">
                     {member.bio}
                   </p>
                 </motion.div>
@@ -413,21 +413,21 @@ const About = () => {
               <br />
               <span className="text-[#E54D2E]">this button.</span>
             </h2>
-            <p className="text-[#1A1110]/60 text-base md:text-lg mb-12 max-w-xl mx-auto leading-[1.7]">
+            <p className="text-[#1A1110]/60 text-xl sm:text-2xl md:text-3xl mb-12 max-w-xl mx-auto leading-relaxed">
               Book a free strategy call. We'll audit your current acquisition setup and show you
               exactly where the leaks are — no fluff, no pitch decks, just clarity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <TransitionLink
                 to="/#pricing"
-                className="inline-flex items-center justify-center gap-2 bg-[#140E0E] text-[#fafaf8] px-10 py-5 font-black uppercase tracking-wider text-base shadow-[0_4px_0_0_#E54D2E] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#E54D2E] transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-[#140E0E] text-[#fafaf8] px-10 py-5 font-black uppercase tracking-wider text-lg md:text-xl shadow-[0_4px_0_0_#E54D2E] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#E54D2E] transition-all"
               >
                 Book Your Strategy Call
                 <ArrowRight className="w-5 h-5" />
               </TransitionLink>
               <TransitionLink
                 to="/services"
-                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#111110]/20 text-[#1A1110] px-10 py-5 font-black uppercase tracking-wider text-base hover:border-[#E54D2E] hover:text-[#E54D2E] transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#111110]/20 text-[#1A1110] px-10 py-5 font-black uppercase tracking-wider text-lg md:text-xl hover:border-[#E54D2E] hover:text-[#E54D2E] transition-all"
               >
                 See Our Services
               </TransitionLink>
