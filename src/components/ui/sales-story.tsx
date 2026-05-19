@@ -7,21 +7,21 @@ import { Check, X } from 'lucide-react';
 export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <section className={cn('py-8 md:py-14 bg-background overflow-x-hidden', className)}>
-      <div className="max-w-3xl mx-auto px-4 md:px-8 prose-lg">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 prose-xl">
 
         <ScrollReveal delay={0.1}>
-          <p className="text-lg sm:text-xl md:text-2xl leading-loose font-bold mb-6 md:mb-8 text-foreground uppercase tracking-tight">
+          <p className="text-xl sm:text-2xl md:text-3xl leading-relaxed font-black mb-6 md:mb-8 text-foreground uppercase tracking-tight">
             You.
           </p>
-          <p className="text-lg sm:text-xl md:text-xl leading-loose text-foreground mx-auto mb-6 font-medium">
+          <p className="text-xl sm:text-2xl md:text-3xl leading-relaxed text-foreground mx-auto mb-6 font-medium">
             Yeah you are the consultancy owner who wants to stop watching money leave your ad account every week while your calendar sits half empty. The one who wants a system where qualified, pre-nurtured, ready-to-buy prospects actually show up to your consultations.
           </p>
           <div className="my-8 md:my-10 text-center">
-            <p className="text-lg sm:text-xl md:text-xl leading-snug text-foreground mx-auto font-black bg-[#E54D2E] text-white p-3 inline-block md:-rotate-1 shadow-[4px_4px_0_0_#000]">
+            <p className="text-xl sm:text-2xl md:text-3xl leading-snug text-foreground mx-auto font-black bg-[#E54D2E] text-white p-3 inline-block md:-rotate-1 shadow-[4px_4px_0_0_#000]">
               Then I promise you: this is the most important f*cking page you will read this year.
             </p>
           </div>
-          <p className="text-sm md:text-lg leading-loose text-neutral-500 mx-auto mb-12 md:mb-16 italic text-center w-full">
+          <p className="text-base sm:text-lg md:text-xl font-bold leading-relaxed text-neutral-500 mx-auto mb-12 md:mb-16 italic text-center w-full">
             (And no — we haven't lost the plot. Keep reading.)
           </p>
         </ScrollReveal>
@@ -32,19 +32,19 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
           </h2>
           <div className="w-20 h-2 bg-brand-orange mb-10" />
 
-          <p className="text-lg md:text-xl leading-loose text-foreground mb-5 md:mb-6">
+          <p className="text-xl sm:text-2xl md:text-3xl leading-relaxed text-foreground mb-5 md:mb-6 font-medium">
             You hired someone. An agency. A freelancer who "specialised in Meta." Maybe your own internal person who watched a YouTube course and felt confident.
           </p>
-          <p className="text-lg md:text-xl leading-loose text-foreground mb-5 md:mb-6">
+          <p className="text-xl sm:text-2xl md:text-3xl leading-relaxed text-foreground mb-5 md:mb-6 font-medium">
             You gave them budget. You gave them access. You gave them time.
           </p>
-          <p className="text-lg md:text-xl leading-loose text-foreground mb-5 md:mb-6">
+          <p className="text-xl sm:text-2xl md:text-3xl leading-relaxed text-foreground mb-5 md:mb-6 font-medium">
             Leads started coming in. The dashboard showed numbers. CPL looking decent. The report landed in your inbox every Monday morning.
           </p>
-          <p className="text-lg md:text-xl leading-loose font-bold text-foreground mb-8 p-5 md:p-6 bg-gray-50 border-l-4 border-gray-800 uppercase tracking-wide">
+          <p className="text-xl sm:text-2xl md:text-3xl leading-relaxed font-black text-foreground mb-8 p-5 md:p-6 bg-gray-50 border-l-4 border-gray-800 uppercase tracking-wide">
             The numbers looked fine.
           </p>
-          <p className="text-lg md:text-xl leading-loose text-foreground mb-6 font-medium">
+          <p className="text-xl sm:text-2xl md:text-3xl leading-relaxed text-foreground mb-6 font-medium">
             And then you looked at your actual booked consultations.
           </p>
 
@@ -59,15 +59,15 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
           <ul className="space-y-5 md:space-y-6 mb-12 md:mb-16 pl-2 md:pl-8">
             <li className="flex items-start gap-3 md:gap-4">
               <X className="w-6 h-6 md:w-8 md:h-8 text-red-600 mt-1 flex-shrink-0" />
-              <span className="text-lg md:text-xl font-bold text-gray-800">Paying for leads who don't even pick up the phone.</span>
+              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Paying for leads who don't even pick up the phone.</span>
             </li>
             <li className="flex items-start gap-3 md:gap-4">
               <X className="w-6 h-6 md:w-8 md:h-8 text-red-600 mt-1 flex-shrink-0" />
-              <span className="text-lg md:text-xl font-bold text-gray-800">Paying for "booked" calls that ghost you before the day arrives.</span>
+              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Paying for "booked" calls that ghost you before the day arrives.</span>
             </li>
             <li className="flex items-start gap-3 md:gap-4">
               <X className="w-6 h-6 md:w-8 md:h-8 text-red-600 mt-1 flex-shrink-0" />
-              <span className="text-base md:text-lg font-bold text-gray-800 leading-snug">Paying for a Monday morning PDF that tells you everything — except whether any of it ever turns into a paying client.</span>
+              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 leading-snug">Paying for a Monday morning PDF that tells you everything — except whether any of it ever turns into a paying client.</span>
             </li>
           </ul>
         </ScrollReveal>
@@ -77,7 +77,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.3] sm:leading-[1.3] md:leading-[1.3]">
               Why is none of this<br/><span className="text-[#E54D2E]">turning into actual clients?</span>
             </h2>
-            <p className="text-lg sm:text-xl md:text-xl text-gray-300 font-medium max-w-2xl mx-auto leading-[1.7]">
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-medium max-w-3xl mx-auto leading-relaxed">
               Here's the answer. And it's going to make you furious. Not at yourself. At every agency that ripped you off without telling you this:
             </p>
           </div>
@@ -91,13 +91,13 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
              </h2>
           </div>
 
-          <p className="text-lg md:text-xl font-medium leading-[1.7] text-foreground mb-8 text-center max-w-2xl mx-auto">
+          <p className="text-xl sm:text-2xl md:text-3xl font-medium leading-relaxed text-foreground mb-8 text-center max-w-3xl mx-auto">
             Any agency can fill a form. Any agency can lower your cost per click. Any agency can produce a dashboard that looks like progress.
           </p>
           <div className="p-6 sm:p-8 md:p-10 bg-red-50 border-4 border-red-600 font-black text-base sm:text-lg md:text-xl mb-8 text-center leading-snug uppercase tracking-tight shadow-[6px_6px_0_0_#dc2626] md:shadow-[8px_8px_0_0_#dc2626] md:-rotate-1">
             <span className="text-red-700 bg-yellow-300 px-1 md:px-2 py-0.5 md:py-1">from the moment they click your ad and never let go until they are sitting ...</span>
           </div>
-          <p className="text-sm md:text-lg font-bold leading-loose text-neutral-500 italic mb-12 md:mb-16 text-center max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl font-bold leading-relaxed text-neutral-500 italic mb-12 md:mb-16 text-center max-w-3xl mx-auto">
             (That gap — between form submission and a qualified, pre-nurtured, showed-up consultation? That's where your money goes. Every. Single. Time.)
           </p>
 
@@ -113,7 +113,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#E54D2E]/10 transform rotate-45 translate-x-16 -translate-y-16 hidden md:block"></div>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase mb-3 md:mb-4 tracking-tight md:tracking-tighter text-gray-400 line-through">We don't start with your ads.</h3>
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#E54D2E] uppercase mb-6 md:mb-8 tracking-tight md:tracking-tighter leading-[1.3] sm:leading-[1.3] md:leading-[1.3]">We start with your offer.</h3>
-            <p className="text-lg md:text-xl font-medium text-gray-800 leading-[1.7] max-w-2xl mx-auto mb-8 md:mb-10">
+            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 leading-relaxed max-w-3xl mx-auto mb-8 md:mb-10">
               The offer your ideal education client is desperately searching for — that nobody in your market is actually giving them. We find that gap. We craft the offer that fills it. Then — and only then — do we build everything else around it.
             </p>
             <motion.a

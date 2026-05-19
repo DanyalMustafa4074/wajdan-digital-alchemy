@@ -55,7 +55,7 @@ const Index = () => {
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#fafaf8] uppercase tracking-tighter leading-[1.5] sm:leading-[1.5] md:leading-[1.5] lg:leading-[1.5] text-center mb-6">
               Bricks <span className="text-[#E54D2E]">≠</span> House.
             </h2>
-            <p className="text-lg md:text-xl text-neutral-400 font-medium text-center max-w-2xl mx-auto mb-16 leading-relaxed">
+            <p className="text-xl sm:text-2xl md:text-3xl text-neutral-400 font-medium text-center max-w-3xl mx-auto mb-16 leading-relaxed">
               You have been sold individual components. Not a system.
             </p>
           </ScrollReveal>
@@ -77,8 +77,8 @@ const Index = () => {
                 <ul className="space-y-4">
                   {['An ad account that "looks good" on paper', 'Leads that ghost you before the call', 'A Monday morning PDF no one reads', 'A freelancer who handles one piece', 'Dashboards. Not booked consultations.'].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <span className="text-red-500 font-black mt-0.5 flex-shrink-0">✕</span>
-                      <span className="text-[#D8CBC7] text-base font-medium leading-snug">{item}</span>
+                      <span className="text-red-500 font-black mt-0.5 flex-shrink-0 md:text-xl">✕</span>
+                      <span className="text-[#D8CBC7] text-lg sm:text-xl font-medium leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -94,8 +94,8 @@ const Index = () => {
                 <ul className="space-y-4 relative z-10">
                   {['An offer so good, they feel foolish saying no', 'A funnel that qualifies before they call', 'Automated nurture that shows up even when you sleep', 'Ads engineered to book — not just click', 'One system. End to end. Accountable.'].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <SuccessAnimation size={20} />
-                      <span className="text-white/90 text-base font-medium leading-snug">{item}</span>
+                      <SuccessAnimation size={24} />
+                      <span className="text-white/90 text-lg sm:text-xl font-medium leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -137,12 +137,12 @@ const Index = () => {
       <section className="bg-white border-y border-neutral-200">
         <div className="max-w-4xl mx-auto px-4 py-16 text-center">
           <ScrollReveal>
-            <p className="text-neutral-700 text-lg mb-6 font-medium">
+            <p className="text-neutral-700 text-xl sm:text-2xl font-medium mb-8 leading-relaxed">
               Want to see how each layer works in detail?
             </p>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#140E0E] text-white font-black uppercase tracking-wider shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#140E0E] text-white font-black text-lg uppercase tracking-wider shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all"
             >
               Explore the System Layers
               <ArrowRight className="w-4 h-4" />

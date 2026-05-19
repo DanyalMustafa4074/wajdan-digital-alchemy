@@ -123,11 +123,11 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={cn('py-12 bg-[#fafaf8]', className)}>
       <ScrollReveal className="text-center mb-12 px-4">
-        <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">The Wajdan System</p>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
+        <p className="text-[#E54D2E] text-lg sm:text-xl font-bold uppercase tracking-[0.2em] mb-4">The Wajdan System</p>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
           Five Layers. <span className="text-[#E54D2E]">One System.</span>
         </h2>
-        <p className="mt-6 text-base md:text-lg text-neutral-600 max-w-2xl mx-auto font-medium">
+        <p className="mt-6 text-xl sm:text-2xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
           Remove any one layer and the whole thing leaks. This is the complete sequence — built in this exact order, before traffic goes live.
         </p>
       </ScrollReveal>
@@ -141,7 +141,7 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                 key={layer.number}
                 onClick={() => setActiveLayer(layer.number)}
                 className={cn(
-                  'relative flex shrink-0 items-center justify-center gap-3 px-5 py-3 rounded-full border-2 transition-all whitespace-nowrap',
+                  'relative flex shrink-0 items-center justify-center gap-3 px-6 py-4 rounded-full border-2 transition-all whitespace-nowrap',
                   isActive
                     ? 'bg-[#E54D2E] border-[#E54D2E] text-white shadow-[0_4px_0_0_#111110]'
                     : 'bg-white border-neutral-200 text-neutral-600 hover:border-[#E54D2E]/40'
@@ -149,8 +149,8 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="text-sm font-black tracking-wider flex-shrink-0">{layer.number}</span>
-                <span className="font-bold uppercase tracking-tight text-sm flex-shrink-0">{layer.title}</span>
+                <span className="text-lg sm:text-xl font-black tracking-wider flex-shrink-0">{layer.number}</span>
+                <span className="font-bold uppercase tracking-tight text-base sm:text-lg flex-shrink-0">{layer.title}</span>
               </motion.button>
             );
           })}
@@ -201,7 +201,7 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
                           className="flex flex-col items-center gap-2 p-4 rounded-xl bg-[#fafaf8] border border-neutral-200 hover:border-[#E54D2E]/40 transition-colors cursor-pointer"
                         >
                           <div style={{ color: ACCENT }}>{item.icon}</div>
-                          <span className="text-xs text-neutral-600 font-semibold">{item.label}</span>
+                          <span className="text-base sm:text-lg text-neutral-600 font-semibold">{item.label}</span>
                         </motion.div>
                       ))}
                     </div>

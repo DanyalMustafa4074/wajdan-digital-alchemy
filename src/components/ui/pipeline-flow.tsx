@@ -34,14 +34,14 @@ export const PipelineFlow: React.FC<{ className?: string }> = ({ className }) =>
     <section className={cn('py-14 bg-white border-y-2 border-neutral-200', className)}>
       <div className="max-w-6xl mx-auto px-4">
         <ScrollReveal className="text-center mb-16">
-          <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">
+          <p className="text-[#E54D2E] text-base font-bold uppercase tracking-[0.2em] mb-4">
             What Actually Happens
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.3]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
             The Lead Lifecycle.<br />
             <span className="text-[#E54D2E]">Every Single Time.</span>
           </h2>
-          <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto font-medium">
+          <p className="mt-6 text-xl sm:text-2xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
             From the second a prospect submits a form to the second they sit in front of you — automated, monitored, and impossible to forget.
           </p>
         </ScrollReveal>
@@ -89,10 +89,10 @@ export const PipelineFlow: React.FC<{ className?: string }> = ({ className }) =>
                         {String(i + 1).padStart(2, '0')}
                       </span>
                     </motion.div>
-                    <p className="text-sm md:text-base font-black uppercase tracking-tight text-[#1A1110]">
+                    <p className="text-base md:text-lg font-black uppercase tracking-tight text-[#1A1110]">
                       {step.label}
                     </p>
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#E54D2E] mt-1">
+                    <p className="text-sm font-bold uppercase tracking-widest text-[#E54D2E] mt-1">
                       {step.time}
                     </p>
                   </motion.div>
