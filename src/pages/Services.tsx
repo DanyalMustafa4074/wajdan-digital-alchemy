@@ -680,18 +680,23 @@ const Services = () => {
               <ArrowLeft className="w-6 h-6" />
             </button>
 
-            {/* Image */}
-            <motion.img
+            {/* Image — scrollable container for tall page screenshots */}
+            <motion.div
               key={lightboxImage}
-              src={lightboxImage}
-              alt="Landing Page Preview"
-              className="max-h-[90vh] max-w-[85vw] object-contain rounded-2xl shadow-2xl"
+              className="overflow-y-auto rounded-xl shadow-2xl"
+              style={{ maxHeight: '88vh', width: 'min(720px, 92vw)' }}
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.85, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               onClick={(e) => e.stopPropagation()}
-            />
+            >
+              <img
+                src={lightboxImage}
+                alt="Landing Page Preview"
+                className="w-full h-auto block"
+              />
+            </motion.div>
 
             {/* Next */}
             <button
