@@ -192,7 +192,9 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
               </div>
 
               <motion.a
-                href="#contact"
+                href="https://funnel.wajdan.co/booking-page-page"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
                 className={cn(

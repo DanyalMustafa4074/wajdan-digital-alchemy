@@ -106,7 +106,9 @@ const Index = () => {
           <ScrollReveal delay={0.35}>
             <div className="mt-12 text-center">
               <motion.a
-                href="#contact"
+                href="https://funnel.wajdan.co/booking-page-page"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.96 }}
                 className="inline-block bg-[#fafaf8] text-[#140E0E] font-black text-lg uppercase tracking-widest px-10 py-5 shadow-[0_6px_0_0_#E54D2E] hover:shadow-none hover:translate-y-[6px] transition-all"

@@ -33,10 +33,10 @@ export const ORG_LOGO = `${SITE_URL}/Wajdan%20Logo%20light.png`;
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/Wajdan%20Logo%20light.png`;
 
 export const SOCIAL_PROFILES = [
-  "https://www.linkedin.com/company/wajdan-digital-alchemy",
-  "https://twitter.com/wajdandigital",
-  "https://www.facebook.com/wajdandigital",
+  "https://www.facebook.com/share/1bhtmDksoi/?mibextid=wwXIfr",
+  "https://www.linkedin.com/company/wajdan-growth-marketing-agency/",
   "https://www.instagram.com/wajdandigital",
+  "https://wa.me/36709495643",
 ];
 
 export const NAV_LINKS = [

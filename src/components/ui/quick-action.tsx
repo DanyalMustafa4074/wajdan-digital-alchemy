@@ -1,32 +1,40 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, X, Phone, MessageSquare, Mail } from 'lucide-react';
+import { Plus, X, Target, MonitorPlay, Zap, Megaphone, BarChart } from 'lucide-react';
+
+const menuItems = [
+  { id: "01", label: "Offer", icon: Target, href: "#offer" },
+  { id: "02", label: "Funnel + VSL", icon: MonitorPlay, href: "#funnel" },
+  { id: "03", label: "Automation", icon: Zap, href: "#automation" },
+  { id: "04", label: "Meta Ads", icon: Megaphone, href: "#meta-ads" },
+  { id: "05", label: "Tracking", icon: BarChart, href: "#tracking" },
+];
 
 export const QuickAction = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-6 right-6 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            className="absolute bottom-16 left-0 mb-4 flex flex-col gap-3"
+            className="absolute bottom-16 right-0 mb-4 flex flex-col gap-3"
           >
-            <a href="tel:+123456789" className="flex items-center gap-3 bg-[#140E0E] text-white py-2 px-4 rounded-full shadow-lg hover:bg-neutral-800 transition-colors">
-              <span className="text-sm font-bold">Call Us</span>
-              <Phone className="w-4 h-4 text-[#E54D2E]" />
-            </a>
-            <a href="#contact" onClick={() => setIsOpen(false)} className="flex items-center gap-3 bg-[#140E0E] text-white py-2 px-4 rounded-full shadow-lg hover:bg-neutral-800 transition-colors">
-              <span className="text-sm font-bold">Message</span>
-              <MessageSquare className="w-4 h-4 text-[#E54D2E]" />
-            </a>
-            <a href="mailto:hello@wajdan.co" className="flex items-center gap-3 bg-[#140E0E] text-white py-2 px-4 rounded-full shadow-lg hover:bg-neutral-800 transition-colors">
-              <span className="text-sm font-bold">Email</span>
-              <Mail className="w-4 h-4 text-[#E54D2E]" />
-            </a>
+            {menuItems.map((item) => (
+              <a
+                key={item.id}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-3 bg-white text-black py-3 px-5 rounded-2xl shadow-lg hover:bg-gray-100 transition-colors min-w-[180px]"
+              >
+                <item.icon className="w-5 h-5 text-[#E54D2E]" />
+                <span className="font-bold text-sm">{item.id}</span>
+                <span className="text-sm">{item.label}</span>
+              </a>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
@@ -39,7 +47,11 @@ export const QuickAction = () => {
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <Plus className="w-6 h-6" strokeWidth={3} />
+          {isOpen ? (
+            <X className="w-6 h-6" strokeWidth={3} />
+          ) : (
+            <Plus className="w-6 h-6" strokeWidth={3} />
+          )}
         </motion.div>
       </button>
     </div>

@@ -57,7 +57,9 @@ export const ProblemSection: React.FC<{ className?: string }> = ({ className }) 
             </p>
 
             <motion.a
-              href="#contact"
+              href="https://funnel.wajdan.co/booking-page-page"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className="inline-flex w-full sm:w-auto items-center justify-center bg-white text-[#1A1110] font-black text-sm md:text-lg px-6 sm:px-10 py-4 md:py-5 uppercase tracking-wider hover:bg-gray-100 transition-colors shadow-[0_6px_0_0_#E54D2E] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#E54D2E] relative z-10"

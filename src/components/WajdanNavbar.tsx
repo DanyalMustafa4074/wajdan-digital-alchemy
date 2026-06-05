@@ -66,7 +66,9 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
               ))}
 
               <motion.a
-                href="/#contact"
+                href="https://funnel.wajdan.co/booking-page-page"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.96 }}
                 className={cn(
@@ -117,7 +119,9 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
                 </TransitionLink>
               ))}
               <a
-                href="/#contact"
+                href="https://funnel.wajdan.co/booking-page-page"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 px-6 py-4 bg-[#140E0E] text-white font-black uppercase tracking-wider mt-4 shadow-[0_4px_0_0_#E54D2E] min-h-[56px] text-base"
               >

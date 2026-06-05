@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export const Footer = () => {
   return (
@@ -53,7 +53,9 @@ export const Footer = () => {
               Stop relying on referrals and start building a predictable client acquisition system.
             </p>
             <motion.a
-              href="#contact"
+              href="https://funnel.wajdan.co/booking-page-page"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.04, y: -1 }}
               whileTap={{ scale: 0.96 }}
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#E54D2E] text-white font-black uppercase tracking-wider text-sm shadow-[0_4px_0_0_#fafaf8] hover:shadow-none hover:translate-y-1 transition-all"
@@ -71,17 +73,17 @@ export const Footer = () => {
               © {new Date().getFullYear()} Wajdan Digital Alchemy. Client acquisition systems for consultancies.
             </p>
             <div className="flex items-center gap-6">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#E54D2E] transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/share/1bhtmDksoi/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#E54D2E] transition-colors" aria-label="Facebook">
                 <FaFacebook className="w-5 h-5" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#E54D2E] transition-colors" aria-label="Instagram">
-                <FaInstagram className="w-5 h-5" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#E54D2E] transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/wajdan-growth-marketing-agency/" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#E54D2E] transition-colors" aria-label="LinkedIn">
                 <FaLinkedin className="w-5 h-5" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#E54D2E] transition-colors" aria-label="YouTube">
-                <FaYoutube className="w-5 h-5" />
+              <a href="https://www.instagram.com/wajdandigital" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#E54D2E] transition-colors" aria-label="Instagram">
+                <FaInstagram className="w-5 h-5" />
+              </a>
+              <a href="https://wa.me/36709495643" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#E54D2E] transition-colors" aria-label="WhatsApp">
+                <FaWhatsapp className="w-5 h-5" />
               </a>
             </div>
           </div>

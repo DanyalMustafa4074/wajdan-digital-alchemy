@@ -61,14 +61,6 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
         <ScrollReveal delay={0.4}>
           <div className="text-xl md:text-3xl font-black text-white tracking-tight mb-12 flex flex-col gap-2 uppercase">
             <span>The offer's rotting for 4 years Cuz We Always delivered</span>
-            <span className="text-[#E54D2E] mt-4">Five Layers. Zero Gaps.</span>
-            <div className="flex flex-col text-lg md:text-xl text-neutral-400 mt-2 space-y-1">
-              <span>Offer Creation</span>
-              <span>Funnel</span>
-              <span>GHL</span>
-              <span>Meta Campaigns</span>
-              <span>Conversion Loop</span>
-            </div>
           </div>
         </ScrollReveal>
 
@@ -92,7 +84,9 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
 
         <ScrollReveal delay={0.8} className="flex flex-col items-center">
           <motion.a
-            href="#contact"
+            href="https://funnel.wajdan.co/booking-page-page"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -3 }}
             whileTap={{ scale: 0.96 }}
             className="group relative inline-flex items-center justify-center gap-3 md:gap-4 px-6 sm:px-8 md:px-12 py-5 md:py-6 bg-[#E54D2E] text-white font-black uppercase tracking-wider text-base md:text-xl transition-all w-full sm:w-auto shadow-[0_6px_0_0_#fafaf8] hover:shadow-none hover:translate-y-[6px]"

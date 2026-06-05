@@ -122,7 +122,9 @@ export const FinalCTA = () => {
 
         <ScrollReveal delay={0.2} className="flex flex-col items-center">
           <motion.a
-            href="#contact"
+            href="https://funnel.wajdan.co/booking-page-page"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             className="inline-block w-full sm:w-auto bg-[#E54D2E] text-white font-black uppercase text-sm sm:text-base md:text-lg tracking-wider py-4 md:py-5 px-8 sm:px-12 md:px-16 shadow-[0_6px_0_0_#B83521] hover:shadow-none hover:translate-y-[6px] transition-all"

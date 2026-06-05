@@ -85,7 +85,9 @@ export const UrgencyPopover: React.FC<{ className?: string }> = ({ className }) 
           month so every system gets built properly. When the spots fill, the next intake opens the following month.
         </p>
         <a
-          href="#contact"
+          href="https://funnel.wajdan.co/booking-page-page"
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => togglePopover(false)}
           className="inline-flex items-center gap-2 px-5 py-3 bg-[#140E0E] text-white font-black uppercase tracking-wider text-sm shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all"
         >

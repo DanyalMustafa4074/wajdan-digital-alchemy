@@ -10,8 +10,7 @@ import { UrgencyPopover } from "@/components/ui/urgency-popover";
  *  - Bottom: always-on inline VSL with mute toggle + LiveActivityFeed below it.
  *
  * The video autoplays muted, loops, and is `playsInline` so iOS doesn't
- * fullscreen it. Swap the `src` for the real VSL the moment Wajdan delivers
- * it — no other markup change needed.
+ * fullscreen it. The VSL video is served from /vsl-video.mp4 in public/.
  */
 export const WajdanHero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -38,7 +37,7 @@ export const WajdanHero = () => {
             For Consultancies
           </div>
 
-          <h1 className="vt-hero-headline font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1A1110] tracking-tighter leading-[1.5] sm:leading-[1.5] md:leading-[1.5] lg:leading-[1.5] mb-6 max-w-6xl animate-slide-up animation-delay-100 uppercase">
+          <h1 className="vt-hero-headline font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1A1110] tracking-tighter leading-[1.5] sm:leading-[1.5] md:leading-[1.5] lg:leading-[1.5] mb-6 max-w-6xl animate-slide-up animation-delay-100 uppercase">
             We Build The Most <span className="text-[#E54D2E]">Ruthless & Effective System</span> for Rapid Scaling of Consultation Firms — In <span className="text-[#E54D2E]">60 Days</span>.
           </h1>
 
@@ -61,8 +60,8 @@ export const WajdanHero = () => {
                   playsInline
                   preload="auto"
                   poster="/placeholder.svg"
-                  src="https://cdn.coverr.co/videos/coverr-typing-on-the-laptop-2330/1080p.mp4"
-                  aria-label="Wajdan system walkthrough"
+                  src="/vsl-video.mp4"
+                  aria-label="Wajdan VSL"
                 />
 
                 {/* Top-left running badge */}
@@ -91,10 +90,10 @@ export const WajdanHero = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111110]/85 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
                   <p className="text-[#E54D2E] text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-1">
-                    Wajdan System Walkthrough — 3 min
+                    Wajdan VSL
                   </p>
                   <p className="text-white text-sm md:text-base font-bold leading-tight">
-                    How we build the complete acquisition machine.
+                    See why consultancies choose us.
                   </p>
                 </div>
               </div>
@@ -103,7 +102,9 @@ export const WajdanHero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full max-w-lg mb-6 animate-slide-up animation-delay-300">
             <a
-              href="#contact"
+              href="https://funnel.wajdan.co/booking-page-page"
+              target="_blank"
+              rel="noopener noreferrer"
               className="vt-cta group relative inline-flex items-center justify-center gap-2 px-7 py-4 text-base md:text-lg font-black text-white bg-[#140E0E] shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1 transition-all uppercase tracking-wide"
             >
               Show Me What's Broken — Free

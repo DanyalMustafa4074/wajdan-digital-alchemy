@@ -109,7 +109,9 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
             )}
 
             <motion.a
-              href="#contact"
+              href="https://funnel.wajdan.co/booking-page-page"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 px-7 py-4 bg-brand-orange text-white font-black uppercase tracking-wider text-sm transition-all shadow-[0_4px_0_0_#B83521] hover:shadow-none hover:translate-y-1"
@@ -287,7 +289,9 @@ const Services = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center mb-12 md:mb-14"
           >
             <motion.a
-              href="#contact"
+              href="https://funnel.wajdan.co/booking-page-page"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.96 }}
               className="flex items-center justify-center gap-2 px-7 sm:px-10 py-4 md:py-5 bg-[#140E0E] text-white font-black uppercase tracking-wider text-base md:text-lg transition-all shadow-[0_4px_0_0_#E54D2E] hover:shadow-none hover:translate-y-1"

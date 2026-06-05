@@ -59,7 +59,9 @@ export const FinalCTA = () => {
         </motion.h2>
 
         <motion.a
-          href="#contact"
+          href="https://funnel.wajdan.co/booking-page-page"
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.05 }}

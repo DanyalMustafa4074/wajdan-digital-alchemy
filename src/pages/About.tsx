@@ -101,13 +101,15 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <TransitionLink
-              to="/#pricing"
+            <a
+              href="https://funnel.wajdan.co/booking-page-page"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#E54D2E] text-white px-8 py-4 font-black uppercase tracking-wider text-lg md:text-xl shadow-[0_4px_0_0_#B83521] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#B83521] transition-all"
             >
               Work With Us
               <ArrowRight className="w-4 h-4" />
-            </TransitionLink>
+            </a>
             <TransitionLink
               to="/services"
               className="inline-flex items-center justify-center gap-2 bg-white/5 text-[#fafaf8] border border-white/10 px-8 py-4 font-black uppercase tracking-wider text-lg md:text-xl hover:bg-white/10 transition-all"
@@ -245,13 +247,15 @@ const About = () => {
           {/* CTA button */}
           <ScrollReveal delay={0.2}>
             <div className="mt-10">
-              <TransitionLink
-                to="/#pricing"
+              <a
+                href="https://funnel.wajdan.co/booking-page-page"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full bg-[#E54D2E] text-white px-8 py-5 font-black uppercase tracking-wider text-base shadow-[0_4px_0_0_#B83521] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#B83521] transition-all text-center"
               >
                 BOOK YOUR FREE STRATEGY CALL
                 <ArrowRight className="w-5 h-5" />
-              </TransitionLink>
+              </a>
             </div>
           </ScrollReveal>
         </div>
@@ -289,7 +293,7 @@ const About = () => {
                 title: "Strategy Session",
                 desc: "Not ready to commit? Book a free 30-minute call. We'll audit your current setup, identify the leaks, and show you exactly what needs to be built — no fluff, no pitch deck, just clarity.",
                 cta: "Book Free Strategy Call",
-                href: "/#pricing",
+                href: "https://funnel.wajdan.co/booking-page-page",
               },
             ].map((card, i) => (
               <StaggerItem key={i}>
@@ -307,13 +311,15 @@ const About = () => {
                   <p className="text-neutral-400 text-xl sm:text-2xl md:text-3xl leading-relaxed mb-8 flex-1">
                     {card.desc}
                   </p>
-                  <TransitionLink
-                    to={card.href}
+                  <a
+                    href={card.href}
+                    target={card.href.startsWith('http') ? '_blank' : undefined}
+                    rel={card.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="inline-flex items-center justify-center gap-2 bg-[#E54D2E] text-white px-7 py-4 font-black uppercase tracking-wider text-base md:text-lg shadow-[0_4px_0_0_#B83521] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#B83521] transition-all"
                   >
                     {card.cta}
                     <ArrowRight className="w-4 h-4" />
-                  </TransitionLink>
+                  </a>
                 </motion.div>
               </StaggerItem>
             ))}
@@ -418,13 +424,15 @@ const About = () => {
               exactly where the leaks are — no fluff, no pitch decks, just clarity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <TransitionLink
-                to="/#pricing"
+              <a
+                href="https://funnel.wajdan.co/booking-page-page"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#140E0E] text-[#fafaf8] px-10 py-5 font-black uppercase tracking-wider text-lg md:text-xl shadow-[0_4px_0_0_#E54D2E] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#E54D2E] transition-all"
               >
                 Book Your Strategy Call
                 <ArrowRight className="w-5 h-5" />
-              </TransitionLink>
+              </a>
               <TransitionLink
                 to="/services"
                 className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#111110]/20 text-[#1A1110] px-10 py-5 font-black uppercase tracking-wider text-lg md:text-xl hover:border-[#E54D2E] hover:text-[#E54D2E] transition-all"

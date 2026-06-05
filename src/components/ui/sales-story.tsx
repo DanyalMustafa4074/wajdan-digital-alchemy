@@ -14,7 +14,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             You.
           </p>
           <p className="text-xl sm:text-2xl md:text-3xl leading-relaxed text-foreground mx-auto mb-6 font-medium">
-            Yeah you are the consultancy owner who wants to stop watching money leave your ad account every week while your calendar sits half empty. The one who wants a system where qualified, pre-nurtured, ready-to-buy prospects actually show up to your consultations.
+            Consultancy owner who wants to stop watching money leave your ad account every week while your calendar sits half empty. The one who wants a system where qualified, pre-nurtured, ready-to-buy prospects actually show up to your consultations.
           </p>
           <div className="my-8 md:my-10 text-center">
             <p className="text-xl sm:text-2xl md:text-3xl leading-snug text-foreground mx-auto font-black bg-[#E54D2E] text-white p-3 inline-block md:-rotate-1 shadow-[4px_4px_0_0_#000]">
@@ -48,9 +48,11 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             And then you looked at your actual booked consultations.
           </p>
 
-          <p className="text-lg sm:text-xl md:text-2xl font-black leading-snug text-[#E54D2E] my-8 md:my-10 text-center uppercase tracking-tight">
-            And those two numbers? Pure Instagram vs reality.
-          </p>
+          <div className="my-8 md:my-10 text-center border-2 border-[#E54D2E] p-4 md:p-6 inline-block w-full">
+            <p className="text-lg sm:text-xl md:text-2xl font-black leading-snug text-[#E54D2E] uppercase tracking-tight">
+              And those two numbers? Pure Instagram vs reality.
+            </p>
+          </div>
 
           <p className="text-xl sm:text-2xl font-black leading-snug text-foreground mb-8 text-center uppercase tracking-tight">
             AND MEANWHILE? YOUR MONEY'S ON F*CKING FIRE.<br/><span className="text-[#E54D2E]">EVERY. SINGLE. WEEK.</span>
@@ -113,17 +115,9 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#E54D2E]/10 transform rotate-45 translate-x-16 -translate-y-16 hidden md:block"></div>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase mb-3 md:mb-4 tracking-tight md:tracking-tighter text-gray-400 line-through">We don't start with your ads.</h3>
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#E54D2E] uppercase mb-6 md:mb-8 tracking-tight md:tracking-tighter leading-[1.3] sm:leading-[1.3] md:leading-[1.3]">We start with your offer.</h3>
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 leading-relaxed max-w-3xl mx-auto mb-8 md:mb-10">
+            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 leading-relaxed max-w-3xl mx-auto">
               The offer your ideal education client is desperately searching for — that nobody in your market is actually giving them. We find that gap. We craft the offer that fills it. Then — and only then — do we build everything else around it.
             </p>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.96 }}
-              className="inline-block w-full sm:w-auto bg-[#140E0E] text-white font-black text-sm sm:text-base md:text-lg px-6 sm:px-10 py-4 md:py-5 uppercase tracking-wider hover:bg-[#E54D2E] transition-colors shadow-[0_6px_0_0_#E54D2E] hover:shadow-none hover:translate-y-[6px]"
-            >
-              See Exactly What's Leaking — Free Audit
-            </motion.a>
           </div>
 
         </ScrollReveal>
