@@ -11,7 +11,7 @@ export function useViewTransitionNavigate() {
   const router = useRouter();
 
   return useCallback(
-    (to: string, opts?: any) => {
+    (to: string, opts?: { scroll?: boolean; shallow?: boolean }) => {
       if (typeof window === 'undefined') {
         router.push(to, opts);
         return;
