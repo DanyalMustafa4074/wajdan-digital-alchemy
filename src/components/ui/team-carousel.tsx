@@ -20,14 +20,14 @@ const TEAM: TeamMember[] = [
     name: "Wajdan",
     role: "Founder & Chief Growth Architect",
     bio: "Built Wajdan Digital Alchemy from the ground up after watching too many great consultants lose clients to agencies that didn't deliver. Now channels that obsession into client acquisition systems that run 24/7, 365 — so consultants never have to chase leads again.",
-    image: "/magnific_in-img2-change-person-dre_2954651202.png",
+    image: "/magnific_in-img2-change-person-dre_2954651202.webp",
   },
   {
     id: 2,
     name: "Ahmad",
     role: "Head of Paid Acquisition",
     bio: "Manages six-figure monthly ad budgets across Meta for education consultants. Every dirham, pound, and rupee is engineered to convert — no spend leaves the account without a clear path to a booked call.",
-    image: "/magnific_change-img1-bg-to-img2-bg_2954621788.png",
+    image: "/magnific_change-img1-bg-to-img2-bg_2954621788.webp",
   },
   {
     id: 3,

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, Star } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
@@ -14,9 +15,11 @@ export const Footer = () => {
               whileHover={{ scale: 1.04 }}
               className="inline-block mb-6"
             >
-              <img
-                src="/Wajdan%20Logo%20light.png"
+              <Image
+                src="/wajdan-logo-light.webp"
                 alt="Wajdan Digital Alchemy"
+                width={160}
+                height={40}
                 className="h-10 w-auto"
               />
             </motion.a>

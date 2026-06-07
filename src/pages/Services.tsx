@@ -188,18 +188,18 @@ const SystemLayerDetail: React.FC<SystemLayerDetailProps> = ({
 };
 
 const LP_IMAGES = [
-  '/landing-pages/lp-1.jpg',
-  '/landing-pages/lp-2.jpg',
-  '/landing-pages/lp-3.jpg',
-  '/landing-pages/lp-4.jpg',
-  '/landing-pages/lp-5.jpg',
-  '/landing-pages/lp-6.jpg',
-  '/landing-pages/lp-7.jpg',
-  '/landing-pages/lp-10.jpg',
-  '/landing-pages/lp-11.jpg',
-  '/landing-pages/lp-12.jpg',
-  '/landing-pages/lp-13.jpg',
-  '/landing-pages/lp-14.jpg',
+  '/landing-pages/lp-1.webp',
+  '/landing-pages/lp-2.webp',
+  '/landing-pages/lp-3.webp',
+  '/landing-pages/lp-4.webp',
+  '/landing-pages/lp-5.webp',
+  '/landing-pages/lp-6.webp',
+  '/landing-pages/lp-7.webp',
+  '/landing-pages/lp-10.webp',
+  '/landing-pages/lp-11.webp',
+  '/landing-pages/lp-12.webp',
+  '/landing-pages/lp-13.webp',
+  '/landing-pages/lp-14.webp',
 ];
 
 const Services = () => {
@@ -392,13 +392,13 @@ const Services = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <motion.div whileHover={{ y: -6 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
-                  <img src="/offer-screenshot-1.png" alt="Offer Example 1" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src="/offer-screenshot-1.webp" alt="Offer Example 1" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </motion.div>
                 <motion.div whileHover={{ y: -6 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
-                  <img src="/offer-screenshot-2.png" alt="Offer Example 2" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src="/offer-screenshot-2.webp" alt="Offer Example 2" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </motion.div>
                 <motion.div whileHover={{ y: -6 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
-                  <img src="/offer-screenshot-3.png" alt="Offer Example 3" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src="/offer-screenshot-3.webp" alt="Offer Example 3" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </motion.div>
               </div>
             </div>

@@ -32,20 +32,20 @@ interface ClientLogoItem {
 }
 
 const CLIENT_LOGOS: ClientLogoItem[] = [
-  { id: 1, name: "Aspire Edge", imageUrl: "/client%20logos/ASPIRE%20EDGE%20CONSULTANTS.jpg" },
-  { id: 2, name: "Double Entry Academy", imageUrl: "/client%20logos/DOUBE%20ENTRY%20ACADEMY.jpg" },
-  { id: 3, name: "Global Minds", imageUrl: "/client%20logos/GLOBAL%20MINDS%20CONSULTANTS.jpg" },
-  { id: 4, name: "Hainan Corporate Services", imageUrl: "/client%20logos/HAINAN%20CORPORATE%20SERVICES%20GROUP.jpg" },
-  { id: 5, name: "Indus Bazaar", imageUrl: "/client%20logos/Indus%20Bazaar.jpg" },
-  { id: 6, name: "IRT Consultants", imageUrl: "/client%20logos/IRT%20CONSULTANTS.jpg" },
-  { id: 7, name: "One Roof Consultants", imageUrl: "/client%20logos/ONE%20ROOF%20CONSULTATS.jpg" },
-  { id: 8, name: "Pantree", imageUrl: "/client%20logos/PANTREE.jpg" },
-  { id: 9, name: "Portfolyio", imageUrl: "/client%20logos/PORTFOLYIO.png" },
-  { id: 10, name: "Spectrum Consulting", imageUrl: "/client%20logos/Spectrum%20Consulting.jpg" },
-  { id: 11, name: "Study Prime", imageUrl: "/client%20logos/STUDY%20PRIME.jpg" },
-  { id: 12, name: "Verticalsols", imageUrl: "/client%20logos/VERTICALSOLS.jpg" },
-  { id: 13, name: "Wisdom Weavers", imageUrl: "/client%20logos/WISDOM%20WEAVERS.jpg" },
-  { id: 14, name: "Zarveen", imageUrl: "/client%20logos/ZARVEEN.jpg" },
+  { id: 1,  name: "Aspire Edge",              imageUrl: "/client%20logos/ASPIRE%20EDGE%20CONSULTANTS.webp" },
+  { id: 2,  name: "Double Entry Academy",      imageUrl: "/client%20logos/DOUBE%20ENTRY%20ACADEMY.webp" },
+  { id: 3,  name: "Global Minds",              imageUrl: "/client%20logos/GLOBAL%20MINDS%20CONSULTANTS.webp" },
+  { id: 4,  name: "Hainan Corporate Services", imageUrl: "/client%20logos/HAINAN%20CORPORATE%20SERVICES%20GROUP.webp" },
+  { id: 5,  name: "Indus Bazaar",              imageUrl: "/client%20logos/Indus%20Bazaar.webp" },
+  { id: 6,  name: "IRT Consultants",           imageUrl: "/client%20logos/IRT%20CONSULTANTS.webp" },
+  { id: 7,  name: "One Roof Consultants",      imageUrl: "/client%20logos/ONE%20ROOF%20CONSULTATS.webp" },
+  { id: 8,  name: "Pantree",                   imageUrl: "/client%20logos/PANTREE.webp" },
+  { id: 9,  name: "Portfolyio",                imageUrl: "/client%20logos/PORTFOLYIO.webp" },
+  { id: 10, name: "Spectrum Consulting",       imageUrl: "/client%20logos/Spectrum%20Consulting.webp" },
+  { id: 11, name: "Study Prime",               imageUrl: "/client%20logos/STUDY%20PRIME.webp" },
+  { id: 12, name: "Verticalsols",              imageUrl: "/client%20logos/VERTICALSOLS.webp" },
+  { id: 13, name: "Wisdom Weavers",            imageUrl: "/client%20logos/WISDOM%20WEAVERS.webp" },
+  { id: 14, name: "Zarveen",                   imageUrl: "/client%20logos/ZARVEEN.webp" },
 ];
 
 interface FeatureLogoItem {
@@ -73,6 +73,10 @@ const ClientLogoChip: React.FC<{ item: ClientLogoItem }> = ({ item }) => (
     <img
       src={item.imageUrl}
       alt={item.name}
+      loading="lazy"
+      decoding="async"
+      width={56}
+      height={56}
       className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain transition-all duration-300"
     />
   </div>

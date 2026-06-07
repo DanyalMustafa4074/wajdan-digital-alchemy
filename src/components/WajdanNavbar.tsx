@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { TransitionLink } from "@/components/ui/transition-link";
 
@@ -41,13 +42,16 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between">
             <TransitionLink to="/" className="flex items-center gap-2 group vt-logo" aria-label="Home">
-              <motion.img
-                src={theme === "dark" && !isScrolled ? "/Wajdan%20Logo%20light.png" : "/Wajdan%20Logo%20dark.png"}
-                alt="Wajdan"
-                className="h-8 md:h-10 w-auto"
-                whileHover={{ scale: 1.04 }}
-                transition={{ type: 'spring', stiffness: 400 }}
-              />
+              <motion.div whileHover={{ scale: 1.04 }} transition={{ type: 'spring', stiffness: 400 }}>
+                <Image
+                  src={theme === "dark" && !isScrolled ? "/wajdan-logo-light.webp" : "/wajdan-logo-dark.webp"}
+                  alt="Wajdan"
+                  width={160}
+                  height={40}
+                  priority
+                  className="h-8 md:h-10 w-auto"
+                />
+              </motion.div>
             </TransitionLink>
 
             <nav className="hidden md:flex items-center gap-8">

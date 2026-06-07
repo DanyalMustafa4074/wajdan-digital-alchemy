@@ -58,7 +58,7 @@ export const WajdanHero = () => {
                   muted
                   loop
                   playsInline
-                  preload="auto"
+                  preload="metadata"
                   poster="/placeholder.svg"
                   src="https://assets.cdn.filesafe.space/tO3gTsDSPj1E3pHcRoWR/media/6a203c55b75a113972d5d16a.mp4"
                   aria-label="Wajdan VSL"

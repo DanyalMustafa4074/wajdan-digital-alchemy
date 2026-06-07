@@ -22,13 +22,13 @@ const TEAM: TeamMember[] = [
     name: "Wajahat",
     role: "Chief Executive Officer",
     bio: "Drives vision and growth strategy for every client engagement. Wajahat ensures the full 5-layer system is built and delivering before results are ever promised.",
-    image: "/team/Wajahat.png",
+    image: "/team/Wajahat.webp",
   },
   {
     name: "Danyal",
     role: "Chief Operating Officer",
     bio: "Keeps operations tight across every client project — from onboarding to delivery, every milestone lands on time and nothing slips through the cracks.",
-    image: "/team/Danyal.png",
+    image: "/team/Danyal.webp",
   },
   {
     name: "Rafay",
@@ -41,25 +41,25 @@ const TEAM: TeamMember[] = [
     name: "Umar",
     role: "Project Manager",
     bio: "Coordinates every moving part across client builds — timelines, deliverables, and internal execution stay synchronized from day one to go-live.",
-    image: "/team/Umar.png",
+    image: "/team/Umar.webp",
   },
   {
     name: "Aiden",
     role: "Marketing Specialist",
     bio: "Researches markets and manages ad campaigns engineered to book qualified consultations — not just generate clicks and impressions.",
-    image: "/team/Aiden.png",
+    image: "/team/Aiden.webp",
   },
   {
     name: "Xian",
     role: "Creative Director",
     bio: "Leads creative direction across all assets — landing pages, VSL scripts, and ad creatives built with one goal: conversion.",
-    image: "/team/Xuan.png",
+    image: "/team/Xuan.webp",
   },
   {
     name: "Ahmad",
     role: "Video Editor",
     bio: "Produces the video assets that make offers undeniable — VSL edits, ad creatives, and scroll-stopping content that carries the brand.",
-    image: "/team/Ahmad.png",
+    image: "/team/Ahmad.webp",
   },
 ];
 

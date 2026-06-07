@@ -19,9 +19,13 @@ export const ProofSection = () => {
         </ScrollReveal>
 
         <div className="mt-12 md:mt-16 w-full max-w-4xl mx-auto border-4 border-black rounded-lg overflow-hidden shadow-[6px_6px_0_0_#E54D2E] sm:shadow-[10px_10px_0_0_#E54D2E] md:shadow-[12px_12px_0_0_#E54D2E]">
-          <img 
-            src="/Wajdan_Dashboards_blurred%20(1).png" 
-            alt="Dashboard Proof of Results" 
+          <img
+            src="/wajdan-dashboards.webp"
+            alt="Dashboard Proof of Results"
+            loading="lazy"
+            decoding="async"
+            width={896}
+            height={504}
             className="w-full h-auto object-cover block"
           />
         </div>
