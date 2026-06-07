@@ -127,7 +127,7 @@ export const LogoMarquee: React.FC<{
               <ClientLogoChip key={`r1-${i}`} item={item} />
             ))}
           </div>
-          <div className="flex marquee-track-right" aria-hidden>
+          <div className="hidden sm:flex marquee-track-right" aria-hidden>
             {[...ROW_TWO, ...ROW_TWO].map((item, i) => (
               <FeatureLogoChip key={`r2-${i}`} item={item as FeatureLogoItem} />
             ))}
