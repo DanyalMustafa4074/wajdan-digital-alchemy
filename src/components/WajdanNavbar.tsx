@@ -13,7 +13,7 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
     { name: "What you're missing?", url: '/services' },
     { name: 'About', url: '/about' },
     { name: 'Results', url: '/#results' },
-    { name: 'Pricing', url: '/#pricing' },
+    { name: 'Pricing', url: '/pricing' },
   ];
 
   useEffect(() => {

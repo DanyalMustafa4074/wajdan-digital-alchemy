@@ -9,20 +9,114 @@ import { TransitionLink } from "@/components/ui/transition-link";
 
 // ─── Team ─────────────────────────────────────────────────────────────────────
 
-const TEAM = [
+interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+  image: string | null;
+  initials?: string;
+}
+
+const TEAM: TeamMember[] = [
   {
-    name: "Wajdan",
-    role: "Founder & Chief Growth Architect",
-    bio: "Built Wajdan Digital Alchemy from the ground up after watching too many great consultants lose clients to agencies that never delivered. Now channels that obsession into 5-layer client acquisition systems that run 24/7 — so consultants never chase leads again.",
-    image: "/magnific_in-img2-change-person-dre_2954651202.png",
+    name: "Wajahat",
+    role: "Chief Executive Officer",
+    bio: "Drives vision and growth strategy for every client engagement. Wajahat ensures the full 5-layer system is built and delivering before results are ever promised.",
+    image: "/team/Wajahat.png",
+  },
+  {
+    name: "Danyal",
+    role: "Chief Operating Officer",
+    bio: "Keeps operations tight across every client project — from onboarding to delivery, every milestone lands on time and nothing slips through the cracks.",
+    image: "/team/Danyal.png",
+  },
+  {
+    name: "Rafay",
+    role: "GHL Expert",
+    bio: "Architects the GoHighLevel infrastructure: CRM pipelines, automation flows, missed-call text-back, and nurture sequences engineered to run 24/7.",
+    image: null,
+    initials: "RF",
+  },
+  {
+    name: "Umar",
+    role: "Project Manager",
+    bio: "Coordinates every moving part across client builds — timelines, deliverables, and internal execution stay synchronized from day one to go-live.",
+    image: "/team/Umar.png",
+  },
+  {
+    name: "Aiden",
+    role: "Marketing Specialist",
+    bio: "Researches markets and manages ad campaigns engineered to book qualified consultations — not just generate clicks and impressions.",
+    image: "/team/Aiden.png",
+  },
+  {
+    name: "Xian",
+    role: "Creative Director",
+    bio: "Leads creative direction across all assets — landing pages, VSL scripts, and ad creatives built with one goal: conversion.",
+    image: "/team/Xuan.png",
   },
   {
     name: "Ahmad",
-    role: "Head of Paid Acquisition",
-    bio: "Manages six-figure monthly ad budgets across Meta for education consultants across the UK, UAE and Europe. Every dirham, pound and euro is engineered to convert — no spend leaves without a clear path to a booked call.",
-    image: "/magnific_change-img1-bg-to-img2-bg_2954621788.png",
+    role: "Video Editor",
+    bio: "Produces the video assets that make offers undeniable — VSL edits, ad creatives, and scroll-stopping content that carries the brand.",
+    image: "/team/Ahmad.png",
   },
 ];
+
+// ─── TeamCard ─────────────────────────────────────────────────────────────────
+
+function TeamCard({
+  member,
+  featured = false,
+}: {
+  member: TeamMember;
+  featured?: boolean;
+}) {
+  return (
+    <motion.div
+      whileHover={{ y: -4 }}
+      transition={{ type: "spring", stiffness: 280, damping: 22 }}
+      className="group"
+    >
+      {/* Portrait */}
+      <div
+        className={`relative overflow-hidden bg-[#111] mb-5 ${
+          featured ? "aspect-[4/5]" : "aspect-[4/5]"
+        }`}
+      >
+        {member.image ? (
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d]">
+            <span className="text-7xl font-black text-white/10 select-none">
+              {member.initials ?? member.name.slice(0, 2).toUpperCase()}
+            </span>
+          </div>
+        )}
+        {/* Subtle bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+      </div>
+
+      {/* Text */}
+      <div>
+        <p className="text-[#fafaf8] text-xl font-light tracking-wide mb-0.5">
+          {member.name} <span className="text-neutral-600">—</span>
+        </p>
+        <p className="text-[#fafaf8] text-xl font-bold mb-3">
+          {member.role}
+        </p>
+        <p className="text-neutral-500 text-sm leading-relaxed max-w-xs">
+          {member.bio}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -335,58 +429,32 @@ const About = () => {
       </section>
 
       {/* ── TEAM ─────────────────────────────────────────────────────────── */}
-      <section className="bg-[#140E0E] border-t border-white/5 py-20 md:py-28">
+      <section className="bg-[#080808] border-t border-white/5 py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 md:px-8">
 
-          <ScrollReveal className="text-center mb-14">
-            <p className="text-[#E54D2E] text-xs font-black uppercase tracking-[0.25em] mb-4">
-              The People
+          <ScrollReveal className="text-center mb-16">
+            <p className="text-[#E54D2E] text-xs font-black uppercase tracking-[0.25em] mb-3">
+              From Our Network of Operators
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05] mb-3">
-              Meet The Team
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05]">
+              Key People &amp; Contributors
             </h2>
-            <p className="text-neutral-500 text-base sm:text-lg md:text-xl italic font-medium leading-relaxed">
-              Two operators obsessed with one thing — filling your calendar.
-            </p>
           </ScrollReveal>
 
-          <StaggerContainer staggerDelay={0.15} className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {TEAM.map((member, i) => (
+          {/* Top row — CEO + COO full width */}
+          <StaggerContainer staggerDelay={0.1} className="grid sm:grid-cols-2 gap-8 mb-8">
+            {TEAM.slice(0, 2).map((member, i) => (
               <StaggerItem key={i}>
-                <motion.div
-                  whileHover={{ y: -8 }}
-                  transition={{ type: "spring", stiffness: 280, damping: 20 }}
-                  className="group flex flex-col items-center text-center"
-                >
-                  {/* Circular image */}
-                  <div className="relative mb-6">
-                    <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/10 group-hover:border-[#E54D2E]/50 transition-all duration-500 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                        loading="lazy"
-                      />
-                    </div>
-                    {/* Orange ring on hover */}
-                    <div className="absolute inset-0 rounded-full border-4 border-[#E54D2E] scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
-                  </div>
+                <TeamCard member={member} featured />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
 
-                  {/* Name */}
-                  <h3 className="text-xl md:text-2xl font-black text-[#fafaf8] uppercase tracking-tight mb-1.5">
-                    {member.name}
-                  </h3>
-
-                  {/* Role */}
-                  <p className="text-[#E54D2E] text-xs font-black uppercase tracking-[0.2em] mb-4">
-                    {member.role}
-                  </p>
-
-                  {/* Bio */}
-                  <p className="text-neutral-400 text-base md:text-lg leading-relaxed max-w-sm">
-                    {member.bio}
-                  </p>
-                </motion.div>
+          {/* Remaining members — 2-col grid */}
+          <StaggerContainer staggerDelay={0.08} className="grid sm:grid-cols-2 gap-8">
+            {TEAM.slice(2).map((member, i) => (
+              <StaggerItem key={i}>
+                <TeamCard member={member} />
               </StaggerItem>
             ))}
           </StaggerContainer>

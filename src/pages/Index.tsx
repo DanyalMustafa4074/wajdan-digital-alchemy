@@ -12,7 +12,6 @@ import { SystemTimeline, SystemLayersSummary } from "@/components/ui/system-time
 import { VideoTestimonials } from "@/components/ui/video-testimonials";
 import { ProofSection, WhoIsThisFor, FinalCTA, RequirementsSection } from "@/components/ui/content-sections";
 import { GuaranteeSection } from "@/components/ui/guarantee-section";
-import { PricingCards } from "@/components/ui/pricing-cards";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { SalesStory } from "@/components/ui/sales-story";
 import { SystemProgressIndicator, FloatingSystemNav } from "@/components/ui/system-tabs";
@@ -167,13 +166,6 @@ const Index = () => {
 
       {/* Comparison Table - Before/After */}
       <ComparisonTable />
-
-      {/* Pricing Section */}
-      <section id="pricing" className="bg-gradient-to-b from-background to-muted">
-        <div id="layer-4">
-          <PricingCards />
-        </div>
-      </section>
 
       {/* Guarantee Section */}
       <section className="bg-muted">
