@@ -5,9 +5,9 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa"
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#140E0E] border-t border-[#E54D2E]/30 py-16 px-6">
+    <footer className="bg-[#140E0E] border-t border-[#E54D2E]/30 py-10 md:py-16 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="lg:col-span-2">
             <motion.a
               href="/"
@@ -67,7 +67,7 @@ export const Footer = () => {
         </div>
 
         {/* Social Links & Copyright */}
-        <div className="border-t border-neutral-800 mt-16 pt-10">
+        <div className="border-t border-neutral-800 mt-8 md:mt-16 pt-6 md:pt-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-neutral-500 text-sm text-center md:text-left">
               © {new Date().getFullYear()} Wajdan Digital Alchemy. Client acquisition systems for consultancies.

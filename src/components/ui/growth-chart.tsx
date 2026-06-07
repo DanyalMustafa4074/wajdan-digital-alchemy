@@ -32,7 +32,7 @@ export const GrowthChart: React.FC<{ className?: string }> = ({ className }) => 
 
         <ScrollReveal delay={0.1}>
           <TiltCard intensity={4} lift={18}>
-          <div className="sd-reveal bg-white border-2 border-neutral-200 p-6 md:p-12 shadow-[8px_8px_0_0_#111110]">
+          <div className="sd-reveal bg-white border-2 border-neutral-200 p-3 sm:p-5 md:p-8 shadow-[8px_8px_0_0_#111110]">
             <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}>
               <svg
                 viewBox="0 0 800 450"

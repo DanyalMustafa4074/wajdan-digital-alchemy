@@ -37,11 +37,11 @@ export const PipelineFlow: React.FC<{ className?: string }> = ({ className }) =>
           <p className="text-[#E54D2E] text-base font-bold uppercase tracking-[0.2em] mb-4">
             What Actually Happens
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
             The Lead Lifecycle.<br />
             <span className="text-[#E54D2E]">Every Single Time.</span>
           </h2>
-          <p className="mt-6 text-xl sm:text-2xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
             From the second a prospect submits a form to the second they sit in front of you — automated, monitored, and impossible to forget.
           </p>
         </ScrollReveal>
@@ -80,11 +80,11 @@ export const PipelineFlow: React.FC<{ className?: string }> = ({ className }) =>
                     className="flex flex-col items-center text-center"
                   >
                     <motion.div
-                      className="relative w-20 h-20 bg-white border-2 border-[#E54D2E] flex items-center justify-center mb-4 shadow-[0_4px_0_0_#111110]"
+                      className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white border-2 border-[#E54D2E] flex items-center justify-center mb-4 shadow-[0_4px_0_0_#111110]"
                       whileHover={{ y: -4 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <Icon className="w-9 h-9 text-[#E54D2E]" strokeWidth={2.2} />
+                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#E54D2E]" strokeWidth={2.2} />
                       <span className="absolute -top-3 -right-3 bg-[#140E0E] text-white text-xs font-black px-2 py-0.5 uppercase tracking-wider">
                         {String(i + 1).padStart(2, '0')}
                       </span>

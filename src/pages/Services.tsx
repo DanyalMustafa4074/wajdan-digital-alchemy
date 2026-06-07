@@ -265,7 +265,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#1A1110] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter leading-[1.08]"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter leading-[1.08]"
           >
             Not Services.
             <br />
@@ -276,7 +276,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl sm:text-2xl md:text-3xl text-neutral-700 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed"
           >
             Most businesses lose clients not because demand is low — but because nothing was built to catch,
             qualify, and convert the interest that already exists. We build the complete infrastructure that fixes that. End to end.
@@ -605,7 +605,7 @@ const Services = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] mb-5 uppercase tracking-tight leading-[1.05]">
               Five Layers. <span className="text-[#E54D2E]">One Machine.</span>
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
               Remove any one layer and the whole thing leaks. This is the complete system — in the exact sequence we build it.
             </p>
           </ScrollReveal>

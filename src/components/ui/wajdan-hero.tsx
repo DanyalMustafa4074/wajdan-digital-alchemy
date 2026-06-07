@@ -49,7 +49,7 @@ export const WajdanHero = () => {
           </p>
 
           <div className="flex flex-col gap-6 w-full max-w-4xl mb-12 animate-slide-up animation-delay-200">
-            <div className="relative bg-[#140E0E] shadow-[12px_12px_0_0_#E54D2E] border-2 border-[#111110]">
+            <div className="relative bg-[#140E0E] shadow-[4px_4px_0_0_#E54D2E] sm:shadow-[12px_12px_0_0_#E54D2E] border-2 border-[#111110]">
               <div className="relative aspect-video w-full overflow-hidden">
                 <video
                   ref={videoRef}

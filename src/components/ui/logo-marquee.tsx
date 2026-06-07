@@ -69,18 +69,18 @@ const ROW_ONE = CLIENT_LOGOS;
 const ROW_TWO = [...FEATURE_LOGOS, ...FEATURE_LOGOS];
 
 const ClientLogoChip: React.FC<{ item: ClientLogoItem }> = ({ item }) => (
-  <div className="shrink-0 flex items-center gap-3 px-7 py-4 bg-white border border-neutral-200 hover:border-[#E54D2E]/40 transition-colors mx-3 min-w-[200px] justify-center group overflow-hidden">
-    <img 
-      src={item.imageUrl} 
-      alt={item.name} 
-      className="w-16 h-16 object-contain transition-all duration-300"
+  <div className="shrink-0 flex items-center gap-3 px-4 py-3 bg-white border border-neutral-200 hover:border-[#E54D2E]/40 transition-colors mx-2 min-w-[120px] sm:min-w-[160px] md:min-w-[200px] justify-center group overflow-hidden">
+    <img
+      src={item.imageUrl}
+      alt={item.name}
+      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain transition-all duration-300"
     />
   </div>
 );
 
 const FeatureLogoChip: React.FC<{ item: FeatureLogoItem }> = ({ item }) => (
-  <div className="shrink-0 flex items-center gap-3 px-7 py-4 bg-white border border-neutral-200 transition-colors mx-3 min-w-[200px] justify-center group overflow-hidden">
-    <div className={cn("w-10 h-10 flex items-center justify-center transition-all duration-300", item.colorClass)}>
+  <div className="shrink-0 flex items-center gap-2 px-4 py-3 bg-white border border-neutral-200 transition-colors mx-2 min-w-[120px] sm:min-w-[160px] md:min-w-[200px] justify-center group overflow-hidden">
+    <div className={cn("w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center transition-all duration-300", item.colorClass)}>
       {React.cloneElement(item.icon as React.ReactElement, { className: 'w-full h-full' })}
     </div>
     <span className="font-bold text-neutral-800 transition-colors duration-300 uppercase tracking-widest text-sm">

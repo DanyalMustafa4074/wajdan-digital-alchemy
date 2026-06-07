@@ -55,7 +55,7 @@ const Index = () => {
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#fafaf8] uppercase tracking-tighter leading-[1.5] sm:leading-[1.5] md:leading-[1.5] lg:leading-[1.5] text-center mb-6">
               Bricks <span className="text-[#E54D2E]">≠</span> House.
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-neutral-400 font-medium text-center max-w-3xl mx-auto mb-16 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-neutral-400 font-medium text-center max-w-3xl mx-auto mb-10 sm:mb-16 leading-relaxed">
               You have been sold individual components. Not a system.
             </p>
           </ScrollReveal>
@@ -67,7 +67,7 @@ const Index = () => {
           <ScrollReveal delay={0.25}>
             <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               {/* What you've been sold */}
-              <div className="bg-[#1F1513] border border-[#3A2520] p-8 md:p-10">
+              <div className="bg-[#1F1513] border border-[#3A2520] p-5 sm:p-7 md:p-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-red-900/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-red-400 text-xl font-black">✕</span>
@@ -78,14 +78,14 @@ const Index = () => {
                   {['An ad account that "looks good" on paper', 'Leads that ghost you before the call', 'A Monday morning PDF no one reads', 'A freelancer who handles one piece', 'Dashboards. Not booked consultations.'].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="text-red-500 font-black mt-0.5 flex-shrink-0 md:text-xl">✕</span>
-                      <span className="text-[#D8CBC7] text-lg sm:text-xl font-medium leading-relaxed">{item}</span>
+                      <span className="text-[#D8CBC7] text-sm sm:text-base md:text-lg font-medium leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* What you actually need */}
-              <div className="bg-[#E54D2E] p-8 md:p-10 relative overflow-hidden">
+              <div className="bg-[#E54D2E] p-5 sm:p-7 md:p-10 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="flex items-center gap-3 mb-6 relative z-10">
                   <RocketAnimation size={40} />
@@ -95,7 +95,7 @@ const Index = () => {
                   {['An offer so good, they feel foolish saying no', 'A funnel that qualifies before they call', 'Automated nurture that shows up even when you sleep', 'Ads engineered to book — not just click', 'One system. End to end. Accountable.'].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <SuccessAnimation size={24} />
-                      <span className="text-white/90 text-lg sm:text-xl font-medium leading-relaxed">{item}</span>
+                      <span className="text-white/90 text-sm sm:text-base md:text-lg font-medium leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>

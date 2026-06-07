@@ -40,16 +40,16 @@ export const VideoTestimonials = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[1.1] mb-6 text-[#E54D2E]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter leading-[1.1] mb-6 text-[#E54D2E]">
               Don't Just Take Our Word For It
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-400 font-medium leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 font-medium leading-relaxed">
               See what happens when you plug our system into your business. Real results from real people.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {testimonials.map((t, index) => (
             <ScrollReveal key={t.id} delay={index * 0.1}>
               <div className="relative group cursor-pointer overflow-hidden rounded-xl bg-black border border-white/10 aspect-[9/16]">
@@ -67,8 +67,8 @@ export const VideoTestimonials = () => {
                 </div>
 
                 {/* Details */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-2xl font-black text-[#E54D2E] uppercase mb-1">{t.result}</h3>
+                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 bg-gradient-to-t from-black via-black/80 to-transparent transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-base sm:text-lg md:text-xl font-black text-[#E54D2E] uppercase mb-1">{t.result}</h3>
                   <p className="text-white font-bold">{t.name}</p>
                   <p className="text-gray-400 text-sm">{t.company}</p>
                 </div>

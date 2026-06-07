@@ -18,7 +18,7 @@ export const ProofSection = () => {
           </div>
         </ScrollReveal>
 
-        <div className="mt-12 md:mt-16 w-full max-w-4xl mx-auto border-4 border-black rounded-lg overflow-hidden shadow-[12px_12px_0_0_#E54D2E]">
+        <div className="mt-12 md:mt-16 w-full max-w-4xl mx-auto border-4 border-black rounded-lg overflow-hidden shadow-[6px_6px_0_0_#E54D2E] sm:shadow-[10px_10px_0_0_#E54D2E] md:shadow-[12px_12px_0_0_#E54D2E]">
           <img 
             src="/Wajdan_Dashboards_blurred%20(1).png" 
             alt="Dashboard Proof of Results" 
@@ -49,17 +49,17 @@ export const WhoIsThisFor = () => {
     <section className="py-14 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-[1.1]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-[1.1]">
             Who This Is <span className="text-[#E54D2E] border-b-6 border-[#E54D2E] pb-1">For</span>.
           </h2>
-          <p className="text-xl sm:text-2xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
             Make sure to Read this so you dont waste our time.
           </p>
         </ScrollReveal>
 
         <div className="grid md:grid-cols-2 gap-8">
           <ScrollReveal delay={0.1}>
-            <div className="bg-white border-2 border-neutral-200 p-8 h-full shadow-[8px_8px_0_0_#E54D2E]">
+            <div className="bg-white border-2 border-neutral-200 p-5 sm:p-8 h-full shadow-[8px_8px_0_0_#E54D2E]">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-[#E54D2E]/10 rounded-full flex items-center justify-center border-2 border-[#E54D2E]/30">
                   <BadgeCheck className="w-6 h-6 text-[#E54D2E]" strokeWidth={3} />
@@ -70,7 +70,7 @@ export const WhoIsThisFor = () => {
                 {fits.map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-[#E54D2E] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-neutral-700 font-medium text-lg sm:text-xl leading-relaxed">{item}</span>
+                    <span className="text-neutral-700 font-medium text-sm sm:text-base md:text-lg leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -78,7 +78,7 @@ export const WhoIsThisFor = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="bg-[#140E0E] border-2 border-[#111110] p-8 h-full shadow-[8px_8px_0_0_#E54D2E]">
+            <div className="bg-[#140E0E] border-2 border-[#111110] p-5 sm:p-8 h-full shadow-[8px_8px_0_0_#E54D2E]">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center border-2 border-white/30">
                   <ShieldAlert className="w-6 h-6 text-white" strokeWidth={3} />
@@ -89,7 +89,7 @@ export const WhoIsThisFor = () => {
                 {noFits.map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <AlertCircle className="w-6 h-6 md:w-8 md:h-8 text-[#E54D2E] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-neutral-300 font-medium text-lg sm:text-xl leading-relaxed">{item}</span>
+                    <span className="text-neutral-300 font-medium text-sm sm:text-base md:text-lg leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>

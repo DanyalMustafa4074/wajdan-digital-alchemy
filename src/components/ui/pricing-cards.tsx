@@ -82,7 +82,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
     <div className={cn('py-14 bg-[#fafaf8] relative overflow-hidden', className)}>
       <ScrollReveal className="text-center mb-16 relative z-10 px-4">
         <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">Pricing</p>
-        <h2 className="text-4xl md:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight">
           Simple Pricing. <span className="text-[#E54D2E]">No Surprises.</span>
         </h2>
         <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto font-medium">
@@ -101,7 +101,7 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
             >
             <motion.div
               className={cn(
-                'relative w-full p-8 md:p-10 flex flex-col transition-all duration-300 h-full',
+                'relative w-full p-6 sm:p-8 md:p-10 flex flex-col transition-all duration-300 h-full',
                 tier.popular
                   ? 'bg-[#140E0E] border-2 border-[#E54D2E] shadow-[8px_8px_0_0_#E54D2E]'
                   : 'bg-white border-2 border-neutral-200'
