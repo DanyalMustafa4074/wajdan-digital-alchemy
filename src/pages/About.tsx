@@ -34,8 +34,7 @@ const TEAM: TeamMember[] = [
     name: "Rafay",
     role: "GHL Expert",
     bio: "Architects the GoHighLevel infrastructure: CRM pipelines, automation flows, missed-call text-back, and nurture sequences engineered to run 24/7.",
-    image: null,
-    initials: "RF",
+    image: "/team/Rafay.png",
   },
   {
     name: "Umar",
