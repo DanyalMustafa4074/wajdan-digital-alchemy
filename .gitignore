@@ -74,3 +74,9 @@ artifact2.html
 
 .vercel
 .env*.local
+
+# Large media files — deploy via Vercel CLI, not git
+*.mp4
+*.mov
+*.avi
+*.webm

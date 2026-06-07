@@ -103,7 +103,7 @@ function WajdanNavbar({ className, theme = "light" }: { className?: string, them
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "fixed inset-x-0 z-40 bg-[#fafaf8]/98 backdrop-blur-lg border-b border-neutral-200 md:hidden",
+              "fixed inset-x-0 z-40 bg-[#fafaf8] border-b border-neutral-200 md:hidden",
               isScrolled ? "top-[56px]" : "top-[72px]"
             )}
           >

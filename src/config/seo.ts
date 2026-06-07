@@ -2,23 +2,23 @@ export const SITE_URL = "https://wajdan.hu";
 
 export const SITE_NAME = "Wajdan Digital Alchemy";
 
-export const SITE_TAGLINE = "Complete Digital Solutions for Modern Businesses";
+export const SITE_TAGLINE = "End-to-End Growth System for Consultation Firms";
 
 export const SITE_DESCRIPTION =
-  "Wajdan Digital Alchemy builds end-to-end growth systems for modern businesses — high-converting offers, sales funnels, marketing automation, paid ads, and analytics. One complete system, zero gaps.";
+  "Wajdan Digital Alchemy builds the complete 5-layer client acquisition system for immigration and education consultancies — offer creation, high-converting funnel, GHL automation, Meta ads, and conversion tracking. We fill your calendar with qualified, showed-up consultations. In 60 days. Or we work for free.";
 
 export const SITE_KEYWORDS = [
   "Wajdan Digital Alchemy",
-  "digital marketing agency",
-  "growth system",
-  "sales funnel",
-  "marketing automation",
-  "paid ads management",
-  "lead generation",
-  "conversion optimization",
-  "performance marketing",
-  "digital transformation",
-  "complete digital solutions",
+  "immigration consultancy marketing",
+  "education consultancy lead generation",
+  "consultation booking system",
+  "Meta ads for consultancies",
+  "client acquisition system",
+  "GHL automation consultancy",
+  "sales funnel immigration consultancy",
+  "booked consultations",
+  "performance marketing consultancy",
+  "consultation firm growth",
   "Wajdan",
 ];
 

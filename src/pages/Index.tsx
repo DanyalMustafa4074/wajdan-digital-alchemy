@@ -154,11 +154,15 @@ const Index = () => {
       </section>
 
       {/* Video Testimonials */}
-      <VideoTestimonials />
+      <div id="layer-2">
+        <VideoTestimonials />
+      </div>
 
       {/* Proof Section */}
       <section id="results" className="bg-background">
-        <ProofSection />
+        <div id="layer-3">
+          <ProofSection />
+        </div>
       </section>
 
       {/* Comparison Table - Before/After */}
@@ -166,12 +170,16 @@ const Index = () => {
 
       {/* Pricing Section */}
       <section id="pricing" className="bg-gradient-to-b from-background to-muted">
-        <PricingCards />
+        <div id="layer-4">
+          <PricingCards />
+        </div>
       </section>
 
       {/* Guarantee Section */}
       <section className="bg-muted">
-        <GuaranteeSection />
+        <div id="layer-5">
+          <GuaranteeSection />
+        </div>
       </section>
 
       {/* Who Is This For */}

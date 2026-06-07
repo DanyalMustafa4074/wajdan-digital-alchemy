@@ -70,20 +70,6 @@ const About = () => {
             ))}
           </motion.div>
 
-          {/* H1 */}
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-neutral-400 text-xl sm:text-2xl md:text-3xl max-w-2xl mx-auto mb-12 leading-relaxed"
-          >
-            The team
-            <br />
-            <span className="text-[#E54D2E]">behind the</span>
-            <br />
-            machine.
-          </motion.h1>
-
           {/* Sub */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}

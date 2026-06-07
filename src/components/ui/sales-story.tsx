@@ -14,7 +14,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             You.
           </p>
           <p className="text-xl sm:text-2xl md:text-3xl leading-relaxed text-foreground mx-auto mb-6 font-medium">
-            Consultancy owner who wants to stop watching money leave your ad account every week while your calendar sits half empty. The one who wants a system where qualified, pre-nurtured, ready-to-buy prospects actually show up to your consultations.
+            <span className="font-black text-[#1A1110]">Yeah you are the consultancy owner</span> who wants to stop watching money leave your ad account every week while your calendar sits half empty. The one who wants a system where qualified, pre-nurtured, ready-to-buy prospects actually show up to your consultations.
           </p>
           <div className="my-8 md:my-10 text-center">
             <p className="text-xl sm:text-2xl md:text-3xl leading-snug text-foreground mx-auto font-black bg-[#E54D2E] text-white p-3 inline-block md:-rotate-1 shadow-[4px_4px_0_0_#000]">
@@ -48,7 +48,7 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
             And then you looked at your actual booked consultations.
           </p>
 
-          <div className="my-8 md:my-10 text-center border-2 border-[#E54D2E] p-4 md:p-6 inline-block w-full">
+          <div className="my-8 md:my-10 text-center border-2 border-[#E54D2E] bg-[#E54D2E]/10 p-4 md:p-6 inline-block w-full">
             <p className="text-lg sm:text-xl md:text-2xl font-black leading-snug text-[#E54D2E] uppercase tracking-tight">
               And those two numbers? Pure Instagram vs reality.
             </p>

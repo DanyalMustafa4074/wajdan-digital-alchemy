@@ -392,13 +392,13 @@ const Services = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <motion.div whileHover={{ y: -6 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
-                  <img src="/The%20Offer%20ScreenShots/screenshot.png" alt="Offer Example 1" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src="/offer-screenshot-1.png" alt="Offer Example 1" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </motion.div>
                 <motion.div whileHover={{ y: -6 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
-                  <img src="/The%20Offer%20ScreenShots/screenshot%20(1).png" alt="Offer Example 2" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src="/offer-screenshot-2.png" alt="Offer Example 2" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </motion.div>
                 <motion.div whileHover={{ y: -6 }} className="rounded-2xl overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-neutral-200 bg-white">
-                  <img src="/The%20Offer%20ScreenShots/screenshot%20(2).png" alt="Offer Example 3" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src="/offer-screenshot-3.png" alt="Offer Example 3" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </motion.div>
               </div>
             </div>
@@ -455,10 +455,7 @@ const Services = () => {
             <div className="w-full">
               <ScrollReveal>
                 <div className="text-center mb-14">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground uppercase tracking-tight leading-[1.3] max-w-4xl mx-auto">
-                    Landing pages we've<br />built that convert<br />like crazy
-                  </h3>
-                  <p className="text-xl md:text-2xl text-muted-foreground mt-5 leading-relaxed">Click any to view full size</p>
+                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">Click any to view full size</p>
                 </div>
               </ScrollReveal>
               <StaggerContainer staggerDelay={0.04} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2">
