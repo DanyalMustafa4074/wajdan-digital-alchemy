@@ -1,38 +1,87 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
+"use client";
+
+import React, { useRef, useState } from 'react';
+import { Play, Pause } from 'lucide-react';
 import { ScrollReveal } from './scroll-reveal';
 
 const testimonials = [
   {
     id: 1,
-    name: "John Doe",
-    company: "Acme Corp",
-    result: "$100k+ in 30 Days",
-    thumbnail: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800",
+    name: "Call Review",
+    label: "Client Call",
+    src: "https://assets.cdn.filesafe.space/tO3gTsDSPj1E3pHcRoWR/media/6a2467c26a06f03d44888ab6.webm",
   },
   {
     id: 2,
-    name: "Jane Smith",
-    company: "TechFlow",
-    result: "Triple ROI on Ad Spend",
-    thumbnail: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=800",
+    name: "Zohaib",
+    label: "Testimonial",
+    src: "https://assets.cdn.filesafe.space/tO3gTsDSPj1E3pHcRoWR/media/6a2467c2f607d4002ba8c37c.webm",
   },
   {
     id: 3,
-    name: "Michael Chen",
-    company: "GrowthX",
-    result: "Scaled to 7 Figures",
-    thumbnail: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=800",
+    name: "Nam",
+    label: "Testimonial",
+    src: "https://assets.cdn.filesafe.space/tO3gTsDSPj1E3pHcRoWR/media/6a2467c2fc95b245499e7b2e.webm",
   },
   {
     id: 4,
-    name: "Sarah Williams",
-    company: "Elevate",
-    result: "500+ Qualified Leads",
-    thumbnail: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
-  }
+    name: "HCSG",
+    label: "Testimonial",
+    src: "https://assets.cdn.filesafe.space/tO3gTsDSPj1E3pHcRoWR/media/6a2467c2f607d4002ba8c37e.webm",
+  },
 ];
+
+const TestimonialVideo = ({ t }: { t: (typeof testimonials)[0] }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const toggle = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setPlaying(true);
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
+  };
+
+  return (
+    <div
+      className="relative group cursor-pointer overflow-hidden rounded-xl bg-black border border-white/10 aspect-[9/16]"
+      onClick={toggle}
+    >
+      <video
+        ref={videoRef}
+        src={t.src}
+        className="w-full h-full object-cover"
+        preload="metadata"
+        playsInline
+        onEnded={() => setPlaying(false)}
+      />
+
+      <div
+        className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+          playing ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
+        }`}
+      >
+        <div className="w-16 h-16 bg-[#E54D2E] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(229,77,46,0.5)]">
+          {playing ? (
+            <Pause className="w-7 h-7 text-white fill-white" />
+          ) : (
+            <Play className="w-8 h-8 text-white fill-white pl-1" />
+          )}
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 bg-gradient-to-t from-black via-black/80 to-transparent">
+        <p className="text-[#E54D2E] text-xs font-black uppercase tracking-widest mb-1">{t.label}</p>
+        <p className="text-white font-bold">{t.name}</p>
+      </div>
+    </div>
+  );
+};
 
 export const VideoTestimonials = () => {
   return (
@@ -49,30 +98,10 @@ export const VideoTestimonials = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {testimonials.map((t, index) => (
             <ScrollReveal key={t.id} delay={index * 0.1}>
-              <div className="relative group cursor-pointer overflow-hidden rounded-xl bg-black border border-white/10 aspect-[9/16]">
-                <img 
-                  src={t.thumbnail} 
-                  alt={t.name}
-                  className="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity duration-500"
-                />
-                
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-[#E54D2E] rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(229,77,46,0.5)]">
-                    <Play className="w-8 h-8 text-white fill-white" />
-                  </div>
-                </div>
-
-                {/* Details */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 bg-gradient-to-t from-black via-black/80 to-transparent transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-base sm:text-lg md:text-xl font-black text-[#E54D2E] uppercase mb-1">{t.result}</h3>
-                  <p className="text-white font-bold">{t.name}</p>
-                  <p className="text-gray-400 text-sm">{t.company}</p>
-                </div>
-              </div>
+              <TestimonialVideo t={t} />
             </ScrollReveal>
           ))}
         </div>
