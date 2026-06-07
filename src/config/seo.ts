@@ -1,4 +1,4 @@
-export const SITE_URL = "https://wajdan.hu";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://wajdan.hu";
 
 export const SITE_NAME = "Wajdan Digital Alchemy";
 
