@@ -40,10 +40,10 @@ export const VideoTestimonials = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter leading-[1.1] mb-6 text-[#E54D2E]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[1.1] mb-6 text-[#E54D2E]">
               Don't Just Take Our Word For It
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-400 font-medium leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 font-medium leading-relaxed">
               See what happens when you plug our system into your business. Real results from real people.
             </p>
           </div>

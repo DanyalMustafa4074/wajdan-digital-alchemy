@@ -75,7 +75,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-base sm:text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-8 leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-neutral-400 max-w-2xl mx-auto mb-8 leading-relaxed"
           >
             We're trying to make growing consultancies a whole lot easier, faster, and more
             predictable — for every consultant who deserves a full calendar.
@@ -118,7 +118,7 @@ const About = () => {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="space-y-6 text-[#1A1110] text-base sm:text-lg md:text-xl leading-relaxed">
+            <div className="space-y-6 text-[#1A1110] text-lg sm:text-xl md:text-2xl leading-relaxed">
 
               <p className="font-black text-xl md:text-2xl text-[#1A1110]">
                 It looks like you like reading.
@@ -191,7 +191,7 @@ const About = () => {
                       "📍 Active in 12+ countries",
                       "🔒 Zero long-term contracts — earned every month",
                     ].map((item, i) => (
-                      <li key={i} className="text-[#1A1110]/80 text-sm sm:text-base md:text-lg leading-relaxed">
+                      <li key={i} className="text-[#1A1110]/80 text-base sm:text-lg md:text-xl leading-relaxed">
                         {item}
                       </li>
                     ))}
@@ -258,7 +258,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05] mb-5">
               The complete system.
             </h2>
-            <p className="text-neutral-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="text-neutral-400 text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed">
               Every consultancy we work with gets one thing — a fully integrated 5-layer
               system. Not disconnected tactics.
             </p>
@@ -294,7 +294,7 @@ const About = () => {
                   <h3 className="text-2xl md:text-3xl font-black text-[#fafaf8] uppercase tracking-tight mb-4 leading-[1.15]">
                     {card.title}
                   </h3>
-                  <p className="text-neutral-400 text-base sm:text-lg md:text-xl leading-relaxed mb-8 flex-1">
+                  <p className="text-neutral-400 text-lg sm:text-xl md:text-2xl leading-relaxed mb-8 flex-1">
                     {card.desc}
                   </p>
                   <a
@@ -345,7 +345,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-[#fafaf8] leading-[1.05] mb-3">
               Meet The Team
             </h2>
-            <p className="text-neutral-500 text-sm sm:text-base md:text-lg italic font-medium leading-relaxed">
+            <p className="text-neutral-500 text-base sm:text-lg md:text-xl italic font-medium leading-relaxed">
               Two operators obsessed with one thing — filling your calendar.
             </p>
           </ScrollReveal>
@@ -405,7 +405,7 @@ const About = () => {
               <br />
               <span className="text-[#E54D2E]">this button.</span>
             </h2>
-            <p className="text-[#1A1110]/60 text-base sm:text-lg md:text-xl mb-12 max-w-xl mx-auto leading-relaxed">
+            <p className="text-[#1A1110]/60 text-lg sm:text-xl md:text-2xl mb-12 max-w-xl mx-auto leading-relaxed">
               Book a free strategy call. We'll audit your current acquisition setup and show you
               exactly where the leaks are — no fluff, no pitch decks, just clarity.
             </p>

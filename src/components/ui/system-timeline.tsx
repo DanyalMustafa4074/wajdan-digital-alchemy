@@ -124,10 +124,10 @@ const SystemTimeline: React.FC<{ className?: string }> = ({ className }) => {
     <div className={cn('py-12 bg-[#fafaf8]', className)}>
       <ScrollReveal className="text-center mb-12 px-4">
         <p className="text-[#E54D2E] text-lg sm:text-xl font-bold uppercase tracking-[0.2em] mb-4">The Wajdan System</p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
           Five Layers. <span className="text-[#E54D2E]">One System.</span>
         </h2>
-        <p className="mt-6 text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
+        <p className="mt-6 text-lg sm:text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
           Remove any one layer and the whole thing leaks. This is the complete sequence — built in this exact order, before traffic goes live.
         </p>
       </ScrollReveal>

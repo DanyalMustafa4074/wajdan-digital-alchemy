@@ -49,10 +49,10 @@ export const WhoIsThisFor = () => {
     <section className="py-14 bg-[#fafaf8] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <ScrollReveal className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-[1.1]">
             Who This Is <span className="text-[#E54D2E] border-b-6 border-[#E54D2E] pb-1">For</span>.
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
             Make sure to Read this so you dont waste our time.
           </p>
         </ScrollReveal>
@@ -70,7 +70,7 @@ export const WhoIsThisFor = () => {
                 {fits.map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-[#E54D2E] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-neutral-700 font-medium text-sm sm:text-base md:text-lg leading-relaxed">{item}</span>
+                    <span className="text-neutral-700 font-medium text-base sm:text-lg md:text-xl leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -89,7 +89,7 @@ export const WhoIsThisFor = () => {
                 {noFits.map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <AlertCircle className="w-6 h-6 md:w-8 md:h-8 text-[#E54D2E] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                    <span className="text-neutral-300 font-medium text-sm sm:text-base md:text-lg leading-relaxed">{item}</span>
+                    <span className="text-neutral-300 font-medium text-base sm:text-lg md:text-xl leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>

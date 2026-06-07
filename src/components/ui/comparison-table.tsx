@@ -34,11 +34,11 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
     <div className={cn('py-8 md:py-14 relative overflow-hidden bg-[#fafaf8]', className)}>
         <ScrollReveal className="text-center mb-16 relative z-10 px-4">
         <p className="text-[#E54D2E] text-lg sm:text-xl font-bold uppercase tracking-[0.2em] mb-4">Without vs With</p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight leading-tight">
           What Your Funnel Looks Like<br/>
           <span className="text-[#E54D2E]">Right Now vs After.</span>
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
+        <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
           You don't need a thousand words to understand the problem. This is it.
         </p>
       </ScrollReveal>
@@ -69,7 +69,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
                       </div>
                       {i < withoutSteps.length - 1 && <div className="w-0.5 h-6 bg-neutral-200 my-2" />}
                     </div>
-                    <div className="text-sm sm:text-base md:text-lg font-bold text-neutral-700">{step.label}</div>
+                    <div className="text-base sm:text-lg md:text-xl font-bold text-neutral-700">{step.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -112,7 +112,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ className }) => {
                       </div>
                       {i < withSteps.length - 1 && <div className="w-0.5 h-6 bg-[#E54D2E]/40 my-2" />}
                     </div>
-                    <div className="text-sm sm:text-base md:text-lg font-bold text-white">{step.label}</div>
+                    <div className="text-base sm:text-lg md:text-xl font-bold text-white">{step.label}</div>
                   </motion.div>
                 ))}
               </div>

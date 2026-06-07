@@ -10,10 +10,10 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
       <div className="max-w-4xl mx-auto px-4 md:px-8 prose-xl">
 
         <ScrollReveal delay={0.1}>
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed font-black mb-6 md:mb-8 text-foreground uppercase tracking-tight">
+          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed font-black mb-6 md:mb-8 text-foreground uppercase tracking-tight">
             You.
           </p>
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground mx-auto mb-6 font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-foreground mx-auto mb-6 font-medium">
             <span className="font-black text-[#1A1110]">Yeah you are the consultancy owner</span> who wants to stop watching money leave your ad account every week while your calendar sits half empty. The one who wants a system where qualified, pre-nurtured, ready-to-buy prospects actually show up to your consultations.
           </p>
           <div className="my-8 md:my-10 text-center">
@@ -21,30 +21,30 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
               Then I promise you: this is the most important f*cking page you will read this year.
             </p>
           </div>
-          <p className="text-base sm:text-lg md:text-xl font-bold leading-relaxed text-neutral-500 mx-auto mb-12 md:mb-16 italic text-center w-full">
+          <p className="text-lg sm:text-xl md:text-2xl font-bold leading-relaxed text-neutral-500 mx-auto mb-12 md:mb-16 italic text-center w-full">
             (And no — we haven't lost the plot. Keep reading.)
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-foreground mt-4 mb-4 tracking-tight md:tracking-tighter uppercase leading-[1.3] sm:leading-[1.3] md:leading-[1.3]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mt-4 mb-4 tracking-tight md:tracking-tighter uppercase leading-[1.3] sm:leading-[1.3] md:leading-[1.3]">
             You've probably already<br/><span className="text-red-600 underline decoration-red-200">tried the ads thing.</span>
           </h2>
           <div className="w-20 h-2 bg-brand-orange mb-10" />
 
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground mb-5 md:mb-6 font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-foreground mb-5 md:mb-6 font-medium">
             You hired someone. An agency. A freelancer who "specialised in Meta." Maybe your own internal person who watched a YouTube course and felt confident.
           </p>
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground mb-5 md:mb-6 font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-foreground mb-5 md:mb-6 font-medium">
             You gave them budget. You gave them access. You gave them time.
           </p>
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground mb-5 md:mb-6 font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-foreground mb-5 md:mb-6 font-medium">
             Leads started coming in. The dashboard showed numbers. CPL looking decent. The report landed in your inbox every Monday morning.
           </p>
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed font-black text-foreground mb-8 p-4 md:p-6 bg-gray-50 border-l-4 border-gray-800 uppercase tracking-wide">
+          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed font-black text-foreground mb-8 p-4 md:p-6 bg-gray-50 border-l-4 border-gray-800 uppercase tracking-wide">
             The numbers looked fine.
           </p>
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground mb-6 font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-foreground mb-6 font-medium">
             And then you looked at your actual booked consultations.
           </p>
 
@@ -61,11 +61,11 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
           <ul className="space-y-5 md:space-y-6 mb-12 md:mb-16 pl-2 md:pl-8">
             <li className="flex items-start gap-3 md:gap-4">
               <X className="w-6 h-6 md:w-8 md:h-8 text-red-600 mt-1 flex-shrink-0" />
-              <span className="text-base sm:text-lg md:text-xl font-bold text-gray-800">Paying for leads who don't even pick up the phone.</span>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">Paying for leads who don't even pick up the phone.</span>
             </li>
             <li className="flex items-start gap-3 md:gap-4">
               <X className="w-6 h-6 md:w-8 md:h-8 text-red-600 mt-1 flex-shrink-0" />
-              <span className="text-base sm:text-lg md:text-xl font-bold text-gray-800">Paying for "booked" calls that ghost you before the day arrives.</span>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">Paying for "booked" calls that ghost you before the day arrives.</span>
             </li>
             <li className="flex items-start gap-3 md:gap-4">
               <X className="w-6 h-6 md:w-8 md:h-8 text-red-600 mt-1 flex-shrink-0" />
@@ -76,10 +76,10 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
 
         <ScrollReveal delay={0.3}>
           <div className="bg-[#140E0E] text-[#fafaf8] p-5 sm:p-8 md:p-12 text-center border-b-[8px] md:border-b-[12px] border-[#E54D2E] mb-12 md:mb-16 md:rotate-1">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.3] sm:leading-[1.3] md:leading-[1.3]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-5 md:mb-6 uppercase tracking-tight md:tracking-tighter leading-[1.3] sm:leading-[1.3] md:leading-[1.3]">
               Why is none of this<br/><span className="text-[#E54D2E]">turning into actual clients?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 font-medium max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium max-w-3xl mx-auto leading-relaxed">
               Here's the answer. And it's going to make you furious. Not at yourself. At every agency that ripped you off without telling you this:
             </p>
           </div>
@@ -93,19 +93,19 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
              </h2>
           </div>
 
-          <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed text-foreground mb-8 text-center max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl font-medium leading-relaxed text-foreground mb-8 text-center max-w-3xl mx-auto">
             Any agency can fill a form. Any agency can lower your cost per click. Any agency can produce a dashboard that looks like progress.
           </p>
-          <div className="p-6 sm:p-8 md:p-10 bg-red-50 border-4 border-red-600 font-black text-base sm:text-lg md:text-xl mb-8 text-center leading-snug uppercase tracking-tight shadow-[6px_6px_0_0_#dc2626] md:shadow-[8px_8px_0_0_#dc2626] md:-rotate-1">
+          <div className="p-6 sm:p-8 md:p-10 bg-red-50 border-4 border-red-600 font-black text-lg sm:text-xl md:text-2xl mb-8 text-center leading-snug uppercase tracking-tight shadow-[6px_6px_0_0_#dc2626] md:shadow-[8px_8px_0_0_#dc2626] md:-rotate-1">
             <span className="text-red-700 bg-yellow-300 px-1 md:px-2 py-0.5 md:py-1">from the moment they click your ad and never let go until they are sitting ...</span>
           </div>
-          <p className="text-base sm:text-lg md:text-xl font-bold leading-relaxed text-neutral-500 italic mb-12 md:mb-16 text-center max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl font-bold leading-relaxed text-neutral-500 italic mb-12 md:mb-16 text-center max-w-3xl mx-auto">
             (That gap — between form submission and a qualified, pre-nurtured, showed-up consultation? That's where your money goes. Every. Single. Time.)
           </p>
 
           <div className="text-center mb-12 md:mb-20 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[200px] bg-red-50 blur-3xl rounded-full opacity-50 -z-10"></div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground uppercase tracking-tight md:tracking-tighter leading-[1.3] sm:leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-6 relative z-10">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground uppercase tracking-tight md:tracking-tighter leading-[1.3] sm:leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-6 relative z-10">
               That's not bad targeting.<br/>
               <span className="text-red-600 block mt-2">That's your worst fear.</span>
             </h2>
@@ -113,9 +113,9 @@ export const SalesStory: React.FC<{ className?: string }> = ({ className }) => {
 
           <div className="p-4 sm:p-6 md:p-10 border-2 md:border-4 border-black bg-white shadow-[4px_4px_0_0_#E54D2E] sm:shadow-[8px_8px_0_0_#E54D2E] md:shadow-[12px_12px_0_0_#E54D2E] mb-8 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#E54D2E]/10 transform rotate-45 translate-x-16 -translate-y-16 hidden md:block"></div>
-            <h3 className="text-lg sm:text-2xl md:text-3xl font-black uppercase mb-3 md:mb-4 tracking-tight md:tracking-tighter text-gray-400 line-through">We don't start with your ads.</h3>
-            <h3 className="text-xl sm:text-2xl md:text-4xl font-black text-[#E54D2E] uppercase mb-6 md:mb-8 tracking-tight md:tracking-tighter leading-[1.3] sm:leading-[1.3] md:leading-[1.3]">We start with your offer.</h3>
-            <p className="text-base sm:text-lg md:text-xl font-medium text-gray-800 leading-relaxed max-w-3xl mx-auto">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase mb-3 md:mb-4 tracking-tight md:tracking-tighter text-gray-400 line-through">We don't start with your ads.</h3>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#E54D2E] uppercase mb-6 md:mb-8 tracking-tight md:tracking-tighter leading-[1.3] sm:leading-[1.3] md:leading-[1.3]">We start with your offer.</h3>
+            <p className="text-lg sm:text-xl md:text-2xl font-medium text-gray-800 leading-relaxed max-w-3xl mx-auto">
               The offer your ideal education client is desperately searching for — that nobody in your market is actually giving them. We find that gap. We craft the offer that fills it. Then — and only then — do we build everything else around it.
             </p>
           </div>

@@ -37,11 +37,11 @@ export const WajdanHero = () => {
             For Consultancies
           </div>
 
-          <h1 className="vt-hero-headline font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#1A1110] tracking-tighter leading-[1.5] sm:leading-[1.5] md:leading-[1.5] lg:leading-[1.5] mb-4 max-w-6xl animate-slide-up animation-delay-100 uppercase">
+          <h1 className="vt-hero-headline font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1A1110] tracking-tighter leading-[1.4] sm:leading-[1.4] md:leading-[1.4] lg:leading-[1.4] mb-4 max-w-6xl animate-slide-up animation-delay-100 uppercase">
             We Build The Most <span className="text-[#E54D2E]">Ruthless & Effective System</span> for Rapid Scaling of Consultation Firms — In <span className="text-[#E54D2E]">60 Days</span>.
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-neutral-700 font-medium max-w-4xl mb-5 animate-slide-up animation-delay-200 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-neutral-700 font-medium max-w-4xl mb-5 animate-slide-up animation-delay-200 leading-relaxed">
             While every other agency sells you leads and disappears — we build the complete infrastructure that turns Meta traffic into qualified, pre-nurtured, showed-up consultation bookings.
             <span className="block mt-4 font-black uppercase tracking-tight text-[#1A1110] bg-yellow-200/60 px-3 py-2 -rotate-1 inline-block">
               Or we work for free.

@@ -37,7 +37,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-5 md:mb-6 uppercase tracking-tight leading-[1.35] sm:leading-[1.35] md:leading-[1.35]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-5 md:mb-6 uppercase tracking-tight leading-[1.35] sm:leading-[1.35] md:leading-[1.35]">
             How the Hell Can We <br />
             <span className="text-[#E54D2E]">Guarantee Results?</span>
           </h2>
@@ -52,14 +52,14 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ className }) => {
               The 60-Day Commitment
             </div>
 
-            <blockquote className="text-base sm:text-lg md:text-xl text-white font-black leading-snug md:leading-tight mt-6 mb-2 tracking-tight">
+            <blockquote className="text-lg sm:text-xl md:text-2xl text-white font-black leading-snug md:leading-tight mt-6 mb-2 tracking-tight">
               "If we don't improve the quality of your consultation bookings within the first 60 days — we continue optimising your system at <span className="text-[#E54D2E]">no management fee</span> until we do."
             </blockquote>
           </motion.div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.4}>
-          <div className="text-base sm:text-lg md:text-xl font-black text-white tracking-tight mb-12 flex flex-col gap-2 uppercase">
+          <div className="text-lg sm:text-xl md:text-2xl font-black text-white tracking-tight mb-12 flex flex-col gap-2 uppercase">
             <span>The offer's rotting for 4 years Cuz We Always delivered</span>
           </div>
         </ScrollReveal>

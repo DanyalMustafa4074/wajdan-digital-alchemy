@@ -37,11 +37,11 @@ export const PipelineFlow: React.FC<{ className?: string }> = ({ className }) =>
           <p className="text-[#E54D2E] text-base font-bold uppercase tracking-[0.2em] mb-4">
             What Actually Happens
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] uppercase tracking-tighter leading-[1.1]">
             The Lead Lifecycle.<br />
             <span className="text-[#E54D2E]">Every Single Time.</span>
           </h2>
-          <p className="mt-6 text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
+          <p className="mt-6 text-lg sm:text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto font-medium leading-relaxed">
             From the second a prospect submits a form to the second they sit in front of you — automated, monitored, and impossible to forget.
           </p>
         </ScrollReveal>
