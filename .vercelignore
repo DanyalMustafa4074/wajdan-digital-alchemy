@@ -1,0 +1,6 @@
+# Large backup files — not needed in deployment
+public/vsl-video-original-backup.mp4
+
+# Dev artifacts
+.env.local
+*.log

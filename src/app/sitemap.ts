@@ -1,26 +1,36 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/config/seo";
+import { headers } from "next/headers";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const headersList = await headers();
+  const host = headersList.get("host") || "wajdan.hu";
+  const baseUrl = host.startsWith("localhost") ? `http://${host}` : `https://${host}`;
+
   const now = new Date();
   return [
     {
-      url: `${SITE_URL}/`,
+      url: `${baseUrl}/`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: `${SITE_URL}/services`,
+      url: `${baseUrl}/services`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/about`,
+      url: `${baseUrl}/about`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/pricing`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
   ];
 }

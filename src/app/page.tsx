@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Index from "@/pages/Index";
-import { SITE_URL, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION, DEFAULT_OG_IMAGE } from "@/config/seo";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  ORG_LOGO,
+} from "@/config/seo";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} — ${SITE_TAGLINE}`,
@@ -97,44 +104,105 @@ const serviceLd = {
   url: SITE_URL,
   provider: { "@id": `${SITE_URL}/#organization` },
   areaServed: [
-    { "@type": "Place", name: "United Kingdom" },
-    { "@type": "Place", name: "United Arab Emirates" },
-    { "@type": "Place", name: "Europe" },
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Country", name: "United Arab Emirates" },
+    { "@type": "AdministrativeArea", name: "Europe" },
   ],
-  serviceType: "Client Acquisition System for Education Consultancies",
+  serviceType: "Client Acquisition System for Immigration and Education Consultancies",
   description: SITE_DESCRIPTION,
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "The 5-Layer System",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Offer Creation", description: "Market research, positioning, and offer architecture before any ad spend." } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Funnel + VSL", description: "Custom landing pages, VSL scripts, and qualification forms built around your offer." } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "GHL Automation", description: "GoHighLevel workspace, SMS/email nurture, missed-call text-back, and reminder sequences." } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Meta Ad Campaigns", description: "Direct-response Meta campaigns engineered for booked consultations, not clicks." } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Conversion Tracking", description: "Server-side CAPI, custom events, and a closed feedback loop to Meta from real client outcomes." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Offer Creation", description: "Market research, competitor audit, offer architecture, messaging framework, and offer validation — the foundation every other layer is built on." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Funnel + VSL", description: "Custom landing pages, VSL scripts, and qualification forms that filter time-wasters before they reach your calendar." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "GHL Automation", description: "GoHighLevel workspace, SMS/email nurture, missed-call text-back, and reminder sequences. Average lead response time: 18 seconds." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Meta Ad Campaigns", description: "Direct-response Meta campaigns engineered for booked consultations, not clicks. Retargeting sequences keep warm leads moving." } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Conversion Tracking", description: "Server-side CAPI, custom events, and a closed feedback loop to Meta from real client outcomes — campaigns that compound over time." } },
     ],
   },
+};
+
+const howToLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How Wajdan Digital Alchemy Builds a Complete Client Acquisition System",
+  description: "The 5-layer system that fills consultation calendars with qualified, showed-up clients — built in 60 days.",
+  totalTime: "P60D",
+  estimatedCost: {
+    "@type": "MonetaryAmount",
+    currency: "USD",
+    minValue: "1000",
+    maxValue: "1500",
+  },
+  tool: [
+    { "@type": "HowToTool", name: "GoHighLevel CRM" },
+    { "@type": "HowToTool", name: "Meta Ads Manager" },
+    { "@type": "HowToTool", name: "Meta Conversions API" },
+  ],
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Offer Strategy & Positioning",
+      text: "We research your market, audit competitors, architect an irresistible offer, and build the messaging framework — before any ad spend.",
+      url: `${SITE_URL}/services`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Landing Page + Video Sales Letter",
+      text: "We build a custom high-converting landing page with a VSL and qualification form that filters out time-wasters before they reach your calendar.",
+      url: `${SITE_URL}/services`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "GHL Marketing Automation",
+      text: "We configure your GoHighLevel workspace with SMS and email nurture, missed-call text-back, appointment reminders, and CRM pipelines. Average lead response: 18 seconds.",
+      url: `${SITE_URL}/services`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Meta Ad Campaigns & Retargeting",
+      text: "We launch direct-response Meta campaigns engineered for booked consultations — not impressions. Retargeting moves warm leads to the calendar.",
+      url: `${SITE_URL}/services`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 5,
+      name: "Conversion Tracking & Compounding Optimisation",
+      text: "Server-side CAPI integration, custom conversion events, and a closed feedback loop that feeds real client outcome data back to Meta — campaigns that improve every week.",
+      url: `${SITE_URL}/services`,
+    },
+  ],
+};
+
+const videoLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "How Wajdan Digital Alchemy Fills Your Consultation Calendar — Full System Overview",
+  description: "Watch how the complete 5-layer client acquisition system turns paid traffic into showed-up, qualified consultations for immigration and education consultancies.",
+  thumbnailUrl: ORG_LOGO,
+  uploadDate: "2024-01-01T00:00:00Z",
+  duration: "PT8M",
+  contentUrl: `${SITE_URL}/vsl-video-compressed.mp4`,
+  embedUrl: `${SITE_URL}/vsl-video-compressed.mp4`,
+  inLanguage: "en-US",
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  author: { "@id": `${SITE_URL}/#organization` },
 };
 
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoLd) }} />
       <Index />
     </>
   );

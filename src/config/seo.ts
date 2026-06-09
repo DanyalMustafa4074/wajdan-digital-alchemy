@@ -28,9 +28,9 @@ export const GA_MEASUREMENT_ID = "G-1TK9EY6CWF";
 
 export const GOOGLE_SITE_VERIFICATION = "xUXImFxdVvhkmX1Liq1eaii-bbkFRd1rYvCzAQ2OEDc";
 
-export const ORG_LOGO = `${SITE_URL}/Wajdan%20Logo%20light.png`;
+export const ORG_LOGO = `${SITE_URL}/Wajdan%20Logo%20dark.png`;
 
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/Wajdan%20Logo%20light.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/Wajdan%20Logo%20dark.png`;
 
 export const SOCIAL_PROFILES = [
   "https://www.facebook.com/share/1bhtmDksoi/?mibextid=wwXIfr",

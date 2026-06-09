@@ -53,12 +53,13 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "/Wajdan%20Logo%20light.png", type: "image/png" },
+      { url: "/wajdan-logo-dark.webp", type: "image/webp", sizes: "any" },
+      { url: "/Wajdan%20Logo%20dark.png", type: "image/png", sizes: "any" },
     ],
     apple: [
-      { url: "/Wajdan%20Logo%20light.png", sizes: "180x180", type: "image/png" },
+      { url: "/Wajdan%20Logo%20dark.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/Wajdan%20Logo%20light.png",
+    shortcut: "/Wajdan%20Logo%20dark.png",
   },
   openGraph: {
     type: "website",
@@ -119,24 +120,55 @@ export const viewport: Viewport = {
 
 const organizationLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "MarketingAgency",
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
-  alternateName: "Wajdan",
+  alternateName: ["Wajdan", "Wajdan Digital"],
+  slogan: SITE_TAGLINE,
   url: SITE_URL,
   logo: {
     "@type": "ImageObject",
+    "@id": `${SITE_URL}/#logo`,
     url: ORG_LOGO,
+    contentUrl: ORG_LOGO,
+    caption: SITE_NAME,
     width: 512,
     height: 512,
+    inLanguage: "en-US",
   },
   image: ORG_LOGO,
   description: SITE_DESCRIPTION,
+  foundingDate: "2023",
+  numberOfEmployees: { "@type": "QuantitativeValue", value: 7 },
+  areaServed: [
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Country", name: "United Arab Emirates" },
+    { "@type": "AdministrativeArea", name: "Europe" },
+    { "@type": "Place", name: "Worldwide" },
+  ],
+  knowsAbout: [
+    "Client Acquisition for Consultancies",
+    "Immigration Consultancy Marketing",
+    "Education Consultancy Lead Generation",
+    "Meta Ads for Consultancies",
+    "GoHighLevel Automation",
+    "Sales Funnel Design",
+    "Conversion Rate Optimisation",
+    "Video Sales Letters",
+    "Meta Conversions API",
+    "Show Rate Optimisation",
+    "Consultation Booking Systems",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "The 5-Layer Client Acquisition System",
+    url: `${SITE_URL}/services`,
+  },
   sameAs: SOCIAL_PROFILES,
   contactPoint: [
     {
       "@type": "ContactPoint",
-      contactType: "customer support",
+      contactType: "sales",
       url: `${SITE_URL}/services`,
       availableLanguage: ["English"],
     },
@@ -152,6 +184,8 @@ const websiteLd = {
   description: SITE_TAGLINE,
   publisher: { "@id": `${SITE_URL}/#organization` },
   inLanguage: "en-US",
+  copyrightYear: 2023,
+  copyrightHolder: { "@id": `${SITE_URL}/#organization` },
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -184,6 +218,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://assets.cdn.filesafe.space" />
+        {/* AI / LLM context file — GEO (Generative Engine Optimisation) */}
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt — AI context" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
