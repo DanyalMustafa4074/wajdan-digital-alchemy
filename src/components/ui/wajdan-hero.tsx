@@ -1,26 +1,56 @@
 "use client";
 
-import { ArrowRight, Volume2, VolumeX } from "lucide-react";
+import { ArrowRight, Pause, Play, SkipForward, Volume2, VolumeX } from "lucide-react";
 import { useRef, useState } from "react";
 import { UrgencyPopover } from "@/components/ui/urgency-popover";
 
-/*
- * Hero is stacked vertically:
- *  - Top: niche badge, headline, subheadline, CTAs, urgency, trust strip.
- *  - Bottom: always-on inline VSL with mute toggle + LiveActivityFeed below it.
- *
- * The video autoplays muted, loops, and is `playsInline` so iOS doesn't
- * fullscreen it. The VSL video is served from /vsl-video.mp4 in public/.
- */
+const fmt = (s: number) => {
+  const m = Math.floor(s / 60);
+  return `${m}:${Math.floor(s % 60).toString().padStart(2, "0")}`;
+};
+
 export const WajdanHero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const toggleMute = () => {
     const v = videoRef.current;
     if (!v) return;
     v.muted = !v.muted;
     setMuted(v.muted);
+  };
+
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) { v.play(); setPlaying(true); }
+    else { v.pause(); setPlaying(false); }
+  };
+
+  const seekForward = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.currentTime = Math.min(v.currentTime + 15, v.duration || 0);
+  };
+
+  const handleTimeUpdate = () => {
+    const v = videoRef.current;
+    if (!v || !v.duration) return;
+    setCurrentTime(v.currentTime);
+    setDuration(v.duration);
+    setProgress((v.currentTime / v.duration) * 100);
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const v = videoRef.current;
+    if (!v || !v.duration) return;
+    const t = (parseFloat(e.target.value) / 100) * v.duration;
+    v.currentTime = t;
+    setProgress(parseFloat(e.target.value));
   };
 
   return (
@@ -56,12 +86,15 @@ export const WajdanHero = () => {
                   className="w-full h-full object-cover"
                   autoPlay
                   muted
-                  loop
                   playsInline
                   preload="metadata"
                   poster="/placeholder.svg"
                   src="https://assets.cdn.filesafe.space/tO3gTsDSPj1E3pHcRoWR/media/6a203c55b75a113972d5d16a.mp4"
                   aria-label="Wajdan VSL"
+                  onTimeUpdate={handleTimeUpdate}
+                  onPlay={() => setPlaying(true)}
+                  onPause={() => setPlaying(false)}
+                  onEnded={() => setPlaying(false)}
                 />
 
                 {/* Top-left running badge */}
@@ -73,28 +106,58 @@ export const WajdanHero = () => {
                   <span className="text-[10px] font-black uppercase tracking-widest">Live Demo</span>
                 </div>
 
-                {/* Mute toggle */}
-                <button
-                  type="button"
-                  onClick={toggleMute}
-                  aria-label={muted ? 'Unmute video' : 'Mute video'}
-                  className="absolute top-4 right-4 w-10 h-10 bg-white/95 hover:bg-white transition-colors flex items-center justify-center shadow-md"
-                >
-                  {muted ? (
-                    <VolumeX className="w-5 h-5 text-[#1A1110]" />
-                  ) : (
-                    <Volume2 className="w-5 h-5 text-[#E54D2E]" />
-                  )}
-                </button>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111110]/85 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
-                  <p className="text-[#E54D2E] text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-1">
-                    Wajdan VSL
-                  </p>
-                  <p className="text-white text-sm md:text-base font-bold leading-tight">
-                    See why consultancies choose us.
-                  </p>
+                {/* Gradient + controls */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111110] via-[#111110]/60 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 px-4 pt-8 pb-3 pointer-events-auto">
+                  {/* Progress slider */}
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={0.1}
+                    value={progress}
+                    onChange={handleSeek}
+                    aria-label="Video progress"
+                    className="w-full h-1 mb-3 cursor-pointer accent-[#E54D2E] bg-white/20 rounded-full appearance-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#E54D2E]"
+                  />
+                  {/* Controls row */}
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={togglePlay}
+                      aria-label={playing ? "Pause" : "Play"}
+                      className="w-9 h-9 bg-white/95 hover:bg-white transition-colors flex items-center justify-center shadow-md flex-shrink-0"
+                    >
+                      {playing
+                        ? <Pause className="w-4 h-4 text-[#1A1110] fill-[#1A1110]" />
+                        : <Play className="w-4 h-4 text-[#1A1110] fill-[#1A1110] pl-0.5" />
+                      }
+                    </button>
+                    <button
+                      type="button"
+                      onClick={seekForward}
+                      aria-label="Skip forward 15 seconds"
+                      className="w-9 h-9 bg-white/15 hover:bg-white/25 transition-colors flex items-center justify-center flex-shrink-0"
+                    >
+                      <SkipForward className="w-4 h-4 text-white" />
+                    </button>
+                    <span className="text-white/70 text-[11px] font-mono tabular-nums flex-shrink-0">
+                      {fmt(currentTime)} / {fmt(duration)}
+                    </span>
+                    <div className="ml-auto">
+                      <button
+                        type="button"
+                        onClick={toggleMute}
+                        aria-label={muted ? "Unmute video" : "Mute video"}
+                        className="w-9 h-9 bg-white/15 hover:bg-white/25 transition-colors flex items-center justify-center"
+                      >
+                        {muted
+                          ? <VolumeX className="w-4 h-4 text-white" />
+                          : <Volume2 className="w-4 h-4 text-[#E54D2E]" />
+                        }
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

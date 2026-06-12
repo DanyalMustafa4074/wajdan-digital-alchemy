@@ -47,6 +47,11 @@ const TestimonialVideo = ({ t }: { t: (typeof testimonials)[0] }) => {
     }
   };
 
+  const handleMetadata = () => {
+    const v = videoRef.current;
+    if (v && !playing) v.currentTime = 0.001;
+  };
+
   return (
     <div
       className="relative group cursor-pointer overflow-hidden rounded-xl bg-black border border-white/10 aspect-[9/16]"
@@ -58,6 +63,7 @@ const TestimonialVideo = ({ t }: { t: (typeof testimonials)[0] }) => {
         className="w-full h-full object-cover"
         preload="metadata"
         playsInline
+        onLoadedMetadata={handleMetadata}
         onEnded={() => setPlaying(false)}
       />
 

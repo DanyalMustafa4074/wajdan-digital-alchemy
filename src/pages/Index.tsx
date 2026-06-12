@@ -165,7 +165,9 @@ const Index = () => {
       </section>
 
       {/* Comparison Table - Before/After */}
-      <ComparisonTable />
+      <div id="layer-4">
+        <ComparisonTable />
+      </div>
 
       {/* Guarantee Section */}
       <section className="bg-muted">
