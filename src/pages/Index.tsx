@@ -153,27 +153,21 @@ const Index = () => {
       </section>
 
       {/* Video Testimonials */}
-      <div id="layer-2">
+      <div id="testimonials">
         <VideoTestimonials />
       </div>
 
       {/* Proof Section */}
       <section id="results" className="bg-background">
-        <div id="layer-3">
-          <ProofSection />
-        </div>
+        <ProofSection />
       </section>
 
       {/* Comparison Table - Before/After */}
-      <div id="layer-4">
-        <ComparisonTable />
-      </div>
+      <ComparisonTable />
 
       {/* Guarantee Section */}
-      <section className="bg-muted">
-        <div id="layer-5">
-          <GuaranteeSection />
-        </div>
+      <section id="guarantee" className="bg-muted">
+        <GuaranteeSection />
       </section>
 
       {/* Who Is This For */}

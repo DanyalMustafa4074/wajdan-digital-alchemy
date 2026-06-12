@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { Layers, Play, BarChart3, ShieldCheck, CalendarCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   OfferIcon,
@@ -220,6 +221,15 @@ export const SystemProgressIndicator: React.FC<{ className?: string }> = ({ clas
   );
 };
 
+// Page-level nav items that match the actual sections on the homepage
+const pageNavItems = [
+  { id: 'system',       num: '01', label: 'The System',   sectionId: 'system',       Icon: Layers       },
+  { id: 'testimonials', num: '02', label: 'Testimonials', sectionId: 'testimonials', Icon: Play         },
+  { id: 'results',      num: '03', label: 'Results',      sectionId: 'results',      Icon: BarChart3    },
+  { id: 'guarantee',    num: '04', label: 'Guarantee',    sectionId: 'guarantee',    Icon: ShieldCheck  },
+  { id: 'contact',      num: '05', label: 'Book a Call',  sectionId: 'contact',      Icon: CalendarCheck},
+];
+
 // Floating action button for quick navigation
 export const FloatingSystemNav: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -236,7 +246,9 @@ export const FloatingSystemNav: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const offset = 80;
+      const top = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
     setIsOpen(false);
   };
@@ -256,27 +268,22 @@ export const FloatingSystemNav: React.FC = () => {
             initial={{ opacity: 0, y: 20, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
-            className="absolute bottom-16 right-0 bg-white border border-neutral-200 rounded-xl p-2 shadow-xl min-w-[220px]"
+            className="absolute bottom-16 right-0 bg-white border border-neutral-200 shadow-xl min-w-[220px]"
           >
-            {systemTabs.map((tab, index) => {
-              const IconComponent = tab.IconComponent;
-              return (
-                <motion.button
-                  key={tab.id}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  onClick={() => scrollToSection(tab.sectionId)}
-                  className="w-full flex items-center gap-3 px-4 py-3 text-left text-neutral-700 hover:text-[#1A1110] hover:bg-[#fafaf8] rounded-lg transition-colors group"
-                >
-                  <IconComponent size={28} />
-                  <div>
-                    <span className="text-[#E54D2E] font-black mr-2">{tab.num}</span>
-                    <span className="text-sm font-semibold">{tab.label}</span>
-                  </div>
-                </motion.button>
-              );
-            })}
+            {pageNavItems.map((item, index) => (
+              <motion.button
+                key={item.id}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.05 }}
+                onClick={() => scrollToSection(item.sectionId)}
+                className="w-full flex items-center gap-3 px-4 py-3 text-left text-neutral-700 hover:bg-[#fafaf8] border-b border-neutral-100 last:border-0 transition-colors"
+              >
+                <item.Icon className="w-4 h-4 text-[#E54D2E] flex-shrink-0" />
+                <span className="text-[#E54D2E] font-black text-sm mr-1">{item.num}</span>
+                <span className="text-sm font-semibold text-[#1A1110]">{item.label}</span>
+              </motion.button>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
