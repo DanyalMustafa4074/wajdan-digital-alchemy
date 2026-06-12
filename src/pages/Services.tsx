@@ -12,7 +12,16 @@ import { ComparisonTable } from "@/components/ui/comparison-table";
 import { PricingCards } from "@/components/ui/pricing-cards";
 import { GuaranteeSection } from "@/components/ui/guarantee-section";
 import { FinalCTA } from "@/components/ui/content-sections";
-import { SystemTabsBar, SystemProgressIndicator, FloatingSystemNav } from "@/components/ui/system-tabs";
+import { SystemTabsBar, SystemProgressIndicator, FloatingSystemNav, type FloatingNavItem } from "@/components/ui/system-tabs";
+
+const servicesNavItems: FloatingNavItem[] = [
+  { id: 'layer-1', num: '01', label: 'Offer',        sectionId: 'layer-1', Icon: Target     },
+  { id: 'layer-2', num: '02', label: 'Funnel + VSL', sectionId: 'layer-2', Icon: MonitorPlay},
+  { id: 'layer-3', num: '03', label: 'Automation',   sectionId: 'layer-3', Icon: Zap        },
+  { id: 'layer-4', num: '04', label: 'Meta Ads',     sectionId: 'layer-4', Icon: Megaphone  },
+  { id: 'layer-5', num: '05', label: 'Tracking',     sectionId: 'layer-5', Icon: BarChart3  },
+  { id: 'contact', num: '06', label: 'Book a Call',  sectionId: 'contact', Icon: Calendar   },
+];
 import { LogoMarquee } from "@/components/ui/logo-marquee";
 import { GrowthChart } from "@/components/ui/growth-chart";
 import { PipelineFlow } from "@/components/ui/pipeline-flow";
@@ -650,7 +659,7 @@ const Services = () => {
       </section>
 
       {/* Floating Navigation */}
-      <FloatingSystemNav />
+      <FloatingSystemNav navItems={servicesNavItems} />
 
       {/* Footer */}
       <Footer />

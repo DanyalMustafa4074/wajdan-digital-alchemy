@@ -221,8 +221,16 @@ export const SystemProgressIndicator: React.FC<{ className?: string }> = ({ clas
   );
 };
 
-// Page-level nav items that match the actual sections on the homepage
-const pageNavItems = [
+export interface FloatingNavItem {
+  id: string;
+  num: string;
+  label: string;
+  sectionId: string;
+  Icon: React.FC<{ className?: string }>;
+}
+
+// Default nav items for the homepage
+export const homeNavItems: FloatingNavItem[] = [
   { id: 'system',       num: '01', label: 'The System',   sectionId: 'system',       Icon: Layers       },
   { id: 'testimonials', num: '02', label: 'Testimonials', sectionId: 'testimonials', Icon: Play         },
   { id: 'results',      num: '03', label: 'Results',      sectionId: 'results',      Icon: BarChart3    },
@@ -230,8 +238,8 @@ const pageNavItems = [
   { id: 'contact',      num: '05', label: 'Book a Call',  sectionId: 'contact',      Icon: CalendarCheck},
 ];
 
-// Floating action button for quick navigation
-export const FloatingSystemNav: React.FC = () => {
+// Floating action button for quick navigation — accepts per-page navItems
+export const FloatingSystemNav: React.FC<{ navItems?: FloatingNavItem[] }> = ({ navItems = homeNavItems }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -270,7 +278,7 @@ export const FloatingSystemNav: React.FC = () => {
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             className="absolute bottom-16 right-0 bg-white border border-neutral-200 shadow-xl min-w-[220px]"
           >
-            {pageNavItems.map((item, index) => (
+            {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 initial={{ opacity: 0, x: 20 }}
