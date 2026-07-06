@@ -10,7 +10,7 @@ const PUBLIC = path.join(__dirname, '..', 'public');
 const RULES = [
   { dir: 'team',          maxW: 900,  maxH: 1200, quality: 82 },
   { dir: 'client logos',  maxW: 400,  maxH: 400,  quality: 85 },
-  { dir: 'landing-pages', maxW: 800,  maxH: 1200, quality: 80 },
+  { dir: 'landing-pages', maxW: 1000,  maxH: 12000, quality: 85 },
   { dir: '',              maxW: 1400, maxH: 1400, quality: 85 }, // root-level
 ];
 
@@ -18,7 +18,7 @@ async function convertFile(src, destDir, maxW, maxH, quality) {
   const name = path.basename(src, path.extname(src));
   const dest = path.join(destDir, name + '.webp');
 
-  if (existsSync(dest)) {
+  if (existsSync(dest) && !src.includes('landing-pages')) {
     console.log(`  skip  ${path.relative(PUBLIC, dest)} (exists)`);
     return;
   }
