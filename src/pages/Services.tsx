@@ -204,11 +204,6 @@ const LP_IMAGES = [
   '/landing-pages/lp-5.webp',
   '/landing-pages/lp-6.webp',
   '/landing-pages/lp-7.webp',
-  '/landing-pages/lp-10.webp',
-  '/landing-pages/lp-11.webp',
-  '/landing-pages/lp-12.webp',
-  '/landing-pages/lp-13.webp',
-  '/landing-pages/lp-14.webp',
 ];
 
 const Services = () => {
@@ -467,7 +462,7 @@ const Services = () => {
                   <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">Click any to view full size</p>
                 </div>
               </ScrollReveal>
-              <StaggerContainer staggerDelay={0.04} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2">
+              <StaggerContainer staggerDelay={0.04} className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2">
                 {LP_IMAGES.map((src, i) => (
                   <StaggerItem key={i}>
                     <motion.div
