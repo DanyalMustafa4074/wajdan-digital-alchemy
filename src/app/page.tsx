@@ -184,7 +184,7 @@ const videoLd = {
   "@type": "VideoObject",
   name: "How Wajdan Digital Alchemy Fills Your Consultation Calendar — Full System Overview",
   description: "Watch how the complete 5-layer client acquisition system turns paid traffic into showed-up, qualified consultations for immigration and education consultancies.",
-  thumbnailUrl: ORG_LOGO,
+  thumbnailUrl: `${SITE_URL}/vsl-thumbnail.jpg`,
   uploadDate: "2024-01-01T00:00:00Z",
   duration: "PT8M",
   contentUrl: `${SITE_URL}/vsl-video-compressed.mp4`,

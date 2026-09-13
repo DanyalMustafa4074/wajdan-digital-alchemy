@@ -11,27 +11,42 @@ const fmt = (s: number) => {
 
 export const WajdanHero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
-  const [playing, setPlaying] = useState(true);
+  const [muted, setMuted] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  const toggleMute = () => {
+  const toggleMute = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     const v = videoRef.current;
     if (!v) return;
     v.muted = !v.muted;
     setMuted(v.muted);
   };
 
-  const togglePlay = () => {
+  const togglePlay = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     const v = videoRef.current;
     if (!v) return;
-    if (v.paused) { v.play(); setPlaying(true); }
-    else { v.pause(); setPlaying(false); }
+    if (v.paused) {
+      v.play()
+        .then(() => {
+          setPlaying(true);
+        })
+        .catch(() => {
+          v.muted = true;
+          setMuted(true);
+          v.play().then(() => setPlaying(true));
+        });
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
   };
 
-  const seekForward = () => {
+  const seekForward = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     const v = videoRef.current;
     if (!v) return;
     v.currentTime = Math.min(v.currentTime + 15, v.duration || 0);
@@ -79,16 +94,17 @@ export const WajdanHero = () => {
           </p>
 
           <div className="flex flex-col gap-6 w-full max-w-4xl mb-12 animate-slide-up animation-delay-200">
-            <div className="relative bg-[#140E0E] shadow-[4px_4px_0_0_#E54D2E] sm:shadow-[12px_12px_0_0_#E54D2E] border-2 border-[#111110]">
-              <div className="relative aspect-video w-full overflow-hidden">
+            <div className="relative bg-[#140E0E] shadow-[4px_4px_0_0_#E54D2E] sm:shadow-[12px_12px_0_0_#E54D2E] border-2 border-[#111110] group">
+              <div
+                className="relative aspect-video w-full overflow-hidden cursor-pointer"
+                onClick={togglePlay}
+              >
                 <video
                   ref={videoRef}
                   className="w-full h-full object-cover"
-                  autoPlay
-                  muted
                   playsInline
                   preload="metadata"
-                  poster="/placeholder.svg"
+                  poster="/vsl-thumbnail.webp"
                   src="https://assets.cdn.filesafe.space/tO3gTsDSPj1E3pHcRoWR/media/6a203c55b75a113972d5d16a.mp4"
                   aria-label="Wajdan VSL"
                   onTimeUpdate={handleTimeUpdate}
@@ -97,18 +113,35 @@ export const WajdanHero = () => {
                   onEnded={() => setPlaying(false)}
                 />
 
-                {/* Top-left running badge */}
-                <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#E54D2E] text-white px-3 py-1.5 shadow-md">
+                {/* Top-left status badge */}
+                <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#E54D2E] text-white px-3 py-1.5 shadow-md z-20 pointer-events-none">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
                   </span>
-                  <span className="text-[10px] font-black uppercase tracking-widest">Live Demo</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest">
+                    {playing ? "Live Demo" : "Watch VSL"}
+                  </span>
                 </div>
 
+                {/* Big Center Play Button Overlay */}
+                {!playing && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/25 hover:bg-black/35 transition-all z-10">
+                    <div className="relative flex items-center justify-center">
+                      <span className="animate-ping absolute inline-flex h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-[#E54D2E] opacity-60" />
+                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-[#E54D2E] hover:bg-[#c93b1d] rounded-full flex items-center justify-center shadow-[0_0_35px_rgba(229,77,46,0.7)] group-hover:scale-105 transition-transform">
+                        <Play className="w-7 h-7 sm:w-9 sm:h-9 text-white fill-white pl-1" />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Gradient + controls */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111110] via-[#111110]/60 to-transparent pointer-events-none" />
-                <div className="absolute bottom-0 left-0 right-0 px-4 pt-8 pb-3 pointer-events-auto">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111110] via-[#111110]/40 to-transparent pointer-events-none" />
+                <div
+                  className="absolute bottom-0 left-0 right-0 px-4 pt-8 pb-3 pointer-events-auto z-20"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   {/* Progress slider */}
                   <input
                     type="range"
