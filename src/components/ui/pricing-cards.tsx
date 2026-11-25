@@ -9,7 +9,7 @@ import { TiltCard } from './tilt-card';
 
 interface PricingTier {
   name: string;
-  price: string;
+  price?: string;
   priceSubtext?: string;
   description: string;
   features: string[];
@@ -22,7 +22,6 @@ interface PricingTier {
 const pricingTiers: PricingTier[] = [
   {
     name: 'System Build',
-    price: '$1,000 – $1,500',
     priceSubtext: 'One-time investment',
     description:
       'Offer creation, landing page, VSL script, GHL build, automation setup, conversion tracking. Everything before traffic goes live.',
@@ -39,7 +38,6 @@ const pricingTiers: PricingTier[] = [
   },
   {
     name: 'Monthly Management',
-    price: '$2,000/month',
     priceSubtext: 'Ad spend separate. No long-term contract.',
     description:
       'After the system is built. We run the campaigns, optimise weekly, and earn the retainer every single month.',
@@ -59,13 +57,12 @@ const pricingTiers: PricingTier[] = [
   },
   {
     name: 'Content Support',
-    price: 'From $500/mo',
     priceSubtext: 'Optional add-on',
     description:
       'Video editors and graphic designers — on demand. No agency markup. Just your dedicated person, working your hours.',
     features: [
-      'Full-time editor — $900/month',
-      'Part-time editor — $500/month',
+      'Full-time editor',
+      'Part-time editor',
       'Graphic designer available',
       'Ad creative production',
       'Only pay for what you use',
@@ -81,9 +78,9 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={cn('py-14 bg-[#fafaf8] relative overflow-hidden', className)}>
       <ScrollReveal className="text-center mb-16 relative z-10 px-4">
-        <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">Pricing</p>
+        <p className="text-[#E54D2E] text-sm font-bold uppercase tracking-[0.2em] mb-4">Plans</p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1A1110] mb-6 uppercase tracking-tight">
-          Simple Pricing. <span className="text-[#E54D2E]">No Surprises.</span>
+          Simple Plans. <span className="text-[#E54D2E]">No Surprises.</span>
         </h2>
         <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto font-medium">
           We build the whole system. You run your consultancy. Here's what that looks like.
@@ -137,14 +134,16 @@ const PricingCards: React.FC<{ className?: string }> = ({ className }) => {
                 >
                   {tier.name}
                 </h3>
-                <div
-                  className={cn(
-                    'text-3xl lg:text-4xl font-black mb-2 tracking-tighter',
-                    tier.popular ? 'text-[#E54D2E]' : 'text-[#1A1110]'
-                  )}
-                >
-                  {tier.price}
-                </div>
+                {tier.price && (
+                  <div
+                    className={cn(
+                      'text-3xl lg:text-4xl font-black mb-2 tracking-tighter',
+                      tier.popular ? 'text-[#E54D2E]' : 'text-[#1A1110]'
+                    )}
+                  >
+                    {tier.price}
+                  </div>
+                )}
                 {tier.priceSubtext && (
                   <p
                     className={cn(

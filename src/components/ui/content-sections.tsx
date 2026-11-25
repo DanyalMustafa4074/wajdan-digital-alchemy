@@ -36,7 +36,7 @@ export const ProofSection = () => {
 
 export const WhoIsThisFor = () => {
   const fits = [
-    'You run an education consultancy already getting leads — but far fewer qualified consultations than you\'re paying for',
+    'You run a service-based business already getting leads, but you\'re getting far fewer qualified consultations than you\'re paying for.',
     'You\'ve been burned by at least one agency that promised results and delivered Monday morning excuses',
     'You want to measure marketing by booked calls and show rates — not impressions, clicks, and CPL',
     'You\'re ready to invest in a complete system — not another month of hoping the ads improve on their own',

@@ -9,7 +9,7 @@ We are a performance marketing agency specialising in consultancy firms — immi
 - [Home](https://wajdan.hu/): Full system overview, guarantee, testimonials, FAQ
 - [Services](https://wajdan.hu/services): Detailed breakdown of all 5 system layers
 - [About](https://wajdan.hu/about): Company story and team
-- [Pricing](https://wajdan.hu/pricing): Transparent pricing — system build + monthly management
+- [Plans](https://wajdan.hu/pricing): System build + monthly management plans
 
 ## Services — The 5-Layer System
 
@@ -27,7 +27,7 @@ We are a performance marketing agency specialising in consultancy firms — immi
 - **Clients served**: 50+ consultancies across 12+ countries.
 - **Capacity limit**: Maximum 6 new clients accepted per month.
 - **Contract**: No long-term contracts — earned every month.
-- **Pricing**: System build from $1,000–$1,500 (one-time); monthly management from $2,000/month.
+- **Plans**: One-time System Build, Monthly Management, and optional Content Support add-on.
 
 ## Company
 

@@ -13,6 +13,7 @@ export const WajdanHero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -105,13 +106,25 @@ export const WajdanHero = () => {
                   playsInline
                   preload="metadata"
                   poster="/vsl-thumbnail.webp"
-                  src="https://assets.cdn.filesafe.space/tO3gTsDSPj1E3pHcRoWR/media/6a203c55b75a113972d5d16a.mp4"
+                  src="https://assets.cdn.filesafe.space/tO3gTsDSPj1E3pHcRoWR/media/6ace4351ed5644a05ff55c45.mp4"
                   aria-label="Wajdan VSL"
                   onTimeUpdate={handleTimeUpdate}
-                  onPlay={() => setPlaying(true)}
+                  onPlay={() => {
+                    setPlaying(true);
+                    setHasStarted(true);
+                  }}
                   onPause={() => setPlaying(false)}
                   onEnded={() => setPlaying(false)}
                 />
+
+                {/* Looping preview teaser before main VSL is played */}
+                {!hasStarted && (
+                  <img
+                    src="/vsl-preview.webp"
+                    alt="Watch This First — Wajdan VSL Preview"
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                  />
+                )}
 
                 {/* Top-left status badge */}
                 <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#E54D2E] text-white px-3 py-1.5 shadow-md z-20 pointer-events-none">
@@ -124,15 +137,18 @@ export const WajdanHero = () => {
                   </span>
                 </div>
 
-                {/* Big Center Play Button Overlay */}
+                {/* Big Center Play Button Overlay + WATCH THIS FIRST pill */}
                 {!playing && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/25 hover:bg-black/35 transition-all z-10">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/20 group-hover:bg-black/30 transition-all z-10">
                     <div className="relative flex items-center justify-center">
                       <span className="animate-ping absolute inline-flex h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-[#E54D2E] opacity-60" />
                       <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-[#E54D2E] hover:bg-[#c93b1d] rounded-full flex items-center justify-center shadow-[0_0_35px_rgba(229,77,46,0.7)] group-hover:scale-105 transition-transform">
                         <Play className="w-7 h-7 sm:w-9 sm:h-9 text-white fill-white pl-1" />
                       </div>
                     </div>
+                    <span className="rounded-full bg-black/65 px-4 py-1.5 text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-white ring-1 ring-white/25 backdrop-blur-sm shadow-lg">
+                      WATCH THIS FIRST
+                    </span>
                   </div>
                 )}
 

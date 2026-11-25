@@ -4,9 +4,9 @@ import WajdanNavbar from "@/components/WajdanNavbar";
 import { Footer } from "@/components/Footer";
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/config/seo";
 
-const PRICING_TITLE = "Pricing — Wajdan Digital Alchemy";
+const PRICING_TITLE = "Plans — Wajdan Digital Alchemy";
 const PRICING_DESCRIPTION =
-  "Transparent pricing for the complete 5-layer client acquisition system. One-time system build plus monthly management — no hidden fees, no long-term contracts.";
+  "Explore our plans for the complete 5-layer client acquisition system. One-time system build plus monthly management — no hidden fees, no long-term contracts.";
 const PRICING_URL = `${SITE_URL}/pricing`;
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ const breadcrumbLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Pricing", item: PRICING_URL },
+    { "@type": "ListItem", position: 2, name: "Plans", item: PRICING_URL },
   ],
 };
 
@@ -60,41 +60,27 @@ const productLd = {
       "@id": `${PRICING_URL}/#offer-build`,
       name: "System Build",
       description: "One-time build of the complete 5-layer client acquisition system — offer strategy, funnel, automation, ads setup, and conversion tracking.",
-      priceCurrency: "USD",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        minPrice: "1000",
-        maxPrice: "1500",
-        priceCurrency: "USD",
-      },
       availability: "https://schema.org/InStock",
       url: PRICING_URL,
       seller: { "@id": `${SITE_URL}/#organization` },
-      priceValidUntil: "2026-12-31",
     },
     {
       "@type": "Offer",
       "@id": `${PRICING_URL}/#offer-management`,
       name: "Monthly Management",
       description: "Ongoing management of all 5 system layers — ad campaigns, automation tuning, reporting, and continuous optimisation. No long-term contract.",
-      priceCurrency: "USD",
-      price: "2000",
       availability: "https://schema.org/InStock",
       url: PRICING_URL,
       seller: { "@id": `${SITE_URL}/#organization` },
-      priceValidUntil: "2026-12-31",
     },
     {
       "@type": "Offer",
       "@id": `${PRICING_URL}/#offer-content`,
       name: "Content Support Add-on",
       description: "Video editing, ad creatives, VSL production, and design assets as a monthly add-on to the management plan.",
-      priceCurrency: "USD",
-      price: "500",
       availability: "https://schema.org/InStock",
       url: PRICING_URL,
       seller: { "@id": `${SITE_URL}/#organization` },
-      priceValidUntil: "2026-12-31",
     },
   ],
 };
